@@ -1,0 +1,4 @@
+{
+  JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+  JCMediaPlayer.intance().mediaPlayer.prepareAsync();
+}

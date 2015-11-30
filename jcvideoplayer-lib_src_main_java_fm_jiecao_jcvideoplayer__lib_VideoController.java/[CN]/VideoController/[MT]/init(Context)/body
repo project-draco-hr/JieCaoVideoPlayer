@@ -6,7 +6,10 @@
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
+  surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
+  surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   sbProgress.setOnSeekBarChangeListener(this);
+  surfaceHolder.addCallback(this);
 }
