@@ -1,5 +1,5 @@
 {
-  if (videoEvents.type == VideoEvents.VE_PROGRESS) {
+  if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
   }
  else   if (videoEvents.type == VideoEvents.VE_PREPARED) {
     JCMediaPlayer.intance().mediaPlayer.start();
