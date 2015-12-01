@@ -1,0 +1,6 @@
+{
+  if (JCMediaPlayer.intance().mediaPlayer.isPlaying()) {
+  }
+ else {
+  }
+}

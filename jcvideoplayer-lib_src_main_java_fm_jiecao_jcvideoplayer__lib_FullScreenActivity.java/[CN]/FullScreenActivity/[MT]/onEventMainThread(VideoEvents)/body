@@ -2,4 +2,7 @@
   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
     jcVideoView.goOn();
   }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
+    finish();
+  }
 }

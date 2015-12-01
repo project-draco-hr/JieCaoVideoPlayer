@@ -8,9 +8,12 @@
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
+  llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
+  tvTitle=(TextView)findViewById(R.id.title);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   sbProgress.setOnSeekBarChangeListener(this);
   surfaceHolder.addCallback(this);
+  surfaceView.setOnClickListener(this);
 }

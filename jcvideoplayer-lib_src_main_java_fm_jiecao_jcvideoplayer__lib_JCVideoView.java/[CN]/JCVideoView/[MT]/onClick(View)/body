@@ -7,6 +7,20 @@
     CURRENT_TYPE=CURRENT_TYPE_PREPAREING;
   }
  else   if (i == R.id.fullscreen) {
-    getContext().startActivity(new Intent(getContext(),FullScreenActivity.class));
+    if (ifFullScreen) {
+      EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN));
+    }
+ else {
+      getContext().startActivity(new Intent(getContext(),FullScreenActivity.class));
+    }
+  }
+ else   if (i == R.id.surfaceView) {
+    if (llBottomControl.getVisibility() == View.VISIBLE) {
+      llBottomControl.setVisibility(View.INVISIBLE);
+      ivStart.setVisibility(View.INVISIBLE);
+      tvTitle.setVisibility(View.INVISIBLE);
+    }
+ else {
+    }
   }
 }
