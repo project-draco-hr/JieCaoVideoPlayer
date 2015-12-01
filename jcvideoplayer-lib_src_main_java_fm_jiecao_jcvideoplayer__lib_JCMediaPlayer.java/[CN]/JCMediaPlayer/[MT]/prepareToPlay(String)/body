@@ -1,0 +1,13 @@
+{
+  try {
+    mediaPlayer.release();
+    mediaPlayer=new MediaPlayer();
+    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+    mediaPlayer.setDataSource(context,Uri.parse(url));
+    mediaPlayer.setOnPreparedListener(this);
+    mediaPlayer.prepareAsync();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

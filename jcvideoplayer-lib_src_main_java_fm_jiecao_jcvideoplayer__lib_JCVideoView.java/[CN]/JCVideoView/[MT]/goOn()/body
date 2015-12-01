@@ -1,0 +1,4 @@
+{
+  JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+  ivStart.setVisibility(View.INVISIBLE);
+}

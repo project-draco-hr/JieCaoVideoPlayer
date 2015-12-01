@@ -1,7 +1,0 @@
-{
-  int i=v.getId();
-  if (i == R.id.start) {
-  }
- else   if (i == R.id.fullscreen) {
-  }
-}

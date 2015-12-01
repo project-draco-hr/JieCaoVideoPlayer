@@ -1,6 +1,3 @@
 {
-  if (jcMediaPlayer == null) {
-    jcMediaPlayer=new JCMediaPlayer();
-  }
   return jcMediaPlayer;
 }

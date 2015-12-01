@@ -1,5 +1,0 @@
-{
-  this.url=url;
-  JCMediaPlayer.intance().setUrl(url,context);
-  init(context);
-}

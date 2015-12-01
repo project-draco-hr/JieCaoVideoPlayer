@@ -1,0 +1,9 @@
+{
+  this.ifFullScreen=ifFullScreen;
+  if (ifFullScreen) {
+    ivFullScreen.setImageResource(R.drawable.biz_video_shrink);
+  }
+ else {
+    ivFullScreen.setImageResource(R.drawable.biz_video_expand);
+  }
+}

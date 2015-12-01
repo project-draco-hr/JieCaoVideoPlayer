@@ -1,0 +1,7 @@
+{
+  if (jcMediaPlayer == null || context == null) {
+    jcMediaPlayer=new JCMediaPlayer();
+    context=cont;
+  }
+  return jcMediaPlayer;
+}

@@ -1,0 +1,5 @@
+{
+  TYPE=type;
+  Intent intent=new Intent(context,FullScreenActivity.class);
+  context.startActivity(intent);
+}
