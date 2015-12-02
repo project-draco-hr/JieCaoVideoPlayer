@@ -52,7 +52,7 @@
         llBottomControl.setVisibility(View.VISIBLE);
         tvTitle.setVisibility(View.VISIBLE);
       }
-      sbProgress.setVisibility(View.INVISIBLE);
+      pbLoading.setVisibility(View.INVISIBLE);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       if (llBottomControl.getVisibility() == View.VISIBLE) {
