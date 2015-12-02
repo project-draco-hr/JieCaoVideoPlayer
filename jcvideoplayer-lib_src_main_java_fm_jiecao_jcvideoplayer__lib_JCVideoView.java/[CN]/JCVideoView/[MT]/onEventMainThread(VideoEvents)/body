@@ -7,4 +7,11 @@
   }
  else   if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
   }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_COMPLETE) {
+    ivStart.setImageResource(R.drawable.click_video_play_selector);
+    ivThumb.setVisibility(View.VISIBLE);
+    ivStart.setVisibility(View.VISIBLE);
+    JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
+    CURRENT_STATE=CURRENT_STATE_NORMAL;
+  }
 }

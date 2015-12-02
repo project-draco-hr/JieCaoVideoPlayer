@@ -5,6 +5,7 @@
     mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
     mediaPlayer.setDataSource(context,Uri.parse(url));
     mediaPlayer.setOnPreparedListener(this);
+    mediaPlayer.setOnCompletionListener(this);
     mediaPlayer.prepareAsync();
   }
  catch (  IOException e) {
