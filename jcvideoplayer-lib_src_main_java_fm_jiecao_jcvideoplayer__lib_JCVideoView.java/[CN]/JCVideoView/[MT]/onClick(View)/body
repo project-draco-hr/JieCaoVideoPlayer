@@ -4,14 +4,13 @@
     ivStart.setVisibility(View.INVISIBLE);
     pbLoading.setVisibility(View.VISIBLE);
     JCMediaPlayer.intance().prepareToPlay(url);
-    CURRENT_TYPE=CURRENT_TYPE_PREPAREING;
   }
  else   if (i == R.id.fullscreen) {
     if (ifFullScreen) {
       EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN));
     }
  else {
-      getContext().startActivity(new Intent(getContext(),FullScreenActivity.class));
+      FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,title);
     }
   }
  else   if (i == R.id.surfaceView) {
@@ -21,6 +20,10 @@
       tvTitle.setVisibility(View.INVISIBLE);
     }
  else {
+      setStartImage();
+      llBottomControl.setVisibility(View.VISIBLE);
+      ivStart.setVisibility(View.VISIBLE);
+      tvTitle.setVisibility(View.VISIBLE);
     }
   }
 }

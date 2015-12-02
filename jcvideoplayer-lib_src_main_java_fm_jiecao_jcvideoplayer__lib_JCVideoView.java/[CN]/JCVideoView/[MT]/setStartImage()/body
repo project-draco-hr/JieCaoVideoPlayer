@@ -1,6 +1,8 @@
 {
-  if (JCMediaPlayer.intance().mediaPlayer.isPlaying()) {
+  if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+    ivStart.setImageResource(R.drawable.click_video_pause_selector);
   }
  else {
+    ivStart.setImageResource(R.drawable.click_video_play_selector);
   }
 }

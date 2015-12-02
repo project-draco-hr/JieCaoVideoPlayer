@@ -3,5 +3,5 @@
   setContentView(R.layout.activity_main);
   JCMediaPlayer.init(DemoApplication.instance());
   videoController=(JCVideoView)findViewById(R.id.videocontroller);
-  videoController.setUp("http://7xkbzx.com1.z0.glb.clouddn.com/SampleVideo_1080x720_20mb.mp4");
+  videoController.setUp("http://7xkbzx.com1.z0.glb.clouddn.com/SampleVideo_1080x720_20mb.mp4","???????????????",false);
 }

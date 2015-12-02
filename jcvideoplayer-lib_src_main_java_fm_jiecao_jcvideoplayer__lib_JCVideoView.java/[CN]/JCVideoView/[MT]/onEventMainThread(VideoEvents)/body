@@ -3,7 +3,6 @@
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaPlayer.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
-    CURRENT_TYPE=CURRENT_TYPE_PLAYING;
   }
  else   if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
   }

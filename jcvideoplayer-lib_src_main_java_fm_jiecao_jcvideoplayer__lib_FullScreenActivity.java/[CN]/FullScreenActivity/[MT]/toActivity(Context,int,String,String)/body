@@ -1,5 +1,7 @@
 {
-  TYPE=type;
+  STATE=state;
+  URL=url;
+  TITLE=title;
   Intent intent=new Intent(context,FullScreenActivity.class);
   context.startActivity(intent);
 }

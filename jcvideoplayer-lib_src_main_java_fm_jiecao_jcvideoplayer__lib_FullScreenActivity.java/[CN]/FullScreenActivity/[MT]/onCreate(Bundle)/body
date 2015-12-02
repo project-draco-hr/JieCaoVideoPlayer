@@ -5,5 +5,5 @@
   setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
   setContentView(R.layout.activity_fullscreen);
   jcVideoView=(JCVideoView)findViewById(R.id.jcvideoview);
-  jcVideoView.setFullScreen(true);
+  jcVideoView.setUp(URL,TITLE,true);
 }
