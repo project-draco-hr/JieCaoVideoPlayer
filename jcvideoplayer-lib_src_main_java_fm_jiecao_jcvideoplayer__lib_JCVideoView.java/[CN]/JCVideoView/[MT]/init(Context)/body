@@ -10,8 +10,10 @@
   surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
   tvTitle=(TextView)findViewById(R.id.title);
+  ivThumb=(ImageView)findViewById(R.id.thumb);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
+  ivThumb.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   sbProgress.setOnSeekBarChangeListener(this);
   surfaceHolder.addCallback(this);

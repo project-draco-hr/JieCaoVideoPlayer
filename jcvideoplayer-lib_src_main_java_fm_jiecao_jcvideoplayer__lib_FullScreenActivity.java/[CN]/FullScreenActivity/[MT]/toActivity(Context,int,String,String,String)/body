@@ -1,6 +1,7 @@
 {
   STATE=state;
   URL=url;
+  THUMB=thumb;
   TITLE=title;
   Intent intent=new Intent(context,FullScreenActivity.class);
   context.startActivity(intent);

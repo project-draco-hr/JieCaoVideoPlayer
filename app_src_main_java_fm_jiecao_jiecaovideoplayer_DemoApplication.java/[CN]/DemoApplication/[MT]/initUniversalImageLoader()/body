@@ -1,0 +1,8 @@
+{
+  DisplayImageOptions options=new DisplayImageOptions.Builder().resetViewBeforeLoading(false).delayBeforeLoading(1000).cacheInMemory(true).cacheOnDisk(true).imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2).bitmapConfig(Bitmap.Config.RGB_565).displayer(new SimpleBitmapDisplayer()).build();
+  int memClass=((ActivityManager)getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass();
+  int memCacheSize=1024 * 1024 * memClass / 8;
+  File cacheDir=new File(Environment.getExternalStorageDirectory().getPath() + "/jiecao/cache");
+  ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(this).threadPoolSize(3).threadPriority(Thread.NORM_PRIORITY - 2).denyCacheImageMultipleSizesInMemory().diskCacheFileNameGenerator(new Md5FileNameGenerator()).memoryCache(new UsingFreqLimitedMemoryCache(memCacheSize)).memoryCacheSize(memCacheSize).diskCacheSize(50 * 1024 * 1024).tasksProcessingOrder(QueueProcessingType.LIFO).diskCache(new UnlimitedDiskCache(cacheDir)).imageDownloader(new BaseImageDownloader(this,5 * 1000,30 * 1000)).defaultDisplayImageOptions(options).build();
+  ImageLoader.getInstance().init(config);
+}

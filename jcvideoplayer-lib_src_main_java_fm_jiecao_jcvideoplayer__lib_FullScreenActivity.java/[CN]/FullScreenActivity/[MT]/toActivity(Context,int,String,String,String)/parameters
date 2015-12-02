@@ -1,4 +1,5 @@
 Context context
 int state
 String url
+String thumb
 String title
