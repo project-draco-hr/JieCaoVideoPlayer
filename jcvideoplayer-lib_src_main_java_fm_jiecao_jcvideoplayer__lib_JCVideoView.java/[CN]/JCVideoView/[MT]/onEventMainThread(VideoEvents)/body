@@ -8,11 +8,13 @@
  else   if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
-    ivStart.setImageResource(R.drawable.click_video_play_selector);
-    ivThumb.setVisibility(View.VISIBLE);
-    ivStart.setVisibility(View.VISIBLE);
-    JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
-    CURRENT_STATE=CURRENT_STATE_NORMAL;
+    if (CURRENT_STATE != CURRENT_STATE_PREPAREING) {
+      ivStart.setImageResource(R.drawable.click_video_play_selector);
+      ivThumb.setVisibility(View.VISIBLE);
+      ivStart.setVisibility(View.VISIBLE);
+      JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
+      CURRENT_STATE=CURRENT_STATE_NORMAL;
+    }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
     if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
