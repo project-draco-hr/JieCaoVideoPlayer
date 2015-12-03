@@ -1,4 +1,5 @@
 {
   super(context,attrs);
+  uuid=UUID.randomUUID();
   init(context);
 }

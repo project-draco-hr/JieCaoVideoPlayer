@@ -10,6 +10,6 @@
     ivFullScreen.setImageResource(R.drawable.biz_video_expand);
   }
   tvTitle.setText(title);
-  ImageLoader.getInstance().displayImage(thumb,ivThumb,getDefaultDisplayImageOption());
+  ImageLoader.getInstance().displayImage(thumb,ivThumb);
   CURRENT_STATE=CURRENT_STATE_NORMAL;
 }

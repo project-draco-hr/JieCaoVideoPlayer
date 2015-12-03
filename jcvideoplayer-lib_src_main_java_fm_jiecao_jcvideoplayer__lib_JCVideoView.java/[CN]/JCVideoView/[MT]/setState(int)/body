@@ -1,3 +1,9 @@
 {
   this.CURRENT_STATE=state;
+  if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
+  }
+ else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+  }
+ else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
+  }
 }

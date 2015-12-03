@@ -1,5 +1,5 @@
 {
-  DisplayImageOptions options=new DisplayImageOptions.Builder().resetViewBeforeLoading(false).delayBeforeLoading(1000).cacheInMemory(true).cacheOnDisk(true).imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2).bitmapConfig(Bitmap.Config.RGB_565).displayer(new SimpleBitmapDisplayer()).build();
+  DisplayImageOptions options=new DisplayImageOptions.Builder().showImageOnLoading(new ColorDrawable(Color.parseColor("#f0f0f0"))).resetViewBeforeLoading(true).cacheInMemory(true).cacheOnDisk(true).considerExifParams(true).imageScaleType(ImageScaleType.EXACTLY_STRETCHED).bitmapConfig(Bitmap.Config.RGB_565).build();
   int memClass=((ActivityManager)getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass();
   int memCacheSize=1024 * 1024 * memClass / 8;
   File cacheDir=new File(Environment.getExternalStorageDirectory().getPath() + "/jiecao/cache");
