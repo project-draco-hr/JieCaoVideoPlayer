@@ -8,6 +8,7 @@
     mediaPlayer.setOnCompletionListener(this);
     mediaPlayer.setOnBufferingUpdateListener(this);
     mediaPlayer.setOnSeekCompleteListener(this);
+    mediaPlayer.setOnErrorListener(this);
     mediaPlayer.prepareAsync();
   }
  catch (  IOException e) {

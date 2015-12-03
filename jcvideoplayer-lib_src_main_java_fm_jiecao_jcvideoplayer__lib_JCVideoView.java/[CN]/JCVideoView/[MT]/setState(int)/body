@@ -13,7 +13,7 @@
     llBottomControl.setVisibility(View.VISIBLE);
     tvTitle.setVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
-    if (!ifFullScreen) {
+    if (!ifFullScreen && JCMediaPlayer.intance().mediaPlayer.isPlaying()) {
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     }
   }

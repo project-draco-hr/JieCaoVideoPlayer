@@ -1,5 +1,6 @@
 {
   if (!JCMediaPlayer.uuid.equals(uuid)) {
+    System.out.println("??????????????????");
     return;
   }
   if (videoEvents.type == VideoEvents.VE_PREPARED) {
@@ -15,7 +16,6 @@
       ivStart.setImageResource(R.drawable.click_video_play_selector);
       ivThumb.setVisibility(View.VISIBLE);
       ivStart.setVisibility(View.VISIBLE);
-      JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
       CURRENT_STATE=CURRENT_STATE_NORMAL;
     }
   }
@@ -26,6 +26,14 @@
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
-    setState(Integer.valueOf(videoEvents.obj.toString()));
+    if (isFromFullScreenBackHere) {
+      from_fullscreen_state=Integer.valueOf(videoEvents.obj.toString());
+    }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
+    if (isFromFullScreenBackHere) {
+      setState(from_fullscreen_state);
+      isFromFullScreenBackHere=false;
+    }
   }
 }

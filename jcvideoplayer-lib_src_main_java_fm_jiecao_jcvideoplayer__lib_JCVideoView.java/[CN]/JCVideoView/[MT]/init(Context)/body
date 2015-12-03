@@ -18,4 +18,5 @@
   sbProgress.setOnSeekBarChangeListener(this);
   surfaceHolder.addCallback(this);
   surfaceView.setOnClickListener(this);
+  llBottomControl.setOnClickListener(this);
 }
