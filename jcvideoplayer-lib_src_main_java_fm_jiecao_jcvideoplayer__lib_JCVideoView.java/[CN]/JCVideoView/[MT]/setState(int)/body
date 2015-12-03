@@ -1,9 +1,30 @@
 {
+  JCMediaPlayer.uuid=uuid;
   this.CURRENT_STATE=state;
   if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
+    ivStart.setVisibility(View.INVISIBLE);
+    ivThumb.setVisibility(View.INVISIBLE);
+    pbLoading.setVisibility(View.VISIBLE);
+    setProgressAndTime(0,0,0,0);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+    updateStartImage();
+    ivStart.setVisibility(View.VISIBLE);
+    llBottomControl.setVisibility(View.VISIBLE);
+    tvTitle.setVisibility(View.VISIBLE);
+    ivThumb.setVisibility(View.INVISIBLE);
+    if (!ifFullScreen) {
+      JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+    }
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
+    updateStartImage();
+    ivStart.setVisibility(View.VISIBLE);
+    llBottomControl.setVisibility(View.VISIBLE);
+    tvTitle.setVisibility(View.VISIBLE);
+    ivThumb.setVisibility(View.INVISIBLE);
+    if (!ifFullScreen) {
+      JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+    }
   }
 }

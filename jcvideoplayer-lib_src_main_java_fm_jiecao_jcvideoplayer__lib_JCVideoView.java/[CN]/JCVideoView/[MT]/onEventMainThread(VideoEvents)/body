@@ -1,4 +1,7 @@
 {
+  if (!JCMediaPlayer.uuid.equals(uuid)) {
+    return;
+  }
   if (videoEvents.type == VideoEvents.VE_PREPARED) {
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaPlayer.intance().mediaPlayer.start();
@@ -21,5 +24,8 @@
       int percent=Integer.valueOf(videoEvents.obj.toString());
       setProgressAndTimeFromMediaPlayer(percent);
     }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
+    setState(Integer.valueOf(videoEvents.obj.toString()));
   }
 }
