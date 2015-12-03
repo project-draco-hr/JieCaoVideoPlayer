@@ -1,0 +1,6 @@
+{
+  sbProgress.setProgress(progress);
+  sbProgress.setSecondaryProgress(secProgress);
+  tvTimeCurrent.setText(stringForTime(currentTime));
+  tvTimeTotal.setText(stringForTime(totalTime));
+}

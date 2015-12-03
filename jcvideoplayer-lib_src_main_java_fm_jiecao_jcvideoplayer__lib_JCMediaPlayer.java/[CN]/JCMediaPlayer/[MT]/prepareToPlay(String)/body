@@ -6,6 +6,8 @@
     mediaPlayer.setDataSource(context,Uri.parse(url));
     mediaPlayer.setOnPreparedListener(this);
     mediaPlayer.setOnCompletionListener(this);
+    mediaPlayer.setOnBufferingUpdateListener(this);
+    mediaPlayer.setOnSeekCompleteListener(this);
     mediaPlayer.prepareAsync();
   }
  catch (  IOException e) {

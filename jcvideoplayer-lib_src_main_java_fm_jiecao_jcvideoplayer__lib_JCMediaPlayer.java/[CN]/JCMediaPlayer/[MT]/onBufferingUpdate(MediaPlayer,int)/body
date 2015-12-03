@@ -1,0 +1,5 @@
+{
+  VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE);
+  videoEvents.obj=percent;
+  EventBus.getDefault().post(videoEvents);
+}
