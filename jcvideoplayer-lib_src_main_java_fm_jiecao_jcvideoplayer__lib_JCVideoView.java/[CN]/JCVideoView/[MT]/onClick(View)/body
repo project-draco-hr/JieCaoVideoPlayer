@@ -33,7 +33,6 @@
     }
  else {
       isClickFullscreen=true;
-      JCMediaPlayer.intance().setUuid(uuid);
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
     }
   }

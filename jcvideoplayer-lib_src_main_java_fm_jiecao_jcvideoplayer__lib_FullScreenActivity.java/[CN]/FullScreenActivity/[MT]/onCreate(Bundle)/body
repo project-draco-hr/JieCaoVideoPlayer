@@ -7,4 +7,5 @@
   jcVideoView=(JCVideoView)findViewById(R.id.jcvideoview);
   jcVideoView.setUp(URL,THUMB,TITLE,true);
   jcVideoView.setState(STATE);
+  JCMediaPlayer.intance().setUuid(jcVideoView.uuid);
 }

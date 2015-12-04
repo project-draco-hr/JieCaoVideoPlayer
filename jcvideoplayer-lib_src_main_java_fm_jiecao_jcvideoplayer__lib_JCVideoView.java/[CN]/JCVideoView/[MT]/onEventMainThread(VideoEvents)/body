@@ -1,4 +1,12 @@
 {
+  if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
+    if (CURRENT_STATE != CURRENT_STATE_PREPAREING) {
+      ivStart.setImageResource(R.drawable.click_video_play_selector);
+      ivThumb.setVisibility(View.VISIBLE);
+      ivStart.setVisibility(View.VISIBLE);
+      CURRENT_STATE=CURRENT_STATE_NORMAL;
+    }
+  }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
     System.out.println("??????????????????");
     return;
@@ -10,14 +18,6 @@
     CURRENT_STATE=CURRENT_STATE_PLAYING;
   }
  else   if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
-  }
- else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
-    if (CURRENT_STATE != CURRENT_STATE_PREPAREING) {
-      ivStart.setImageResource(R.drawable.click_video_play_selector);
-      ivThumb.setVisibility(View.VISIBLE);
-      ivStart.setVisibility(View.VISIBLE);
-      CURRENT_STATE=CURRENT_STATE_NORMAL;
-    }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
     if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
@@ -38,5 +38,7 @@
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
       isFromFullScreenBackHere=false;
     }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
   }
 }

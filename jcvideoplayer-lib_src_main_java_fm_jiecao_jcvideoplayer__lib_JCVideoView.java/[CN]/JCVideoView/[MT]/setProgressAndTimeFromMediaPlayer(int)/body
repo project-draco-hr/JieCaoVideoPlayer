@@ -1,7 +1,7 @@
 {
   final int position=JCMediaPlayer.intance().mediaPlayer.getCurrentPosition();
   final int duration=JCMediaPlayer.intance().mediaPlayer.getDuration();
-  System.out.println("onBufferingUpdate " + secProgress + " "+ position+ " "+ duration);
+  System.out.println("onBufferingUpdate " + secProgress + " "+ position+ " "+ duration+ " "+ uuid+ " "+ JCMediaPlayer.intance().uuid);
   int progress=position * 100 / duration;
   setProgressAndTime(progress,secProgress,position,duration);
 }
