@@ -20,7 +20,7 @@
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
-    if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+    if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
       int percent=Integer.valueOf(videoEvents.obj.toString());
       setProgressAndTimeFromMediaPlayer(percent);
     }
@@ -35,11 +35,8 @@
   }
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
     if (isFromFullScreenBackHere) {
-      delaySetdisplay();
+      JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
       isFromFullScreenBackHere=false;
-    }
-    if (ifFullScreen) {
-      Toast.makeText(getContext(),"???????????????????????????",Toast.LENGTH_SHORT).show();
     }
   }
 }
