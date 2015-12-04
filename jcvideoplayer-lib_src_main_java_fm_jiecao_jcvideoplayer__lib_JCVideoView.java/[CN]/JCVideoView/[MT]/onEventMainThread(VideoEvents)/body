@@ -26,14 +26,20 @@
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
-    if (isFromFullScreenBackHere) {
-      from_fullscreen_state=Integer.valueOf(videoEvents.obj.toString());
+    if (isClickFullscreen) {
+      isFromFullScreenBackHere=true;
+      isClickFullscreen=false;
+      int prev_state=Integer.valueOf(videoEvents.obj.toString());
+      setState(prev_state);
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
     if (isFromFullScreenBackHere) {
-      setState(from_fullscreen_state);
+      delaySetdisplay();
       isFromFullScreenBackHere=false;
+    }
+    if (ifFullScreen) {
+      Toast.makeText(getContext(),"???????????????????????????",Toast.LENGTH_SHORT).show();
     }
   }
 }

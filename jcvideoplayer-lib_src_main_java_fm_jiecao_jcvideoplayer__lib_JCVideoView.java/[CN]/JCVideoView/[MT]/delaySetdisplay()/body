@@ -1,0 +1,19 @@
+{
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        Thread.sleep(1000);
+      }
+ catch (      InterruptedException e) {
+        e.printStackTrace();
+      }
+      ((Activity)getContext()).runOnUiThread(new Runnable(){
+        @Override public void run(){
+          Toast.makeText(getContext(),"???????????????????????? " + CURRENT_STATE + " "+ ifFullScreen,Toast.LENGTH_SHORT).show();
+        }
+      }
+);
+    }
+  }
+).start();
+}

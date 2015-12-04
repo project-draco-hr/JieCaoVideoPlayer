@@ -31,10 +31,11 @@
       EventBus.getDefault().post(videoEvents);
     }
  else {
-      isFromFullScreenBackHere=true;
+      isClickFullscreen=true;
       JCMediaPlayer.intance().setUuid(uuid);
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
     }
+    JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
   }
  else   if (i == R.id.surfaceView) {
     if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
