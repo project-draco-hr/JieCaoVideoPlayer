@@ -1,5 +1,4 @@
 {
-  JCMediaPlayer.uuid=uuid;
   this.CURRENT_STATE=state;
   if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
     ivStart.setVisibility(View.INVISIBLE);

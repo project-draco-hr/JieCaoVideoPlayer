@@ -8,8 +8,7 @@
       pbLoading.setVisibility(View.VISIBLE);
       setProgressAndTime(0,0,0,0);
       JCMediaPlayer.intance().prepareToPlay(url);
-      JCMediaPlayer.uuid=uuid;
-      JCMediaPlayer.prev_uuid=JCMediaPlayer.uuid;
+      JCMediaPlayer.intance().setUuid(uuid);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
@@ -26,13 +25,14 @@
   }
  else   if (i == R.id.fullscreen) {
     if (ifFullScreen) {
-      JCMediaPlayer.uuid=JCMediaPlayer.prev_uuid;
+      JCMediaPlayer.intance().backUpUuid();
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN);
       videoEvents.obj=CURRENT_STATE;
       EventBus.getDefault().post(videoEvents);
     }
  else {
       isFromFullScreenBackHere=true;
+      JCMediaPlayer.intance().setUuid(uuid);
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
     }
   }

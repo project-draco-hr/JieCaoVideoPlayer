@@ -1,5 +1,5 @@
 {
-  if (!JCMediaPlayer.uuid.equals(uuid)) {
+  if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
     System.out.println("??????????????????");
     return;
   }

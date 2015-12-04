@@ -1,0 +1,4 @@
+{
+  backUpUuid();
+  this.uuid=uuid;
+}
