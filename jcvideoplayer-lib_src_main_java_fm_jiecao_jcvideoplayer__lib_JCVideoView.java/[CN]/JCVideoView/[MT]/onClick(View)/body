@@ -26,7 +26,7 @@
  else   if (i == R.id.fullscreen) {
     JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
     if (ifFullScreen) {
-      JCMediaPlayer.intance().backUpUuid();
+      JCMediaPlayer.intance().revertUuid();
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN);
       videoEvents.obj=CURRENT_STATE;
       EventBus.getDefault().post(videoEvents);
