@@ -9,6 +9,9 @@
       setProgressAndTime(0,0,0,0);
       JCMediaPlayer.intance().prepareToPlay(getContext(),url);
       JCMediaPlayer.intance().setUuid(uuid);
+      VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
+      videoEvents.obj=uuid;
+      EventBus.getDefault().post(videoEvents);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;

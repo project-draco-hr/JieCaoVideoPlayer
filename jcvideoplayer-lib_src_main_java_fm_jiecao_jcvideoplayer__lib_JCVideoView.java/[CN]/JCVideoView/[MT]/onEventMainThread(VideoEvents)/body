@@ -8,7 +8,11 @@
     }
   }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
-    System.out.println("??????????????????");
+    if (videoEvents.type == VideoEvents.VE_START) {
+      if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+        setState(CURRENT_STATE_NORMAL);
+      }
+    }
     return;
   }
   if (videoEvents.type == VideoEvents.VE_PREPARED) {
@@ -16,8 +20,6 @@
     JCMediaPlayer.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
-  }
- else   if (videoEvents.type == VideoEvents.VE_PROGRESSING) {
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
     if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
@@ -40,5 +42,6 @@
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
+    System.out.println("haha");
   }
 }

@@ -20,4 +20,9 @@
     tvTitle.setVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
   }
+ else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
+    ivStart.setVisibility(View.VISIBLE);
+    ivThumb.setVisibility(View.VISIBLE);
+    updateStartImage();
+  }
 }
