@@ -1,0 +1,3 @@
+{
+  setState(CURRENT_STATE_NORMAL);
+}
