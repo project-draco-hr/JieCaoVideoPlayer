@@ -1,0 +1,42 @@
+{
+  if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
+    if (llBottomControl.getVisibility() == View.VISIBLE) {
+      llBottomControl.setVisibility(View.INVISIBLE);
+      tvTitle.setVisibility(View.INVISIBLE);
+    }
+ else {
+      llBottomControl.setVisibility(View.VISIBLE);
+      tvTitle.setVisibility(View.VISIBLE);
+    }
+    ivStart.setVisibility(View.INVISIBLE);
+    pbLoading.setVisibility(View.VISIBLE);
+  }
+ else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+    if (llBottomControl.getVisibility() == View.VISIBLE) {
+      llBottomControl.setVisibility(View.INVISIBLE);
+      tvTitle.setVisibility(View.INVISIBLE);
+      ivStart.setVisibility(View.INVISIBLE);
+    }
+ else {
+      updateStartImage();
+      ivStart.setVisibility(View.VISIBLE);
+      llBottomControl.setVisibility(View.VISIBLE);
+      tvTitle.setVisibility(View.VISIBLE);
+    }
+    pbLoading.setVisibility(View.INVISIBLE);
+  }
+ else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
+    if (llBottomControl.getVisibility() == View.VISIBLE) {
+      llBottomControl.setVisibility(View.INVISIBLE);
+      tvTitle.setVisibility(View.INVISIBLE);
+      ivStart.setVisibility(View.INVISIBLE);
+    }
+ else {
+      updateStartImage();
+      ivStart.setVisibility(View.VISIBLE);
+      llBottomControl.setVisibility(View.VISIBLE);
+      tvTitle.setVisibility(View.VISIBLE);
+    }
+    pbLoading.setVisibility(View.INVISIBLE);
+  }
+}

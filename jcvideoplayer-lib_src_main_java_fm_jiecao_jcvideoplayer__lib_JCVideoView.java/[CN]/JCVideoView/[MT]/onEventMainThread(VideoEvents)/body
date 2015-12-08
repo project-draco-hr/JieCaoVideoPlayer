@@ -42,21 +42,11 @@
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
-    double width=720;
-    double height=80;
-    double viewWidth=surfaceView.getWidth();
-    double viewHeight=surfaceView.getHeight();
-    double ll=viewWidth / viewHeight;
-    double hh=width / height;
-    if (ll < hh) {
-      viewHeight=viewHeight * width / viewWidth;
+    int mVideoWidth=JCMediaPlayer.intance().currentVideoWidth;
+    int mVideoHeight=JCMediaPlayer.intance().currentVideoHeight;
+    if (mVideoWidth != 0 && mVideoHeight != 0) {
+      surfaceView.requestLayout();
     }
- else {
-      viewWidth=viewWidth * height / viewHeight;
-    }
-    ViewGroup.LayoutParams lp=surfaceView.getLayoutParams();
-    lp.height=(int)viewHeight;
-    lp.width=(int)viewWidth;
     System.out.println("haha");
   }
 }

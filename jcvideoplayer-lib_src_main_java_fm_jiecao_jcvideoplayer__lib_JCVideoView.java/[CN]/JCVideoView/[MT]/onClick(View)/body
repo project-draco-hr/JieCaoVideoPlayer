@@ -2,6 +2,7 @@
   int i=v.getId();
   if (i == R.id.start || i == R.id.thumb) {
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
+      JCMediaPlayer.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
       ivStart.setVisibility(View.INVISIBLE);
       ivThumb.setVisibility(View.INVISIBLE);
@@ -12,6 +13,7 @@
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
       videoEvents.obj=uuid;
       EventBus.getDefault().post(videoEvents);
+      surfaceView.requestLayout();
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
@@ -37,48 +39,12 @@
     }
   }
  else   if (i == R.id.surfaceView) {
-    if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
-      if (llBottomControl.getVisibility() == View.VISIBLE) {
-        llBottomControl.setVisibility(View.INVISIBLE);
-        tvTitle.setVisibility(View.INVISIBLE);
-      }
- else {
-        llBottomControl.setVisibility(View.VISIBLE);
-        tvTitle.setVisibility(View.VISIBLE);
-      }
-      ivStart.setVisibility(View.INVISIBLE);
-      pbLoading.setVisibility(View.VISIBLE);
-    }
- else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
-      if (llBottomControl.getVisibility() == View.VISIBLE) {
-        llBottomControl.setVisibility(View.INVISIBLE);
-        tvTitle.setVisibility(View.INVISIBLE);
-        ivStart.setVisibility(View.INVISIBLE);
-      }
- else {
-        updateStartImage();
-        ivStart.setVisibility(View.VISIBLE);
-        llBottomControl.setVisibility(View.VISIBLE);
-        tvTitle.setVisibility(View.VISIBLE);
-      }
-      pbLoading.setVisibility(View.INVISIBLE);
-    }
- else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
-      if (llBottomControl.getVisibility() == View.VISIBLE) {
-        llBottomControl.setVisibility(View.INVISIBLE);
-        tvTitle.setVisibility(View.INVISIBLE);
-        ivStart.setVisibility(View.INVISIBLE);
-      }
- else {
-        updateStartImage();
-        ivStart.setVisibility(View.VISIBLE);
-        llBottomControl.setVisibility(View.VISIBLE);
-        tvTitle.setVisibility(View.VISIBLE);
-      }
-      pbLoading.setVisibility(View.INVISIBLE);
-    }
+    taggleClear();
   }
  else   if (i == R.id.bottom_control) {
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+  }
+ else   if (i == R.id.parentview) {
+    taggleClear();
   }
 }
