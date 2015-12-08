@@ -57,8 +57,6 @@
     ViewGroup.LayoutParams lp=surfaceView.getLayoutParams();
     lp.height=(int)viewHeight;
     lp.width=(int)viewWidth;
-    surfaceView.setLayoutParams(lp);
-    surfaceView.invalidate();
     System.out.println("haha");
   }
 }
