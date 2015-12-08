@@ -11,7 +11,7 @@
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
   tvTitle=(TextView)findViewById(R.id.title);
   ivThumb=(ImageView)findViewById(R.id.thumb);
-  rlParent=(RelativeLayout)findViewById(R.id.parentview);
+  rlParent=(LinearLayout)findViewById(R.id.parentview);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);
