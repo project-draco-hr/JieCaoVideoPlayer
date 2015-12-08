@@ -1,0 +1,5 @@
+{
+  Canvas canvas=surfaceHolder.lockCanvas();
+  canvas.drawColor(R.color.biz_audio_progress_second);
+  surfaceHolder.unlockCanvasAndPost(canvas);
+}
