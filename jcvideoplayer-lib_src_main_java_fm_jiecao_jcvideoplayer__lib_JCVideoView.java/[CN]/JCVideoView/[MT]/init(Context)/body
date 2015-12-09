@@ -11,7 +11,7 @@
   tvTitle=(TextView)findViewById(R.id.title);
   ivThumb=(ImageView)findViewById(R.id.thumb);
   rlParent=(LinearLayout)findViewById(R.id.parentview);
-  llTitlebg=(LinearLayout)findViewById(R.id.titlebg);
+  llTitleContainer=(LinearLayout)findViewById(R.id.title_container);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);
@@ -21,4 +21,10 @@
   surfaceView.setOnClickListener(this);
   llBottomControl.setOnClickListener(this);
   rlParent.setOnClickListener(this);
+  findViewById(R.id.back).setOnClickListener(new OnClickListener(){
+    @Override public void onClick(    View v){
+      quitFullScreen();
+    }
+  }
+);
 }

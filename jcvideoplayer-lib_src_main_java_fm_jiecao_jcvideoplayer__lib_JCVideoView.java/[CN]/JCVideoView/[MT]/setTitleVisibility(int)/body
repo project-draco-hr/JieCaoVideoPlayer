@@ -1,13 +1,13 @@
 {
   if (ifShowTitle) {
-    llTitlebg.setVisibility(visable);
+    llTitleContainer.setVisibility(visable);
   }
  else {
     if (ifFullScreen) {
-      llTitlebg.setVisibility(visable);
+      llTitleContainer.setVisibility(visable);
     }
  else {
-      llTitlebg.setVisibility(View.INVISIBLE);
+      llTitleContainer.setVisibility(View.INVISIBLE);
     }
   }
 }
