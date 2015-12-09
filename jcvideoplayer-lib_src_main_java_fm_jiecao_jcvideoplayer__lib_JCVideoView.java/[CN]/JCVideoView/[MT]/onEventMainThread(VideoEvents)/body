@@ -22,6 +22,7 @@
     pbLoading.setVisibility(View.INVISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
+    startDismissControlViewTimer();
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
     if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
@@ -51,6 +52,5 @@
       surfaceHolder.setFixedSize(mVideoWidth,mVideoHeight);
       surfaceView.requestLayout();
     }
-    System.out.println("haha");
   }
 }

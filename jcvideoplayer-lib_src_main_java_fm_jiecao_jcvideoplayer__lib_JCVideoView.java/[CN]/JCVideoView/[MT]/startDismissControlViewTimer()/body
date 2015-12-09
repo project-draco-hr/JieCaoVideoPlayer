@@ -1,0 +1,19 @@
+{
+  if (mDismissControlViewTimer != null) {
+    mDismissControlViewTimer.cancel();
+  }
+  mDismissControlViewTimer=new Timer();
+  mDismissControlViewTimer.schedule(new TimerTask(){
+    @Override public void run(){
+      if (getContext() != null && getContext() instanceof Activity) {
+        ((Activity)getContext()).runOnUiThread(new Runnable(){
+          @Override public void run(){
+            dismissControlView();
+          }
+        }
+);
+      }
+    }
+  }
+,3000);
+}

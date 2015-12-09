@@ -25,5 +25,6 @@
     ivThumb.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.INVISIBLE);
     updateStartImage();
+    cancelDismissControlViewTimer();
   }
 }

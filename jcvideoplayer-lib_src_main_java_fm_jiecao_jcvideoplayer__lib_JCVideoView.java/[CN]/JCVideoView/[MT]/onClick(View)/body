@@ -22,6 +22,7 @@
       JCMediaPlayer.intance().mediaPlayer.pause();
       updateStartImage();
       setKeepScreenOn(false);
+      cancelDismissControlViewTimer();
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       CURRENT_STATE=CURRENT_STATE_PLAYING;
@@ -29,6 +30,7 @@
       JCMediaPlayer.intance().mediaPlayer.start();
       updateStartImage();
       setKeepScreenOn(true);
+      startDismissControlViewTimer();
     }
   }
  else   if (i == R.id.fullscreen) {
@@ -41,13 +43,11 @@
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
     }
   }
- else   if (i == R.id.surfaceView) {
+ else   if (i == R.id.surfaceView || i == R.id.parentview) {
     toggleClear();
+    startDismissControlViewTimer();
   }
  else   if (i == R.id.bottom_control) {
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
-  }
- else   if (i == R.id.parentview) {
-    toggleClear();
   }
 }

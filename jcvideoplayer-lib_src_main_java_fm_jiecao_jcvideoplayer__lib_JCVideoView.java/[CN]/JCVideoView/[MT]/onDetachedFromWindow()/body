@@ -1,4 +1,5 @@
 {
   super.onDetachedFromWindow();
   EventBus.getDefault().unregister(this);
+  cancelDismissControlViewTimer();
 }

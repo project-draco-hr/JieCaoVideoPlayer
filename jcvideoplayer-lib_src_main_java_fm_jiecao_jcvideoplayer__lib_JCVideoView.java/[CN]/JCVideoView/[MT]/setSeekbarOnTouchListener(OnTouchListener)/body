@@ -1,5 +1,3 @@
 {
-  if (sbProgress != null) {
-    sbProgress.setOnTouchListener(listener);
-  }
+  mSeekbarOnTouchListener=listener;
 }
