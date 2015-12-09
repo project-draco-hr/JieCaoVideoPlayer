@@ -5,7 +5,6 @@
   ivFullScreen=(ImageView)findViewById(R.id.fullscreen);
   sbProgress=(SeekBar)findViewById(R.id.progress);
   tvTimeCurrent=(TextView)findViewById(R.id.current);
-  tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   surfaceView=(ResizeSurfaceView)findViewById(R.id.surfaceView);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
