@@ -12,4 +12,5 @@
   tvTitle.setText(title);
   ImageLoader.getInstance().displayImage(thumb,ivThumb);
   CURRENT_STATE=CURRENT_STATE_NORMAL;
+  setTitleVisibility(View.VISIBLE);
 }

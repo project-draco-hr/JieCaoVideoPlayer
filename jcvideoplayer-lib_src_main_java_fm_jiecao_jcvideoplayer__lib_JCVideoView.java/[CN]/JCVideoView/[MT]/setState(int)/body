@@ -10,14 +10,14 @@
     updateStartImage();
     ivStart.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
-    tvTitle.setVisibility(View.VISIBLE);
+    setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
     updateStartImage();
     ivStart.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
-    tvTitle.setVisibility(View.VISIBLE);
+    setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {

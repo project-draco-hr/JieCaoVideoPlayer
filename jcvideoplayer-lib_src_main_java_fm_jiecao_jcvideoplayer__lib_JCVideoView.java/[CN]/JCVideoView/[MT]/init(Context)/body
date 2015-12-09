@@ -12,6 +12,7 @@
   tvTitle=(TextView)findViewById(R.id.title);
   ivThumb=(ImageView)findViewById(R.id.thumb);
   rlParent=(LinearLayout)findViewById(R.id.parentview);
+  llTitlebg=(LinearLayout)findViewById(R.id.titlebg);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);

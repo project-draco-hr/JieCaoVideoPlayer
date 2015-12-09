@@ -1,0 +1,4 @@
+{
+  setIfShowTitle(ifShowTitle);
+  setUp(url,thumb,title,ifFullScreen);
+}
