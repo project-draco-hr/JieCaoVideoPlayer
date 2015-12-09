@@ -38,6 +38,7 @@
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
     if (isFromFullScreenBackHere) {
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+      stopToFullscreenOrQuitFullscreenShowDisplay();
       isFromFullScreenBackHere=false;
     }
   }
@@ -45,6 +46,7 @@
     int mVideoWidth=JCMediaPlayer.intance().currentVideoWidth;
     int mVideoHeight=JCMediaPlayer.intance().currentVideoHeight;
     if (mVideoWidth != 0 && mVideoHeight != 0) {
+      surfaceHolder.setFixedSize(mVideoWidth,mVideoHeight);
       surfaceView.requestLayout();
     }
     System.out.println("haha");
