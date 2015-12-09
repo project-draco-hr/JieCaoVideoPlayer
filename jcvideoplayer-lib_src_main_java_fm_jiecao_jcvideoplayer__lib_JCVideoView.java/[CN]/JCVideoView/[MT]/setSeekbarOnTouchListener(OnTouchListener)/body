@@ -1,0 +1,5 @@
+{
+  if (sbProgress != null) {
+    sbProgress.setOnTouchListener(listener);
+  }
+}
