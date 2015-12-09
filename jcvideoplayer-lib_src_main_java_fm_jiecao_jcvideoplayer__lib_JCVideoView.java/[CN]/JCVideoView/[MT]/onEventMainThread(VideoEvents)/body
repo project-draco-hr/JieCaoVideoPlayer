@@ -19,6 +19,7 @@
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaPlayer.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
+    llBottomControl.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
