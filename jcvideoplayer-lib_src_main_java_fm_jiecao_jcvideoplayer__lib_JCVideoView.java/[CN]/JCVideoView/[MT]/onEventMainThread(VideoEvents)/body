@@ -6,6 +6,7 @@
       ivStart.setVisibility(View.VISIBLE);
       CURRENT_STATE=CURRENT_STATE_NORMAL;
     }
+    setKeepScreenOn(false);
   }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
     if (videoEvents.type == VideoEvents.VE_START) {
