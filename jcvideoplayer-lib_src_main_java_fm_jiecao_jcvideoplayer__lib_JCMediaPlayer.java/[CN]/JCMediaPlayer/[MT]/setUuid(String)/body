@@ -1,6 +1,6 @@
 {
-  System.out.println("uuid::0 " + uuid + " prevuuid "+ prev_uuid);
+  Log.i("uuid::","0 " + uuid + " prevuuid "+ prev_uuid);
   backUpUuid();
   this.uuid=uuid;
-  System.out.println("uuid::1 " + uuid + " prevuuid "+ prev_uuid);
+  Log.i("uuid::","1 " + uuid + " prevuuid "+ prev_uuid);
 }
