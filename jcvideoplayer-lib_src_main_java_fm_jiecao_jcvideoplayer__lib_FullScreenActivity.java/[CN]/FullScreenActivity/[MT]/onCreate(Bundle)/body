@@ -4,8 +4,8 @@
   getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
   setContentView(R.layout.activity_fullscreen);
-  jcVideoView=(JCVideoPlayer)findViewById(R.id.jcvideoview);
-  jcVideoView.setUp(URL,THUMB,TITLE,true);
-  jcVideoView.setState(STATE);
-  JCMediaPlayer.intance().setUuid(jcVideoView.uuid);
+  jcVideoPlayer=(JCVideoPlayer)findViewById(R.id.jcvideoplayer);
+  jcVideoPlayer.setUp(URL,THUMB,TITLE,true);
+  jcVideoPlayer.setState(STATE);
+  JCMediaPlayer.intance().setUuid(jcVideoPlayer.uuid);
 }
