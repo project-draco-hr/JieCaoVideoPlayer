@@ -1,11 +1,9 @@
 {
   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
-    if (CURRENT_STATE != CURRENT_STATE_PREPAREING) {
-      ivStart.setImageResource(R.drawable.click_video_play_selector);
-      ivThumb.setVisibility(View.VISIBLE);
-      ivStart.setVisibility(View.VISIBLE);
-      CURRENT_STATE=CURRENT_STATE_NORMAL;
-    }
+    ivStart.setImageResource(R.drawable.click_video_play_selector);
+    ivThumb.setVisibility(View.VISIBLE);
+    ivStart.setVisibility(View.VISIBLE);
+    CURRENT_STATE=CURRENT_STATE_NORMAL;
     setKeepScreenOn(false);
   }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
