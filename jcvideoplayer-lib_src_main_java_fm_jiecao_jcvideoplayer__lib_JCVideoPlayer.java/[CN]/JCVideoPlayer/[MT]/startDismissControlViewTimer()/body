@@ -3,13 +3,15 @@
   mDismissControlViewTimer=new Timer();
   mDismissControlViewTimer.schedule(new TimerTask(){
     @Override public void run(){
-      if (getContext() != null && getContext() instanceof Activity) {
-        ((Activity)getContext()).runOnUiThread(new Runnable(){
-          @Override public void run(){
-            dismissControlView();
+      if (uuid.equals(JCMediaPlayer.intance().uuid)) {
+        if (getContext() != null && getContext() instanceof Activity) {
+          ((Activity)getContext()).runOnUiThread(new Runnable(){
+            @Override public void run(){
+              dismissControlView();
+            }
           }
-        }
 );
+        }
       }
     }
   }
