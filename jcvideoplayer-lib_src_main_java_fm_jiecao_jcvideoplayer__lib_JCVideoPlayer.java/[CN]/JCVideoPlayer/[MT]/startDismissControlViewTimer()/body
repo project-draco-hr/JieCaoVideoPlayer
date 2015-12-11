@@ -1,7 +1,5 @@
 {
-  if (mDismissControlViewTimer != null) {
-    mDismissControlViewTimer.cancel();
-  }
+  cancelDismissControlViewTimer();
   mDismissControlViewTimer=new Timer();
   mDismissControlViewTimer.schedule(new TimerTask(){
     @Override public void run(){
@@ -15,5 +13,5 @@
       }
     }
   }
-,3000);
+,2500);
 }

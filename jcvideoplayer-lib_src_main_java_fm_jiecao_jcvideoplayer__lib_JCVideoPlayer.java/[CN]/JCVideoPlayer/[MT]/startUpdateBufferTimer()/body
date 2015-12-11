@@ -1,0 +1,21 @@
+{
+  cancelBufferTimer();
+  mUpdateBufferTimer=new Timer();
+  mUpdateBufferTimer.schedule(new TimerTask(){
+    @Override public void run(){
+      if (getContext() != null && getContext() instanceof Activity) {
+        ((Activity)getContext()).runOnUiThread(new Runnable(){
+          @Override public void run(){
+            VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE);
+            videoEvents.obj=-1;
+            EventBus.getDefault().post(videoEvents);
+            Log.i("update buffer","updatebuffer:: ");
+          }
+        }
+);
+      }
+    }
+  }
+,0,300);
+  Log.i("update buffer","updatebuffer:: start");
+}

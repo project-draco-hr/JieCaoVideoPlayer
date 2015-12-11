@@ -26,5 +26,6 @@
     llBottomControl.setVisibility(View.INVISIBLE);
     updateStartImage();
     cancelDismissControlViewTimer();
+    cancelBufferTimer();
   }
 }

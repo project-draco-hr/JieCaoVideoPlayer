@@ -1,0 +1,8 @@
+{
+  if (uuid.equals(JCMediaPlayer.intance().uuid)) {
+    if (mUpdateBufferTimer != null) {
+      mUpdateBufferTimer.cancel();
+      Log.i("update buffer","updatebuffer:: cancel");
+    }
+  }
+}
