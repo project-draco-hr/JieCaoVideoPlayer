@@ -7,6 +7,7 @@
       ivStart.setVisibility(View.INVISIBLE);
       ivThumb.setVisibility(View.INVISIBLE);
       pbLoading.setVisibility(View.VISIBLE);
+      ivCover.setVisibility(View.VISIBLE);
       setProgressAndTime(0,0,0,0);
       JCMediaPlayer.intance().prepareToPlay(getContext(),url);
       JCMediaPlayer.intance().setUuid(uuid);
@@ -19,6 +20,7 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
       ivThumb.setVisibility(View.INVISIBLE);
+      ivCover.setVisibility(View.INVISIBLE);
       JCMediaPlayer.intance().mediaPlayer.pause();
       updateStartImage();
       setKeepScreenOn(false);
@@ -27,6 +29,7 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       CURRENT_STATE=CURRENT_STATE_PLAYING;
       ivThumb.setVisibility(View.INVISIBLE);
+      ivCover.setVisibility(View.INVISIBLE);
       JCMediaPlayer.intance().mediaPlayer.start();
       updateStartImage();
       setKeepScreenOn(true);
@@ -48,6 +51,5 @@
     startDismissControlViewTimer();
   }
  else   if (i == R.id.bottom_control) {
-    JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
   }
 }
