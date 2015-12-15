@@ -12,6 +12,7 @@
   ivThumb=(ImageView)findViewById(R.id.thumb);
   rlParent=(LinearLayout)findViewById(R.id.parentview);
   llTitleContainer=(LinearLayout)findViewById(R.id.title_container);
+  ivCover=(ImageView)findViewById(R.id.cover);
   surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);
