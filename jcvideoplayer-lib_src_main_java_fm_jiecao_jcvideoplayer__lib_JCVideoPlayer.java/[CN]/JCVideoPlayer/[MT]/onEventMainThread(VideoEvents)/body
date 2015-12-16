@@ -44,6 +44,7 @@
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
       stopToFullscreenOrQuitFullscreenShowDisplay();
       isFromFullScreenBackHere=false;
+      startDismissControlViewTimer();
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
