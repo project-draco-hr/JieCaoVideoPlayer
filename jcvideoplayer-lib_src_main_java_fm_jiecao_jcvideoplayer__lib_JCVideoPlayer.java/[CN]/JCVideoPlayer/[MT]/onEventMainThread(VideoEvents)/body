@@ -5,6 +5,53 @@
     ivThumb.setVisibility(View.VISIBLE);
     ivStart.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_NORMAL;
+    setKeepScreenOn(false);
   }
-  setKeepScreenOn(false);
+  if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
+    if (videoEvents.type == VideoEvents.VE_START) {
+      if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+        setState(CURRENT_STATE_NORMAL);
+      }
+    }
+    return;
+  }
+  if (videoEvents.type == VideoEvents.VE_PREPARED) {
+    JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+    JCMediaPlayer.intance().mediaPlayer.start();
+    pbLoading.setVisibility(View.INVISIBLE);
+    ivCover.setVisibility(View.INVISIBLE);
+    llBottomControl.setVisibility(View.VISIBLE);
+    CURRENT_STATE=CURRENT_STATE_PLAYING;
+    startDismissControlViewTimer();
+    startUpdateBufferTimer();
+  }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
+    if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
+      int percent=Integer.valueOf(videoEvents.obj.toString());
+      setProgressAndTimeFromMediaPlayer(percent);
+    }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
+    if (isClickFullscreen) {
+      isFromFullScreenBackHere=true;
+      isClickFullscreen=false;
+      int prev_state=Integer.valueOf(videoEvents.obj.toString());
+      setState(prev_state);
+    }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_CREATED) {
+    if (isFromFullScreenBackHere) {
+      JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
+      stopToFullscreenOrQuitFullscreenShowDisplay();
+      isFromFullScreenBackHere=false;
+    }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
+    int mVideoWidth=JCMediaPlayer.intance().currentVideoWidth;
+    int mVideoHeight=JCMediaPlayer.intance().currentVideoHeight;
+    if (mVideoWidth != 0 && mVideoHeight != 0) {
+      surfaceHolder.setFixedSize(mVideoWidth,mVideoHeight);
+      surfaceView.requestLayout();
+    }
+  }
 }
