@@ -1,5 +1,4 @@
 {
-  if ((System.currentTimeMillis() - clickfullscreentime) < 5000)   return;
   this.url=url;
   this.thumb=thumb;
   this.title=title;

@@ -1,6 +1,5 @@
 {
   Log.i("uuid::","0 " + uuid + " prevuuid "+ prev_uuid);
-  backUpUuid();
   this.uuid=uuid;
   Log.i("uuid::","1 " + uuid + " prevuuid "+ prev_uuid);
 }
