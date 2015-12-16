@@ -1,5 +1,4 @@
 {
-  if ((System.currentTimeMillis() - clickfullscreentime) < FULL_SCREEN_NORMAL_DELAY)   return;
   this.url=url;
   this.thumb=thumb;
   this.title=title;

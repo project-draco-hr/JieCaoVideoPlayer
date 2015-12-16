@@ -42,9 +42,11 @@
     }
  else {
       JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
+      JCMediaPlayer.intance().backUpUuid();
       isClickFullscreen=true;
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
     }
+    clickfullscreentime=System.currentTimeMillis();
   }
  else   if (i == R.id.surfaceView || i == R.id.parentview) {
     toggleClear();

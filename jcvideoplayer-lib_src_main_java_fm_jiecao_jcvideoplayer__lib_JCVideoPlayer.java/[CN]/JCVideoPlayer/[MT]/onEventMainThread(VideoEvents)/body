@@ -16,6 +16,7 @@
     return;
   }
   if (videoEvents.type == VideoEvents.VE_PREPARED) {
+    if (CURRENT_STATE != CURRENT_STATE_PREPAREING)     return;
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaPlayer.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
@@ -44,6 +45,7 @@
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
       stopToFullscreenOrQuitFullscreenShowDisplay();
       isFromFullScreenBackHere=false;
+      startDismissControlViewTimer();
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {
