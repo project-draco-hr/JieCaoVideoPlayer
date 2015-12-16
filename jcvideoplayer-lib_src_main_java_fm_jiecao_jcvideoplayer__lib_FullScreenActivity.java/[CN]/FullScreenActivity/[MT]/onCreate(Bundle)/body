@@ -8,4 +8,5 @@
   jcVideoPlayer.setUpForFullscreen(URL,THUMB,TITLE,true);
   jcVideoPlayer.setState(STATE);
   JCMediaPlayer.intance().setUuid(jcVideoPlayer.uuid);
+  manualQuit=false;
 }
