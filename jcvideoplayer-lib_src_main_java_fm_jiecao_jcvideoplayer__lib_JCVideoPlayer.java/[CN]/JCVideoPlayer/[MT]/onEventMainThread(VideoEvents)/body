@@ -6,6 +6,7 @@
     ivStart.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_NORMAL;
     setKeepScreenOn(false);
+    sendPointEvent(ifFullScreen ? VideoEvents.POINT_AUTO_COMPLETE_FULLSCREEN : VideoEvents.POINT_AUTO_COMPLETE);
   }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
     if (videoEvents.type == VideoEvents.VE_START) {

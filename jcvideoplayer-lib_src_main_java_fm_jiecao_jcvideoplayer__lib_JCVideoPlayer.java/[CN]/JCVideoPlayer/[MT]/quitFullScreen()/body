@@ -6,4 +6,5 @@
   VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN);
   videoEvents.obj=CURRENT_STATE;
   EventBus.getDefault().post(videoEvents);
+  sendPointEvent(VideoEvents.POINT_QUIT_FULLSCREEN);
 }

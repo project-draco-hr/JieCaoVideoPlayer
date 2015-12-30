@@ -36,7 +36,8 @@ case MotionEvent.ACTION_DOWN:
       break;
 case MotionEvent.ACTION_UP:
     startDismissControlViewTimer();
-  break;
+  sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_SEEKBAR_FULLSCREEN : VideoEvents.POINT_CLICK_SEEKBAR);
+break;
 }
 if (mSeekbarOnTouchListener != null) {
 mSeekbarOnTouchListener.onTouch(v,event);
