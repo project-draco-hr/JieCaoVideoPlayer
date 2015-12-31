@@ -1,6 +1,7 @@
 {
   FullScreenActivity.manualQuit=true;
   clickfullscreentime=System.currentTimeMillis();
+  JCMediaPlayer.intance().mediaPlayer.pause();
   JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
   JCMediaPlayer.intance().revertUuid();
   VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN);

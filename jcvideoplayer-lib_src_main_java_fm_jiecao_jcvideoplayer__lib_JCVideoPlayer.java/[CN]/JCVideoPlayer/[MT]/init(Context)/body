@@ -2,6 +2,7 @@
   View.inflate(context,R.layout.video_control_view,this);
   ivStart=(ImageView)findViewById(R.id.start);
   pbLoading=(ProgressBar)findViewById(R.id.loading);
+  pbBottom=(ProgressBar)findViewById(R.id.bottom_progressbar);
   ivFullScreen=(ImageView)findViewById(R.id.fullscreen);
   sbProgress=(SeekBar)findViewById(R.id.progress);
   tvTimeCurrent=(TextView)findViewById(R.id.current);
@@ -10,7 +11,7 @@
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
   tvTitle=(TextView)findViewById(R.id.title);
   ivThumb=(ImageView)findViewById(R.id.thumb);
-  rlParent=(LinearLayout)findViewById(R.id.parentview);
+  rlParent=(RelativeLayout)findViewById(R.id.parentview);
   llTitleContainer=(LinearLayout)findViewById(R.id.title_container);
   ivCover=(ImageView)findViewById(R.id.cover);
   surfaceHolder=surfaceView.getHolder();
