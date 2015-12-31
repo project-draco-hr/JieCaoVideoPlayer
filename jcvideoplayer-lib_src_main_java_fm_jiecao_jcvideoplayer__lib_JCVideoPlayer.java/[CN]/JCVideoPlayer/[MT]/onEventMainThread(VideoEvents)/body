@@ -58,4 +58,8 @@
       surfaceView.requestLayout();
     }
   }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_SEEKCOMPLETE) {
+    pbLoading.setVisibility(View.INVISIBLE);
+    Toast.makeText(surfaceView.getContext(),"seek compile",Toast.LENGTH_SHORT).show();
+  }
 }
