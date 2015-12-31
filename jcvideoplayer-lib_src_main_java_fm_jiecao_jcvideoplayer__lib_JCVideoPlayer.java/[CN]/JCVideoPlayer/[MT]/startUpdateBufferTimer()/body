@@ -9,7 +9,6 @@
             VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE);
             videoEvents.obj=-1;
             EventBus.getDefault().post(videoEvents);
-            Log.i("update buffer","updatebuffer:: ");
           }
         }
 );

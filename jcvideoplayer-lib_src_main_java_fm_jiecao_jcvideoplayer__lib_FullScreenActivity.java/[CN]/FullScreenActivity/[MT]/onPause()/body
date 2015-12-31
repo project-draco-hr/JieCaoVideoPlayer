@@ -1,0 +1,7 @@
+{
+  super.onPause();
+  if (!manualQuit) {
+    JCVideoPlayer.releaseAllVideo();
+    finish();
+  }
+}

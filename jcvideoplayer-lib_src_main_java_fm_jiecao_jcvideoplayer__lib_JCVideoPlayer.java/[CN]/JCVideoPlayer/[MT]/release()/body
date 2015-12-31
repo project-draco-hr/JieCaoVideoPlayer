@@ -1,3 +1,4 @@
 {
+  if ((System.currentTimeMillis() - clickfullscreentime) < FULL_SCREEN_NORMAL_DELAY)   return;
   setState(CURRENT_STATE_NORMAL);
 }

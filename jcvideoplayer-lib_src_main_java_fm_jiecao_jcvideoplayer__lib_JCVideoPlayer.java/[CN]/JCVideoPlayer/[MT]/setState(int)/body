@@ -4,21 +4,26 @@
     ivStart.setVisibility(View.INVISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
     pbLoading.setVisibility(View.VISIBLE);
+    ivCover.setVisibility(View.VISIBLE);
     setProgressAndTime(0,0,0,0);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
     updateStartImage();
     ivStart.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
+    pbBottom.setVisibility(View.INVISIBLE);
     setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
+    ivCover.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
     updateStartImage();
     ivStart.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
+    pbBottom.setVisibility(View.INVISIBLE);
     setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
+    ivCover.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
     if (uuid.equals(JCMediaPlayer.intance().uuid)) {
@@ -27,6 +32,8 @@
     ivStart.setVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.VISIBLE);
     llBottomControl.setVisibility(View.INVISIBLE);
+    pbBottom.setVisibility(View.VISIBLE);
+    ivCover.setVisibility(View.VISIBLE);
     updateStartImage();
     cancelDismissControlViewTimer();
     cancelBufferTimer();

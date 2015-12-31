@@ -1,0 +1,4 @@
+String url
+String thumb
+String title
+boolean ifFullScreen

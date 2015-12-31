@@ -6,6 +6,7 @@
     ivStart.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_NORMAL;
     setKeepScreenOn(false);
+    sendPointEvent(ifFullScreen ? VideoEvents.POINT_AUTO_COMPLETE_FULLSCREEN : VideoEvents.POINT_AUTO_COMPLETE);
   }
   if (!JCMediaPlayer.intance().uuid.equals(uuid)) {
     if (videoEvents.type == VideoEvents.VE_START) {
@@ -16,10 +17,13 @@
     return;
   }
   if (videoEvents.type == VideoEvents.VE_PREPARED) {
+    if (CURRENT_STATE != CURRENT_STATE_PREPAREING)     return;
     JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaPlayer.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
+    ivCover.setVisibility(View.INVISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
+    pbBottom.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
     startDismissControlViewTimer();
     startUpdateBufferTimer();
@@ -43,6 +47,7 @@
       JCMediaPlayer.intance().mediaPlayer.setDisplay(surfaceHolder);
       stopToFullscreenOrQuitFullscreenShowDisplay();
       isFromFullScreenBackHere=false;
+      startDismissControlViewTimer();
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_RESIZE) {

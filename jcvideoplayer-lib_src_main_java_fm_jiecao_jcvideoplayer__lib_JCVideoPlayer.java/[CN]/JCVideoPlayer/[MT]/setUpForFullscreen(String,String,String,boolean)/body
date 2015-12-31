@@ -1,5 +1,4 @@
 {
-  if ((System.currentTimeMillis() - clickfullscreentime) < FULL_SCREEN_NORMAL_DELAY)   return;
   this.url=url;
   this.thumb=thumb;
   this.title=title;
@@ -15,7 +14,6 @@
   ivStart.setVisibility(View.VISIBLE);
   llBottomControl.setVisibility(View.INVISIBLE);
   pbBottom.setVisibility(View.VISIBLE);
-  ImageLoader.getInstance().displayImage(thumb,ivThumb,getDefaultDisplayImageOption());
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
 }
