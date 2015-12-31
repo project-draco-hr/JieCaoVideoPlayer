@@ -16,4 +16,7 @@
 ).start();
     surfaceView.requestLayout();
   }
+ else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+    JCMediaPlayer.intance().mediaPlayer.start();
+  }
 }

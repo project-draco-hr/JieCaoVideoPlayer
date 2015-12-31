@@ -44,6 +44,7 @@
       quitFullScreen();
     }
  else {
+      JCMediaPlayer.intance().mediaPlayer.pause();
       JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
       JCMediaPlayer.intance().backUpUuid();
       isClickFullscreen=true;
