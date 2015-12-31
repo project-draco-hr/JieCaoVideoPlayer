@@ -23,6 +23,7 @@
     pbLoading.setVisibility(View.INVISIBLE);
     ivCover.setVisibility(View.INVISIBLE);
     llBottomControl.setVisibility(View.VISIBLE);
+    pbBottom.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
     startDismissControlViewTimer();
     startUpdateBufferTimer();
