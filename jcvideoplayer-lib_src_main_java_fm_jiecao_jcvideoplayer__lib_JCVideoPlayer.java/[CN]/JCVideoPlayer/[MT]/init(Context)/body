@@ -10,6 +10,7 @@
   surfaceView=(ResizeSurfaceView)findViewById(R.id.surfaceView);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
   tvTitle=(TextView)findViewById(R.id.title);
+  ivBack=(ImageView)findViewById(R.id.back);
   ivThumb=(ImageView)findViewById(R.id.thumb);
   rlParent=(RelativeLayout)findViewById(R.id.parentview);
   llTitleContainer=(LinearLayout)findViewById(R.id.title_container);
@@ -23,12 +24,7 @@
   surfaceView.setOnClickListener(this);
   llBottomControl.setOnClickListener(this);
   rlParent.setOnClickListener(this);
-  findViewById(R.id.back).setOnClickListener(new OnClickListener(){
-    @Override public void onClick(    View v){
-      quitFullScreen();
-    }
-  }
-);
+  ivBack.setOnClickListener(this);
   sbProgress.setOnTouchListener(new OnTouchListener(){
     @Override public boolean onTouch(    View v,    MotionEvent event){
 switch (event.getAction()) {

@@ -1,4 +1,5 @@
 {
+  if (TextUtils.isEmpty(url))   return;
   try {
     mediaPlayer.release();
     mediaPlayer=new MediaPlayer();

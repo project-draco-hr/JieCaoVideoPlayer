@@ -1,14 +1,16 @@
 {
+  setIfShowTitle(ifShowTitle);
   if ((System.currentTimeMillis() - clickfullscreentime) < FULL_SCREEN_NORMAL_DELAY)   return;
   this.url=url;
   this.thumb=thumb;
   this.title=title;
-  this.ifFullScreen=ifFullScreen;
+  this.ifFullScreen=false;
   if (ifFullScreen) {
     ivFullScreen.setImageResource(R.drawable.shrink_video);
   }
  else {
     ivFullScreen.setImageResource(R.drawable.enlarge_video);
+    ivBack.setVisibility(View.GONE);
   }
   tvTitle.setText(title);
   ivThumb.setVisibility(View.VISIBLE);
