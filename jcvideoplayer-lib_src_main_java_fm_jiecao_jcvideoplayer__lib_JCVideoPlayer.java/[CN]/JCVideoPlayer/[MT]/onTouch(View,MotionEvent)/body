@@ -1,15 +1,15 @@
 {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-    cancelDismissControlViewTimer();
-  break;
+    touchingProgressBar=true;
+  cancelDismissControlViewTimer();
+cancelProgressTimer();
+break;
 case MotionEvent.ACTION_UP:
+touchingProgressBar=false;
 startDismissControlViewTimer();
+startProgressTimer();
 sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_SEEKBAR_FULLSCREEN : VideoEvents.POINT_CLICK_SEEKBAR);
-int time=sbProgress.getProgress() * JCMediaPlayer.intance().mediaPlayer.getDuration() / 100;
-JCMediaPlayer.intance().mediaPlayer.seekTo(time);
-pbLoading.setVisibility(View.VISIBLE);
-ivStart.setVisibility(View.INVISIBLE);
 break;
 }
 if (mSeekbarOnTouchListener != null) {

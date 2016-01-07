@@ -12,7 +12,8 @@
       ivThumb.setVisibility(View.INVISIBLE);
       pbLoading.setVisibility(View.VISIBLE);
       ivCover.setVisibility(View.VISIBLE);
-      setProgressAndTime(0,0,0,0);
+      setProgressAndTime(0,0,0);
+      setProgressBuffered(0);
       JCMediaPlayer.intance().prepareToPlay(getContext(),url);
       JCMediaPlayer.intance().setUuid(uuid);
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);

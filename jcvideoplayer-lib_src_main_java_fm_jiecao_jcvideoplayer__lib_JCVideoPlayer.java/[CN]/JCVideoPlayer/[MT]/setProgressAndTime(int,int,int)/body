@@ -1,0 +1,8 @@
+{
+  if (!touchingProgressBar) {
+    sbProgress.setProgress(progress);
+    pbBottom.setProgress(progress);
+  }
+  tvTimeCurrent.setText(stringForTime(currentTime));
+  tvTimeTotal.setText(stringForTime(totalTime));
+}
