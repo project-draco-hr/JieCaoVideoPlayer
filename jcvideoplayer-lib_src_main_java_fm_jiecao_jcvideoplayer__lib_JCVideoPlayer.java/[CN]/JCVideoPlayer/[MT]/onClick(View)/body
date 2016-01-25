@@ -1,6 +1,10 @@
 {
   int i=v.getId();
   if (i == R.id.start || i == R.id.thumb) {
+    if (TextUtils.isEmpty(url)) {
+      Toast.makeText(getContext(),"??????????????????",Toast.LENGTH_SHORT).show();
+      return;
+    }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
       JCMediaPlayer.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
@@ -8,7 +12,8 @@
       ivThumb.setVisibility(View.INVISIBLE);
       pbLoading.setVisibility(View.VISIBLE);
       ivCover.setVisibility(View.VISIBLE);
-      setProgressAndTime(0,0,0,0);
+      setProgressAndTime(0,0,0);
+      setProgressBuffered(0);
       JCMediaPlayer.intance().prepareToPlay(getContext(),url);
       JCMediaPlayer.intance().setUuid(uuid);
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
@@ -59,5 +64,8 @@
     sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_BLANK_FULLSCREEN : VideoEvents.POINT_CLICK_BLANK);
   }
  else   if (i == R.id.bottom_control) {
+  }
+ else   if (i == R.id.back) {
+    quitFullScreen();
   }
 }

@@ -5,7 +5,8 @@
     ivThumb.setVisibility(View.INVISIBLE);
     pbLoading.setVisibility(View.VISIBLE);
     ivCover.setVisibility(View.VISIBLE);
-    setProgressAndTime(0,0,0,0);
+    setProgressAndTime(0,0,0);
+    setProgressBuffered(0);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
     updateStartImage();
@@ -15,6 +16,7 @@
     setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
     ivCover.setVisibility(View.INVISIBLE);
+    pbLoading.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
     updateStartImage();
@@ -34,8 +36,9 @@
     llBottomControl.setVisibility(View.INVISIBLE);
     pbBottom.setVisibility(View.VISIBLE);
     ivCover.setVisibility(View.VISIBLE);
+    setTitleVisibility(View.VISIBLE);
     updateStartImage();
     cancelDismissControlViewTimer();
-    cancelBufferTimer();
+    cancelProgressTimer();
   }
 }

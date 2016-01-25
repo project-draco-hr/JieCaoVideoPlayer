@@ -1,6 +1,6 @@
 {
   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
-    cancelBufferTimer();
+    cancelProgressTimer();
     ivStart.setImageResource(R.drawable.click_video_play_selector);
     ivThumb.setVisibility(View.VISIBLE);
     ivStart.setVisibility(View.VISIBLE);
@@ -26,12 +26,17 @@
     pbBottom.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
     startDismissControlViewTimer();
-    startUpdateBufferTimer();
+    startProgressTimer();
   }
- else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_BUFFERUPDATE) {
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_UPDATE_BUFFER) {
     if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
       int percent=Integer.valueOf(videoEvents.obj.toString());
-      setProgressAndTimeFromMediaPlayer(percent);
+      setProgressBuffered(percent);
+    }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_UPDATE_PROGRESS) {
+    if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
+      setProgressAndTimeFromTimer();
     }
   }
  else   if (videoEvents.type == VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN) {
@@ -57,5 +62,9 @@
       surfaceHolder.setFixedSize(mVideoWidth,mVideoHeight);
       surfaceView.requestLayout();
     }
+  }
+ else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_SEEKCOMPLETE) {
+    pbLoading.setVisibility(View.INVISIBLE);
+    Log.i("JCVideoPlayer","seek compile");
   }
 }

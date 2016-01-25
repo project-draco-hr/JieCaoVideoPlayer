@@ -1,0 +1,19 @@
+{
+switch (event.getAction()) {
+case MotionEvent.ACTION_DOWN:
+    touchingProgressBar=true;
+  cancelDismissControlViewTimer();
+cancelProgressTimer();
+break;
+case MotionEvent.ACTION_UP:
+touchingProgressBar=false;
+startDismissControlViewTimer();
+startProgressTimer();
+sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_SEEKBAR_FULLSCREEN : VideoEvents.POINT_CLICK_SEEKBAR);
+break;
+}
+if (mSeekbarOnTouchListener != null) {
+mSeekbarOnTouchListener.onTouch(v,event);
+}
+return false;
+}
