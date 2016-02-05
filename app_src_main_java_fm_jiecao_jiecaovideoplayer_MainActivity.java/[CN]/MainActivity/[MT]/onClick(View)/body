@@ -1,0 +1,10 @@
+{
+switch (v.getId()) {
+case R.id.to_list_activity:
+    break;
+case R.id.to_list_viewpager_activity:
+  break;
+case R.id.to_fullscreen:
+break;
+}
+}
