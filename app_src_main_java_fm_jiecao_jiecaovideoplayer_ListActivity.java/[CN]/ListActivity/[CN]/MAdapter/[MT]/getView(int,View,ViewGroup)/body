@@ -1,0 +1,15 @@
+{
+  ViewHolder viewHolder;
+  if (null == convertView) {
+    viewHolder=new ViewHolder();
+    LayoutInflater mInflater=LayoutInflater.from(ListActivity.this);
+    convertView=mInflater.inflate(R.layout.item_list,null);
+    viewHolder.jcVideoPlayer=(JCVideoPlayer)convertView.findViewById(R.id.videoplayer);
+    convertView.setTag(viewHolder);
+  }
+ else {
+    viewHolder=(ViewHolder)convertView.getTag();
+  }
+  viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],videoThumbs[videoIndexs[position]],videoTitles[videoIndexs[position]]);
+  return convertView;
+}
