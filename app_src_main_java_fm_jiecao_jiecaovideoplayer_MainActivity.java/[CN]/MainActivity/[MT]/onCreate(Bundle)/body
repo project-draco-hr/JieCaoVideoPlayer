@@ -9,7 +9,9 @@
   btnToList=(Button)findViewById(R.id.to_list_activity);
   btnToListViewpager=(Button)findViewById(R.id.to_list_viewpager_activity);
   btnToFullscreen=(Button)findViewById(R.id.to_fullscreen);
+  btnToChangecolor=(Button)findViewById(R.id.to_changecolor_activity);
   btnToList.setOnClickListener(this);
   btnToListViewpager.setOnClickListener(this);
   btnToFullscreen.setOnClickListener(this);
+  btnToChangecolor.setOnClickListener(this);
 }
