@@ -20,4 +20,7 @@
   ImageLoader.getInstance().displayImage(thumb,ivThumb,getDefaultDisplayImageOption());
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
+  if (uuid.equals(JCMediaPlayer.intance().uuid)) {
+    JCMediaPlayer.intance().mediaPlayer.stop();
+  }
 }
