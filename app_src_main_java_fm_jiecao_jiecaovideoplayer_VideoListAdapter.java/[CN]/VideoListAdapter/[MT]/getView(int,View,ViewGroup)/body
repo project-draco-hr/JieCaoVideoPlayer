@@ -2,7 +2,7 @@
   ViewHolder viewHolder;
   if (null == convertView) {
     viewHolder=new ViewHolder();
-    LayoutInflater mInflater=LayoutInflater.from(ListActivity.this);
+    LayoutInflater mInflater=LayoutInflater.from(context);
     convertView=mInflater.inflate(R.layout.item_list,null);
     viewHolder.jcVideoPlayer=(JCVideoPlayer)convertView.findViewById(R.id.videoplayer);
     convertView.setTag(viewHolder);

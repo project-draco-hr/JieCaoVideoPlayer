@@ -1,0 +1,3 @@
+{
+  ((ViewPager)view).removeView(viewLists.get(position));
+}

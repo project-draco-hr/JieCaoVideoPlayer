@@ -5,7 +5,6 @@
   getSupportActionBar().setDisplayShowHomeEnabled(true);
   getSupportActionBar().setDisplayShowTitleEnabled(true);
   getSupportActionBar().setDisplayUseLogoEnabled(false);
-  getSupportActionBar().setTitle("??????????????????");
   listView=(ListView)findViewById(R.id.listview);
-  listView.setAdapter(new MAdapter());
+  listView.setAdapter(new VideoListAdapter(this));
 }
