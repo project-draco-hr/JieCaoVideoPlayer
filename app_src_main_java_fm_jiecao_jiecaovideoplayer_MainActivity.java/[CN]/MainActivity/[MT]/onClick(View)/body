@@ -1,4 +1,5 @@
 {
+  JCVideoPlayer.releaseAllVideo();
 switch (v.getId()) {
 case R.id.to_list_activity:
     startActivity(new Intent(MainActivity.this,ListActivity.class));
