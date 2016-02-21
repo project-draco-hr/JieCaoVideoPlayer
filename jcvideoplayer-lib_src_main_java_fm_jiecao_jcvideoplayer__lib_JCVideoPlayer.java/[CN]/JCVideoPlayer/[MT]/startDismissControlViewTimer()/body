@@ -3,7 +3,7 @@
   mDismissControlViewTimer=new Timer();
   mDismissControlViewTimer.schedule(new TimerTask(){
     @Override public void run(){
-      if (uuid.equals(JCMediaPlayer.intance().uuid)) {
+      if (uuid.equals(JCMediaManager.intance().uuid)) {
         if (getContext() != null && getContext() instanceof Activity) {
           ((Activity)getContext()).runOnUiThread(new Runnable(){
             @Override public void run(){

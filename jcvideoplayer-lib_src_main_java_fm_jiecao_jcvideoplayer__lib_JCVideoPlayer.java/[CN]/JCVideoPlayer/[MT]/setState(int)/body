@@ -28,8 +28,8 @@
     ivCover.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
-    if (uuid.equals(JCMediaPlayer.intance().uuid)) {
-      JCMediaPlayer.intance().mediaPlayer.stop();
+    if (uuid.equals(JCMediaManager.intance().uuid)) {
+      JCMediaManager.intance().mediaPlayer.stop();
     }
     ivStart.setVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.VISIBLE);

@@ -1,0 +1,6 @@
+{
+  if (jcMediaManager == null) {
+    jcMediaManager=new JCMediaManager();
+  }
+  return jcMediaManager;
+}
