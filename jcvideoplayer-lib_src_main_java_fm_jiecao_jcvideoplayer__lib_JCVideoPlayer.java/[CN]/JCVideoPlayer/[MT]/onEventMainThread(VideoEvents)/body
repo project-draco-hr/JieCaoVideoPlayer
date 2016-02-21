@@ -21,7 +21,9 @@
     JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaManager.intance().mediaPlayer.start();
     pbLoading.setVisibility(View.INVISIBLE);
-    ivCover.setVisibility(View.INVISIBLE);
+    if (!ifMp3) {
+      ivCover.setVisibility(View.INVISIBLE);
+    }
     llBottomControl.setVisibility(View.VISIBLE);
     pbBottom.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;

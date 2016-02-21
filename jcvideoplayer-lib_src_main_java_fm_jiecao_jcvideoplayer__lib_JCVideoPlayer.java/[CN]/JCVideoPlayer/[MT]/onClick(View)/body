@@ -26,7 +26,9 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
       ivThumb.setVisibility(View.INVISIBLE);
-      ivCover.setVisibility(View.INVISIBLE);
+      if (!ifMp3) {
+        ivCover.setVisibility(View.INVISIBLE);
+      }
       JCMediaManager.intance().mediaPlayer.pause();
       updateStartImage();
       setKeepScreenOn(false);
@@ -36,7 +38,9 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       CURRENT_STATE=CURRENT_STATE_PLAYING;
       ivThumb.setVisibility(View.INVISIBLE);
-      ivCover.setVisibility(View.INVISIBLE);
+      if (!ifMp3) {
+        ivCover.setVisibility(View.INVISIBLE);
+      }
       JCMediaManager.intance().mediaPlayer.start();
       updateStartImage();
       setKeepScreenOn(true);

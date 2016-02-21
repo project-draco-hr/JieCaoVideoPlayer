@@ -1,0 +1,3 @@
+{
+  ImageLoader.getInstance().displayImage(thumb,ivCover,Utils.getDefaultDisplayImageOption());
+}
