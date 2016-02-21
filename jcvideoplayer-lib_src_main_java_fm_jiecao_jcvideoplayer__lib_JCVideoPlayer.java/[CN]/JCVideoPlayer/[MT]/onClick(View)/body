@@ -6,7 +6,7 @@
       return;
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
-      JCMediaPlayer.intance().clearWidthAndHeight();
+      JCMediaManager.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
       ivStart.setVisibility(View.INVISIBLE);
       ivThumb.setVisibility(View.INVISIBLE);
@@ -14,8 +14,8 @@
       ivCover.setVisibility(View.VISIBLE);
       setProgressAndTime(0,0,0);
       setProgressBuffered(0);
-      JCMediaPlayer.intance().prepareToPlay(getContext(),url);
-      JCMediaPlayer.intance().setUuid(uuid);
+      JCMediaManager.intance().prepareToPlay(getContext(),url);
+      JCMediaManager.intance().setUuid(uuid);
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
       videoEvents.obj=uuid;
       EventBus.getDefault().post(videoEvents);
@@ -26,8 +26,10 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
       ivThumb.setVisibility(View.INVISIBLE);
-      ivCover.setVisibility(View.INVISIBLE);
-      JCMediaPlayer.intance().mediaPlayer.pause();
+      if (!ifMp3) {
+        ivCover.setVisibility(View.INVISIBLE);
+      }
+      JCMediaManager.intance().mediaPlayer.pause();
       updateStartImage();
       setKeepScreenOn(false);
       cancelDismissControlViewTimer();
@@ -36,8 +38,10 @@
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       CURRENT_STATE=CURRENT_STATE_PLAYING;
       ivThumb.setVisibility(View.INVISIBLE);
-      ivCover.setVisibility(View.INVISIBLE);
-      JCMediaPlayer.intance().mediaPlayer.start();
+      if (!ifMp3) {
+        ivCover.setVisibility(View.INVISIBLE);
+      }
+      JCMediaManager.intance().mediaPlayer.start();
       updateStartImage();
       setKeepScreenOn(true);
       startDismissControlViewTimer();
@@ -49,9 +53,9 @@
       quitFullScreen();
     }
  else {
-      JCMediaPlayer.intance().mediaPlayer.pause();
-      JCMediaPlayer.intance().mediaPlayer.setDisplay(null);
-      JCMediaPlayer.intance().backUpUuid();
+      JCMediaManager.intance().mediaPlayer.pause();
+      JCMediaManager.intance().mediaPlayer.setDisplay(null);
+      JCMediaManager.intance().backUpUuid();
       isClickFullscreen=true;
       FullScreenActivity.toActivity(getContext(),CURRENT_STATE,url,thumb,title);
       sendPointEvent(VideoEvents.POINT_ENTER_FULLSCREEN);

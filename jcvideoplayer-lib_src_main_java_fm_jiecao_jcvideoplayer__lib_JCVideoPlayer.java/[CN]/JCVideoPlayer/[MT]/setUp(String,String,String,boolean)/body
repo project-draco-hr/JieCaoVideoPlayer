@@ -20,7 +20,11 @@
   ImageLoader.getInstance().displayImage(thumb,ivThumb,Utils.getDefaultDisplayImageOption());
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
-  if (uuid.equals(JCMediaPlayer.intance().uuid)) {
-    JCMediaPlayer.intance().mediaPlayer.stop();
+  if (uuid.equals(JCMediaManager.intance().uuid)) {
+    JCMediaManager.intance().mediaPlayer.stop();
+  }
+  if (url.contains(".mp3")) {
+    ifMp3=true;
+    loadMp3Thum();
   }
 }

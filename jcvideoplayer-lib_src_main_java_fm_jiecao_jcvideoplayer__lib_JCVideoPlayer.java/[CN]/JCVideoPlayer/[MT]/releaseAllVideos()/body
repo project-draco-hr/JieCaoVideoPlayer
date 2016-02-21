@@ -1,0 +1,8 @@
+{
+  if (!isClickFullscreen) {
+    JCMediaManager.intance().mediaPlayer.stop();
+    JCMediaManager.intance().setUuid("");
+    JCMediaManager.intance().setUuid("");
+    EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE));
+  }
+}

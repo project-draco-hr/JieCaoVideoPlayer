@@ -7,6 +7,6 @@
   jcVideoPlayer=(JCVideoPlayer)findViewById(R.id.jcvideoplayer);
   jcVideoPlayer.setUpForFullscreen(URL,THUMB,TITLE);
   jcVideoPlayer.setState(STATE);
-  JCMediaPlayer.intance().setUuid(jcVideoPlayer.uuid);
+  JCMediaManager.intance().setUuid(jcVideoPlayer.uuid);
   manualQuit=false;
 }

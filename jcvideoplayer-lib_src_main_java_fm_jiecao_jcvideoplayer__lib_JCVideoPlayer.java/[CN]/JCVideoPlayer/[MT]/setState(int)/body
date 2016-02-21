@@ -15,7 +15,9 @@
     pbBottom.setVisibility(View.INVISIBLE);
     setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
-    ivCover.setVisibility(View.INVISIBLE);
+    if (!ifMp3) {
+      ivCover.setVisibility(View.INVISIBLE);
+    }
     pbLoading.setVisibility(View.INVISIBLE);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
@@ -25,11 +27,13 @@
     pbBottom.setVisibility(View.INVISIBLE);
     setTitleVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.INVISIBLE);
-    ivCover.setVisibility(View.INVISIBLE);
+    if (!ifMp3) {
+      ivCover.setVisibility(View.INVISIBLE);
+    }
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
-    if (uuid.equals(JCMediaPlayer.intance().uuid)) {
-      JCMediaPlayer.intance().mediaPlayer.stop();
+    if (uuid.equals(JCMediaManager.intance().uuid)) {
+      JCMediaManager.intance().mediaPlayer.stop();
     }
     ivStart.setVisibility(View.VISIBLE);
     ivThumb.setVisibility(View.VISIBLE);

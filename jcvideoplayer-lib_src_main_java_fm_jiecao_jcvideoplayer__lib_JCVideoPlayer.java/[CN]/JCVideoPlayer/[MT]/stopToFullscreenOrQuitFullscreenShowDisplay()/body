@@ -1,12 +1,12 @@
 {
   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
-    JCMediaPlayer.intance().mediaPlayer.start();
+    JCMediaManager.intance().mediaPlayer.start();
     CURRENT_STATE=CURRENT_STATE_PLAYING;
     new Thread(new Runnable(){
       @Override public void run(){
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            JCMediaPlayer.intance().mediaPlayer.pause();
+            JCMediaManager.intance().mediaPlayer.pause();
             CURRENT_STATE=CURRENT_STATE_PAUSE;
           }
         }
@@ -17,6 +17,6 @@
     surfaceView.requestLayout();
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
-    JCMediaPlayer.intance().mediaPlayer.start();
+    JCMediaManager.intance().mediaPlayer.start();
   }
 }
