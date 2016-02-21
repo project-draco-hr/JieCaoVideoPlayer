@@ -2,7 +2,7 @@
   this.url=url;
   this.thumb=thumb;
   this.title=title;
-  this.ifFullScreen=ifFullScreen;
+  this.ifFullScreen=true;
   if (ifFullScreen) {
     ivFullScreen.setImageResource(R.drawable.shrink_video);
   }

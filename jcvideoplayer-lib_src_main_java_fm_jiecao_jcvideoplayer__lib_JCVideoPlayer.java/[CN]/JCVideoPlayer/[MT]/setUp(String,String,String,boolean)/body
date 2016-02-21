@@ -17,7 +17,7 @@
   ivStart.setVisibility(View.VISIBLE);
   llBottomControl.setVisibility(View.INVISIBLE);
   pbBottom.setVisibility(View.VISIBLE);
-  ImageLoader.getInstance().displayImage(thumb,ivThumb,getDefaultDisplayImageOption());
+  ImageLoader.getInstance().displayImage(thumb,ivThumb,Utils.getDefaultDisplayImageOption());
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
   if (uuid.equals(JCMediaPlayer.intance().uuid)) {

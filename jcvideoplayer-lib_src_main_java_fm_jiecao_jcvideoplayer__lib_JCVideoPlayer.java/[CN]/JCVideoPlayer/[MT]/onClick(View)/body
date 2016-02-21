@@ -59,7 +59,7 @@
     clickfullscreentime=System.currentTimeMillis();
   }
  else   if (i == R.id.surfaceView || i == R.id.parentview) {
-    toggleClear();
+    onClickToggleClear();
     startDismissControlViewTimer();
     sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_BLANK_FULLSCREEN : VideoEvents.POINT_CLICK_BLANK);
   }
