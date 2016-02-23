@@ -1,0 +1,3 @@
+{
+  globleSkin=new Skin(titleColor,timeColor,seekDrawable,bottomControlBackground,enlargRecId,shrinkRecId);
+}

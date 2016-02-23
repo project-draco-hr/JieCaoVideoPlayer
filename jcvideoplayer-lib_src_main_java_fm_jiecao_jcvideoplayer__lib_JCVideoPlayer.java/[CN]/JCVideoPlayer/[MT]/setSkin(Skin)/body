@@ -1,0 +1,17 @@
+{
+  Resources resource=getContext().getResources();
+  ColorStateList titleCsl=resource.getColorStateList(skin.titleColor);
+  if (titleCsl != null) {
+    tvTitle.setTextColor(titleCsl);
+  }
+  ColorStateList timeCsl=resource.getColorStateList(skin.timeColor);
+  if (timeCsl != null) {
+    tvTimeCurrent.setTextColor(timeCsl);
+    tvTimeTotal.setTextColor(timeCsl);
+  }
+  skProgress.setProgressDrawable(resource.getDrawable(skin.seekDrawable));
+  pbBottom.setProgressDrawable(resource.getDrawable(skin.seekDrawable));
+  llBottomControl.setBackgroundColor(resource.getColor(skin.bottomControlBackground));
+  this.enlargRecId=skin.enlargRecId;
+  this.shrinkRecId=skin.shrinkRecId;
+}

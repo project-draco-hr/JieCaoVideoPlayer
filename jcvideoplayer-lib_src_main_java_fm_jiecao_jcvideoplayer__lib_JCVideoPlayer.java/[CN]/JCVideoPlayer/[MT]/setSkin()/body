@@ -1,0 +1,10 @@
+{
+  if (skin != null) {
+    setSkin(skin);
+  }
+ else {
+    if (globleSkin != null) {
+      setSkin(globleSkin);
+    }
+  }
+}
