@@ -17,7 +17,7 @@
   pbBottom.setVisibility(View.VISIBLE);
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
-  if (url.contains(".mp3")) {
+  if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
     loadMp3Thum();
   }
