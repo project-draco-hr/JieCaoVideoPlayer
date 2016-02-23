@@ -1,6 +1,6 @@
 {
   if (!touchingProgressBar) {
-    sbProgress.setProgress(progress);
+    skProgress.setProgress(progress);
     pbBottom.setProgress(progress);
   }
   tvTimeCurrent.setText(Utils.stringForTime(currentTime));

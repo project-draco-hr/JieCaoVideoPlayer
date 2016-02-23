@@ -1,6 +1,6 @@
 {
   if (secProgress >= 0) {
-    sbProgress.setSecondaryProgress(secProgress);
+    skProgress.setSecondaryProgress(secProgress);
     pbBottom.setSecondaryProgress(secProgress);
   }
 }

@@ -1,0 +1,15 @@
+{
+  Resources resource=getContext().getResources();
+  ColorStateList titleCsl=resource.getColorStateList(titleColor);
+  if (titleCsl != null) {
+    tvTitle.setTextColor(titleCsl);
+  }
+  ColorStateList timeCsl=resource.getColorStateList(timeColor);
+  if (timeCsl != null) {
+    tvTimeCurrent.setTextColor(timeCsl);
+    tvTimeTotal.setTextColor(timeCsl);
+  }
+  skProgress.setProgressDrawable(resource.getDrawable(seekDrawable));
+  pbBottom.setProgressDrawable(resource.getDrawable(seekDrawable));
+  llBottomControl.setBackgroundColor(resource.getColor(bottomControlBackground));
+}

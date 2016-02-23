@@ -1,0 +1,4 @@
+int titleColor
+int timeColor
+int seekDrawable
+int bottomControlBackground
