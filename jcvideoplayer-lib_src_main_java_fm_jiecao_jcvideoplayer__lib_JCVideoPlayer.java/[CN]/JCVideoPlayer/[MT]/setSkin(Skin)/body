@@ -14,7 +14,10 @@
     }
   }
   if (skin.seekDrawable != 0) {
-    skProgress.setProgressDrawable(resource.getDrawable(skin.seekDrawable));
+    Drawable bg=resource.getDrawable(skin.seekDrawable);
+    Rect bounds=skProgress.getProgressDrawable().getBounds();
+    skProgress.setProgressDrawable(bg);
+    skProgress.getProgressDrawable().setBounds(bounds);
     pbBottom.setProgressDrawable(resource.getDrawable(skin.seekDrawable));
   }
   if (skin.bottomControlBackground != 0) {
