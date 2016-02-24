@@ -4,7 +4,7 @@
   pbLoading=(ProgressBar)findViewById(R.id.loading);
   pbBottom=(ProgressBar)findViewById(R.id.bottom_progressbar);
   ivFullScreen=(ImageView)findViewById(R.id.fullscreen);
-  sbProgress=(SeekBar)findViewById(R.id.progress);
+  skProgress=(SeekBar)findViewById(R.id.progress);
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   surfaceView=(ResizeSurfaceView)findViewById(R.id.surfaceView);
@@ -19,11 +19,11 @@
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
-  sbProgress.setOnSeekBarChangeListener(this);
+  skProgress.setOnSeekBarChangeListener(this);
   surfaceHolder.addCallback(this);
   surfaceView.setOnClickListener(this);
   llBottomControl.setOnClickListener(this);
   rlParent.setOnClickListener(this);
   ivBack.setOnClickListener(this);
-  sbProgress.setOnTouchListener(this);
+  skProgress.setOnTouchListener(this);
 }

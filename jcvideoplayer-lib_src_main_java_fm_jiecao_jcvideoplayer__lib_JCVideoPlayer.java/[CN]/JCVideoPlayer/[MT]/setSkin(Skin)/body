@@ -1,0 +1,28 @@
+{
+  Resources resource=getContext().getResources();
+  if (skin.titleColor != 0) {
+    ColorStateList titleCsl=resource.getColorStateList(skin.titleColor);
+    if (titleCsl != null) {
+      tvTitle.setTextColor(titleCsl);
+    }
+  }
+  if (skin.timeColor != 0) {
+    ColorStateList timeCsl=resource.getColorStateList(skin.timeColor);
+    if (timeCsl != null) {
+      tvTimeCurrent.setTextColor(timeCsl);
+      tvTimeTotal.setTextColor(timeCsl);
+    }
+  }
+  if (skin.seekDrawable != 0) {
+    Drawable bg=resource.getDrawable(skin.seekDrawable);
+    Rect bounds=skProgress.getProgressDrawable().getBounds();
+    skProgress.setProgressDrawable(bg);
+    skProgress.getProgressDrawable().setBounds(bounds);
+    pbBottom.setProgressDrawable(resource.getDrawable(skin.seekDrawable));
+  }
+  if (skin.bottomControlBackground != 0) {
+    llBottomControl.setBackgroundColor(resource.getColor(skin.bottomControlBackground));
+  }
+  this.enlargRecId=skin.enlargRecId;
+  this.shrinkRecId=skin.shrinkRecId;
+}

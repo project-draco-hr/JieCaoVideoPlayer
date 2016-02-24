@@ -1,13 +1,14 @@
 {
+  setSkin();
   this.url=url;
   this.thumb=thumb;
   this.title=title;
   this.ifFullScreen=true;
   if (ifFullScreen) {
-    ivFullScreen.setImageResource(R.drawable.shrink_video);
+    ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.shrink_video : shrinkRecId);
   }
  else {
-    ivFullScreen.setImageResource(R.drawable.enlarge_video);
+    ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.enlarge_video : enlargRecId);
   }
   tvTitle.setText(title);
   ivThumb.setVisibility(View.VISIBLE);
@@ -16,7 +17,7 @@
   pbBottom.setVisibility(View.VISIBLE);
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
-  if (url.contains(".mp3")) {
+  if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
     loadMp3Thum();
   }
