@@ -1,5 +1,5 @@
 {
-  Log.i("uuid::","0 " + uuid + " prevuuid "+ prev_uuid);
+  Log.i(TAG,"0 " + uuid + " prevuuid "+ prev_uuid);
   this.uuid=uuid;
-  Log.i("uuid::","1 " + uuid + " prevuuid "+ prev_uuid);
+  Log.i(TAG,"1 " + uuid + " prevuuid "+ prev_uuid);
 }
