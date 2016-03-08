@@ -26,4 +26,7 @@
   rlParent.setOnClickListener(this);
   ivBack.setOnClickListener(this);
   skProgress.setOnTouchListener(this);
+  if (speScalType != null) {
+    ivThumb.setScaleType(speScalType);
+  }
 }
