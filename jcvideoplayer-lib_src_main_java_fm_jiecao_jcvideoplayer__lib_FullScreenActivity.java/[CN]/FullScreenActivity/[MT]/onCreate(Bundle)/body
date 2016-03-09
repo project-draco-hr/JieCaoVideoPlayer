@@ -3,6 +3,10 @@
   requestWindowFeature(Window.FEATURE_NO_TITLE);
   getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+  Window window=getWindow();
+  WindowManager.LayoutParams params=window.getAttributes();
+  params.systemUiVisibility=View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+  window.setAttributes(params);
   setContentView(R.layout.activity_fullscreen);
   jcVideoPlayer=(JCVideoPlayer)findViewById(R.id.jcvideoplayer);
   if (skin != null) {
