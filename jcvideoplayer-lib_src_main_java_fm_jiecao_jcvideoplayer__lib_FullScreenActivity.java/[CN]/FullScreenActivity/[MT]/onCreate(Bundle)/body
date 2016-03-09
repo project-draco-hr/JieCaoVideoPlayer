@@ -16,4 +16,7 @@
   jcVideoPlayer.setState(STATE);
   JCMediaManager.intance().setUuid(jcVideoPlayer.uuid);
   manualQuit=false;
+  if (start) {
+    jcVideoPlayer.ivStart.performClick();
+  }
 }

@@ -3,6 +3,7 @@
   URL=url;
   THUMB=thumb;
   TITLE=title;
+  start=false;
   Intent intent=new Intent(context,FullScreenActivity.class);
   context.startActivity(intent);
 }
