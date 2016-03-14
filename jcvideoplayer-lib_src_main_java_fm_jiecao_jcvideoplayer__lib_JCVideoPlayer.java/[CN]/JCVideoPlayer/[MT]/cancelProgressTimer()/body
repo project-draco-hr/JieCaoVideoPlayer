@@ -2,7 +2,6 @@
   if (uuid.equals(JCMediaManager.intance().uuid)) {
     if (mUpdateProgressTimer != null) {
       mUpdateProgressTimer.cancel();
-      Log.i("update buffer","updatebuffer:: cancel");
     }
   }
 }

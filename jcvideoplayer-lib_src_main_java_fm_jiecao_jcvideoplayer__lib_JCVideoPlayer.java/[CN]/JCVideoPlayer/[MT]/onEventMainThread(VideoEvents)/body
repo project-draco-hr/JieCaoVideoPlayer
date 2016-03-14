@@ -67,6 +67,5 @@
   }
  else   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_SEEKCOMPLETE) {
     pbLoading.setVisibility(View.INVISIBLE);
-    Log.i("JCVideoPlayer","seek compile");
   }
 }
