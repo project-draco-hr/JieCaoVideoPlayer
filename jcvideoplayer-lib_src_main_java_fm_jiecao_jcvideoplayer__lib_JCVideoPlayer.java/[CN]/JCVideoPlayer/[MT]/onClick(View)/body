@@ -16,6 +16,7 @@
       setProgressBuffered(0);
       JCMediaManager.intance().prepareToPlay(getContext(),url);
       JCMediaManager.intance().setUuid(uuid);
+      Log.i("JCVideoPlayer","play video");
       VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
       videoEvents.obj=uuid;
       EventBus.getDefault().post(videoEvents);
@@ -30,6 +31,7 @@
         ivCover.setVisibility(View.INVISIBLE);
       }
       JCMediaManager.intance().mediaPlayer.pause();
+      Log.i("JCVideoPlayer","pause video");
       updateStartImage();
       setKeepScreenOn(false);
       cancelDismissControlViewTimer();
@@ -42,6 +44,7 @@
         ivCover.setVisibility(View.INVISIBLE);
       }
       JCMediaManager.intance().mediaPlayer.start();
+      Log.i("JCVideoPlayer","go on video");
       updateStartImage();
       setKeepScreenOn(true);
       startDismissControlViewTimer();

@@ -15,5 +15,4 @@
     }
   }
 ,0,300);
-  Log.i("update buffer","updatebuffer:: start");
 }
