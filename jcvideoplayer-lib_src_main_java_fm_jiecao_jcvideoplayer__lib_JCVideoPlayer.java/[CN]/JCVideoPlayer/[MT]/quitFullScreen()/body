@@ -1,5 +1,5 @@
 {
-  FullScreenActivity.manualQuit=true;
+  JCFullScreenActivity.manualQuit=true;
   clickfullscreentime=System.currentTimeMillis();
   JCMediaManager.intance().mediaPlayer.pause();
   JCMediaManager.intance().mediaPlayer.setDisplay(null);

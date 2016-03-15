@@ -56,12 +56,12 @@
       quitFullScreen();
     }
  else {
-      FullScreenActivity.skin=skin;
+      JCFullScreenActivity.skin=skin;
       JCMediaManager.intance().mediaPlayer.pause();
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
       JCMediaManager.intance().backUpUuid();
       isClickFullscreen=true;
-      FullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,thumb,title);
+      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,thumb,title);
       sendPointEvent(VideoEvents.POINT_ENTER_FULLSCREEN);
     }
     clickfullscreentime=System.currentTimeMillis();

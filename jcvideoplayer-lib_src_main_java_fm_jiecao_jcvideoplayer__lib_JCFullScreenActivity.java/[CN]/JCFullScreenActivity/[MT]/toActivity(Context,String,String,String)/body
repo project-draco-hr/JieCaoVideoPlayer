@@ -4,6 +4,6 @@
   THUMB=thumb;
   TITLE=title;
   start=true;
-  Intent intent=new Intent(context,FullScreenActivity.class);
+  Intent intent=new Intent(context,JCFullScreenActivity.class);
   context.startActivity(intent);
 }
