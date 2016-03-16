@@ -7,7 +7,7 @@ case R.id.to_list_viewpager_activity:
 startActivity(new Intent(MainActivity.this,ListViewpagerActivity.class));
 break;
 case R.id.to_fullscreen:
-JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_43b6f696980311e59ed467f22794e792.f20.mp4","http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640","????????????");
+JCFullScreenActivity.toActivity(this,"http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4","http://img4.jiecaojingxuan.com/2016/3/14/2204a578-609b-440e-8af7-a0ee17ff3aee.jpg","????????????");
 break;
 case R.id.to_changecolor_activity:
 startActivity(new Intent(this,SetSkinActivity.class));
