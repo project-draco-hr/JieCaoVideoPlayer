@@ -10,6 +10,7 @@
  else {
     viewHolder=(ViewHolder)convertView.getTag();
   }
-  viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],videoThumbs[videoIndexs[position]],videoTitles[videoIndexs[position]]);
+  viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],videoTitles[videoIndexs[position]]);
+  ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],viewHolder.jcVideoPlayer.ivThumb);
   return convertView;
 }

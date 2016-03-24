@@ -1,0 +1,3 @@
+{
+  setUp(url,title,true);
+}

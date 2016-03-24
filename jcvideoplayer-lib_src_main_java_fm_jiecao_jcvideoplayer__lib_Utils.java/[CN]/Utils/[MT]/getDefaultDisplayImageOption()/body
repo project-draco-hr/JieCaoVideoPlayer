@@ -1,4 +1,0 @@
-{
-  DisplayImageOptions options=new DisplayImageOptions.Builder().showImageOnLoading(new ColorDrawable(Color.parseColor("#f0f0f0"))).resetViewBeforeLoading(true).cacheInMemory(true).cacheOnDisk(true).considerExifParams(true).imageScaleType(ImageScaleType.EXACTLY_STRETCHED).bitmapConfig(Bitmap.Config.RGB_565).displayer(new FadeInBitmapDisplayer(500)).build();
-  return options;
-}

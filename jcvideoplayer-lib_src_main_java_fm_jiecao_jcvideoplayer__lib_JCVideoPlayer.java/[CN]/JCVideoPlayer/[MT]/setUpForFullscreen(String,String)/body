@@ -1,7 +1,6 @@
 {
   setSkin();
   this.url=url;
-  this.thumb=thumb;
   this.title=title;
   this.ifFullScreen=true;
   if (ifFullScreen) {
@@ -19,6 +18,5 @@
   setTitleVisibility(View.VISIBLE);
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
-    loadMp3Thum();
   }
 }

@@ -3,7 +3,6 @@
   setIfShowTitle(ifShowTitle);
   if ((System.currentTimeMillis() - clickfullscreentime) < FULL_SCREEN_NORMAL_DELAY)   return;
   this.url=url;
-  this.thumb=thumb;
   this.title=title;
   this.ifFullScreen=false;
   if (ifFullScreen) {
@@ -18,7 +17,6 @@
   ivStart.setVisibility(View.VISIBLE);
   llBottomControl.setVisibility(View.INVISIBLE);
   pbBottom.setVisibility(View.VISIBLE);
-  ImageLoader.getInstance().displayImage(thumb,ivThumb,Utils.getDefaultDisplayImageOption());
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
   if (uuid.equals(JCMediaManager.intance().uuid)) {
@@ -26,6 +24,5 @@
   }
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
-    loadMp3Thum();
   }
 }

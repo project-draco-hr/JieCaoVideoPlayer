@@ -10,7 +10,7 @@
   if (skin != null) {
     jcVideoPlayer.setSkin(skin.titleColor,skin.timeColor,skin.seekDrawable,skin.bottomControlBackground,skin.enlargRecId,skin.shrinkRecId);
   }
-  jcVideoPlayer.setUpForFullscreen(URL,THUMB,TITLE);
+  jcVideoPlayer.setUpForFullscreen(URL,TITLE);
   jcVideoPlayer.setState(STATE);
   JCMediaManager.intance().setUuid(jcVideoPlayer.uuid);
   manualQuit=false;
