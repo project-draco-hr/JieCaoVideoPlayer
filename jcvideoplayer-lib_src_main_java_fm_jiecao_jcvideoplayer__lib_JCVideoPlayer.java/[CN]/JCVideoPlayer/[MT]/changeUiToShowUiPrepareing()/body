@@ -1,6 +1,6 @@
 {
   setTitleVisibility(View.VISIBLE);
-  llBottomControl.setVisibility(View.INVISIBLE);
+  llBottomControl.setVisibility(View.VISIBLE);
   ivStart.setVisibility(View.INVISIBLE);
   pbLoading.setVisibility(View.VISIBLE);
   setThumbVisibility(View.INVISIBLE);
