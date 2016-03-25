@@ -5,6 +5,6 @@
   pbLoading.setVisibility(View.INVISIBLE);
   setThumbVisibility(View.INVISIBLE);
   ivCover.setVisibility(View.INVISIBLE);
-  pbBottom.setVisibility(View.VISIBLE);
+  pbBottom.setVisibility(View.INVISIBLE);
   updateStartImage();
 }
