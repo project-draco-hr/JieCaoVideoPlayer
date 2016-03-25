@@ -1,0 +1,4 @@
+{
+  changeUiToClearUi();
+  pbLoading.setVisibility(View.VISIBLE);
+}

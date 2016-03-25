@@ -5,13 +5,16 @@
       Toast.makeText(getContext(),"??????????????????",Toast.LENGTH_SHORT).show();
       return;
     }
+    if (i == R.id.thumb) {
+      if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+        onClickUiToggle();
+        return;
+      }
+    }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
       JCMediaManager.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
-      ivStart.setVisibility(View.INVISIBLE);
-      ivThumb.setVisibility(View.INVISIBLE);
-      pbLoading.setVisibility(View.VISIBLE);
-      ivCover.setVisibility(View.VISIBLE);
+      changeUiToShowUiPrepareing();
       setProgressAndTime(0,0,0);
       setProgressBuffered(0);
       JCMediaManager.intance().prepareToPlay(getContext(),url);
@@ -26,26 +29,18 @@
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
       CURRENT_STATE=CURRENT_STATE_PAUSE;
-      ivThumb.setVisibility(View.INVISIBLE);
-      if (!ifMp3) {
-        ivCover.setVisibility(View.INVISIBLE);
-      }
+      changeUiToShowUiPause();
       JCMediaManager.intance().mediaPlayer.pause();
       Log.i("JCVideoPlayer","pause video");
-      updateStartImage();
       setKeepScreenOn(false);
       cancelDismissControlViewTimer();
       sendPointEvent(ifFullScreen ? VideoEvents.POINT_STOP_FULLSCREEN : VideoEvents.POINT_STOP);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       CURRENT_STATE=CURRENT_STATE_PLAYING;
-      ivThumb.setVisibility(View.INVISIBLE);
-      if (!ifMp3) {
-        ivCover.setVisibility(View.INVISIBLE);
-      }
+      changeUiToShowUiPlaying();
       JCMediaManager.intance().mediaPlayer.start();
       Log.i("JCVideoPlayer","go on video");
-      updateStartImage();
       setKeepScreenOn(true);
       startDismissControlViewTimer();
       sendPointEvent(ifFullScreen ? VideoEvents.POINT_RESUME_FULLSCREEN : VideoEvents.POINT_RESUME);
@@ -67,7 +62,7 @@
     clickfullscreentime=System.currentTimeMillis();
   }
  else   if (i == R.id.surfaceView || i == R.id.parentview) {
-    onClickToggleClear();
+    onClickUiToggle();
     startDismissControlViewTimer();
     sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_BLANK_FULLSCREEN : VideoEvents.POINT_CLICK_BLANK);
   }

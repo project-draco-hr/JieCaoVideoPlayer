@@ -2,7 +2,7 @@
   setSkin();
   this.url=url;
   this.title=title;
-  this.ifFullScreen=true;
+  setIfShowTitle(true);
   if (ifFullScreen) {
     ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.shrink_video : shrinkRecId);
   }
@@ -10,10 +10,7 @@
     ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.enlarge_video : enlargRecId);
   }
   tvTitle.setText(title);
-  ivThumb.setVisibility(View.VISIBLE);
-  ivStart.setVisibility(View.VISIBLE);
-  llBottomControl.setVisibility(View.INVISIBLE);
-  pbBottom.setVisibility(View.VISIBLE);
+  changeUiToNormal();
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   setTitleVisibility(View.VISIBLE);
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {

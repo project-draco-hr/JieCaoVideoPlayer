@@ -1,6 +1,0 @@
-{
-  llBottomControl.setVisibility(View.INVISIBLE);
-  pbBottom.setVisibility(View.VISIBLE);
-  setTitleVisibility(View.INVISIBLE);
-  ivStart.setVisibility(View.INVISIBLE);
-}

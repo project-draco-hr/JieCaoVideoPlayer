@@ -1,47 +1,21 @@
 {
   this.CURRENT_STATE=state;
   if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
-    ivStart.setVisibility(View.INVISIBLE);
-    ivThumb.setVisibility(View.INVISIBLE);
-    pbLoading.setVisibility(View.VISIBLE);
-    ivCover.setVisibility(View.VISIBLE);
+    changeUiToShowUiPrepareing();
     setProgressAndTime(0,0,0);
     setProgressBuffered(0);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
-    updateStartImage();
-    ivStart.setVisibility(View.VISIBLE);
-    llBottomControl.setVisibility(View.VISIBLE);
-    pbBottom.setVisibility(View.INVISIBLE);
-    setTitleVisibility(View.VISIBLE);
-    ivThumb.setVisibility(View.INVISIBLE);
-    if (!ifMp3) {
-      ivCover.setVisibility(View.INVISIBLE);
-    }
-    pbLoading.setVisibility(View.INVISIBLE);
+    changeUiToShowUiPlaying();
   }
  else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
-    updateStartImage();
-    ivStart.setVisibility(View.VISIBLE);
-    llBottomControl.setVisibility(View.VISIBLE);
-    pbBottom.setVisibility(View.INVISIBLE);
-    setTitleVisibility(View.VISIBLE);
-    ivThumb.setVisibility(View.INVISIBLE);
-    if (!ifMp3) {
-      ivCover.setVisibility(View.INVISIBLE);
-    }
+    changeUiToShowUiPause();
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
     if (uuid.equals(JCMediaManager.intance().uuid)) {
       JCMediaManager.intance().mediaPlayer.stop();
     }
-    ivStart.setVisibility(View.VISIBLE);
-    ivThumb.setVisibility(View.VISIBLE);
-    llBottomControl.setVisibility(View.INVISIBLE);
-    pbBottom.setVisibility(View.VISIBLE);
-    ivCover.setVisibility(View.VISIBLE);
-    setTitleVisibility(View.VISIBLE);
-    updateStartImage();
+    changeUiToNormal();
     cancelDismissControlViewTimer();
     cancelProgressTimer();
   }

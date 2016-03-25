@@ -1,11 +1,9 @@
 {
   if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE) {
-    cancelProgressTimer();
-    ivStart.setImageResource(R.drawable.click_video_play_selector);
-    ivThumb.setVisibility(View.VISIBLE);
-    ivStart.setVisibility(View.VISIBLE);
     CURRENT_STATE=CURRENT_STATE_NORMAL;
+    cancelProgressTimer();
     setKeepScreenOn(false);
+    changeUiToNormal();
     if (JCMediaManager.intance().uuid.equals(uuid)) {
       sendPointEvent(ifFullScreen ? VideoEvents.POINT_AUTO_COMPLETE_FULLSCREEN : VideoEvents.POINT_AUTO_COMPLETE);
     }
@@ -22,13 +20,9 @@
     if (CURRENT_STATE != CURRENT_STATE_PREPAREING)     return;
     JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
     JCMediaManager.intance().mediaPlayer.start();
-    pbLoading.setVisibility(View.INVISIBLE);
-    if (!ifMp3) {
-      ivCover.setVisibility(View.INVISIBLE);
-    }
-    llBottomControl.setVisibility(View.VISIBLE);
-    pbBottom.setVisibility(View.INVISIBLE);
     CURRENT_STATE=CURRENT_STATE_PLAYING;
+    changeUiToShowUiPlaying();
+    ivStart.setVisibility(View.INVISIBLE);
     startDismissControlViewTimer();
     startProgressTimer();
   }

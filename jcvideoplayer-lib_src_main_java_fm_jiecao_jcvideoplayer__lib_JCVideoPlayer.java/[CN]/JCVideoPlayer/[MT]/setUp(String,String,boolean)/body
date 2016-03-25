@@ -13,12 +13,8 @@
     ivBack.setVisibility(View.GONE);
   }
   tvTitle.setText(title);
-  ivThumb.setVisibility(View.VISIBLE);
-  ivStart.setVisibility(View.VISIBLE);
-  llBottomControl.setVisibility(View.INVISIBLE);
-  pbBottom.setVisibility(View.VISIBLE);
+  changeUiToNormal();
   CURRENT_STATE=CURRENT_STATE_NORMAL;
-  setTitleVisibility(View.VISIBLE);
   if (uuid.equals(JCMediaManager.intance().uuid)) {
     JCMediaManager.intance().mediaPlayer.stop();
   }
