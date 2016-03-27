@@ -2,8 +2,9 @@
   setSkin();
   this.url=url;
   this.title=title;
-  setIfShowTitle(true);
+  ifShowTitle=true;
   ifFullScreen=true;
+  CURRENT_STATE=CURRENT_STATE_NORMAL;
   if (ifFullScreen) {
     ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.shrink_video : shrinkRecId);
   }
@@ -11,10 +12,8 @@
     ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.enlarge_video : enlargRecId);
   }
   tvTitle.setText(title);
-  changeUiToNormal();
-  CURRENT_STATE=CURRENT_STATE_NORMAL;
-  setTitleVisibility(View.VISIBLE);
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
   }
+  changeUiToNormal();
 }
