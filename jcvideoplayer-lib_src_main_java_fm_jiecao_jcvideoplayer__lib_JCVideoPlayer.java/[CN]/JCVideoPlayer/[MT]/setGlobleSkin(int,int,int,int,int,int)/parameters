@@ -1,6 +1,0 @@
-int titleColor
-int timeColor
-int seekDrawable
-int bottomControlBackground
-int enlargRecId
-int shrinkRecId

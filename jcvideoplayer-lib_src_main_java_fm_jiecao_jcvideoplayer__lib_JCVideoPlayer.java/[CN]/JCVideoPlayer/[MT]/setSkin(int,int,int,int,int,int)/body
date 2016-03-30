@@ -1,3 +1,0 @@
-{
-  skin=new Skin(titleColor,timeColor,seekDrawable,bottomControlBackground,enlargRecId,shrinkRecId);
-}

@@ -53,7 +53,6 @@
       quitFullScreen();
     }
  else {
-      JCFullScreenActivity.skin=skin;
       JCMediaManager.intance().mediaPlayer.pause();
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
       JCMediaManager.intance().backUpUuid();

@@ -1,5 +1,4 @@
 {
-  setSkin();
   this.url=url;
   this.title=title;
   ifShowTitle=true;
