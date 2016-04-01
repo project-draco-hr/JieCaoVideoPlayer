@@ -6,5 +6,6 @@
   config.diskCacheSize(50 * 1024 * 1024);
   config.tasksProcessingOrder(QueueProcessingType.LIFO);
   config.writeDebugLogs();
+  config.defaultDisplayImageOptions(getDefaultDisplayImageOption());
   ImageLoader.getInstance().init(config.build());
 }
