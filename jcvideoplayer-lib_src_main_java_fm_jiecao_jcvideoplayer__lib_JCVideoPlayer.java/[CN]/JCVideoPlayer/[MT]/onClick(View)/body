@@ -12,6 +12,7 @@
       }
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
+      addSurfaceView();
       JCMediaManager.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
       changeUiToShowUiPrepareing();
@@ -63,7 +64,7 @@
     }
     clickfullscreentime=System.currentTimeMillis();
   }
- else   if (i == R.id.surfaceView || i == R.id.parentview) {
+ else   if (i == surfaceId || i == R.id.parentview) {
     onClickUiToggle();
     startDismissControlViewTimer();
     sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_BLANK_FULLSCREEN : VideoEvents.POINT_CLICK_BLANK);

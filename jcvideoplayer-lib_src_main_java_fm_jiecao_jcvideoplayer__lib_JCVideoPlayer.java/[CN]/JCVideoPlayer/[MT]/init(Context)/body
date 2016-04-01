@@ -7,7 +7,6 @@
   skProgress=(SeekBar)findViewById(R.id.progress);
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
-  surfaceView=(ResizeSurfaceView)findViewById(R.id.surfaceView);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
   tvTitle=(TextView)findViewById(R.id.title);
   ivBack=(ImageView)findViewById(R.id.back);
@@ -15,13 +14,10 @@
   rlParent=(RelativeLayout)findViewById(R.id.parentview);
   llTitleContainer=(LinearLayout)findViewById(R.id.title_container);
   ivCover=(ImageView)findViewById(R.id.cover);
-  surfaceHolder=surfaceView.getHolder();
   ivStart.setOnClickListener(this);
   ivThumb.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   skProgress.setOnSeekBarChangeListener(this);
-  surfaceHolder.addCallback(this);
-  surfaceView.setOnClickListener(this);
   llBottomControl.setOnClickListener(this);
   rlParent.setOnClickListener(this);
   ivBack.setOnClickListener(this);

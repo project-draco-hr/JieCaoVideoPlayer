@@ -15,5 +15,6 @@
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {
     ifMp3=true;
   }
+  addSurfaceView();
   changeUiToNormal();
 }
