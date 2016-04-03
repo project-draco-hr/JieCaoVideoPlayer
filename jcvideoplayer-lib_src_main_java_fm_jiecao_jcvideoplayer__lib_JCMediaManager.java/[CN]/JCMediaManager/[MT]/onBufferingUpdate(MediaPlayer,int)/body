@@ -1,5 +1,5 @@
 {
-  VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_UPDATE_BUFFER);
-  videoEvents.obj=percent;
-  EventBus.getDefault().post(videoEvents);
+  if (listener != null) {
+    listener.onBufferingUpdate(percent);
+  }
 }
