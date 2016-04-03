@@ -1,0 +1,9 @@
+{
+  CURRENT_STATE=CURRENT_STATE_NORMAL;
+  cancelProgressTimer();
+  setKeepScreenOn(false);
+  changeUiToNormal();
+  if (JCMediaManager.intance().uuid.equals(uuid)) {
+    sendPointEvent(ifFullScreen ? VideoEvents.POINT_AUTO_COMPLETE_FULLSCREEN : VideoEvents.POINT_AUTO_COMPLETE);
+  }
+}

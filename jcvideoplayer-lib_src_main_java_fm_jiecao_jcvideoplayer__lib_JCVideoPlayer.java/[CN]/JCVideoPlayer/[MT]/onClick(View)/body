@@ -13,6 +13,10 @@
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
       addSurfaceView();
+      if (JCMediaManager.intance().listener != null) {
+        JCMediaManager.intance().listener.onCompletion();
+      }
+      JCMediaManager.intance().listener=this;
       JCMediaManager.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
       changeUiToShowUiPrepareing();
@@ -23,9 +27,6 @@
       JCMediaManager.intance().prepareToPlay(getContext(),url);
       JCMediaManager.intance().setUuid(uuid);
       Log.i("JCVideoPlayer","play video");
-      VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_START);
-      videoEvents.obj=uuid;
-      EventBus.getDefault().post(videoEvents);
       surfaceView.requestLayout();
       setKeepScreenOn(true);
       sendPointEvent(i == R.id.start ? VideoEvents.POINT_START_ICON : VideoEvents.POINT_START_THUMB);
