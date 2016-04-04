@@ -1,8 +1,0 @@
-{
-  this.titleColor=titleColor;
-  this.timeColor=timeColor;
-  this.seekDrawable=seekDrawable;
-  this.bottomControlBackground=bottomControlBackground;
-  this.enlargRecId=enlargRecId;
-  this.shrinkRecId=shrinkRecId;
-}
