@@ -1,9 +1,9 @@
 {
   if (!isClickFullscreen) {
     JCMediaManager.intance().mediaPlayer.stop();
-    JCMediaManager.intance().listener.onCompletion();
-    JCMediaManager.intance().setUuid("");
-    JCMediaManager.intance().setUuid("");
+    if (JCMediaManager.intance().listener != null) {
+      JCMediaManager.intance().listener.onCompletion();
+    }
     if (mUpdateProgressTimer != null) {
       mUpdateProgressTimer.cancel();
     }

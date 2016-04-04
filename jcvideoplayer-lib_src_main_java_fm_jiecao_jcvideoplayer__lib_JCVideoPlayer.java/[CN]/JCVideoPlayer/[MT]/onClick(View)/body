@@ -25,7 +25,6 @@
       setProgressAndTime(0,0,0);
       setProgressBuffered(0);
       JCMediaManager.intance().prepareToPlay(getContext(),url);
-      JCMediaManager.intance().setUuid(uuid);
       Log.i("JCVideoPlayer","play video");
       surfaceView.requestLayout();
       setKeepScreenOn(true);
@@ -58,7 +57,8 @@
       JCFullScreenActivity.skin=skin;
       JCMediaManager.intance().mediaPlayer.pause();
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
-      JCMediaManager.intance().backUpUuid();
+      JCMediaManager.intance().lastListener=this;
+      JCMediaManager.intance().listener=null;
       isClickFullscreen=true;
       JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,title);
       sendPointEvent(VideoEvents.POINT_ENTER_FULLSCREEN);

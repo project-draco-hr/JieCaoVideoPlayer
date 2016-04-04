@@ -12,9 +12,6 @@
     changeUiToShowUiPause();
   }
  else   if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
-    if (uuid.equals(JCMediaManager.intance().uuid)) {
-      JCMediaManager.intance().mediaPlayer.stop();
-    }
     changeUiToNormal();
     cancelDismissControlViewTimer();
     cancelProgressTimer();

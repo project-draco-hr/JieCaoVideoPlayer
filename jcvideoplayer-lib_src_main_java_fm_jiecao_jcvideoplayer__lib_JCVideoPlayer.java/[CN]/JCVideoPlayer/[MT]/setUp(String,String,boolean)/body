@@ -19,7 +19,7 @@
   }
   tvTitle.setText(title);
   changeUiToNormal();
-  if (uuid.equals(JCMediaManager.intance().uuid)) {
+  if (JCMediaManager.intance().listener == this) {
     JCMediaManager.intance().mediaPlayer.stop();
   }
 }

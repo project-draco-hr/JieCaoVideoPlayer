@@ -5,11 +5,12 @@
   }
   if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
     startDismissControlViewTimer();
+    startProgressTimer();
   }
-  if (isFromFullScreenBackHere) {
+  if (JCMediaManager.intance().lastListener == this) {
     JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
     stopToFullscreenOrQuitFullscreenShowDisplay();
-    isFromFullScreenBackHere=false;
     startDismissControlViewTimer();
   }
+  Log.i("surfaceCreated","fdsfds " + getId());
 }

@@ -3,6 +3,8 @@
   clickfullscreentime=System.currentTimeMillis();
   JCMediaManager.intance().mediaPlayer.pause();
   JCMediaManager.intance().mediaPlayer.setDisplay(null);
-  JCMediaManager.intance().revertUuid();
+  JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
+  JCMediaManager.intance().lastState=CURRENT_STATE;
+  JCMediaManager.intance().listener.onBackFullscreen();
   sendPointEvent(VideoEvents.POINT_QUIT_FULLSCREEN);
 }

@@ -1,7 +1,2 @@
 {
-  VideoEvents videoEvents=new VideoEvents();
-  videoEvents.setType(type);
-  videoEvents.obj=title;
-  videoEvents.obj1=url;
-  EventBus.getDefault().post(videoEvents);
 }

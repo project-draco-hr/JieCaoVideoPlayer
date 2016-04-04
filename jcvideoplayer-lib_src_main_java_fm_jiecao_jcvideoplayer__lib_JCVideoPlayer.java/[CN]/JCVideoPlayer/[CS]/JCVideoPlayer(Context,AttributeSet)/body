@@ -1,5 +1,4 @@
 {
   super(context,attrs);
-  uuid=UUID.randomUUID().toString();
   init(context);
 }
