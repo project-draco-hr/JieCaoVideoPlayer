@@ -28,12 +28,12 @@
       Log.i("JCVideoPlayer","play video");
       surfaceView.requestLayout();
       setKeepScreenOn(true);
-      if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+      if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         if (i == R.id.start) {
-          jcBuriedPoint.POINT_START_ICON(title,url);
+          JC_BURIED_POINT.POINT_START_ICON(title,url);
         }
  else {
-          jcBuriedPoint.POINT_START_THUMB(title,url);
+          JC_BURIED_POINT.POINT_START_THUMB(title,url);
         }
       }
     }
@@ -44,12 +44,12 @@
       Log.i("JCVideoPlayer","pause video");
       setKeepScreenOn(false);
       cancelDismissControlViewTimer();
-      if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+      if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         if (ifFullScreen) {
-          jcBuriedPoint.POINT_STOP_FULLSCREEN(title,url);
+          JC_BURIED_POINT.POINT_STOP_FULLSCREEN(title,url);
         }
  else {
-          jcBuriedPoint.POINT_STOP(title,url);
+          JC_BURIED_POINT.POINT_STOP(title,url);
         }
       }
     }
@@ -60,12 +60,12 @@
       Log.i("JCVideoPlayer","go on video");
       setKeepScreenOn(true);
       startDismissControlViewTimer();
-      if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+      if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         if (ifFullScreen) {
-          jcBuriedPoint.POINT_RESUME_FULLSCREEN(title,url);
+          JC_BURIED_POINT.POINT_RESUME_FULLSCREEN(title,url);
         }
  else {
-          jcBuriedPoint.POINT_RESUME(title,url);
+          JC_BURIED_POINT.POINT_RESUME(title,url);
         }
       }
     }
@@ -82,8 +82,8 @@
       JCMediaManager.intance().listener=null;
       isClickFullscreen=true;
       JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,title);
-      if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
-        jcBuriedPoint.POINT_ENTER_FULLSCREEN(title,url);
+      if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+        JC_BURIED_POINT.POINT_ENTER_FULLSCREEN(title,url);
       }
     }
     clickfullscreentime=System.currentTimeMillis();
@@ -91,12 +91,12 @@
  else   if (i == surfaceId || i == R.id.parentview) {
     onClickUiToggle();
     startDismissControlViewTimer();
-    if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+    if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
       if (ifFullScreen) {
-        jcBuriedPoint.POINT_CLICK_BLANK_FULLSCREEN(title,url);
+        JC_BURIED_POINT.POINT_CLICK_BLANK_FULLSCREEN(title,url);
       }
  else {
-        jcBuriedPoint.POINT_CLICK_BLANK(title,url);
+        JC_BURIED_POINT.POINT_CLICK_BLANK(title,url);
       }
     }
   }

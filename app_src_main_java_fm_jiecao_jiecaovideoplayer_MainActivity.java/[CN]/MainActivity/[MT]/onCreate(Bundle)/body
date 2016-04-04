@@ -18,5 +18,5 @@
   btnToListViewpager.setOnClickListener(this);
   btnToFullscreen.setOnClickListener(this);
   btnToChangecolor.setOnClickListener(this);
-  JCVideoPlayer.jcBuriedPoint=jcBuriedPoint;
+  JCVideoPlayer.setJcBuriedPoint(jcBuriedPoint);
 }

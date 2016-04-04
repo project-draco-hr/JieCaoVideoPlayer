@@ -4,12 +4,12 @@
   cancelDismissControlViewTimer();
   setKeepScreenOn(false);
   changeUiToNormal();
-  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+  if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
     if (ifFullScreen) {
-      jcBuriedPoint.POINT_AUTO_COMPLETE_FULLSCREEN(title,url);
+      JC_BURIED_POINT.POINT_AUTO_COMPLETE_FULLSCREEN(title,url);
     }
  else {
-      jcBuriedPoint.POINT_AUTO_COMPLETE(title,url);
+      JC_BURIED_POINT.POINT_AUTO_COMPLETE(title,url);
     }
   }
   if (getContext() instanceof JCFullScreenActivity) {

@@ -9,12 +9,12 @@ case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
 startDismissControlViewTimer();
 startProgressTimer();
-if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 if (ifFullScreen) {
-jcBuriedPoint.POINT_CLICK_SEEKBAR_FULLSCREEN(title,url);
+JC_BURIED_POINT.POINT_CLICK_SEEKBAR_FULLSCREEN(title,url);
 }
  else {
-jcBuriedPoint.POINT_CLICK_SEEKBAR(title,url);
+JC_BURIED_POINT.POINT_CLICK_SEEKBAR(title,url);
 }
 }
 break;

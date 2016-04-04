@@ -9,7 +9,7 @@
   if (getContext() instanceof JCFullScreenActivity) {
     ((JCFullScreenActivity)getContext()).finish();
   }
-  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
-    jcBuriedPoint.POINT_QUIT_FULLSCREEN(title,url);
+  if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+    JC_BURIED_POINT.POINT_QUIT_FULLSCREEN(title,url);
   }
 }
