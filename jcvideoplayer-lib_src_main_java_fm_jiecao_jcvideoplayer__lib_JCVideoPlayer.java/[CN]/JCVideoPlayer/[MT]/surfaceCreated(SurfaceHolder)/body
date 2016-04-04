@@ -12,5 +12,4 @@
     stopToFullscreenOrQuitFullscreenShowDisplay();
     startDismissControlViewTimer();
   }
-  Log.i("surfaceCreated","fdsfds " + getId());
 }

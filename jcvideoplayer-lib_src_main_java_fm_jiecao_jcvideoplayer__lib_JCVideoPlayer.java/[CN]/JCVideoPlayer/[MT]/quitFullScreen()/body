@@ -6,5 +6,7 @@
   JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
   JCMediaManager.intance().lastState=CURRENT_STATE;
   JCMediaManager.intance().listener.onBackFullscreen();
-  sendPointEvent(VideoEvents.POINT_QUIT_FULLSCREEN);
+  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+    jcBuriedPoint.POINT_QUIT_FULLSCREEN(title,url);
+  }
 }

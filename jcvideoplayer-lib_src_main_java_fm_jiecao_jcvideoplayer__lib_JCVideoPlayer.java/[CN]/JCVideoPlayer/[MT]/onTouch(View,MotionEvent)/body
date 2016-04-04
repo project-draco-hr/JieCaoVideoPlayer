@@ -9,7 +9,14 @@ case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
 startDismissControlViewTimer();
 startProgressTimer();
-sendPointEvent(ifFullScreen ? VideoEvents.POINT_CLICK_SEEKBAR_FULLSCREEN : VideoEvents.POINT_CLICK_SEEKBAR);
+if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+if (ifFullScreen) {
+jcBuriedPoint.POINT_CLICK_SEEKBAR_FULLSCREEN(title,url);
+}
+ else {
+jcBuriedPoint.POINT_CLICK_SEEKBAR(title,url);
+}
+}
 break;
 }
 if (mSeekbarOnTouchListener != null) {

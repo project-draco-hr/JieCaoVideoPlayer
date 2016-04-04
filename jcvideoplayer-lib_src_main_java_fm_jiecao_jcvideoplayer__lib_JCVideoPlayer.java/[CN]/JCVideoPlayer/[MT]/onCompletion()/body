@@ -4,7 +4,14 @@
   cancelDismissControlViewTimer();
   setKeepScreenOn(false);
   changeUiToNormal();
-  sendPointEvent(ifFullScreen ? VideoEvents.POINT_AUTO_COMPLETE_FULLSCREEN : VideoEvents.POINT_AUTO_COMPLETE);
+  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+    if (ifFullScreen) {
+      jcBuriedPoint.POINT_AUTO_COMPLETE_FULLSCREEN(title,url);
+    }
+ else {
+      jcBuriedPoint.POINT_AUTO_COMPLETE(title,url);
+    }
+  }
   if (getContext() instanceof JCFullScreenActivity) {
     ((JCFullScreenActivity)getContext()).finish();
   }
