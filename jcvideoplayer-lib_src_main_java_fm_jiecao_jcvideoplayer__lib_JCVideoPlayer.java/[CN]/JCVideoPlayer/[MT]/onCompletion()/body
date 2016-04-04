@@ -16,7 +16,7 @@
     ((JCFullScreenActivity)getContext()).finish();
   }
   if (isFullscreenFromNormal) {
-    isClickFullscreen=false;
+    isFullscreenFromNormal=false;
     JCMediaManager.intance().lastListener.onCompletion();
   }
 }

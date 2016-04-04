@@ -1,7 +1,7 @@
 {
   super.onPause();
   if (!manualQuit) {
-    jcVideoPlayer.isClickFullscreen=false;
+    JCVideoPlayer.isClickFullscreen=false;
     JCVideoPlayer.releaseAllVideos();
     finish();
   }

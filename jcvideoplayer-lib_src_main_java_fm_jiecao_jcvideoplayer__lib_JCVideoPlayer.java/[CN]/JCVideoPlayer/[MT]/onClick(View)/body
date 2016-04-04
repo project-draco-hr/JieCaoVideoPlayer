@@ -72,6 +72,7 @@
   }
  else   if (i == R.id.fullscreen) {
     if (ifFullScreen) {
+      isClickFullscreen=false;
       quitFullScreen();
     }
  else {

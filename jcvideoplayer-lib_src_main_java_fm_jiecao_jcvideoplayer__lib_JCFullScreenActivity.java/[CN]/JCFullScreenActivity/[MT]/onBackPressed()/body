@@ -1,4 +1,4 @@
 {
+  JCVideoPlayer.isClickFullscreen=false;
   jcVideoPlayer.quitFullScreen();
-  super.onBackPressed();
 }

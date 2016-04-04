@@ -6,6 +6,9 @@
   JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
   JCMediaManager.intance().lastState=CURRENT_STATE;
   JCMediaManager.intance().listener.onBackFullscreen();
+  if (getContext() instanceof JCFullScreenActivity) {
+    ((JCFullScreenActivity)getContext()).finish();
+  }
   if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
     jcBuriedPoint.POINT_QUIT_FULLSCREEN(title,url);
   }
