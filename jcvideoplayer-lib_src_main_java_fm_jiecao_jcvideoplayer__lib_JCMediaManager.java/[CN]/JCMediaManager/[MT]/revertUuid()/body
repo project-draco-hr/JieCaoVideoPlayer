@@ -1,4 +1,0 @@
-{
-  this.uuid=this.prev_uuid;
-  this.prev_uuid="";
-}

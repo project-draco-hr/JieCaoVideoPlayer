@@ -1,3 +1,5 @@
 {
-  EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_FINISH_COMPLETE));
+  if (listener != null) {
+    listener.onCompletion();
+  }
 }

@@ -1,0 +1,22 @@
+{
+  CURRENT_STATE=CURRENT_STATE_NORMAL;
+  cancelProgressTimer();
+  cancelDismissControlViewTimer();
+  setKeepScreenOn(false);
+  changeUiToNormal();
+  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+    if (ifFullScreen) {
+      jcBuriedPoint.POINT_AUTO_COMPLETE_FULLSCREEN(title,url);
+    }
+ else {
+      jcBuriedPoint.POINT_AUTO_COMPLETE(title,url);
+    }
+  }
+  if (getContext() instanceof JCFullScreenActivity) {
+    ((JCFullScreenActivity)getContext()).finish();
+  }
+  if (isFullscreenFromNormal) {
+    isFullscreenFromNormal=false;
+    JCMediaManager.intance().lastListener.onCompletion();
+  }
+}

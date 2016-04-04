@@ -1,5 +1,7 @@
 {
   currentVideoWidth=mp.getVideoWidth();
   currentVideoHeight=mp.getVideoHeight();
-  EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_RESIZE));
+  if (listener != null) {
+    listener.onVideoSizeChanged();
+  }
 }

@@ -1,6 +1,0 @@
-{
-  super.onAttachedToWindow();
-  if (!EventBus.getDefault().isRegistered(this)) {
-    EventBus.getDefault().register(this);
-  }
-}

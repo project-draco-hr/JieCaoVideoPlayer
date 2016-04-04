@@ -1,7 +1,0 @@
-{
-  super.onDetachedFromWindow();
-  EventBus.getDefault().unregister(this);
-  if (uuid.equals(JCMediaManager.intance().uuid)) {
-    JCMediaManager.intance().mediaPlayer.stop();
-  }
-}

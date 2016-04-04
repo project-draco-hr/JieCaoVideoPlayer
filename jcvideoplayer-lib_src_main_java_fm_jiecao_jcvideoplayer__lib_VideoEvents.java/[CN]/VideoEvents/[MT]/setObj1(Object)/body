@@ -1,4 +1,0 @@
-{
-  this.obj1=obj1;
-  return this;
-}

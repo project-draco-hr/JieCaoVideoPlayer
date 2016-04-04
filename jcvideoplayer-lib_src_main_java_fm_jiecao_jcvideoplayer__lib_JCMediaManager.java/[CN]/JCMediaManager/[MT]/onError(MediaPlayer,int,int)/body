@@ -1,3 +1,6 @@
 {
+  if (listener != null) {
+    listener.onError();
+  }
   return true;
 }

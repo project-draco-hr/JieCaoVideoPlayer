@@ -1,10 +1,15 @@
 {
-  EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_CREATED));
   if (ifFullScreen) {
     JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
     stopToFullscreenOrQuitFullscreenShowDisplay();
   }
   if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+    startDismissControlViewTimer();
+    startProgressTimer();
+  }
+  if (JCMediaManager.intance().lastListener == this) {
+    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+    stopToFullscreenOrQuitFullscreenShowDisplay();
     startDismissControlViewTimer();
   }
 }

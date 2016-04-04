@@ -6,8 +6,9 @@
       if (getContext() != null && getContext() instanceof Activity) {
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_MEDIAPLAYER_UPDATE_PROGRESS);
-            EventBus.getDefault().post(videoEvents);
+            if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
+              setProgressAndTimeFromTimer();
+            }
           }
         }
 );

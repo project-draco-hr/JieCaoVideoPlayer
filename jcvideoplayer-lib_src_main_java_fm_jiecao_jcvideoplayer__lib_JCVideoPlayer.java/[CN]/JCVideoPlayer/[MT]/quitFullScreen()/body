@@ -3,9 +3,13 @@
   clickfullscreentime=System.currentTimeMillis();
   JCMediaManager.intance().mediaPlayer.pause();
   JCMediaManager.intance().mediaPlayer.setDisplay(null);
-  JCMediaManager.intance().revertUuid();
-  VideoEvents videoEvents=new VideoEvents().setType(VideoEvents.VE_SURFACEHOLDER_FINISH_FULLSCREEN);
-  videoEvents.obj=CURRENT_STATE;
-  EventBus.getDefault().post(videoEvents);
-  sendPointEvent(VideoEvents.POINT_QUIT_FULLSCREEN);
+  JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
+  JCMediaManager.intance().lastState=CURRENT_STATE;
+  JCMediaManager.intance().listener.onBackFullscreen();
+  if (getContext() instanceof JCFullScreenActivity) {
+    ((JCFullScreenActivity)getContext()).finish();
+  }
+  if (jcBuriedPoint != null && JCMediaManager.intance().listener == this) {
+    jcBuriedPoint.POINT_QUIT_FULLSCREEN(title,url);
+  }
 }
