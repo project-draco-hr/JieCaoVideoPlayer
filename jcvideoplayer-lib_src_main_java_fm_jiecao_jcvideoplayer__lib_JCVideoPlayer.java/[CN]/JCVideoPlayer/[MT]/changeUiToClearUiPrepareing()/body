@@ -1,4 +1,5 @@
 {
   changeUiToClearUi();
   pbLoading.setVisibility(View.VISIBLE);
+  ivCover.setVisibility(View.VISIBLE);
 }
