@@ -1,5 +1,8 @@
 {
-  changeUiToClearUi();
-  pbLoading.setVisibility(View.VISIBLE);
+  setTitleVisibility(View.INVISIBLE);
+  llBottomControl.setVisibility(View.INVISIBLE);
+  ivStart.setVisibility(View.INVISIBLE);
+  setThumbVisibility(View.INVISIBLE);
+  pbBottom.setVisibility(View.INVISIBLE);
   ivCover.setVisibility(View.VISIBLE);
 }
