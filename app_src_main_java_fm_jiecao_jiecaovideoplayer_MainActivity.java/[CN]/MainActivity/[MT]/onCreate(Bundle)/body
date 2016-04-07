@@ -14,9 +14,11 @@
   btnToListViewpager=(Button)findViewById(R.id.to_list_viewpager_activity);
   btnToFullscreen=(Button)findViewById(R.id.to_fullscreen);
   btnToChangecolor=(Button)findViewById(R.id.to_changecolor_activity);
+  btnToLoadImage=(Button)findViewById(R.id.to_list_loadimage_activity);
   btnToList.setOnClickListener(this);
   btnToListViewpager.setOnClickListener(this);
   btnToFullscreen.setOnClickListener(this);
   btnToChangecolor.setOnClickListener(this);
+  btnToLoadImage.setOnClickListener(this);
   JCVideoPlayer.setJcBuriedPoint(jcBuriedPoint);
 }

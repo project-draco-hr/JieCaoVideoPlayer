@@ -1,0 +1,8 @@
+{
+  cache=new LruCache<String,Bitmap>(8 * 1024 * 1024){
+    @Override protected int sizeOf(    String key,    Bitmap bitmap){
+      return bitmap.getRowBytes() * bitmap.getHeight();
+    }
+  }
+;
+}
