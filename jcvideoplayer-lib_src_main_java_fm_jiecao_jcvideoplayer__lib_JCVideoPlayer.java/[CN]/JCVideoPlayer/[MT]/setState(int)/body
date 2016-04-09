@@ -16,4 +16,8 @@
     cancelDismissControlViewTimer();
     cancelProgressTimer();
   }
+ else   if (CURRENT_STATE == CURRENT_STATE_ERROR) {
+    JCMediaManager.intance().mediaPlayer.release();
+    changeUiToError();
+  }
 }

@@ -1,0 +1,5 @@
+{
+  if (what != -38) {
+    setState(CURRENT_STATE_ERROR);
+  }
+}

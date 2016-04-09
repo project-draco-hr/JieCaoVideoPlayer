@@ -11,7 +11,7 @@
         return;
       }
     }
-    if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
+    if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
       addSurfaceView();
       if (JCMediaManager.intance().listener != null) {
         JCMediaManager.intance().listener.onCompletion();
@@ -89,14 +89,19 @@
     clickfullscreentime=System.currentTimeMillis();
   }
  else   if (i == surfaceId || i == R.id.parentview) {
-    onClickUiToggle();
-    startDismissControlViewTimer();
-    if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
-      if (ifFullScreen) {
-        JC_BURIED_POINT.POINT_CLICK_BLANK_FULLSCREEN(title,url);
-      }
+    if (CURRENT_STATE == CURRENT_STATE_ERROR) {
+      ivStart.performClick();
+    }
  else {
-        JC_BURIED_POINT.POINT_CLICK_BLANK(title,url);
+      onClickUiToggle();
+      startDismissControlViewTimer();
+      if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+        if (ifFullScreen) {
+          JC_BURIED_POINT.POINT_CLICK_BLANK_FULLSCREEN(title,url);
+        }
+ else {
+          JC_BURIED_POINT.POINT_CLICK_BLANK(title,url);
+        }
       }
     }
   }
