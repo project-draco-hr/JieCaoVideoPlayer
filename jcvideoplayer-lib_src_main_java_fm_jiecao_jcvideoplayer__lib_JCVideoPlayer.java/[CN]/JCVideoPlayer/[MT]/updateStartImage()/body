@@ -2,6 +2,9 @@
   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
     ivStart.setImageResource(R.drawable.click_video_pause_selector);
   }
+ else   if (CURRENT_STATE == CURRENT_STATE_ERROR) {
+    ivStart.setImageResource(R.drawable.click_video_error_selector);
+  }
  else {
     ivStart.setImageResource(R.drawable.click_video_play_selector);
   }
