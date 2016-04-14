@@ -1,4 +1,20 @@
 {
-switch (v.getId()) {
+  int i=v.getId();
+  if (i == R.id.start) {
+    if (TextUtils.isEmpty("")) {
+      Toast.makeText(getContext(),"No url",Toast.LENGTH_SHORT).show();
+      return;
+    }
+    if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
+      if (JCMediaManager.intance().listener != null) {
+        JCMediaManager.intance().listener.onCompletion();
+      }
+      JCMediaManager.intance().listener=this;
+      addSurfaceView();
+      JCMediaManager.intance().prepareToPlay(getContext(),url);
+      CURRENT_STATE=CURRENT_STATE_PREPAREING;
+    }
+  }
+ else {
   }
 }

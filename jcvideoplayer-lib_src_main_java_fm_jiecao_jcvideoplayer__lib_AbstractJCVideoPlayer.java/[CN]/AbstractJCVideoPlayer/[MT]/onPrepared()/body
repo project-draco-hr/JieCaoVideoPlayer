@@ -1,0 +1,6 @@
+{
+  if (CURRENT_STATE != CURRENT_STATE_PREPAREING)   return;
+  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+  JCMediaManager.intance().mediaPlayer.start();
+  CURRENT_STATE=CURRENT_STATE_PLAYING;
+}
