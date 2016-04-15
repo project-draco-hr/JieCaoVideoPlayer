@@ -1,7 +1,7 @@
 {
   int i=v.getId();
   if (i == R.id.start) {
-    if (TextUtils.isEmpty("")) {
+    if (TextUtils.isEmpty(url)) {
       Toast.makeText(getContext(),"No url",Toast.LENGTH_SHORT).show();
       return;
     }
