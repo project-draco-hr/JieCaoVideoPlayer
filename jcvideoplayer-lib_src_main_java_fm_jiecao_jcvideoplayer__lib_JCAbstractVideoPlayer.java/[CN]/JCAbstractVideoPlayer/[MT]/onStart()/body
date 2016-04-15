@@ -1,0 +1,9 @@
+{
+  if (JCMediaManager.intance().listener != null) {
+    JCMediaManager.intance().listener.onCompletion();
+  }
+  JCMediaManager.intance().listener=this;
+  addSurfaceView();
+  JCMediaManager.intance().prepareToPlay(getContext(),url);
+  CURRENT_STATE=CURRENT_STATE_PREPAREING;
+}
