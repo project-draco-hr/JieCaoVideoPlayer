@@ -12,6 +12,7 @@
       }
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
+      touchingProgressBar=false;
       addSurfaceView();
       if (JCMediaManager.intance().listener != null) {
         JCMediaManager.intance().listener.onCompletion();
