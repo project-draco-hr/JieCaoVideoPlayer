@@ -1,14 +1,3 @@
 {
-  int i=v.getId();
-  if (i == surfaceId || i == R.id.parentview) {
-    if (CURRENT_STATE == CURRENT_STATE_ERROR) {
-      ivStart.performClick();
-    }
- else {
-      onClickBlank();
-    }
-  }
- else {
-  }
   super.onClick(v);
 }

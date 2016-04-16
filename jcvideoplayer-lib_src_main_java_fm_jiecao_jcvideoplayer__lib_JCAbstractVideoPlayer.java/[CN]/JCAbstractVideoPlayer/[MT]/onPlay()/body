@@ -3,4 +3,5 @@
   CURRENT_STATE=CURRENT_STATE_PLAYING;
   JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
   JCMediaManager.intance().mediaPlayer.start();
+  startProgressTimer();
 }
