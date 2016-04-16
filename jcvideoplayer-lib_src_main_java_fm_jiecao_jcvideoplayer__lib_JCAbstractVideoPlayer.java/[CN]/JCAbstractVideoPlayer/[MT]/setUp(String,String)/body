@@ -1,5 +1,5 @@
 {
+  CURRENT_STATE=CURRENT_STATE_NORMAL;
   this.title=title;
   this.url=url;
-  CURRENT_STATE=CURRENT_STATE_NORMAL;
 }

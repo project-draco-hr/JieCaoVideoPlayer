@@ -1,2 +1,4 @@
 {
+  CURRENT_STATE=CURRENT_STATE_PAUSE;
+  JCMediaManager.intance().mediaPlayer.pause();
 }

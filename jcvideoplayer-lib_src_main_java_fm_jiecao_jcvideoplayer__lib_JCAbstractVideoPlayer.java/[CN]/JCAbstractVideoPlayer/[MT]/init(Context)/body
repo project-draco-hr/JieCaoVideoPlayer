@@ -6,7 +6,6 @@
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
-  tvTitle=(TextView)findViewById(R.id.title);
   ivBack=(ImageView)findViewById(R.id.back);
   rlParent=(RelativeLayout)findViewById(R.id.parentview);
   llTopContainer=(LinearLayout)findViewById(R.id.title_container);

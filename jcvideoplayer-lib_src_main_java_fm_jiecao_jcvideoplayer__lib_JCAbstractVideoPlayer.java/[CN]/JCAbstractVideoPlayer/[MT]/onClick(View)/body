@@ -8,7 +8,11 @@
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
       onStart();
     }
-  }
- else {
+ else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+      onPause();
+    }
+ else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
+      onResume();
+    }
   }
 }

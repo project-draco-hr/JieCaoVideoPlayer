@@ -1,3 +1,6 @@
 {
   super.onStart();
+  llTopContainer.setVisibility(View.INVISIBLE);
+  llBottomControl.setVisibility(View.INVISIBLE);
+  ivStart.setVisibility(View.INVISIBLE);
 }
