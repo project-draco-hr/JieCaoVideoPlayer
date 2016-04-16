@@ -1,4 +1,5 @@
 {
   super.onPlay();
+  ivStart.setVisibility(View.VISIBLE);
   updateStartImage();
 }

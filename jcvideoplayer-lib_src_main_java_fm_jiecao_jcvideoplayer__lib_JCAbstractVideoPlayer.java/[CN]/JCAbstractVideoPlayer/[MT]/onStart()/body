@@ -1,9 +1,9 @@
 {
-  CURRENT_STATE=CURRENT_STATE_PREPAREING;
   if (JCMediaManager.intance().listener != null) {
     JCMediaManager.intance().listener.onCompletion();
   }
   JCMediaManager.intance().listener=this;
+  CURRENT_STATE=CURRENT_STATE_PREPAREING;
   addSurfaceView();
   JCMediaManager.intance().prepareToPlay(getContext(),url);
 }

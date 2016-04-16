@@ -1,3 +1,4 @@
 {
   super.onStart();
+  ivStart.setVisibility(View.INVISIBLE);
 }
