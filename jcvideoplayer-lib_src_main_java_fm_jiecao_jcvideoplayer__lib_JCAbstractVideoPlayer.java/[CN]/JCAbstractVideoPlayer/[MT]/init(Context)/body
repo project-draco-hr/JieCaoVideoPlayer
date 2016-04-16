@@ -6,7 +6,6 @@
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   llBottomControl=(LinearLayout)findViewById(R.id.bottom_control);
-  ivBack=(ImageView)findViewById(R.id.back);
   rlParent=(RelativeLayout)findViewById(R.id.parentview);
   llTopContainer=(LinearLayout)findViewById(R.id.title_container);
   ivStart.setOnClickListener(this);
@@ -14,6 +13,5 @@
   skProgress.setOnSeekBarChangeListener(this);
   llBottomControl.setOnClickListener(this);
   rlParent.setOnClickListener(this);
-  ivBack.setOnClickListener(this);
   skProgress.setOnTouchListener(this);
 }

@@ -1,4 +1,3 @@
 {
   super(context);
-  getHolder().setFormat(PixelFormat.TRANSPARENT);
 }
