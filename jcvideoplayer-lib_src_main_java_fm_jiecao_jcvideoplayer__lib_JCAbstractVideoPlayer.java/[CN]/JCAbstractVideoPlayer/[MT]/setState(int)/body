@@ -1,0 +1,13 @@
+{
+  CURRENT_STATE=state;
+switch (CURRENT_STATE) {
+case CURRENT_STATE_NORMAL:
+    break;
+case CURRENT_STATE_PREPAREING:
+  break;
+case CURRENT_STATE_PLAYING:
+break;
+case CURRENT_STATE_PAUSE:
+break;
+}
+}

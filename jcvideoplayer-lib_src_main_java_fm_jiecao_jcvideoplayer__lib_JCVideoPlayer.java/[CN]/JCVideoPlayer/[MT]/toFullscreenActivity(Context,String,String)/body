@@ -1,3 +1,3 @@
 {
-  JCFullScreenActivity.toActivity(context,url,title);
+  JCFullScreenActivity.toActivity(context,url);
 }

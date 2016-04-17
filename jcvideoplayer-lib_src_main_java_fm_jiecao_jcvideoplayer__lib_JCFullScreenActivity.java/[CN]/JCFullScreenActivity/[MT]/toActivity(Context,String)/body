@@ -1,8 +1,7 @@
 {
-  STATE=state;
+  CURRENT_STATE=JCAbstractVideoPlayer.CURRENT_STATE_NORMAL;
   URL=url;
-  TITLE=title;
-  start=false;
+  DIRECT_FULLSCREEN=true;
   Intent intent=new Intent(context,JCFullScreenActivity.class);
   context.startActivity(intent);
 }

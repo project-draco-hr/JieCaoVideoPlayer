@@ -7,7 +7,6 @@ case R.id.to_list_viewpager_activity:
 startActivity(new Intent(MainActivity.this,ListViewpagerActivity.class));
 break;
 case R.id.to_fullscreen:
-JCFullScreenActivity.toActivity(this,"http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4","????????????");
 break;
 case R.id.to_changecolor_activity:
 Toast.makeText(MainActivity.this,"coming soon",Toast.LENGTH_SHORT).show();

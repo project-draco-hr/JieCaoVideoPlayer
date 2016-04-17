@@ -1,6 +1,5 @@
 {
   CURRENT_STATE=CURRENT_STATE_NORMAL;
-  JCMediaManager.intance().mediaPlayer.release();
   cancelProgressTimer();
   resetProgressAndTime();
 }

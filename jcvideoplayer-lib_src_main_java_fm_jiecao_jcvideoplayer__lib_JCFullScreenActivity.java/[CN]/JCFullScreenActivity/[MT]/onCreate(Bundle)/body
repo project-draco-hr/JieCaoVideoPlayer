@@ -6,19 +6,15 @@
   View decor=this.getWindow().getDecorView();
   decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
   setContentView(R.layout.activity_fullscreen);
-  jcVideoPlayer=(JCVideoPlayer)findViewById(R.id.jcvideoplayer);
-  jcVideoPlayer.setUpForFullscreen(URL,TITLE);
-  jcVideoPlayer.setState(STATE);
-  manualQuit=false;
-  if (start) {
+  jcVideoPlayer=(JCDemoVideoPlayer)findViewById(R.id.jcvideoplayer);
+  jcVideoPlayer.addSurfaceView();
+  jcVideoPlayer.setState(CURRENT_STATE);
+  jcVideoPlayer.IF_CURRENT_IS_FULLSCREEN=true;
+  if (DIRECT_FULLSCREEN) {
     jcVideoPlayer.ivStart.performClick();
   }
  else {
-    jcVideoPlayer.isFullscreenFromNormal=true;
-    jcVideoPlayer.addSurfaceView();
-    if (JCMediaManager.intance().listener != null) {
-      JCMediaManager.intance().listener.onCompletion();
-    }
+    manualQuit=false;
     JCMediaManager.intance().listener=jcVideoPlayer;
   }
 }
