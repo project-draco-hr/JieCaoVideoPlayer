@@ -1,5 +1,3 @@
 {
-  if (!IF_FULLSCREEN_IS_DIRECTLY) {
-    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
-  }
+  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
 }

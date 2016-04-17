@@ -1,6 +1,2 @@
 {
-  CURRENT_STATE=JCMediaManager.intance().lastState;
-  addSurfaceView();
-  setState(CURRENT_STATE);
-  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
 }
