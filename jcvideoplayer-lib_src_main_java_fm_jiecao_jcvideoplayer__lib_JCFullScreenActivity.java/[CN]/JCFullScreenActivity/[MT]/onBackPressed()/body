@@ -1,3 +1,9 @@
 {
-  JCVideoPlayer.isClickFullscreen=false;
+  if (jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY) {
+    JCMediaManager.intance().mediaPlayer.release();
+  }
+ else {
+    jcVideoPlayer.quitFullcreenGoToNormal();
+  }
+  super.onBackPressed();
 }
