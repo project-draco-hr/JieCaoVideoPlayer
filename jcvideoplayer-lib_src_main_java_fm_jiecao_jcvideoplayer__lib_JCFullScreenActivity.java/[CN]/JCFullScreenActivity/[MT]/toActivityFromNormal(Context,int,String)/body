@@ -1,6 +1,7 @@
 {
   CURRENT_STATE=state;
   DIRECT_FULLSCREEN=false;
+  URL=url;
   Intent intent=new Intent(context,JCFullScreenActivity.class);
   context.startActivity(intent);
 }

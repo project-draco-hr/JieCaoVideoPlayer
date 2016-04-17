@@ -1,13 +1,15 @@
 {
-  CURRENT_STATE=state;
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
     break;
 case CURRENT_STATE_PREPAREING:
-  break;
+  ivStart.setVisibility(View.INVISIBLE);
+break;
 case CURRENT_STATE_PLAY:
+ivStart.setVisibility(View.VISIBLE);
 break;
 case CURRENT_STATE_PAUSE:
 break;
 }
+updateStartImage();
 }

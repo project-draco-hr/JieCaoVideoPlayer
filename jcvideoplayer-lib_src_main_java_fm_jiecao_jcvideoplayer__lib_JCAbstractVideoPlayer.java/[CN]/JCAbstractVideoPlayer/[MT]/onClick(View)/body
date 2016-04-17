@@ -6,9 +6,9 @@
       return;
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
-      onStart();
+      onPrepareing();
     }
- else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+ else     if (CURRENT_STATE == CURRENT_STATE_PLAY) {
       onPause();
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
@@ -22,7 +22,7 @@
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
       JCMediaManager.intance().lastListener=this;
       JCMediaManager.intance().listener=null;
-      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE);
+      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url);
     }
   }
 }

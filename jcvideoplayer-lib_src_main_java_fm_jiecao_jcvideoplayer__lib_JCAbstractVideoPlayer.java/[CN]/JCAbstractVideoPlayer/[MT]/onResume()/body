@@ -1,5 +1,5 @@
 {
-  CURRENT_STATE=CURRENT_STATE_PLAYING;
+  CURRENT_STATE=CURRENT_STATE_PLAY;
   JCMediaManager.intance().mediaPlayer.start();
   Log.i("JCVideoPlayer","go on video");
 }

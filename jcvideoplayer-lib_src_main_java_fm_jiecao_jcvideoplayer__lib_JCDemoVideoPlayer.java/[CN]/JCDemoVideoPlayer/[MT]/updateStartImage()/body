@@ -1,5 +1,5 @@
 {
-  if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+  if (CURRENT_STATE == CURRENT_STATE_PLAY) {
     ivStart.setImageResource(R.drawable.click_video_pause_selector);
   }
  else   if (CURRENT_STATE == CURRENT_STATE_ERROR) {
