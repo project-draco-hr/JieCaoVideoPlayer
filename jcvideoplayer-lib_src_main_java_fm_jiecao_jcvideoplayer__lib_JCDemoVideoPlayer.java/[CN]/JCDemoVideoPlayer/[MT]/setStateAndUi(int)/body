@@ -1,5 +1,5 @@
 {
-  super.setState(state);
+  super.setStateAndUi(state);
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
     break;

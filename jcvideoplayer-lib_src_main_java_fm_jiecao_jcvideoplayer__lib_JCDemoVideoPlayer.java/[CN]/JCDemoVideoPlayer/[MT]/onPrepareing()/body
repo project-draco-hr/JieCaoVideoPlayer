@@ -1,4 +1,0 @@
-{
-  super.onPrepareing();
-  ivStart.setVisibility(View.INVISIBLE);
-}

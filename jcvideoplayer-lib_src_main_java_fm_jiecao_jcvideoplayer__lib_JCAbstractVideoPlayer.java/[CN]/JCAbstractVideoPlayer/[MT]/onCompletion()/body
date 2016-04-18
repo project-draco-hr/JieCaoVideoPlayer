@@ -1,5 +1,5 @@
 {
-  CURRENT_STATE=CURRENT_STATE_NORMAL;
   cancelProgressTimer();
   resetProgressAndTime();
+  setStateAndUi(CURRENT_STATE_NORMAL);
 }

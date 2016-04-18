@@ -6,13 +6,21 @@
       return;
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
-      onPrepareing();
+      if (JCMediaManager.intance().listener != null) {
+        JCMediaManager.intance().listener.onCompletion();
+      }
+      JCMediaManager.intance().listener=this;
+      addSurfaceView();
+      JCMediaManager.intance().prepareToPlay(getContext(),url);
+      setStateAndUi(CURRENT_STATE_PREPAREING);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
-      onPause();
+      JCMediaManager.intance().mediaPlayer.pause();
+      setStateAndUi(CURRENT_STATE_PAUSE);
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
-      onResume();
+      JCMediaManager.intance().mediaPlayer.start();
+      setStateAndUi(CURRENT_STATE_PLAYING);
     }
   }
  else   if (i == R.id.fullscreen) {
