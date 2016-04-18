@@ -18,6 +18,5 @@
  else {
     manualQuit=false;
     JCMediaManager.intance().listener=jcVideoPlayer;
-    jcVideoPlayer.setUpUI();
   }
 }

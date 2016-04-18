@@ -1,0 +1,12 @@
+{
+  setUp(url);
+  tvTitle.setText(title);
+  if (IF_CURRENT_IS_FULLSCREEN) {
+    ivFullScreen.setImageResource(R.drawable.shrink_video);
+  }
+ else {
+    ivFullScreen.setImageResource(R.drawable.enlarge_video);
+    ivBack.setVisibility(View.GONE);
+  }
+  changeUiToNormal();
+}

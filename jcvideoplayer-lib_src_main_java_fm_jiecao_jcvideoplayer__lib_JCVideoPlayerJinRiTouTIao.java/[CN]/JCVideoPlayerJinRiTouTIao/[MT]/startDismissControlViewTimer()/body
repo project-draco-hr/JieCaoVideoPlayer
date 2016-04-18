@@ -1,0 +1,22 @@
+{
+  cancelDismissControlViewTimer();
+  mDismissControlViewTimer=new Timer();
+  mDismissControlViewTimer.schedule(new TimerTask(){
+    @Override public void run(){
+      if (getContext() != null && getContext() instanceof Activity) {
+        ((Activity)getContext()).runOnUiThread(new Runnable(){
+          @Override public void run(){
+            if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+              llBottomControl.setVisibility(View.INVISIBLE);
+              pbBottom.setVisibility(View.VISIBLE);
+              tvTitle.setVisibility(View.INVISIBLE);
+              ivStart.setVisibility(View.INVISIBLE);
+            }
+          }
+        }
+);
+      }
+    }
+  }
+,2500);
+}
