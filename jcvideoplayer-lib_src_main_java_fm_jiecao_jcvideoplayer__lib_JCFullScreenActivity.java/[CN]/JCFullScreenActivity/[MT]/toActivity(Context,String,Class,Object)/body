@@ -2,6 +2,8 @@
   CURRENT_STATE=JCAbstractVideoPlayer.CURRENT_STATE_NORMAL;
   URL=url;
   DIRECT_FULLSCREEN=true;
+  VIDEO_PLAYER_CLASS=videoPlayClass;
+  OBJECTS=obj;
   Intent intent=new Intent(context,JCFullScreenActivity.class);
   context.startActivity(intent);
 }

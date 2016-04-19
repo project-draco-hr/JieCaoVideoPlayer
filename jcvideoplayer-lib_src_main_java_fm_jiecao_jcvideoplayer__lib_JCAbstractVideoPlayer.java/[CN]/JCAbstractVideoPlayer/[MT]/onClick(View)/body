@@ -30,7 +30,7 @@
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
       JCMediaManager.intance().lastListener=this;
       JCMediaManager.intance().listener=null;
-      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,JCAbstractVideoPlayer.this.getClass());
+      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,JCAbstractVideoPlayer.this.getClass(),this.obj);
     }
   }
 }
