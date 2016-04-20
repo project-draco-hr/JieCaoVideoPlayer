@@ -1,12 +1,10 @@
 {
 switch (v.getId()) {
 case R.id.to_fullscreen_simple_demo:
-    JCAbstractVideoPlayer jcAbstractVideoPlayer=new JCDemoVideoPlayer(this);
-  JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",jcAbstractVideoPlayer.getClass(),"????????????");
-break;
+    JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCDemoVideoPlayer.class,"????????????");
+  break;
 case R.id.to_fullscreen_jinritoutiao:
-JCAbstractVideoPlayer jCVideoPlayerJinRiTouTIao=new JCVideoPlayerJinRiTouTIao(this);
-JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",jCVideoPlayerJinRiTouTIao.getClass(),"???????????????");
+JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerJinRiTouTIao.class,"???????????????");
 break;
 }
 }
