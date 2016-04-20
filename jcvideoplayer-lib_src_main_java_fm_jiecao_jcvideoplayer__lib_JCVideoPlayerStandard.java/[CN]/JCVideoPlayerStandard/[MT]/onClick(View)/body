@@ -8,5 +8,6 @@
   }
  else   if (i == R.id.parentview) {
     onClickUiToggle();
+    startDismissControlViewTimer();
   }
 }

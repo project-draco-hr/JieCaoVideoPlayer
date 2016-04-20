@@ -8,8 +8,8 @@
           @Override public void run(){
             if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
               llBottomControl.setVisibility(View.INVISIBLE);
+              llTopContainer.setVisibility(View.INVISIBLE);
               pbBottom.setVisibility(View.VISIBLE);
-              tvTitle.setVisibility(View.INVISIBLE);
               ivStart.setVisibility(View.INVISIBLE);
             }
           }

@@ -1,0 +1,4 @@
+int progress
+int secProgress
+int currentTime
+int totalTime
