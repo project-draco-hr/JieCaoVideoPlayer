@@ -1,6 +1,6 @@
 {
   if (jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY) {
-    JCMediaManager.intance().mediaPlayer.release();
+    JCMediaManager.intance().mediaPlayer.stop();
   }
  else {
     jcVideoPlayer.quitFullcreenGoToNormal();
