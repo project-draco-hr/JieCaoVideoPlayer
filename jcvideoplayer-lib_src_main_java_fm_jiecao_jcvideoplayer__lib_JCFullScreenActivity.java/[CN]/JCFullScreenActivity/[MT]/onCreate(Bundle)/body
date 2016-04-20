@@ -7,7 +7,7 @@
   decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
   setContentView(R.layout.activity_fullscreen);
   try {
-    Constructor<JCVideoPlayerJinRiTouTIao> constructor=VIDEO_PLAYER_CLASS.getConstructor(Context.class);
+    Constructor<JCVideoPlayerStandard> constructor=VIDEO_PLAYER_CLASS.getConstructor(Context.class);
     jcVideoPlayer=constructor.newInstance(this);
     setContentView(jcVideoPlayer);
   }
