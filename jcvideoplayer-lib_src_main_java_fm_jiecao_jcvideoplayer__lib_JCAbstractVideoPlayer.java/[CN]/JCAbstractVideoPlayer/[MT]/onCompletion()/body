@@ -2,4 +2,9 @@
   cancelProgressTimer();
   resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
+  finishMyFullscreen();
+  if (isFullscreenFromNormal) {
+    isFullscreenFromNormal=false;
+    JCMediaManager.intance().lastListener.onCompletion();
+  }
 }

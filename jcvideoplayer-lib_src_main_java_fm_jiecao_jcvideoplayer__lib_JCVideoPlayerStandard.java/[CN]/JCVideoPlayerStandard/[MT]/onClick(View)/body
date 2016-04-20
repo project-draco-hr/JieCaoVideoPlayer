@@ -10,4 +10,7 @@
     onClickUiToggle();
     startDismissControlViewTimer();
   }
+ else   if (i == R.id.back) {
+    backFullscreen();
+  }
 }
