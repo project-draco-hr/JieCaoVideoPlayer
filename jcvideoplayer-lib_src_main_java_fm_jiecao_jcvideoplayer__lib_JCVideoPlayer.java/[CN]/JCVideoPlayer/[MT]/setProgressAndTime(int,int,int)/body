@@ -3,6 +3,6 @@
     skProgress.setProgress(progress);
     pbBottom.setProgress(progress);
   }
-  tvTimeCurrent.setText(Utils.stringForTime(currentTime));
-  tvTimeTotal.setText(Utils.stringForTime(totalTime));
+  tvTimeCurrent.setText(JCUtils.stringForTime(currentTime));
+  tvTimeTotal.setText(JCUtils.stringForTime(totalTime));
 }

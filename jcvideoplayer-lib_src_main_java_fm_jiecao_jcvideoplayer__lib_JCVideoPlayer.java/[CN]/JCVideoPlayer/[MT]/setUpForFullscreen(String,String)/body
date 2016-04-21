@@ -5,10 +5,10 @@
   ifFullScreen=true;
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   if (ifFullScreen) {
-    ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.shrink_video : shrinkRecId);
+    ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.jc_shrink : shrinkRecId);
   }
  else {
-    ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.enlarge_video : enlargRecId);
+    ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.jc_enlarge : enlargRecId);
   }
   tvTitle.setText(title);
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {

@@ -6,10 +6,10 @@
   this.ifFullScreen=false;
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   if (ifFullScreen) {
-    ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.shrink_video : enlargRecId);
+    ivFullScreen.setImageResource(enlargRecId == 0 ? R.drawable.jc_shrink : enlargRecId);
   }
  else {
-    ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.enlarge_video : shrinkRecId);
+    ivFullScreen.setImageResource(shrinkRecId == 0 ? R.drawable.jc_enlarge : shrinkRecId);
     ivBack.setVisibility(View.GONE);
   }
   if (!TextUtils.isEmpty(url) && url.contains(".mp3")) {

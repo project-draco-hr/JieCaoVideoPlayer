@@ -3,6 +3,6 @@
     if (progress != 0)     skProgress.setProgress(progress);
   }
   if (secProgress != 0)   skProgress.setSecondaryProgress(secProgress);
-  tvTimeCurrent.setText(Utils.stringForTime(currentTime));
-  tvTimeTotal.setText(Utils.stringForTime(totalTime));
+  tvTimeCurrent.setText(JCUtils.stringForTime(currentTime));
+  tvTimeTotal.setText(JCUtils.stringForTime(totalTime));
 }
