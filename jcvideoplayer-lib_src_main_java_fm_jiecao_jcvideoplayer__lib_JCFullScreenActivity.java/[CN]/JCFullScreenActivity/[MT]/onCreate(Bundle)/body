@@ -26,7 +26,7 @@ catch (  Exception e) {
     jcVideoPlayer.ivStart.performClick();
   }
  else {
-    manualQuit=false;
+    JCAbstractVideoPlayer.IF_RELEASE_WHEN_ON_PAUSE=true;
     JCMediaManager.intance().listener=jcVideoPlayer;
   }
 }

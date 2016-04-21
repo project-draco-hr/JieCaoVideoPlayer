@@ -1,0 +1,11 @@
+{
+  if (IF_RELEASE_WHEN_ON_PAUSE) {
+    JCMediaManager.intance().mediaPlayer.stop();
+    if (JCMediaManager.intance().listener != null) {
+      JCMediaManager.intance().listener.onCompletion();
+    }
+  }
+ else {
+    IF_RELEASE_WHEN_ON_PAUSE=true;
+  }
+}

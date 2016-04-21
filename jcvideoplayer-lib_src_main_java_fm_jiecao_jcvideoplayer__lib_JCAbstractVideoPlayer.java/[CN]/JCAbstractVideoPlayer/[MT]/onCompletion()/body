@@ -3,8 +3,8 @@
   resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
   finishMyFullscreen();
-  if (isFullscreenFromNormal) {
-    isFullscreenFromNormal=false;
+  if (IF_FULLSCREEN_FROM_NORMAL) {
+    IF_FULLSCREEN_FROM_NORMAL=false;
     JCMediaManager.intance().lastListener.onCompletion();
   }
 }

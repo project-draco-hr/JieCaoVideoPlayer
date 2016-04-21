@@ -4,6 +4,7 @@
     finishMyFullscreen();
   }
  else {
+    IF_RELEASE_WHEN_ON_PAUSE=false;
     quitFullcreenGoToNormal();
   }
 }
