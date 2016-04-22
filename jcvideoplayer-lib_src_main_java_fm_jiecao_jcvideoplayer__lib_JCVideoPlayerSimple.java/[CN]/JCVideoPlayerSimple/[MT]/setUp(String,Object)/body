@@ -6,4 +6,5 @@
  else {
     ivFullScreen.setImageResource(R.drawable.jc_enlarge);
   }
+  setStateAndUi(CURRENT_STATE_NORMAL);
 }

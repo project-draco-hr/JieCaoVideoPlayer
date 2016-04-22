@@ -3,7 +3,10 @@
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
     cancelProgressTimer();
-  break;
+  if (rlParent.getChildCount() > 0) {
+    rlParent.removeAllViews();
+  }
+break;
 case CURRENT_STATE_PREPAREING:
 break;
 case CURRENT_STATE_PLAYING:
