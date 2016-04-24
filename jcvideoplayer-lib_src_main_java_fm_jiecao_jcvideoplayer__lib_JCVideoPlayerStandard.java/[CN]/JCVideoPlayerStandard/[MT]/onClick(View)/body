@@ -6,7 +6,7 @@
       ivStart.performClick();
     }
   }
- else   if (i == R.id.parentview) {
+ else   if (i == R.id.surface_container) {
     onClickUiToggle();
     startDismissControlViewTimer();
   }

@@ -1,6 +1,6 @@
 {
-  if (rlParent.getChildCount() > 0) {
-    rlParent.removeAllViews();
+  if (rlSurfaceContainer.getChildCount() > 0) {
+    rlSurfaceContainer.removeAllViews();
   }
   surfaceView=new JCResizeSurfaceView(getContext());
   surfaceId=surfaceView.getId();
@@ -8,5 +8,5 @@
   surfaceHolder.addCallback(this);
   RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
   layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
-  rlParent.addView(surfaceView,layoutParams);
+  rlSurfaceContainer.addView(surfaceView,layoutParams);
 }

@@ -6,12 +6,12 @@
   tvTimeCurrent=(TextView)findViewById(R.id.current);
   tvTimeTotal=(TextView)findViewById(R.id.total);
   llBottomControl=(ViewGroup)findViewById(R.id.layout_bottom);
-  rlParent=(RelativeLayout)findViewById(R.id.parentview);
+  rlSurfaceContainer=(RelativeLayout)findViewById(R.id.surface_container);
   llTopContainer=(ViewGroup)findViewById(R.id.layout_top);
   ivStart.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   skProgress.setOnSeekBarChangeListener(this);
   llBottomControl.setOnClickListener(this);
-  rlParent.setOnClickListener(this);
+  rlSurfaceContainer.setOnClickListener(this);
   skProgress.setOnTouchListener(this);
 }
