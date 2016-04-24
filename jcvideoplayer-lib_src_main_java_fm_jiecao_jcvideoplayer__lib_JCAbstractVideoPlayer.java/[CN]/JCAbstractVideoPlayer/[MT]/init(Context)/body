@@ -1,0 +1,17 @@
+{
+  View.inflate(context,getLayoutId(),this);
+  ivStart=(ImageView)findViewById(R.id.start);
+  ivFullScreen=(ImageView)findViewById(R.id.fullscreen);
+  skProgress=(SeekBar)findViewById(R.id.progress);
+  tvTimeCurrent=(TextView)findViewById(R.id.current);
+  tvTimeTotal=(TextView)findViewById(R.id.total);
+  llBottomControl=(ViewGroup)findViewById(R.id.bottom_control);
+  rlParent=(RelativeLayout)findViewById(R.id.parentview);
+  llTopContainer=(ViewGroup)findViewById(R.id.title_container);
+  ivStart.setOnClickListener(this);
+  ivFullScreen.setOnClickListener(this);
+  skProgress.setOnSeekBarChangeListener(this);
+  llBottomControl.setOnClickListener(this);
+  rlParent.setOnClickListener(this);
+  skProgress.setOnTouchListener(this);
+}

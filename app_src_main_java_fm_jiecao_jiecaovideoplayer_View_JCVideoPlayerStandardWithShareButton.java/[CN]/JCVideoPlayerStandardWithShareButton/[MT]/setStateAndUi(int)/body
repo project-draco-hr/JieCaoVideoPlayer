@@ -1,0 +1,9 @@
+{
+  super.setStateAndUi(state);
+  if (IF_CURRENT_IS_FULLSCREEN) {
+    btnShare.setVisibility(View.VISIBLE);
+  }
+ else {
+    btnShare.setVisibility(View.INVISIBLE);
+  }
+}

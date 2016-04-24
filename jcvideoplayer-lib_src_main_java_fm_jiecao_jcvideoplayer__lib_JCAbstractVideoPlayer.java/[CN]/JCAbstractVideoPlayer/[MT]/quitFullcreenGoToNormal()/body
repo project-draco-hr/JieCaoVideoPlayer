@@ -1,0 +1,7 @@
+{
+  JCMediaManager.intance().mediaPlayer.setDisplay(null);
+  JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
+  JCMediaManager.intance().lastState=CURRENT_STATE;
+  JCMediaManager.intance().listener.onBackFullscreen();
+  finishMyFullscreen();
+}

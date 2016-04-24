@@ -5,20 +5,28 @@
   setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
   View decor=this.getWindow().getDecorView();
   decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-  setContentView(R.layout.activity_fullscreen);
-  jcVideoPlayer=(JCVideoPlayer)findViewById(R.id.jcvideoplayer);
-  jcVideoPlayer.setUpForFullscreen(URL,TITLE);
-  jcVideoPlayer.setState(STATE);
-  manualQuit=false;
-  if (start) {
+  setContentView(R.layout.jc_activity_fullscreen);
+  try {
+    Constructor<JCVideoPlayerStandard> constructor=VIDEO_PLAYER_CLASS.getConstructor(Context.class);
+    jcVideoPlayer=constructor.newInstance(this);
+    setContentView(jcVideoPlayer);
+  }
+ catch (  InstantiationException e) {
+    e.printStackTrace();
+  }
+catch (  Exception e) {
+    e.printStackTrace();
+  }
+  jcVideoPlayer.IF_CURRENT_IS_FULLSCREEN=true;
+  jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY=DIRECT_FULLSCREEN;
+  jcVideoPlayer.setUp(URL,OBJECTS);
+  jcVideoPlayer.addSurfaceView();
+  jcVideoPlayer.setStateAndUi(CURRENT_STATE);
+  if (jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY) {
     jcVideoPlayer.ivStart.performClick();
   }
  else {
-    jcVideoPlayer.isFullscreenFromNormal=true;
-    jcVideoPlayer.addSurfaceView();
-    if (JCMediaManager.intance().listener != null) {
-      JCMediaManager.intance().listener.onCompletion();
-    }
+    JCAbstractVideoPlayer.IF_RELEASE_WHEN_ON_PAUSE=true;
     JCMediaManager.intance().listener=jcVideoPlayer;
   }
 }

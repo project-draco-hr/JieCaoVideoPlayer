@@ -1,0 +1,19 @@
+{
+  cancelProgressTimer();
+  mUpdateProgressTimer=new Timer();
+  mUpdateProgressTimer.schedule(new TimerTask(){
+    @Override public void run(){
+      if (getContext() != null && getContext() instanceof Activity) {
+        ((Activity)getContext()).runOnUiThread(new Runnable(){
+          @Override public void run(){
+            if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+              setTextAndProgress(0);
+            }
+          }
+        }
+);
+      }
+    }
+  }
+,0,300);
+}

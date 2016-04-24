@@ -1,0 +1,5 @@
+Context context
+int state
+String url
+Class videoPlayClass
+Object obj

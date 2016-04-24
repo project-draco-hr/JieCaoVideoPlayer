@@ -1,0 +1,21 @@
+{
+  super.setStateAndUi(state);
+switch (CURRENT_STATE) {
+case CURRENT_STATE_NORMAL:
+    changeUiToNormal();
+  cancelDismissControlViewTimer();
+break;
+case CURRENT_STATE_PREPAREING:
+changeUiToShowUiPrepareing();
+startDismissControlViewTimer();
+break;
+case CURRENT_STATE_PLAYING:
+changeUiToShowUiPlaying();
+startDismissControlViewTimer();
+break;
+case CURRENT_STATE_PAUSE:
+changeUiToShowUiPause();
+cancelDismissControlViewTimer();
+break;
+}
+}

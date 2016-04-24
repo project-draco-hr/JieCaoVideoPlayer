@@ -18,7 +18,6 @@
         JCMediaManager.intance().listener.onCompletion();
       }
       JCMediaManager.intance().listener=this;
-      JCMediaManager.intance().clearWidthAndHeight();
       CURRENT_STATE=CURRENT_STATE_PREPAREING;
       changeUiToShowUiPrepareing();
       llBottomControl.setVisibility(View.INVISIBLE);
@@ -82,7 +81,6 @@
       JCMediaManager.intance().lastListener=this;
       JCMediaManager.intance().listener=null;
       isClickFullscreen=true;
-      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,title);
       if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         JC_BURIED_POINT.POINT_ENTER_FULLSCREEN(title,url);
       }

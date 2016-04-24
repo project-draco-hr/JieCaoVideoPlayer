@@ -1,0 +1,6 @@
+{
+  skProgress.setProgress(0);
+  skProgress.setSecondaryProgress(0);
+  tvTimeCurrent.setText(JCUtils.stringForTime(0));
+  tvTimeTotal.setText(JCUtils.stringForTime(0));
+}

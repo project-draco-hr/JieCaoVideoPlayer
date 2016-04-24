@@ -1,0 +1,13 @@
+{
+switch (event.getAction()) {
+case MotionEvent.ACTION_DOWN:
+    touchingProgressBar=true;
+  cancelProgressTimer();
+break;
+case MotionEvent.ACTION_UP:
+touchingProgressBar=false;
+startProgressTimer();
+break;
+}
+return false;
+}
