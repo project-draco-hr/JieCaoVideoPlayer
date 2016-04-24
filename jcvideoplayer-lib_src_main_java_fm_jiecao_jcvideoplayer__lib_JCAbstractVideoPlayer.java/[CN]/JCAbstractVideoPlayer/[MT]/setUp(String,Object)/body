@@ -3,4 +3,5 @@
   this.url=url;
   resetProgressAndTime();
   this.obj=obj;
+  setStateAndUi(CURRENT_STATE_NORMAL);
 }

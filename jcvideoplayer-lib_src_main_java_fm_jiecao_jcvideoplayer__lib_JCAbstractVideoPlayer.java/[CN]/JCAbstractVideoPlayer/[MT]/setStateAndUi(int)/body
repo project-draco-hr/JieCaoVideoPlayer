@@ -6,6 +6,9 @@ case CURRENT_STATE_NORMAL:
   if (rlParent.getChildCount() > 0) {
     rlParent.removeAllViews();
   }
+if (JCMediaManager.intance().listener == this) {
+  JCMediaManager.intance().mediaPlayer.stop();
+}
 break;
 case CURRENT_STATE_PREPAREING:
 break;
