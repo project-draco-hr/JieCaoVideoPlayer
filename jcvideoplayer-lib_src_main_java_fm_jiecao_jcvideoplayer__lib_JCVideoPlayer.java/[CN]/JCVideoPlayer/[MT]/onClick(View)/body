@@ -32,7 +32,7 @@
       JCMediaManager.intance().listener=null;
       IF_FULLSCREEN_FROM_NORMAL=true;
       IF_RELEASE_WHEN_ON_PAUSE=false;
-      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,JCAbstractVideoPlayer.this.getClass(),this.obj);
+      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,JCVideoPlayer.this.getClass(),this.obj);
     }
   }
 }
