@@ -1,4 +1,0 @@
-{
-  changeUiToClearUi();
-  pbBottom.setVisibility(View.VISIBLE);
-}

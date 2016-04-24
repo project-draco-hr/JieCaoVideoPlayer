@@ -1,4 +1,4 @@
 {
   super.onPause();
-  JCVideoPlayer.releaseAllVideos();
+  JCAbstractVideoPlayer.releaseAllVideos();
 }

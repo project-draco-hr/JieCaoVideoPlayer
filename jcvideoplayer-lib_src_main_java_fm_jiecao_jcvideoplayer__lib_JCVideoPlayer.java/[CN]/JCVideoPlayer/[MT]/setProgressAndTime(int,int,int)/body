@@ -1,8 +1,0 @@
-{
-  if (!touchingProgressBar) {
-    skProgress.setProgress(progress);
-    pbBottom.setProgress(progress);
-  }
-  tvTimeCurrent.setText(JCUtils.stringForTime(currentTime));
-  tvTimeTotal.setText(JCUtils.stringForTime(totalTime));
-}

@@ -1,5 +1,0 @@
-{
-  if (CURRENT_STATE != CURRENT_STATE_NORMAL || CURRENT_STATE != CURRENT_STATE_PREPAREING) {
-    setProgressBuffered(percent);
-  }
-}

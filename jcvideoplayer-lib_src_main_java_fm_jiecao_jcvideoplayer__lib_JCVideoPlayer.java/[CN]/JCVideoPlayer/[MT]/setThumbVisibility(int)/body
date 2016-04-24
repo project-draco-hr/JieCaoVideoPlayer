@@ -1,8 +1,0 @@
-{
-  if (ifMp3) {
-    ivThumb.setVisibility(View.VISIBLE);
-  }
- else {
-    ivThumb.setVisibility(visable);
-  }
-}

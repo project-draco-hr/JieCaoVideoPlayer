@@ -1,5 +1,0 @@
-{
-  if (mUpdateProgressTimer != null) {
-    mUpdateProgressTimer.cancel();
-  }
-}

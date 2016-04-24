@@ -1,8 +1,0 @@
-{
-  if (fromUser) {
-    int time=progress * JCMediaManager.intance().mediaPlayer.getDuration() / 100;
-    JCMediaManager.intance().mediaPlayer.seekTo(time);
-    pbLoading.setVisibility(View.VISIBLE);
-    ivStart.setVisibility(View.INVISIBLE);
-  }
-}
