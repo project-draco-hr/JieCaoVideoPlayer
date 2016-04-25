@@ -17,5 +17,8 @@ case CURRENT_STATE_PAUSE:
 changeUiToShowUiPause();
 cancelDismissControlViewTimer();
 break;
+case CURRENT_STATE_ERROR:
+changeUiToError();
+break;
 }
 }
