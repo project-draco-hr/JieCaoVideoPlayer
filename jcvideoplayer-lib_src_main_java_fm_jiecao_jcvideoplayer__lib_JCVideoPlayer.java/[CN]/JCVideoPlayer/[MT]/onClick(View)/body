@@ -6,6 +6,12 @@
       return;
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
+      if (JC_BURIED_POINT != null && CURRENT_STATE == CURRENT_STATE_NORMAL) {
+        JC_BURIED_POINT.POINT_START_ICON(url,objects);
+      }
+ else       if (JC_BURIED_POINT != null) {
+        JC_BURIED_POINT.POINT_START_ERROR(url,objects);
+      }
       prepareVideo();
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
@@ -50,6 +56,9 @@
     }
   }
  else   if (i == R.id.surface_container && CURRENT_STATE == CURRENT_STATE_ERROR) {
+    if (JC_BURIED_POINT != null) {
+      JC_BURIED_POINT.POINT_START_ERROR(url,objects);
+    }
     prepareVideo();
   }
 }

@@ -3,12 +3,6 @@
     JCMediaManager.intance().listener.onCompletion();
   }
   JCMediaManager.intance().listener=this;
-  if (JC_BURIED_POINT != null && CURRENT_STATE == CURRENT_STATE_NORMAL) {
-    JC_BURIED_POINT.POINT_START_ICON(url,objects);
-  }
- else   if (JC_BURIED_POINT != null && CURRENT_STATE == CURRENT_STATE_ERROR) {
-    JC_BURIED_POINT.POINT_START_ICON_FROM_ERROR(url,objects);
-  }
   addSurfaceView();
   JCMediaManager.intance().prepareToPlay(getContext(),url);
   setStateAndUi(CURRENT_STATE_PREPAREING);
