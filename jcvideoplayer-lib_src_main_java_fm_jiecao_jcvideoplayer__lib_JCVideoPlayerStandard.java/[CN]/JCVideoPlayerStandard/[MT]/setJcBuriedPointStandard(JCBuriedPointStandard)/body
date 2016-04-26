@@ -1,0 +1,4 @@
+{
+  jc_BuriedPointStandard=jcBuriedPointStandard;
+  JCVideoPlayer.setJcBuriedPoint(jcBuriedPointStandard);
+}

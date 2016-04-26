@@ -2,6 +2,6 @@
   CURRENT_STATE=CURRENT_STATE_NORMAL;
   this.url=url;
   resetProgressAndTime();
-  this.obj=obj;
+  this.objects=obj;
   setStateAndUi(CURRENT_STATE_NORMAL);
 }
