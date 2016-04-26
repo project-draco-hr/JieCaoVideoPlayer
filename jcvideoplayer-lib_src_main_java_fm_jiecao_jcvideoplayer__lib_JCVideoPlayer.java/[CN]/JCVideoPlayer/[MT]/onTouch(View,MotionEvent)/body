@@ -7,6 +7,14 @@ break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
 startProgressTimer();
+if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+if (IF_CURRENT_IS_FULLSCREEN) {
+JC_BURIED_POINT.POINT_CLICK_SEEKBAR_FULLSCREEN(url,objects);
+}
+ else {
+JC_BURIED_POINT.POINT_CLICK_SEEKBAR(url,objects);
+}
+}
 break;
 }
 return false;

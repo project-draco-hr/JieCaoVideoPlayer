@@ -1,6 +1,6 @@
 {
   if (IF_RELEASE_WHEN_ON_PAUSE) {
-    JCMediaManager.intance().mediaPlayer.stop();
+    JCMediaManager.intance().mediaPlayer.release();
     if (JCMediaManager.intance().listener != null) {
       JCMediaManager.intance().listener.onCompletion();
     }

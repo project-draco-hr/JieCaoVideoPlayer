@@ -1,4 +1,7 @@
 {
+  if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+    JC_BURIED_POINT.POINT_QUIT_FULLSCREEN(url,objects);
+  }
   JCMediaManager.intance().mediaPlayer.setDisplay(null);
   JCMediaManager.intance().listener=JCMediaManager.intance().lastListener;
   JCMediaManager.intance().lastState=CURRENT_STATE;
