@@ -1,0 +1,9 @@
+{
+  super.setUp(url,objects);
+  if (IF_CURRENT_IS_FULLSCREEN) {
+    tvTitle.setVisibility(View.VISIBLE);
+  }
+ else {
+    tvTitle.setVisibility(View.INVISIBLE);
+  }
+}
