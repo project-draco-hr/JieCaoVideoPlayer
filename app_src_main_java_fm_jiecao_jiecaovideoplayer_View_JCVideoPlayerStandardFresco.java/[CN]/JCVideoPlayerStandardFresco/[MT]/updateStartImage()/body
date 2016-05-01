@@ -1,0 +1,11 @@
+{
+  if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+    ivStart.setImageResource(R.drawable.jc_click_pause_selector);
+  }
+ else   if (CURRENT_STATE == CURRENT_STATE_ERROR) {
+    ivStart.setImageResource(R.drawable.jc_click_error_selector);
+  }
+ else {
+    ivStart.setImageResource(R.drawable.jc_click_play_selector);
+  }
+}

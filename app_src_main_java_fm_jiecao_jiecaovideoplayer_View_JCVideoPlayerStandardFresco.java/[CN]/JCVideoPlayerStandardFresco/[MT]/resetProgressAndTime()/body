@@ -1,0 +1,5 @@
+{
+  super.resetProgressAndTime();
+  pbBottom.setProgress(0);
+  pbBottom.setSecondaryProgress(0);
+}

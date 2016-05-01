@@ -1,0 +1,11 @@
+{
+  super.init(context);
+  pbBottom=(ProgressBar)findViewById(R.id.bottom_progressbar);
+  tvTitle=(TextView)findViewById(R.id.title);
+  ivBack=(ImageView)findViewById(R.id.back);
+  ivThumb=(SimpleDraweeView)findViewById(R.id.thumb);
+  ivCover=(ImageView)findViewById(R.id.cover);
+  pbLoading=(ProgressBar)findViewById(R.id.loading);
+  ivThumb.setOnClickListener(this);
+  ivBack.setOnClickListener(this);
+}
