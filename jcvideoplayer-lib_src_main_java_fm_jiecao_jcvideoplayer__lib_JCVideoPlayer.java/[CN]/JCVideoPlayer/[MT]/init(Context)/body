@@ -10,6 +10,7 @@
   llTopContainer=(ViewGroup)findViewById(R.id.layout_top);
   surfaceView=(JCResizeSurfaceView)this.findViewById(R.id.surfaceView);
   surfaceHolder=surfaceView.getHolder();
+  surfaceHolder.addCallback(this);
   ivStart.setOnClickListener(this);
   ivFullScreen.setOnClickListener(this);
   skProgress.setOnSeekBarChangeListener(this);

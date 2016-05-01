@@ -1,4 +1,5 @@
 {
   CURRENT_STATE=JCMediaManager.intance().lastState;
+  BACK_FROM_FULLSCREEN=true;
   setStateAndUi(CURRENT_STATE);
 }

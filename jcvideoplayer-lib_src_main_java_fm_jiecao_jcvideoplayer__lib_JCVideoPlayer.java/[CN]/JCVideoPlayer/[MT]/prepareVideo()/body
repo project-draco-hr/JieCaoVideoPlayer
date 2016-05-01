@@ -4,6 +4,8 @@
   }
   JCMediaManager.intance().listener=this;
   JCMediaManager.intance().prepareToPlay(getContext(),url);
-  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+  if (!IF_CURRENT_IS_FULLSCREEN) {
+    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+  }
   setStateAndUi(CURRENT_STATE_PREPAREING);
 }
