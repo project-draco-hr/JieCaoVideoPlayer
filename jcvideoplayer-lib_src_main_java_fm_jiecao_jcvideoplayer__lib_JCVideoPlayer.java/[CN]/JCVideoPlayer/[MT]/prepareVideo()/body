@@ -3,7 +3,7 @@
     JCMediaManager.intance().listener.onCompletion();
   }
   JCMediaManager.intance().listener=this;
-  addSurfaceView();
   JCMediaManager.intance().prepareToPlay(getContext(),url);
+  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
   setStateAndUi(CURRENT_STATE_PREPAREING);
 }

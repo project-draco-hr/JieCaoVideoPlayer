@@ -1,4 +1,3 @@
 {
-  JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
   ifNeedCreateSurfaceView=false;
 }

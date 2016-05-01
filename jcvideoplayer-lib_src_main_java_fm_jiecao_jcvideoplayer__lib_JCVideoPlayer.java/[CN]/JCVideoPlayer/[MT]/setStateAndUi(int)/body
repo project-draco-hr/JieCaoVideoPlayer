@@ -3,12 +3,9 @@
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
     cancelProgressTimer();
-  if (rlSurfaceContainer.getChildCount() > 0) {
-    rlSurfaceContainer.removeAllViews();
+  if (JCMediaManager.intance().listener == this) {
+    JCMediaManager.intance().mediaPlayer.release();
   }
-if (JCMediaManager.intance().listener == this) {
-  JCMediaManager.intance().mediaPlayer.release();
-}
 break;
 case CURRENT_STATE_PREPAREING:
 break;
