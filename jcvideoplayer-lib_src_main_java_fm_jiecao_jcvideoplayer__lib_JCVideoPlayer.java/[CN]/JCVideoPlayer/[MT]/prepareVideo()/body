@@ -5,7 +5,7 @@
   JCMediaManager.intance().listener=this;
   JCMediaManager.intance().prepareToPlay(getContext(),url);
   if (!IF_CURRENT_IS_FULLSCREEN) {
-    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+    setDisplayCaseFailse();
   }
   setStateAndUi(CURRENT_STATE_PREPAREING);
 }

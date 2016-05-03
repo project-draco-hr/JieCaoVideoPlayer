@@ -1,10 +1,14 @@
 {
+  if (FalseSetDisPlay) {
+    FalseSetDisPlay=false;
+    setDisplayCaseFailse();
+  }
   if (IF_CURRENT_IS_FULLSCREEN) {
-    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+    setDisplayCaseFailse();
   }
   if (BACK_FROM_FULLSCREEN) {
     BACK_FROM_FULLSCREEN=false;
-    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+    setDisplayCaseFailse();
   }
   ifNeedCreateSurfaceView=false;
 }

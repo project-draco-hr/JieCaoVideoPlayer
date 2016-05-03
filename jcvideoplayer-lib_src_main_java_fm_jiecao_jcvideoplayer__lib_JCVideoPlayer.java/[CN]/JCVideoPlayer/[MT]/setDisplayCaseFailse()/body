@@ -1,0 +1,9 @@
+{
+  try {
+    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+  }
+ catch (  IllegalArgumentException e) {
+    FalseSetDisPlay=true;
+    addSurfaceView();
+  }
+}
