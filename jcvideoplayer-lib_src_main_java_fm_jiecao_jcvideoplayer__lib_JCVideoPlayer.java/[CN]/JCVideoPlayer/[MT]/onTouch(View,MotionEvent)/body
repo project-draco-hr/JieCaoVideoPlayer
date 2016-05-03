@@ -9,10 +9,10 @@ touchingProgressBar=false;
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 if (IF_CURRENT_IS_FULLSCREEN) {
-JC_BURIED_POINT.POINT_CLICK_SEEKBAR_FULLSCREEN(url,objects);
+JC_BURIED_POINT.onClickSeekbarFullscreen(url,objects);
 }
  else {
-JC_BURIED_POINT.POINT_CLICK_SEEKBAR(url,objects);
+JC_BURIED_POINT.onClickSeekbar(url,objects);
 }
 }
 break;

@@ -7,10 +7,10 @@
     }
     if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
       if (JC_BURIED_POINT != null && CURRENT_STATE == CURRENT_STATE_NORMAL) {
-        JC_BURIED_POINT.POINT_START_ICON(url,objects);
+        JC_BURIED_POINT.onClickStartIcon(url,objects);
       }
  else       if (JC_BURIED_POINT != null) {
-        JC_BURIED_POINT.POINT_START_ERROR(url,objects);
+        JC_BURIED_POINT.onClickStartError(url,objects);
       }
       prepareVideo();
     }
@@ -19,20 +19,20 @@
       setStateAndUi(CURRENT_STATE_PAUSE);
       if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         if (IF_CURRENT_IS_FULLSCREEN) {
-          JC_BURIED_POINT.POINT_STOP_FULLSCREEN(url,objects);
+          JC_BURIED_POINT.onClickStopFullscreen(url,objects);
         }
  else {
-          JC_BURIED_POINT.POINT_STOP(url,objects);
+          JC_BURIED_POINT.onClickStop(url,objects);
         }
       }
     }
  else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
       if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
         if (IF_CURRENT_IS_FULLSCREEN) {
-          JC_BURIED_POINT.POINT_RESUME_FULLSCREEN(url,objects);
+          JC_BURIED_POINT.onClickResumeFullscreen(url,objects);
         }
  else {
-          JC_BURIED_POINT.POINT_RESUME(url,objects);
+          JC_BURIED_POINT.onClickResume(url,objects);
         }
       }
       JCMediaManager.intance().mediaPlayer.start();
@@ -45,7 +45,7 @@
     }
  else {
       if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
-        JC_BURIED_POINT.POINT_ENTER_FULLSCREEN(url,objects);
+        JC_BURIED_POINT.onEnterFullscreen(url,objects);
       }
       JCMediaManager.intance().mediaPlayer.setDisplay(null);
       JCMediaManager.intance().lastListener=this;
@@ -57,7 +57,7 @@
   }
  else   if (i == R.id.surface_container && CURRENT_STATE == CURRENT_STATE_ERROR) {
     if (JC_BURIED_POINT != null) {
-      JC_BURIED_POINT.POINT_START_ERROR(url,objects);
+      JC_BURIED_POINT.onClickStartError(url,objects);
     }
     prepareVideo();
   }
