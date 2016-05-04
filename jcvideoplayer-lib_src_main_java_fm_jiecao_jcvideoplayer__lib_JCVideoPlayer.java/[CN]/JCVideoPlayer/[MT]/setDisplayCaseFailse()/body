@@ -3,7 +3,9 @@
     JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
   }
  catch (  IllegalArgumentException e) {
+    Log.i(TAG,"recreate surfaceview");
     FalseSetDisPlay=true;
     addSurfaceView();
+    e.printStackTrace();
   }
 }
