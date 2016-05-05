@@ -3,8 +3,7 @@
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
     changeUiToNormal();
-  cancelDismissControlViewTimer();
-break;
+  break;
 case CURRENT_STATE_PREPAREING:
 changeUiToShowUiPrepareing();
 startDismissControlViewTimer();

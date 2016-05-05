@@ -2,11 +2,10 @@
   CURRENT_STATE=state;
 switch (CURRENT_STATE) {
 case CURRENT_STATE_NORMAL:
-    cancelProgressTimer();
-  if (JCMediaManager.intance().listener == this) {
-    JCMediaManager.intance().mediaPlayer.release();
-  }
-break;
+    if (JCMediaManager.intance().listener == this) {
+      JCMediaManager.intance().mediaPlayer.release();
+    }
+  break;
 case CURRENT_STATE_PREPAREING:
 break;
 case CURRENT_STATE_PLAYING:
