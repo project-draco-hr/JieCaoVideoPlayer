@@ -1,7 +1,7 @@
 {
 switch (v.getId()) {
 case R.id.to_fullscreen_simple:
-    JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerSimple.class,"????????????");
+    showProgressDialog(random.nextInt(100),random.nextInt(100));
   break;
 case R.id.to_fullscreen_standard:
 JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.class,"???????????????");

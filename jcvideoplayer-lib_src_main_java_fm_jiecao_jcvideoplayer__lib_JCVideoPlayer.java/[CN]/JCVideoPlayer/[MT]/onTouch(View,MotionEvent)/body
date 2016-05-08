@@ -1,11 +1,39 @@
 {
+  float x=event.getX();
+  float y=event.getY();
   int id=v.getId();
   if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
       touchingProgressBar=true;
-    cancelProgressTimer();
-  break;
+    downX=x;
+  downY=y;
+changeVolume=false;
+changePosition=false;
+cancelProgressTimer();
+break;
+case MotionEvent.ACTION_MOVE:
+float deltaX=x - downX;
+float deltaY=y - downY;
+float absDeltaX=Math.abs(deltaX);
+float absDeltaY=Math.abs(deltaY);
+if (!changePosition && !changeVolume) {
+if (absDeltaX > threshold || absDeltaY > threshold) {
+if (absDeltaX >= threshold) {
+changePosition=true;
+}
+ else {
+changeVolume=true;
+}
+}
+}
+if (changePosition) {
+Log.i(TAG,"onTouch: changePosition " + deltaX);
+}
+if (changeVolume) {
+Log.i(TAG,"onTouch: changeVolume");
+}
+break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
 startProgressTimer();
