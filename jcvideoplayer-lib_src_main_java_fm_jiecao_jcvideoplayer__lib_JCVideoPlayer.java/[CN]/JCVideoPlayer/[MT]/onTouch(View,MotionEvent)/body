@@ -21,6 +21,7 @@ if (!changePosition && !changeVolume) {
 if (absDeltaX > threshold || absDeltaY > threshold) {
 if (absDeltaX >= threshold) {
 changePosition=true;
+downPosition=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
 }
  else {
 changeVolume=true;
@@ -29,6 +30,7 @@ changeVolume=true;
 }
 if (changePosition) {
 Log.i(TAG,"onTouch: changePosition " + deltaX);
+showProgressDialog(deltaX);
 }
 if (changeVolume) {
 Log.i(TAG,"onTouch: changeVolume");
@@ -36,6 +38,12 @@ Log.i(TAG,"onTouch: changeVolume");
 break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
+if (dialog != null) {
+dialog.dismiss();
+}
+if (changePosition) {
+JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
+}
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 if (IF_CURRENT_IS_FULLSCREEN) {

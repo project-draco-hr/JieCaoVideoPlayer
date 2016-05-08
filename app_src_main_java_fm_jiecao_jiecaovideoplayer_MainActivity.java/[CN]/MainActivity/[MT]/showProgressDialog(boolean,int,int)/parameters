@@ -1,2 +1,3 @@
+boolean backwardOrForward
 int currentTime
 int totalTime
