@@ -17,4 +17,5 @@
   llBottomControl.setOnClickListener(this);
   rlSurfaceContainer.setOnClickListener(this);
   skProgress.setOnTouchListener(this);
+  rlSurfaceContainer.setOnTouchListener(this);
 }

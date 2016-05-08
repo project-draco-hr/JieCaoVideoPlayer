@@ -1,11 +1,14 @@
 {
+  int id=v.getId();
+  if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-    cancelDismissControlViewTimer();
-  break;
+      cancelDismissControlViewTimer();
+    break;
 case MotionEvent.ACTION_UP:
-startDismissControlViewTimer();
+  startDismissControlViewTimer();
 break;
+}
 }
 return super.onTouch(v,event);
 }

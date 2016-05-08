@@ -1,9 +1,11 @@
 {
+  int id=v.getId();
+  if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-    touchingProgressBar=true;
-  cancelProgressTimer();
-break;
+      touchingProgressBar=true;
+    cancelProgressTimer();
+  break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
 startProgressTimer();
@@ -16,6 +18,7 @@ JC_BURIED_POINT.onClickSeekbar(url,objects);
 }
 }
 break;
+}
 }
 return false;
 }
