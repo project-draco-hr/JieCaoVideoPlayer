@@ -1,13 +1,63 @@
 {
+  float x=event.getX();
+  float y=event.getY();
   int id=v.getId();
   if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
       touchingProgressBar=true;
-    cancelProgressTimer();
-  break;
+    downX=x;
+  downY=y;
+changeVolume=false;
+changePosition=false;
+cancelProgressTimer();
+break;
+case MotionEvent.ACTION_MOVE:
+float deltaX=x - downX;
+float deltaY=y - downY;
+float absDeltaX=Math.abs(deltaX);
+float absDeltaY=Math.abs(deltaY);
+if (IF_CURRENT_IS_FULLSCREEN) {
+if (!changePosition && !changeVolume) {
+if (absDeltaX > threshold || absDeltaY > threshold) {
+if (absDeltaX >= threshold) {
+changePosition=true;
+downPosition=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
+if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+JC_BURIED_POINT.onTouchScreenSeekPosition(url,objects);
+}
+}
+ else {
+changeVolume=true;
+downVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+JC_BURIED_POINT.onTouchScreenSeekVolume(url,objects);
+}
+}
+}
+}
+}
+if (changePosition) {
+showProgressDialog(deltaX);
+}
+if (changeVolume) {
+showVolumDialog(-deltaY);
+}
+break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
+if (dialogProgress != null) {
+dialogProgress.dismiss();
+}
+if (dialogVolum != null) {
+dialogVolum.dismiss();
+}
+if (changePosition) {
+JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
+int duration=JCMediaManager.intance().mediaPlayer.getDuration();
+int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
+skProgress.setProgress(progress);
+}
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 if (IF_CURRENT_IS_FULLSCREEN) {

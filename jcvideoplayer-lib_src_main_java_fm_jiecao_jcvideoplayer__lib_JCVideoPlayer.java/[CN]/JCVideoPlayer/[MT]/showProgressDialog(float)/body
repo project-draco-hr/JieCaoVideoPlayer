@@ -1,0 +1,33 @@
+{
+  if (dialogProgress == null) {
+    View localView=LayoutInflater.from(getContext()).inflate(fm.jiecao.jcvideoplayer_lib.R.layout.jc_progress_dialog,null);
+    dpPb=((ProgressBar)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_progressbar));
+    dpTvCurrent=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_current));
+    dpTvTotal=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_duration));
+    dpIv=((ImageView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_image_tip));
+    dialogProgress=new Dialog(getContext(),fm.jiecao.jcvideoplayer_lib.R.style.jc_style_dialog_progress);
+    dialogProgress.setContentView(localView);
+    dialogProgress.getWindow().addFlags(Window.FEATURE_ACTION_BAR);
+    dialogProgress.getWindow().addFlags(32);
+    dialogProgress.getWindow().addFlags(16);
+    dialogProgress.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=dialogProgress.getWindow().getAttributes();
+    localLayoutParams.gravity=49;
+    localLayoutParams.y=getResources().getDimensionPixelOffset(fm.jiecao.jcvideoplayer_lib.R.dimen.jc_progress_dialog_margin_top);
+    dialogProgress.getWindow().setAttributes(localLayoutParams);
+  }
+  if (!dialogProgress.isShowing()) {
+    dialogProgress.show();
+  }
+  int totalTime=JCMediaManager.intance().mediaPlayer.getDuration();
+  resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
+  dpTvCurrent.setText(JCUtils.stringForTime(resultTimePosition));
+  dpTvTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
+  dpPb.setProgress(resultTimePosition * 100 / totalTime);
+  if (deltaX > 0) {
+    dpIv.setBackgroundResource(R.drawable.jc_forward_icon);
+  }
+ else {
+    dpIv.setBackgroundResource(R.drawable.jc_backward_icon);
+  }
+}

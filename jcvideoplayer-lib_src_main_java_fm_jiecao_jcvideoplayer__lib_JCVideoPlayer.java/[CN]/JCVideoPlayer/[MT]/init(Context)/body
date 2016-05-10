@@ -18,4 +18,7 @@
   rlSurfaceContainer.setOnClickListener(this);
   skProgress.setOnTouchListener(this);
   rlSurfaceContainer.setOnTouchListener(this);
+  screenWidth=getContext().getResources().getDisplayMetrics().widthPixels;
+  screenHeight=getContext().getResources().getDisplayMetrics().heightPixels;
+  mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
 }
