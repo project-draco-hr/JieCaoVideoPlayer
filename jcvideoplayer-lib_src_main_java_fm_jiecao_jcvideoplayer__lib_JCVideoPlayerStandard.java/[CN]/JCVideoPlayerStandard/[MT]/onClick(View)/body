@@ -23,7 +23,6 @@
         jc_BuriedPointStandard.onClickBlank(url,objects);
       }
     }
-    onClickUiToggle();
     startDismissControlViewTimer();
   }
  else   if (i == R.id.back) {
