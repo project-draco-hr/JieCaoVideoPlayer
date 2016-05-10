@@ -43,6 +43,9 @@ dialog.dismiss();
 }
 if (changePosition) {
 JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
+int duration=JCMediaManager.intance().mediaPlayer.getDuration();
+int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
+skProgress.setProgress(progress);
 }
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {

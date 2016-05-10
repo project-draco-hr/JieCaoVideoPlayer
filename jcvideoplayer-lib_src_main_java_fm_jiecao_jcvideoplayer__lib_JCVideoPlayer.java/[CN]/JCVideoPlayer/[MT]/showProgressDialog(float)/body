@@ -23,7 +23,7 @@
   resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
   tvCurrent.setText(JCUtils.stringForTime(resultTimePosition));
   tvTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
-  progressBar.setProgress((int)(resultTimePosition * 100 / totalTime));
+  progressBar.setProgress(resultTimePosition * 100 / totalTime);
   if (deltaX > 0) {
     imageView.setBackgroundResource(R.drawable.forardicon_video);
   }
