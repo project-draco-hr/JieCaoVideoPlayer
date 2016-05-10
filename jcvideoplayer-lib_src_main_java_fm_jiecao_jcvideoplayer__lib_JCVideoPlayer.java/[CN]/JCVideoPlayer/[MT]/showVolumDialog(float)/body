@@ -1,7 +1,7 @@
 {
   if (dialogVolum == null) {
-    View localView=LayoutInflater.from(getContext()).inflate(R.layout.video_volume_dialog,null);
-    dialogVolumProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
+    View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_volume_dialog,null);
+    dvProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
     dialogVolum=new Dialog(getContext(),R.style.jc_style_dialog_progress);
     dialogVolum.setContentView(localView);
     dialogVolum.getWindow().addFlags(8);
@@ -20,5 +20,5 @@
   int deltaV=(int)(max * deltaY * 3 / screenHeight);
   mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,downVolume + deltaV,0);
   int transformatVolume=(int)(downVolume * 100 / max + deltaY * 3 * 100 / screenHeight);
-  dialogVolumProgressBar.setProgress(transformatVolume);
+  dvProgressBar.setProgress(transformatVolume);
 }
