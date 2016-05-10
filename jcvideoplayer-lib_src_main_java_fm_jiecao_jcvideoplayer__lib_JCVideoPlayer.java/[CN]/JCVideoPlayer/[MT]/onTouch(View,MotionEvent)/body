@@ -25,21 +25,24 @@ downPosition=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
 }
  else {
 changeVolume=true;
+downVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 }
 }
 }
 if (changePosition) {
-Log.i(TAG,"onTouch: changePosition " + deltaX);
 showProgressDialog(deltaX);
 }
 if (changeVolume) {
-Log.i(TAG,"onTouch: changeVolume");
+showVolumDialog(-deltaY);
 }
 break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
-if (dialog != null) {
-dialog.dismiss();
+if (dialogProgress != null) {
+dialogProgress.dismiss();
+}
+if (dialogVolum != null) {
+dialogVolum.dismiss();
 }
 if (changePosition) {
 JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);

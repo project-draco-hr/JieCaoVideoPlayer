@@ -1,0 +1,24 @@
+{
+  if (dialogVolum == null) {
+    View localView=LayoutInflater.from(getContext()).inflate(R.layout.video_volume_dialog,null);
+    dialogVolumProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
+    dialogVolum=new Dialog(getContext(),R.style.jc_style_dialog_progress);
+    dialogVolum.setContentView(localView);
+    dialogVolum.getWindow().addFlags(8);
+    dialogVolum.getWindow().addFlags(32);
+    dialogVolum.getWindow().addFlags(16);
+    dialogVolum.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=dialogVolum.getWindow().getAttributes();
+    localLayoutParams.gravity=19;
+    localLayoutParams.x=getContext().getResources().getDimensionPixelOffset(R.dimen.volume_dlg_margin_left);
+    dialogVolum.getWindow().setAttributes(localLayoutParams);
+  }
+  if (!dialogVolum.isShowing()) {
+    dialogVolum.show();
+  }
+  int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+  int deltaV=(int)(max * deltaY * 3 / screenHeight);
+  mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,downVolume + deltaV,0);
+  int transformatVolume=(int)(downVolume * 100 / max + deltaY * 3 * 100 / screenHeight);
+  dialogVolumProgressBar.setProgress(transformatVolume);
+}
