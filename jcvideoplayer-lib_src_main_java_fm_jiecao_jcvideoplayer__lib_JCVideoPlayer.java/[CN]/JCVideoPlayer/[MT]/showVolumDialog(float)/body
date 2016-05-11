@@ -1,24 +1,24 @@
 {
-  if (dialogVolum == null) {
+  if (dlgVolume == null) {
     View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_volume_dialog,null);
-    dvProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
-    dialogVolum=new Dialog(getContext(),R.style.jc_style_dialog_progress);
-    dialogVolum.setContentView(localView);
-    dialogVolum.getWindow().addFlags(8);
-    dialogVolum.getWindow().addFlags(32);
-    dialogVolum.getWindow().addFlags(16);
-    dialogVolum.getWindow().setLayout(-2,-2);
-    WindowManager.LayoutParams localLayoutParams=dialogVolum.getWindow().getAttributes();
+    dlgVolumeProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
+    dlgVolume=new Dialog(getContext(),R.style.jc_style_dialog_progress);
+    dlgVolume.setContentView(localView);
+    dlgVolume.getWindow().addFlags(8);
+    dlgVolume.getWindow().addFlags(32);
+    dlgVolume.getWindow().addFlags(16);
+    dlgVolume.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=dlgVolume.getWindow().getAttributes();
     localLayoutParams.gravity=19;
     localLayoutParams.x=getContext().getResources().getDimensionPixelOffset(R.dimen.jc_volume_dialog_margin_left);
-    dialogVolum.getWindow().setAttributes(localLayoutParams);
+    dlgVolume.getWindow().setAttributes(localLayoutParams);
   }
-  if (!dialogVolum.isShowing()) {
-    dialogVolum.show();
+  if (!dlgVolume.isShowing()) {
+    dlgVolume.show();
   }
   int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
   int deltaV=(int)(max * deltaY * 3 / screenHeight);
   mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,downVolume + deltaV,0);
   int transformatVolume=(int)(downVolume * 100 / max + deltaY * 3 * 100 / screenHeight);
-  dvProgressBar.setProgress(transformatVolume);
+  dlgVolumeProgressBar.setProgress(transformatVolume);
 }

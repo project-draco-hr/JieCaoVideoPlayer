@@ -48,11 +48,11 @@ showVolumDialog(-deltaY);
 break;
 case MotionEvent.ACTION_UP:
 touchingProgressBar=false;
-if (dialogProgress != null) {
-dialogProgress.dismiss();
+if (dlgProgress != null) {
+dlgProgress.dismiss();
 }
-if (dialogVolum != null) {
-dialogVolum.dismiss();
+if (dlgVolume != null) {
+dlgVolume.dismiss();
 }
 if (changePosition) {
 JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);

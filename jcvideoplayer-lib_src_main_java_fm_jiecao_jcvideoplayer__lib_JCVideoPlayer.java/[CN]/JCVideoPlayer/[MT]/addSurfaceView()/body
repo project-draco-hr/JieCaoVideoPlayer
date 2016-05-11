@@ -3,7 +3,6 @@
     rlSurfaceContainer.removeAllViews();
   }
   surfaceView=new JCResizeSurfaceView(getContext());
-  surfaceId=surfaceView.getId();
   surfaceHolder=surfaceView.getHolder();
   surfaceHolder.addCallback(this);
   RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
