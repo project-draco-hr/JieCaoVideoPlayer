@@ -21,10 +21,12 @@ if (IF_CURRENT_IS_FULLSCREEN) {
 if (!changePosition && !changeVolume) {
 if (absDeltaX > threshold || absDeltaY > threshold) {
 if (absDeltaX >= threshold) {
+if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
 changePosition=true;
 downPosition=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 JC_BURIED_POINT.onTouchScreenSeekPosition(url,objects);
+}
 }
 }
  else {
