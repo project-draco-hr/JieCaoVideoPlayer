@@ -1,0 +1,7 @@
+{
+  if (v.getId() == R.id.fullscreen && CURRENT_STATE == CURRENT_STATE_NORMAL) {
+    Toast.makeText(getContext(),"Play video first",Toast.LENGTH_SHORT).show();
+    return;
+  }
+  super.onClick(v);
+}
