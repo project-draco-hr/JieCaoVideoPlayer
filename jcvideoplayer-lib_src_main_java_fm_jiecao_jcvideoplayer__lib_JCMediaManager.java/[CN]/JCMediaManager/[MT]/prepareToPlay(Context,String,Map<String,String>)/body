@@ -6,7 +6,7 @@
     mediaPlayer.release();
     mediaPlayer=new MediaPlayer();
     mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-    mediaPlayer.setDataSource(context,Uri.parse(url));
+    mediaPlayer.setDataSource(context,Uri.parse(url),mapHeadData);
     mediaPlayer.setOnPreparedListener(this);
     mediaPlayer.setOnCompletionListener(this);
     mediaPlayer.setOnBufferingUpdateListener(this);

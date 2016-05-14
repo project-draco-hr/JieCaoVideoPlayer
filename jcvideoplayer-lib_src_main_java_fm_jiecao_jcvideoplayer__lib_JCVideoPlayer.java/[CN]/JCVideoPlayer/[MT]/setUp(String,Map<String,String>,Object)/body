@@ -1,0 +1,6 @@
+{
+  if (JCMediaManager.intance().listener == this && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) < FULL_SCREEN_NORMAL_DELAY)   return;
+  setUp(url,objects);
+  this.mapHeadData.clear();
+  this.mapHeadData.putAll(mapHeadData);
+}
