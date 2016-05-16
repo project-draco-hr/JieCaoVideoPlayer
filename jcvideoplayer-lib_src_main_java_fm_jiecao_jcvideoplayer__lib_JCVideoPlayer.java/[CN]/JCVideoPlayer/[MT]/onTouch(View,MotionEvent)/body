@@ -75,6 +75,7 @@ break;
  else if (id == R.id.progress) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
+cancelProgressTimer();
 ViewParent vpdown=getParent();
 while (vpdown != null) {
 vpdown.requestDisallowInterceptTouchEvent(true);
@@ -82,6 +83,7 @@ vpdown=vpdown.getParent();
 }
 break;
 case MotionEvent.ACTION_UP:
+startProgressTimer();
 ViewParent vpup=getParent();
 while (vpup != null) {
 vpup.requestDisallowInterceptTouchEvent(false);
