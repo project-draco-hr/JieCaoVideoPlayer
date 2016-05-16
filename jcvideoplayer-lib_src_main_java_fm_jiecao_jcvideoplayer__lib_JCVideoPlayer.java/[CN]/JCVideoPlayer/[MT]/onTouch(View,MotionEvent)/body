@@ -72,5 +72,23 @@ JC_BURIED_POINT.onClickSeekbar(url,objects);
 break;
 }
 }
+ else if (id == R.id.progress) {
+switch (event.getAction()) {
+case MotionEvent.ACTION_DOWN:
+ViewParent vpdown=getParent();
+while (vpdown != null) {
+vpdown.requestDisallowInterceptTouchEvent(true);
+vpdown=vpdown.getParent();
+}
+break;
+case MotionEvent.ACTION_UP:
+ViewParent vpup=getParent();
+while (vpup != null) {
+vpup.requestDisallowInterceptTouchEvent(false);
+vpup=vpup.getParent();
+}
+break;
+}
+}
 return false;
 }
