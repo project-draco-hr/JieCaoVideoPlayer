@@ -12,9 +12,6 @@ break;
 case R.id.to_list_viewpager_activity:
 startActivity(new Intent(MainActivity.this,ListViewpagerActivity.class));
 break;
-case R.id.to_list_viewpager_fragment_activity:
-startActivity(new Intent(MainActivity.this,ListViewPagerFragmentActivity.class));
-break;
 case R.id.to_loadimage_activity:
 startActivity(new Intent(MainActivity.this,LoadImageActivity.class));
 break;

@@ -6,7 +6,7 @@
       if (getContext() != null && getContext() instanceof Activity) {
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+            if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
               setTextAndProgress(0);
             }
           }

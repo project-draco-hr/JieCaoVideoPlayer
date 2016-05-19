@@ -1,5 +1,5 @@
 {
-  if (what != 38) {
+  if (what != 38 && what != -38) {
     setStateAndUi(CURRENT_STATE_ERROR);
   }
 }
