@@ -19,11 +19,13 @@
   if (!dlgProgress.isShowing()) {
     dlgProgress.show();
   }
-  int totalTime=JCMediaManager.intance().mediaPlayer.getDuration();
-  resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
-  dlgProgressCurrent.setText(JCUtils.stringForTime(resultTimePosition));
-  dlgProgressTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
-  dlgProgressProgressBar.setProgress(resultTimePosition * 100 / totalTime);
+  if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
+    int totalTime=JCMediaManager.intance().mediaPlayer.getDuration();
+    resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
+    dlgProgressCurrent.setText(JCUtils.stringForTime(resultTimePosition));
+    dlgProgressTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
+    dlgProgressProgressBar.setProgress(resultTimePosition * 100 / totalTime);
+  }
   if (deltaX > 0) {
     dlgProgressIcon.setBackgroundResource(R.drawable.jc_forward_icon);
   }

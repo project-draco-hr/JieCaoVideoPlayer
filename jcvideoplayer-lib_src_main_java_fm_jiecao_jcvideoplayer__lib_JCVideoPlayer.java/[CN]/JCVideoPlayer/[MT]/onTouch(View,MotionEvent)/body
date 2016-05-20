@@ -56,9 +56,11 @@ dlgVolume.dismiss();
 }
 if (changePosition) {
 JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
+if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
 int duration=JCMediaManager.intance().mediaPlayer.getDuration();
 int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
 skProgress.setProgress(progress);
+}
 }
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
