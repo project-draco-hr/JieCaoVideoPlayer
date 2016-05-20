@@ -21,12 +21,10 @@ if (IF_CURRENT_IS_FULLSCREEN) {
 if (!changePosition && !changeVolume) {
 if (absDeltaX > threshold || absDeltaY > threshold) {
 if (absDeltaX >= threshold) {
-if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
 changePosition=true;
-downPosition=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
+downPosition=getCurrentPositionWhenPlaying();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
 JC_BURIED_POINT.onTouchScreenSeekPosition(url,objects);
-}
 }
 }
  else {
@@ -56,11 +54,9 @@ dlgVolume.dismiss();
 }
 if (changePosition) {
 JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
-if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
 int duration=JCMediaManager.intance().mediaPlayer.getDuration();
 int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
 skProgress.setProgress(progress);
-}
 }
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {

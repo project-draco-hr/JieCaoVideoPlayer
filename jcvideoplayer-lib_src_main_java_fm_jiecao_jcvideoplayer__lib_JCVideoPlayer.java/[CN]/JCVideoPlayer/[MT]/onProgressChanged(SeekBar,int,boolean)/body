@@ -1,8 +1,6 @@
 {
   if (fromUser) {
-    if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
-      int time=progress * JCMediaManager.intance().mediaPlayer.getDuration() / 100;
-      JCMediaManager.intance().mediaPlayer.seekTo(time);
-    }
+    int time=progress * JCMediaManager.intance().mediaPlayer.getDuration() / 100;
+    JCMediaManager.intance().mediaPlayer.seekTo(time);
   }
 }
