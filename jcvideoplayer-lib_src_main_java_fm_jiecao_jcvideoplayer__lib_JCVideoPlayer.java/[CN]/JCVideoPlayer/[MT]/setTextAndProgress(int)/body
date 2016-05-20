@@ -1,6 +1,8 @@
 {
-  int position=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
-  int duration=JCMediaManager.intance().mediaPlayer.getDuration();
-  int progress=position * 100 / (duration == 0 ? 1 : duration);
-  setProgressAndTime(progress,secProgress,position,duration);
+  if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
+    int position=JCMediaManager.intance().mediaPlayer.getCurrentPosition();
+    int duration=JCMediaManager.intance().mediaPlayer.getDuration();
+    int progress=position * 100 / (duration == 0 ? 1 : duration);
+    setProgressAndTime(progress,secProgress,position,duration);
+  }
 }
