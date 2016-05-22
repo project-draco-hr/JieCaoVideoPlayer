@@ -8,6 +8,6 @@
   finishMyFullscreen();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
-    JCMediaManager.intance().lastListener.onCompletion();
+    JCMediaManager.instance().lastListener.onCompletion();
   }
 }

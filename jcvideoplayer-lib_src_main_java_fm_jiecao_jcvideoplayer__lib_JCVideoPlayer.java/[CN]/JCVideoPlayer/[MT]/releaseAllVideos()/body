@@ -1,8 +1,8 @@
 {
   if (IF_RELEASE_WHEN_ON_PAUSE) {
-    JCMediaManager.intance().mediaPlayer.release();
-    if (JCMediaManager.intance().listener != null) {
-      JCMediaManager.intance().listener.onCompletion();
+    JCMediaManager.instance().mediaPlayer.release();
+    if (JCMediaManager.instance().listener != null) {
+      JCMediaManager.instance().listener.onCompletion();
     }
   }
  else {

@@ -10,7 +10,7 @@ case MotionEvent.ACTION_MOVE:
 case MotionEvent.ACTION_UP:
 startDismissControlViewTimer();
 if (changePosition) {
-int duration=JCMediaManager.intance().mediaPlayer.getDuration();
+int duration=JCMediaManager.instance().mediaPlayer.getDuration();
 int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
 pbBottom.setProgress(progress);
 }

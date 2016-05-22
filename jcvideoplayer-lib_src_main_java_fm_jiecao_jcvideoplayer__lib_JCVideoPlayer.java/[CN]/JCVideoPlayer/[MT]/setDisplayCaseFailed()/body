@@ -1,6 +1,6 @@
 {
   try {
-    JCMediaManager.intance().mediaPlayer.setDisplay(surfaceHolder);
+    JCMediaManager.instance().mediaPlayer.setDisplay(surfaceHolder);
   }
  catch (  IllegalArgumentException e) {
     Log.i(TAG,"recreate surfaceview from IllegalArgumentException");

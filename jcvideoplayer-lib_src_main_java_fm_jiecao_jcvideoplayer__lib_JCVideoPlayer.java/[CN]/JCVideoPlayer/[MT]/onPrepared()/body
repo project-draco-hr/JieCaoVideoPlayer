@@ -1,6 +1,6 @@
 {
   if (CURRENT_STATE != CURRENT_STATE_PREPAREING)   return;
-  JCMediaManager.intance().mediaPlayer.start();
+  JCMediaManager.instance().mediaPlayer.start();
   startProgressTimer();
   setStateAndUi(CURRENT_STATE_PLAYING);
 }

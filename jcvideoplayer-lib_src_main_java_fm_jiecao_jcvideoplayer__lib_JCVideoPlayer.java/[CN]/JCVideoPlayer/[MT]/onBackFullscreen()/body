@@ -1,4 +1,4 @@
 {
-  CURRENT_STATE=JCMediaManager.intance().lastState;
+  CURRENT_STATE=JCMediaManager.instance().lastState;
   setStateAndUi(CURRENT_STATE);
 }

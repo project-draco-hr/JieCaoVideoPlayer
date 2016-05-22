@@ -23,14 +23,14 @@ if (absDeltaX > threshold || absDeltaY > threshold) {
 if (absDeltaX >= threshold) {
 changePosition=true;
 downPosition=getCurrentPositionWhenPlaying();
-if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
 JC_BURIED_POINT.onTouchScreenSeekPosition(url,objects);
 }
 }
  else {
 changeVolume=true;
 downVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
 JC_BURIED_POINT.onTouchScreenSeekVolume(url,objects);
 }
 }
@@ -53,13 +53,13 @@ if (dlgVolume != null) {
 dlgVolume.dismiss();
 }
 if (changePosition) {
-JCMediaManager.intance().mediaPlayer.seekTo(resultTimePosition);
-int duration=JCMediaManager.intance().mediaPlayer.getDuration();
+JCMediaManager.instance().mediaPlayer.seekTo(resultTimePosition);
+int duration=JCMediaManager.instance().mediaPlayer.getDuration();
 int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
 skProgress.setProgress(progress);
 }
 startProgressTimer();
-if (JC_BURIED_POINT != null && JCMediaManager.intance().listener == this) {
+if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
 if (IF_CURRENT_IS_FULLSCREEN) {
 JC_BURIED_POINT.onClickSeekbarFullscreen(url,objects);
 }

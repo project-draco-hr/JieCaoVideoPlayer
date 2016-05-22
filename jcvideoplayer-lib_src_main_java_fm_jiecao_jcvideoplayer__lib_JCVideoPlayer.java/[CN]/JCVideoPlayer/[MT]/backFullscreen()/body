@@ -1,6 +1,6 @@
 {
   if (IF_FULLSCREEN_IS_DIRECTLY) {
-    JCMediaManager.intance().mediaPlayer.stop();
+    JCMediaManager.instance().mediaPlayer.stop();
     finishMyFullscreen();
   }
  else {

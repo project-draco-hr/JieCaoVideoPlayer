@@ -19,7 +19,7 @@
   if (!dlgProgress.isShowing()) {
     dlgProgress.show();
   }
-  int totalTime=JCMediaManager.intance().mediaPlayer.getDuration();
+  int totalTime=JCMediaManager.instance().mediaPlayer.getDuration();
   resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
   dlgProgressCurrent.setText(JCUtils.stringForTime(resultTimePosition));
   dlgProgressTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
