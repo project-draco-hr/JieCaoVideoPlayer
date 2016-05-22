@@ -1,14 +1,3 @@
 {
-  if (FalseSetDisPlay) {
-    FalseSetDisPlay=false;
-    setDisplayCaseFailse();
-  }
-  if (IF_CURRENT_IS_FULLSCREEN) {
-    setDisplayCaseFailse();
-  }
-  if (BACK_FROM_FULLSCREEN) {
-    BACK_FROM_FULLSCREEN=false;
-    setDisplayCaseFailse();
-  }
-  ifNeedCreateSurfaceView=false;
+  setDisplayCaseFailse();
 }

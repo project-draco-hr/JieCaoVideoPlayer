@@ -2,6 +2,9 @@
   cancelProgressTimer();
   resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
+  if (rlSurfaceContainer.getChildCount() > 0) {
+    rlSurfaceContainer.removeAllViews();
+  }
   finishMyFullscreen();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
