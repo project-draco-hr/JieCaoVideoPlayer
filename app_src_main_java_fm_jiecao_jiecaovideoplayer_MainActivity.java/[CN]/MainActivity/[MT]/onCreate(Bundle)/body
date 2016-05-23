@@ -7,11 +7,13 @@
   btnToListActivity=(Button)findViewById(R.id.to_list_activity);
   btnToListViewPagerActivity=(Button)findViewById(R.id.to_list_viewpager_activity);
   btnToImageLoadActivity=(Button)findViewById(R.id.to_loadimage_activity);
+  btnToMultiHolderActivity=(Button)findViewById(R.id.to_multiholder_activity);
   btnToFullscreen_simple.setOnClickListener(this);
   btnToFullscreen_standard.setOnClickListener(this);
   btnToListActivity.setOnClickListener(this);
   btnToListViewPagerActivity.setOnClickListener(this);
   btnToImageLoadActivity.setOnClickListener(this);
+  btnToMultiHolderActivity.setOnClickListener(this);
   Map<String,String> headData=new HashMap<>();
   headData.put("key1","value1");
   headData.put("key2","value2");
