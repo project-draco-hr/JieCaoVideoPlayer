@@ -16,6 +16,7 @@ startProgressTimer();
 break;
 case CURRENT_STATE_ERROR:
 JCMediaManager.instance().mediaPlayer.release();
+onCompletion();
 break;
 }
 }
