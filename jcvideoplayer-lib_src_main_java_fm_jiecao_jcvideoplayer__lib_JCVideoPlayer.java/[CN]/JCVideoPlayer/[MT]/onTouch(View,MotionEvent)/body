@@ -54,7 +54,7 @@ mVolumeDialog.dismiss();
 }
 if (mChangePosition) {
 JCMediaManager.instance().mediaPlayer.seekTo(mResultTimePosition);
-int duration=JCMediaManager.instance().mediaPlayer.getDuration();
+int duration=getDuration();
 int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
 progressBar.setProgress(progress);
 }

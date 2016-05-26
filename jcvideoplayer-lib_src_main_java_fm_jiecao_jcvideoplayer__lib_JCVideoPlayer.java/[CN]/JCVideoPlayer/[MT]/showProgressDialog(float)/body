@@ -19,7 +19,7 @@
   if (!mProgressDialog.isShowing()) {
     mProgressDialog.show();
   }
-  int totalTime=JCMediaManager.instance().mediaPlayer.getDuration();
+  int totalTime=getDuration();
   mResultTimePosition=(int)(mDownPosition + deltaX * totalTime / mScreenWidth);
   mDialogCurrentTime.setText(JCUtils.stringForTime(mResultTimePosition));
   mDialogTotalTime.setText(" / " + JCUtils.stringForTime(totalTime) + "");

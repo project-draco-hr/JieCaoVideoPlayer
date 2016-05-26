@@ -1,6 +1,6 @@
 {
   if (fromUser) {
-    int time=progress * JCMediaManager.instance().mediaPlayer.getDuration() / 100;
+    int time=progress * getDuration() / 100;
     JCMediaManager.instance().mediaPlayer.seekTo(time);
   }
 }
