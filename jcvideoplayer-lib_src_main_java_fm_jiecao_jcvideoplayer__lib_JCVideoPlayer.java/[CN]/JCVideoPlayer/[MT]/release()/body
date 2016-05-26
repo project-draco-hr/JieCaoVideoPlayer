@@ -1,5 +1,5 @@
 {
-  if (CURRENT_STATE != CURRENT_STATE_NORMAL) {
+  if (mCurrentState != CURRENT_STATE_NORMAL) {
     releaseAllVideos();
   }
 }

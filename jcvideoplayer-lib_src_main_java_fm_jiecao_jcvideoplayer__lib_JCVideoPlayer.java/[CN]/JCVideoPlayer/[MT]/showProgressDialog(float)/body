@@ -1,33 +1,33 @@
 {
-  if (dlgProgress == null) {
+  if (mProgressDialog == null) {
     View localView=LayoutInflater.from(getContext()).inflate(fm.jiecao.jcvideoplayer_lib.R.layout.jc_progress_dialog,null);
-    dlgProgressProgressBar=((ProgressBar)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_progressbar));
-    dlgProgressCurrent=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_current));
-    dlgProgressTotal=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_duration));
-    dlgProgressIcon=((ImageView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_image_tip));
-    dlgProgress=new Dialog(getContext(),fm.jiecao.jcvideoplayer_lib.R.style.jc_style_dialog_progress);
-    dlgProgress.setContentView(localView);
-    dlgProgress.getWindow().addFlags(Window.FEATURE_ACTION_BAR);
-    dlgProgress.getWindow().addFlags(32);
-    dlgProgress.getWindow().addFlags(16);
-    dlgProgress.getWindow().setLayout(-2,-2);
-    WindowManager.LayoutParams localLayoutParams=dlgProgress.getWindow().getAttributes();
+    mDialogProgressBar=((ProgressBar)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_progressbar));
+    mDialogCurrentTime=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_current));
+    mDialogTotalTime=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_duration));
+    mDialogIcon=((ImageView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_image_tip));
+    mProgressDialog=new Dialog(getContext(),fm.jiecao.jcvideoplayer_lib.R.style.jc_style_dialog_progress);
+    mProgressDialog.setContentView(localView);
+    mProgressDialog.getWindow().addFlags(Window.FEATURE_ACTION_BAR);
+    mProgressDialog.getWindow().addFlags(32);
+    mProgressDialog.getWindow().addFlags(16);
+    mProgressDialog.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=mProgressDialog.getWindow().getAttributes();
     localLayoutParams.gravity=49;
     localLayoutParams.y=getResources().getDimensionPixelOffset(fm.jiecao.jcvideoplayer_lib.R.dimen.jc_progress_dialog_margin_top);
-    dlgProgress.getWindow().setAttributes(localLayoutParams);
+    mProgressDialog.getWindow().setAttributes(localLayoutParams);
   }
-  if (!dlgProgress.isShowing()) {
-    dlgProgress.show();
+  if (!mProgressDialog.isShowing()) {
+    mProgressDialog.show();
   }
   int totalTime=JCMediaManager.instance().mediaPlayer.getDuration();
-  resultTimePosition=(int)(downPosition + deltaX * totalTime / screenWidth);
-  dlgProgressCurrent.setText(JCUtils.stringForTime(resultTimePosition));
-  dlgProgressTotal.setText(" / " + JCUtils.stringForTime(totalTime) + "");
-  dlgProgressProgressBar.setProgress(resultTimePosition * 100 / totalTime);
+  mResultTimePosition=(int)(mDownPosition + deltaX * totalTime / mScreenWidth);
+  mDialogCurrentTime.setText(JCUtils.stringForTime(mResultTimePosition));
+  mDialogTotalTime.setText(" / " + JCUtils.stringForTime(totalTime) + "");
+  mDialogProgressBar.setProgress(mResultTimePosition * 100 / totalTime);
   if (deltaX > 0) {
-    dlgProgressIcon.setBackgroundResource(R.drawable.jc_forward_icon);
+    mDialogIcon.setBackgroundResource(R.drawable.jc_forward_icon);
   }
  else {
-    dlgProgressIcon.setBackgroundResource(R.drawable.jc_backward_icon);
+    mDialogIcon.setBackgroundResource(R.drawable.jc_backward_icon);
   }
 }

@@ -1,6 +1,6 @@
 {
   int position=0;
-  if (CURRENT_STATE == CURRENT_STATE_PLAYING || CURRENT_STATE == CURRENT_STATE_PAUSE) {
+  if (mCurrentState == CURRENT_STATE_PLAYING || mCurrentState == CURRENT_STATE_PAUSE) {
     position=JCMediaManager.instance().mediaPlayer.getCurrentPosition();
   }
   return position;

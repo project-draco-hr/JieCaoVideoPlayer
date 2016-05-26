@@ -1,38 +1,38 @@
 {
   int i=v.getId();
   if (i == R.id.start) {
-    if (TextUtils.isEmpty(url)) {
-      Toast.makeText(getContext(),"No url",Toast.LENGTH_SHORT).show();
+    if (TextUtils.isEmpty(mUrl)) {
+      Toast.makeText(getContext(),"No mUrl",Toast.LENGTH_SHORT).show();
       return;
     }
-    if (CURRENT_STATE == CURRENT_STATE_NORMAL || CURRENT_STATE == CURRENT_STATE_ERROR) {
-      if (JC_BURIED_POINT != null && CURRENT_STATE == CURRENT_STATE_NORMAL) {
-        JC_BURIED_POINT.onClickStartIcon(url,objects);
+    if (mCurrentState == CURRENT_STATE_NORMAL || mCurrentState == CURRENT_STATE_ERROR) {
+      if (JC_BURIED_POINT != null && mCurrentState == CURRENT_STATE_NORMAL) {
+        JC_BURIED_POINT.onClickStartIcon(mUrl,mObjects);
       }
  else       if (JC_BURIED_POINT != null) {
-        JC_BURIED_POINT.onClickStartError(url,objects);
+        JC_BURIED_POINT.onClickStartError(mUrl,mObjects);
       }
       prepareVideo();
     }
- else     if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
+ else     if (mCurrentState == CURRENT_STATE_PLAYING) {
       JCMediaManager.instance().mediaPlayer.pause();
       setStateAndUi(CURRENT_STATE_PAUSE);
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-        if (IF_CURRENT_IS_FULLSCREEN) {
-          JC_BURIED_POINT.onClickStopFullscreen(url,objects);
+        if (mIfCurrentIsFullscreen) {
+          JC_BURIED_POINT.onClickStopFullscreen(mUrl,mObjects);
         }
  else {
-          JC_BURIED_POINT.onClickStop(url,objects);
+          JC_BURIED_POINT.onClickStop(mUrl,mObjects);
         }
       }
     }
- else     if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
+ else     if (mCurrentState == CURRENT_STATE_PAUSE) {
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-        if (IF_CURRENT_IS_FULLSCREEN) {
-          JC_BURIED_POINT.onClickResumeFullscreen(url,objects);
+        if (mIfCurrentIsFullscreen) {
+          JC_BURIED_POINT.onClickResumeFullscreen(mUrl,mObjects);
         }
  else {
-          JC_BURIED_POINT.onClickResume(url,objects);
+          JC_BURIED_POINT.onClickResume(mUrl,mObjects);
         }
       }
       JCMediaManager.instance().mediaPlayer.start();
@@ -40,24 +40,24 @@
     }
   }
  else   if (i == R.id.fullscreen) {
-    if (IF_CURRENT_IS_FULLSCREEN) {
+    if (mIfCurrentIsFullscreen) {
       backFullscreen();
     }
  else {
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-        JC_BURIED_POINT.onEnterFullscreen(url,objects);
+        JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
       }
       JCMediaManager.instance().mediaPlayer.setDisplay(null);
       JCMediaManager.instance().lastListener=this;
       JCMediaManager.instance().listener=null;
       IF_FULLSCREEN_FROM_NORMAL=true;
       IF_RELEASE_WHEN_ON_PAUSE=false;
-      JCFullScreenActivity.toActivityFromNormal(getContext(),CURRENT_STATE,url,JCVideoPlayer.this.getClass(),this.objects);
+      JCFullScreenActivity.toActivityFromNormal(getContext(),mCurrentState,mUrl,JCVideoPlayer.this.getClass(),this.mObjects);
     }
   }
- else   if (i == R.id.surface_container && CURRENT_STATE == CURRENT_STATE_ERROR) {
+ else   if (i == R.id.surface_container && mCurrentState == CURRENT_STATE_ERROR) {
     if (JC_BURIED_POINT != null) {
-      JC_BURIED_POINT.onClickStartError(url,objects);
+      JC_BURIED_POINT.onClickStartError(mUrl,mObjects);
     }
     prepareVideo();
   }

@@ -6,11 +6,11 @@
       if (getContext() != null && getContext() instanceof Activity) {
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            if (CURRENT_STATE != CURRENT_STATE_NORMAL && CURRENT_STATE != CURRENT_STATE_ERROR) {
-              llBottomControl.setVisibility(View.INVISIBLE);
-              llTopContainer.setVisibility(View.INVISIBLE);
+            if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_ERROR) {
+              bottomContainer.setVisibility(View.INVISIBLE);
+              topContainer.setVisibility(View.INVISIBLE);
               pbBottom.setVisibility(View.VISIBLE);
-              ivStart.setVisibility(View.INVISIBLE);
+              startButton.setVisibility(View.INVISIBLE);
             }
           }
         }

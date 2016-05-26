@@ -1,16 +1,16 @@
 {
   cancelDismissControlViewTimer();
-  mDismissControlViewTimer=new Timer();
-  mDismissControlViewTimer.schedule(new TimerTask(){
+  DISSMISS_CONTROL_VIEW_TIMER=new Timer();
+  DISSMISS_CONTROL_VIEW_TIMER.schedule(new TimerTask(){
     @Override public void run(){
       if (getContext() != null && getContext() instanceof Activity) {
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            if (CURRENT_STATE != CURRENT_STATE_NORMAL && CURRENT_STATE != CURRENT_STATE_ERROR) {
-              llBottomControl.setVisibility(View.INVISIBLE);
-              llTopContainer.setVisibility(View.INVISIBLE);
-              pbBottom.setVisibility(View.VISIBLE);
-              ivStart.setVisibility(View.INVISIBLE);
+            if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_ERROR) {
+              bottomContainer.setVisibility(View.INVISIBLE);
+              topContainer.setVisibility(View.INVISIBLE);
+              bottomProgressBar.setVisibility(View.VISIBLE);
+              startButton.setVisibility(View.INVISIBLE);
             }
           }
         }

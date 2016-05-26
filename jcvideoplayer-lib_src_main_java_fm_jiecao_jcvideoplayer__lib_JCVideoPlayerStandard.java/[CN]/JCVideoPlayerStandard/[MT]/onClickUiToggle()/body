@@ -1,22 +1,22 @@
 {
-  if (CURRENT_STATE == CURRENT_STATE_PREPAREING) {
-    if (llBottomControl.getVisibility() == View.VISIBLE) {
+  if (mCurrentState == CURRENT_STATE_PREPAREING) {
+    if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToClearUiPrepareing();
     }
  else {
       changeUiToShowUiPrepareing();
     }
   }
- else   if (CURRENT_STATE == CURRENT_STATE_PLAYING) {
-    if (llBottomControl.getVisibility() == View.VISIBLE) {
+ else   if (mCurrentState == CURRENT_STATE_PLAYING) {
+    if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToClearUiPlaying();
     }
  else {
       changeUiToShowUiPlaying();
     }
   }
- else   if (CURRENT_STATE == CURRENT_STATE_PAUSE) {
-    if (llBottomControl.getVisibility() == View.VISIBLE) {
+ else   if (mCurrentState == CURRENT_STATE_PAUSE) {
+    if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToClearUiPause();
     }
  else {

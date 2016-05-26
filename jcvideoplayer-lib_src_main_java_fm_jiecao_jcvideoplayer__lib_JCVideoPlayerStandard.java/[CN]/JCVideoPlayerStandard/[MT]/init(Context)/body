@@ -1,11 +1,11 @@
 {
   super.init(context);
-  pbBottom=(ProgressBar)findViewById(R.id.bottom_progressbar);
-  tvTitle=(TextView)findViewById(R.id.title);
-  ivBack=(ImageView)findViewById(R.id.back);
-  ivThumb=(ImageView)findViewById(R.id.thumb);
-  ivCover=(ImageView)findViewById(R.id.cover);
-  pbLoading=(ProgressBar)findViewById(R.id.loading);
-  ivThumb.setOnClickListener(this);
-  ivBack.setOnClickListener(this);
+  bottomProgressBar=(ProgressBar)findViewById(R.id.bottom_progressbar);
+  titleTextView=(TextView)findViewById(R.id.title);
+  backButton=(ImageView)findViewById(R.id.back);
+  thumbImageView=(ImageView)findViewById(R.id.thumb);
+  coverImageView=(ImageView)findViewById(R.id.cover);
+  loadingProgressBar=(ProgressBar)findViewById(R.id.loading);
+  thumbImageView.setOnClickListener(this);
+  backButton.setOnClickListener(this);
 }

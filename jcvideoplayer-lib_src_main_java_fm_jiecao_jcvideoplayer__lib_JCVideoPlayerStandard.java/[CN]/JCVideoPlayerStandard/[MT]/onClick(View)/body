@@ -2,25 +2,25 @@
   super.onClick(v);
   int i=v.getId();
   if (i == R.id.thumb) {
-    if (TextUtils.isEmpty(url)) {
-      Toast.makeText(getContext(),"No url",Toast.LENGTH_SHORT).show();
+    if (TextUtils.isEmpty(mUrl)) {
+      Toast.makeText(getContext(),"No mUrl",Toast.LENGTH_SHORT).show();
       return;
     }
-    if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
-      if (jc_BuriedPointStandard != null) {
-        jc_BuriedPointStandard.onClickStartThumb(url,objects);
+    if (mCurrentState == CURRENT_STATE_NORMAL) {
+      if (JC_BURIED_POINT_STANDARD != null) {
+        JC_BURIED_POINT_STANDARD.onClickStartThumb(mUrl,mObjects);
       }
       prepareVideo();
       startDismissControlViewTimer();
     }
   }
  else   if (i == R.id.surface_container) {
-    if (jc_BuriedPointStandard != null && JCMediaManager.instance().listener == this) {
-      if (IF_CURRENT_IS_FULLSCREEN) {
-        jc_BuriedPointStandard.onClickBlankFullscreen(url,objects);
+    if (JC_BURIED_POINT_STANDARD != null && JCMediaManager.instance().listener == this) {
+      if (mIfCurrentIsFullscreen) {
+        JC_BURIED_POINT_STANDARD.onClickBlankFullscreen(mUrl,mObjects);
       }
  else {
-        jc_BuriedPointStandard.onClickBlank(url,objects);
+        JC_BURIED_POINT_STANDARD.onClickBlank(mUrl,mObjects);
       }
     }
     startDismissControlViewTimer();

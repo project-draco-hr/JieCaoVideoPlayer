@@ -1,5 +1,5 @@
 {
   super.resetProgressAndTime();
-  pbBottom.setProgress(0);
-  pbBottom.setSecondaryProgress(0);
+  bottomProgressBar.setProgress(0);
+  bottomProgressBar.setSecondaryProgress(0);
 }

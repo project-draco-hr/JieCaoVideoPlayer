@@ -1,6 +1,6 @@
 {
-  CURRENT_STATE=state;
-switch (CURRENT_STATE) {
+  mCurrentState=state;
+switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
     if (JCMediaManager.instance().listener == this) {
       JCMediaManager.instance().mediaPlayer.release();

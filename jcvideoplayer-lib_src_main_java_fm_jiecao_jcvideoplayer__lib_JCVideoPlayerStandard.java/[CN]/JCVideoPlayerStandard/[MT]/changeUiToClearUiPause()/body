@@ -1,4 +1,4 @@
 {
   changeUiToClearUi();
-  pbBottom.setVisibility(View.VISIBLE);
+  bottomProgressBar.setVisibility(View.VISIBLE);
 }

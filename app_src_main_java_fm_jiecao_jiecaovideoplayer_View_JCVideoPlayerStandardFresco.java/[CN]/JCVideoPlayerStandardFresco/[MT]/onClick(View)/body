@@ -2,9 +2,9 @@
   super.onClick(v);
   int i=v.getId();
   if (i == R.id.thumb) {
-    if (CURRENT_STATE == CURRENT_STATE_NORMAL) {
+    if (mCurrentState == CURRENT_STATE_NORMAL) {
       if (jc_BuriedPointStandard != null) {
-        jc_BuriedPointStandard.onClickStartThumb(url,objects);
+        jc_BuriedPointStandard.onClickStartThumb(mUrl,mObjects);
       }
       prepareVideo();
       startDismissControlViewTimer();
@@ -12,11 +12,11 @@
   }
  else   if (i == R.id.surface_container) {
     if (jc_BuriedPointStandard != null && JCMediaManager.instance().listener == this) {
-      if (IF_CURRENT_IS_FULLSCREEN) {
-        jc_BuriedPointStandard.onClickBlankFullscreen(url,objects);
+      if (mIfCurrentIsFullscreen) {
+        jc_BuriedPointStandard.onClickBlankFullscreen(mUrl,mObjects);
       }
  else {
-        jc_BuriedPointStandard.onClickBlank(url,objects);
+        jc_BuriedPointStandard.onClickBlank(mUrl,mObjects);
       }
     }
     onClickUiToggle();

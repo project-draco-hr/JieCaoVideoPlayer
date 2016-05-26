@@ -1,10 +1,10 @@
 {
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-    if (IF_CURRENT_IS_FULLSCREEN) {
-      JC_BURIED_POINT.onAutoCompleteFullscreen(url,objects);
+    if (mIfCurrentIsFullscreen) {
+      JC_BURIED_POINT.onAutoCompleteFullscreen(mUrl,mObjects);
     }
  else {
-      JC_BURIED_POINT.onAutoComplete(url,objects);
+      JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
     }
   }
   onCompletion();

@@ -1,7 +1,7 @@
 {
-  llTopContainer.setVisibility(View.VISIBLE);
-  llBottomControl.setVisibility(View.VISIBLE);
-  ivStart.setVisibility(View.INVISIBLE);
+  topContainer.setVisibility(View.VISIBLE);
+  bottomContainer.setVisibility(View.VISIBLE);
+  startButton.setVisibility(View.INVISIBLE);
   pbLoading.setVisibility(View.VISIBLE);
   ivThumb.setVisibility(View.INVISIBLE);
   ivCover.setVisibility(View.VISIBLE);

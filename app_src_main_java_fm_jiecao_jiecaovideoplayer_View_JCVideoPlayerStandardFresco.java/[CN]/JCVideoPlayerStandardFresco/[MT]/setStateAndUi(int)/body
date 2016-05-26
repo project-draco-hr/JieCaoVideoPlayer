@@ -1,6 +1,6 @@
 {
   super.setStateAndUi(state);
-switch (CURRENT_STATE) {
+switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
     changeUiToNormal();
   cancelDismissControlViewTimer();

@@ -1,6 +1,6 @@
 {
-  skProgress.setProgress(0);
-  skProgress.setSecondaryProgress(0);
-  tvTimeCurrent.setText(JCUtils.stringForTime(0));
-  tvTimeTotal.setText(JCUtils.stringForTime(0));
+  progressBar.setProgress(0);
+  progressBar.setSecondaryProgress(0);
+  currentTimeTextView.setText(JCUtils.stringForTime(0));
+  totalTimeTextView.setText(JCUtils.stringForTime(0));
 }

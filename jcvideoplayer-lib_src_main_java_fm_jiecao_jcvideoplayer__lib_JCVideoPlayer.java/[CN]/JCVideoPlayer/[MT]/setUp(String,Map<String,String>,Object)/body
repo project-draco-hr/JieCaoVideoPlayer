@@ -1,7 +1,7 @@
 {
   if (setUp(url,objects)) {
-    this.mapHeadData.clear();
-    this.mapHeadData.putAll(mapHeadData);
+    this.mMapHeadData.clear();
+    this.mMapHeadData.putAll(mapHeadData);
     return true;
   }
   return false;

@@ -21,12 +21,12 @@
   jcVideoPlayerSimple.setUp("http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8",headData);
   jcVideoPlayerStandard=(JCVideoPlayerStandard)findViewById(R.id.custom_videoplayer_standard);
   jcVideoPlayerStandard.setUp("http://2449.vod.myqcloud.com/2449_bfbbfa3cea8f11e5aac3db03cda99974.f20.mp4","???????????????");
-  ImageLoader.getInstance().displayImage("http://p.qpic.cn/videoyun/0/2449_bfbbfa3cea8f11e5aac3db03cda99974_1/640",jcVideoPlayerStandard.ivThumb);
+  ImageLoader.getInstance().displayImage("http://p.qpic.cn/videoyun/0/2449_bfbbfa3cea8f11e5aac3db03cda99974_1/640",jcVideoPlayerStandard.thumbImageView);
   jcVideoPlayerStandardWithShareButton=(JCVideoPlayerStandardShowShareButtonAfterFullscreen)findViewById(R.id.custom_videoplayer_standard_with_share_button);
   jcVideoPlayerStandardWithShareButton.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4","???????????????");
-  ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideoPlayerStandardWithShareButton.ivThumb);
+  ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideoPlayerStandardWithShareButton.thumbImageView);
   jcVideoPlayerStandardShowTitleAfterFullscreen=(JCVideoPlayerStandardShowTitleAfterFullscreen)findViewById(R.id.custom_videoplayer_standard_show_title_after_fullscreen);
   jcVideoPlayerStandardShowTitleAfterFullscreen.setUp("http://video.jiecao.fm/5/1/%E8%87%AA%E5%8F%96%E5%85%B6%E8%BE%B1.mp4","???????????????");
-  ImageLoader.getInstance().displayImage("http://img4.jiecaojingxuan.com/2016/5/1/3430ec64-e6a7-4d8e-b044-9d408e075b7c.jpg",jcVideoPlayerStandardShowTitleAfterFullscreen.ivThumb);
+  ImageLoader.getInstance().displayImage("http://img4.jiecaojingxuan.com/2016/5/1/3430ec64-e6a7-4d8e-b044-9d408e075b7c.jpg",jcVideoPlayerStandardShowTitleAfterFullscreen.thumbImageView);
   JCVideoPlayerStandard.setJcBuriedPointStandard(jcBuriedPointStandard);
 }

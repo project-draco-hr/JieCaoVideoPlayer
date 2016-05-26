@@ -9,12 +9,12 @@ case MotionEvent.ACTION_MOVE:
   break;
 case MotionEvent.ACTION_UP:
 startDismissControlViewTimer();
-if (changePosition) {
+if (mChangePosition) {
 int duration=JCMediaManager.instance().mediaPlayer.getDuration();
-int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
-pbBottom.setProgress(progress);
+int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
+bottomProgressBar.setProgress(progress);
 }
-if (!changePosition && !changeVolume) {
+if (!mChangePosition && !mChangeVolume) {
 onClickUiToggle();
 }
 break;

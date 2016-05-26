@@ -1,10 +1,10 @@
 {
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-    JC_BURIED_POINT.onQuitFullscreen(url,objects);
+    JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }
   JCMediaManager.instance().mediaPlayer.setDisplay(null);
   JCMediaManager.instance().listener=JCMediaManager.instance().lastListener;
-  JCMediaManager.instance().lastState=CURRENT_STATE;
+  JCMediaManager.instance().lastState=mCurrentState;
   JCMediaManager.instance().listener.onBackFullscreen();
   finishMyFullscreen();
 }

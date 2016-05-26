@@ -1,14 +1,14 @@
 {
   super.setStateAndUi(state);
-switch (CURRENT_STATE) {
+switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
-    ivStart.setVisibility(View.VISIBLE);
+    startButton.setVisibility(View.VISIBLE);
   break;
 case CURRENT_STATE_PREPAREING:
-ivStart.setVisibility(View.INVISIBLE);
+startButton.setVisibility(View.INVISIBLE);
 break;
 case CURRENT_STATE_PLAYING:
-ivStart.setVisibility(View.VISIBLE);
+startButton.setVisibility(View.VISIBLE);
 break;
 case CURRENT_STATE_PAUSE:
 break;

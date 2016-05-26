@@ -7,8 +7,8 @@
   decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
   try {
     Constructor<JCVideoPlayerStandard> constructor=VIDEO_PLAYER_CLASS.getConstructor(Context.class);
-    jcVideoPlayer=constructor.newInstance(this);
-    setContentView(jcVideoPlayer);
+    mJcVideoPlayer=constructor.newInstance(this);
+    setContentView(mJcVideoPlayer);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();
@@ -16,16 +16,16 @@
 catch (  Exception e) {
     e.printStackTrace();
   }
-  jcVideoPlayer.IF_CURRENT_IS_FULLSCREEN=true;
-  jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY=DIRECT_FULLSCREEN;
-  jcVideoPlayer.setUp(URL,OBJECTS);
-  jcVideoPlayer.setStateAndUi(CURRENT_STATE);
-  jcVideoPlayer.addSurfaceView();
-  if (jcVideoPlayer.IF_FULLSCREEN_IS_DIRECTLY) {
-    jcVideoPlayer.ivStart.performClick();
+  mJcVideoPlayer.mIfCurrentIsFullscreen=true;
+  mJcVideoPlayer.mIfFullscreenIsDirectly=DIRECT_FULLSCREEN;
+  mJcVideoPlayer.setUp(URL,OBJECTS);
+  mJcVideoPlayer.setStateAndUi(CURRENT_STATE);
+  mJcVideoPlayer.addSurfaceView();
+  if (mJcVideoPlayer.mIfFullscreenIsDirectly) {
+    mJcVideoPlayer.startButton.performClick();
   }
  else {
     JCVideoPlayer.IF_RELEASE_WHEN_ON_PAUSE=true;
-    JCMediaManager.instance().listener=jcVideoPlayer;
+    JCMediaManager.instance().listener=mJcVideoPlayer;
   }
 }

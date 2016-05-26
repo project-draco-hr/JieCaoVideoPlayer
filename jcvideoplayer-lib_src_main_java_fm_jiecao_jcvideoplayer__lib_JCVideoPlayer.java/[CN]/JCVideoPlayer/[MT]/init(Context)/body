@@ -1,21 +1,21 @@
 {
   View.inflate(context,getLayoutId(),this);
-  ivStart=(ImageView)findViewById(R.id.start);
-  ivFullScreen=(ImageView)findViewById(R.id.fullscreen);
-  skProgress=(SeekBar)findViewById(R.id.progress);
-  tvTimeCurrent=(TextView)findViewById(R.id.current);
-  tvTimeTotal=(TextView)findViewById(R.id.total);
-  llBottomControl=(ViewGroup)findViewById(R.id.layout_bottom);
-  rlSurfaceContainer=(RelativeLayout)findViewById(R.id.surface_container);
-  llTopContainer=(ViewGroup)findViewById(R.id.layout_top);
-  ivStart.setOnClickListener(this);
-  ivFullScreen.setOnClickListener(this);
-  skProgress.setOnSeekBarChangeListener(this);
-  llBottomControl.setOnClickListener(this);
-  rlSurfaceContainer.setOnClickListener(this);
-  skProgress.setOnTouchListener(this);
-  rlSurfaceContainer.setOnTouchListener(this);
-  screenWidth=getContext().getResources().getDisplayMetrics().widthPixels;
-  screenHeight=getContext().getResources().getDisplayMetrics().heightPixels;
+  startButton=(ImageView)findViewById(R.id.start);
+  fullscreenButton=(ImageView)findViewById(R.id.fullscreen);
+  progressBar=(SeekBar)findViewById(R.id.progress);
+  currentTimeTextView=(TextView)findViewById(R.id.current);
+  totalTimeTextView=(TextView)findViewById(R.id.total);
+  bottomContainer=(ViewGroup)findViewById(R.id.layout_bottom);
+  surfaceContainer=(RelativeLayout)findViewById(R.id.surface_container);
+  topContainer=(ViewGroup)findViewById(R.id.layout_top);
+  startButton.setOnClickListener(this);
+  fullscreenButton.setOnClickListener(this);
+  progressBar.setOnSeekBarChangeListener(this);
+  bottomContainer.setOnClickListener(this);
+  surfaceContainer.setOnClickListener(this);
+  progressBar.setOnTouchListener(this);
+  surfaceContainer.setOnTouchListener(this);
+  mScreenWidth=getContext().getResources().getDisplayMetrics().widthPixels;
+  mScreenHeight=getContext().getResources().getDisplayMetrics().heightPixels;
   mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
 }

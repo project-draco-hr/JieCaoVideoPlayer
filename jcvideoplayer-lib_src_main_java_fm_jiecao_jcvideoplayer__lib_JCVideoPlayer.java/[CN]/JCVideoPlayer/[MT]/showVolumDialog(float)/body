@@ -1,24 +1,24 @@
 {
-  if (dlgVolume == null) {
+  if (mVolumeDialog == null) {
     View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_volume_dialog,null);
-    dlgVolumeProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
-    dlgVolume=new Dialog(getContext(),R.style.jc_style_dialog_progress);
-    dlgVolume.setContentView(localView);
-    dlgVolume.getWindow().addFlags(8);
-    dlgVolume.getWindow().addFlags(32);
-    dlgVolume.getWindow().addFlags(16);
-    dlgVolume.getWindow().setLayout(-2,-2);
-    WindowManager.LayoutParams localLayoutParams=dlgVolume.getWindow().getAttributes();
+    mDialogVolumeProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
+    mVolumeDialog=new Dialog(getContext(),R.style.jc_style_dialog_progress);
+    mVolumeDialog.setContentView(localView);
+    mVolumeDialog.getWindow().addFlags(8);
+    mVolumeDialog.getWindow().addFlags(32);
+    mVolumeDialog.getWindow().addFlags(16);
+    mVolumeDialog.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=mVolumeDialog.getWindow().getAttributes();
     localLayoutParams.gravity=19;
     localLayoutParams.x=getContext().getResources().getDimensionPixelOffset(R.dimen.jc_volume_dialog_margin_left);
-    dlgVolume.getWindow().setAttributes(localLayoutParams);
+    mVolumeDialog.getWindow().setAttributes(localLayoutParams);
   }
-  if (!dlgVolume.isShowing()) {
-    dlgVolume.show();
+  if (!mVolumeDialog.isShowing()) {
+    mVolumeDialog.show();
   }
   int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-  int deltaV=(int)(max * deltaY * 3 / screenHeight);
-  mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,downVolume + deltaV,0);
-  int transformatVolume=(int)(downVolume * 100 / max + deltaY * 3 * 100 / screenHeight);
-  dlgVolumeProgressBar.setProgress(transformatVolume);
+  int deltaV=(int)(max * deltaY * 3 / mScreenHeight);
+  mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,mDownVolume + deltaV,0);
+  int transformatVolume=(int)(mDownVolume * 100 / max + deltaY * 3 * 100 / mScreenHeight);
+  mDialogVolumeProgressBar.setProgress(transformatVolume);
 }

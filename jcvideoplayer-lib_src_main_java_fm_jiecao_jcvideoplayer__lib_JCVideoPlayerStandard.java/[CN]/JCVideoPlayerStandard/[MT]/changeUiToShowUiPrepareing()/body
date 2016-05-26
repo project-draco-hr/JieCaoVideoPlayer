@@ -1,9 +1,9 @@
 {
-  llTopContainer.setVisibility(View.VISIBLE);
-  llBottomControl.setVisibility(View.VISIBLE);
-  ivStart.setVisibility(View.INVISIBLE);
-  pbLoading.setVisibility(View.VISIBLE);
-  ivThumb.setVisibility(View.INVISIBLE);
-  ivCover.setVisibility(View.VISIBLE);
-  pbBottom.setVisibility(View.INVISIBLE);
+  topContainer.setVisibility(View.VISIBLE);
+  bottomContainer.setVisibility(View.VISIBLE);
+  startButton.setVisibility(View.INVISIBLE);
+  loadingProgressBar.setVisibility(View.VISIBLE);
+  thumbImageView.setVisibility(View.INVISIBLE);
+  coverImageView.setVisibility(View.VISIBLE);
+  bottomProgressBar.setVisibility(View.INVISIBLE);
 }

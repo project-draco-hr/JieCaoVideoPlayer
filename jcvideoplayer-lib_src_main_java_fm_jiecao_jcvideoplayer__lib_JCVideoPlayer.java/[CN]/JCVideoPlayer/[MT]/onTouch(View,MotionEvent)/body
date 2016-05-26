@@ -5,66 +5,66 @@
   if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-      touchingProgressBar=true;
-    downX=x;
-  downY=y;
-changeVolume=false;
-changePosition=false;
+      mTouchingProgressBar=true;
+    mDownX=x;
+  mDownY=y;
+mChangeVolume=false;
+mChangePosition=false;
 cancelProgressTimer();
 break;
 case MotionEvent.ACTION_MOVE:
-float deltaX=x - downX;
-float deltaY=y - downY;
+float deltaX=x - mDownX;
+float deltaY=y - mDownY;
 float absDeltaX=Math.abs(deltaX);
 float absDeltaY=Math.abs(deltaY);
-if (IF_CURRENT_IS_FULLSCREEN) {
-if (!changePosition && !changeVolume) {
-if (absDeltaX > threshold || absDeltaY > threshold) {
-if (absDeltaX >= threshold) {
-changePosition=true;
-downPosition=getCurrentPositionWhenPlaying();
+if (mIfCurrentIsFullscreen) {
+if (!mChangePosition && !mChangeVolume) {
+if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
+if (absDeltaX >= mThreshold) {
+mChangePosition=true;
+mDownPosition=getCurrentPositionWhenPlaying();
 if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-JC_BURIED_POINT.onTouchScreenSeekPosition(url,objects);
+JC_BURIED_POINT.onTouchScreenSeekPosition(mUrl,mObjects);
 }
 }
  else {
-changeVolume=true;
-downVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+mChangeVolume=true;
+mDownVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-JC_BURIED_POINT.onTouchScreenSeekVolume(url,objects);
+JC_BURIED_POINT.onTouchScreenSeekVolume(mUrl,mObjects);
 }
 }
 }
 }
 }
-if (changePosition) {
+if (mChangePosition) {
 showProgressDialog(deltaX);
 }
-if (changeVolume) {
+if (mChangeVolume) {
 showVolumDialog(-deltaY);
 }
 break;
 case MotionEvent.ACTION_UP:
-touchingProgressBar=false;
-if (dlgProgress != null) {
-dlgProgress.dismiss();
+mTouchingProgressBar=false;
+if (mProgressDialog != null) {
+mProgressDialog.dismiss();
 }
-if (dlgVolume != null) {
-dlgVolume.dismiss();
+if (mVolumeDialog != null) {
+mVolumeDialog.dismiss();
 }
-if (changePosition) {
-JCMediaManager.instance().mediaPlayer.seekTo(resultTimePosition);
+if (mChangePosition) {
+JCMediaManager.instance().mediaPlayer.seekTo(mResultTimePosition);
 int duration=JCMediaManager.instance().mediaPlayer.getDuration();
-int progress=resultTimePosition * 100 / (duration == 0 ? 1 : duration);
-skProgress.setProgress(progress);
+int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
+progressBar.setProgress(progress);
 }
 startProgressTimer();
 if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
-if (IF_CURRENT_IS_FULLSCREEN) {
-JC_BURIED_POINT.onClickSeekbarFullscreen(url,objects);
+if (mIfCurrentIsFullscreen) {
+JC_BURIED_POINT.onClickSeekbarFullscreen(mUrl,mObjects);
 }
  else {
-JC_BURIED_POINT.onClickSeekbar(url,objects);
+JC_BURIED_POINT.onClickSeekbar(mUrl,mObjects);
 }
 }
 break;
