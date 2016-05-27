@@ -1,14 +1,15 @@
 {
   try {
     JCMediaManager.instance().mediaPlayer.setDisplay(surfaceHolder);
+    if (DEBUG)     Log.i(TAG,"setDisplay(surfaceHolder) [" + this + "] "+ mUrl);
   }
  catch (  IllegalArgumentException e) {
-    Log.i(TAG,"recreate surfaceview from IllegalArgumentException");
+    if (DEBUG)     Log.w(TAG,"recreate surfaceview from IllegalArgumentException [" + this + "] "+ mUrl);
     addSurfaceView();
     e.printStackTrace();
   }
 catch (  IllegalStateException e1) {
-    Log.i(TAG,"recreate surfaceview from IllegalStateException");
+    if (DEBUG)     Log.w(TAG,"recreate surfaceview from IllegalStateException [" + this + "] "+ mUrl);
     addSurfaceView();
     e1.printStackTrace();
   }

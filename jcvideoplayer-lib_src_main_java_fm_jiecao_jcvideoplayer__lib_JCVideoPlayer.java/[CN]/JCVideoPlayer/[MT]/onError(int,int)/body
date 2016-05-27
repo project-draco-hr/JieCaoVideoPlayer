@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   Log.e(TAG,"onError " + what + " - "+ extra+ " ["+ this+ "] "+ mUrl);
   if (what != 38 && what != -38) {
     setStateAndUi(CURRENT_STATE_ERROR);
   }

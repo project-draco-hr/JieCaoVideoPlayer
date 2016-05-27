@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   Log.i(TAG,"quitFullScreenGoToNormal [" + this + "] "+ mUrl);
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
     JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }
@@ -6,5 +7,5 @@
   JCMediaManager.instance().listener=JCMediaManager.instance().lastListener;
   JCMediaManager.instance().lastState=mCurrentState;
   JCMediaManager.instance().listener.onBackFullscreen();
-  finishMyFullscreen();
+  finishFullscreenActivity();
 }

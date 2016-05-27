@@ -1,7 +1,8 @@
 {
+  if (DEBUG)   Log.d(TAG,"quitFullscreen [" + this + "] "+ mUrl);
   if (mIfFullscreenIsDirectly) {
     JCMediaManager.instance().mediaPlayer.stop();
-    finishMyFullscreen();
+    finishFullscreenActivity();
   }
  else {
     CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();

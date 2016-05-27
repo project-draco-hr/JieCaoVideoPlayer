@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   Log.i(TAG,"addSurfaceView [" + this + "] "+ mUrl);
   if (surfaceContainer.getChildCount() > 0) {
     surfaceContainer.removeAllViews();
   }

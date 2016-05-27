@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   Log.d(TAG,"prepareVideo [" + this + "] "+ mUrl);
   if (JCMediaManager.instance().listener != null) {
     JCMediaManager.instance().listener.onCompletion();
   }

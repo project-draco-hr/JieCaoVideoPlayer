@@ -1,5 +1,6 @@
 {
   if (mCurrentState != CURRENT_STATE_NORMAL) {
+    if (DEBUG)     Log.i(TAG,"release [" + this + "]"+ mUrl);
     releaseAllVideos();
   }
 }

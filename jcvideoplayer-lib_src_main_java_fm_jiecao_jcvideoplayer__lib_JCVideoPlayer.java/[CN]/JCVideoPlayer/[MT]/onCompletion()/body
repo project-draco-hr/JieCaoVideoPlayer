@@ -5,7 +5,7 @@
   if (surfaceContainer.getChildCount() > 0) {
     surfaceContainer.removeAllViews();
   }
-  finishMyFullscreen();
+  finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
     JCMediaManager.instance().lastListener.onCompletion();

@@ -1,4 +1,5 @@
 {
   super.onCreate();
+  JCVideoPlayer.DEBUG=true;
   initUniversalImageLoader();
 }

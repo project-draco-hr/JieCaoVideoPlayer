@@ -1,5 +1,6 @@
 {
   if (getContext() instanceof JCFullScreenActivity) {
+    if (DEBUG)     Log.i(TAG,"finishFullscreenActivity [" + this + "] "+ mUrl);
     ((JCFullScreenActivity)getContext()).finish();
   }
 }

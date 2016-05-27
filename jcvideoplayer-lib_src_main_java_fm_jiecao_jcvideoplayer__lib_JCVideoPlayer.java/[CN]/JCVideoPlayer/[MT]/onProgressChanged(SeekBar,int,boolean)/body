@@ -2,5 +2,6 @@
   if (fromUser) {
     int time=progress * getDuration() / 100;
     JCMediaManager.instance().mediaPlayer.seekTo(time);
+    if (DEBUG)     Log.d(TAG,"seekTo " + time + " ["+ this+ "] "+ mUrl);
   }
 }
