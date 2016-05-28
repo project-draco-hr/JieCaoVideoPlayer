@@ -1,10 +1,10 @@
 {
 switch (v.getId()) {
 case R.id.to_fullscreen_simple:
-    JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerSimple.class,"????????????");
+    JCFullScreenActivity.startActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerSimple.class,"????????????");
   break;
 case R.id.to_fullscreen_standard:
-JCFullScreenActivity.toActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.class,"???????????????");
+JCFullScreenActivity.startActivity(this,"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.class,"???????????????");
 break;
 case R.id.to_list_activity:
 startActivity(new Intent(MainActivity.this,ListActivity.class));
