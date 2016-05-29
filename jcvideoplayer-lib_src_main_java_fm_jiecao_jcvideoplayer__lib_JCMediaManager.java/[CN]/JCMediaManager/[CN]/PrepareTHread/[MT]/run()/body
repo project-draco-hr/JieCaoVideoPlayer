@@ -1,0 +1,23 @@
+{
+  try {
+synchronized (mediaAsyncObj) {
+      currentVideoWidth=0;
+      currentVideoHeight=0;
+      mediaPlayer.release();
+      mediaPlayer=new MediaPlayer();
+      mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+      mediaPlayer.setDataSource(context,Uri.parse(url),mapHeadData);
+      mediaPlayer.setOnPreparedListener(JCMediaManager.this);
+      mediaPlayer.setOnCompletionListener(JCMediaManager.this);
+      mediaPlayer.setOnBufferingUpdateListener(JCMediaManager.this);
+      mediaPlayer.setScreenOnWhilePlaying(true);
+      mediaPlayer.setOnSeekCompleteListener(JCMediaManager.this);
+      mediaPlayer.setOnErrorListener(JCMediaManager.this);
+      mediaPlayer.setOnVideoSizeChangedListener(JCMediaManager.this);
+      mediaPlayer.prepareAsync();
+    }
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

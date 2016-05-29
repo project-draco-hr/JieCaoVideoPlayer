@@ -1,0 +1,4 @@
+{
+  ReleaseTHread r=new ReleaseTHread();
+  r.start();
+}

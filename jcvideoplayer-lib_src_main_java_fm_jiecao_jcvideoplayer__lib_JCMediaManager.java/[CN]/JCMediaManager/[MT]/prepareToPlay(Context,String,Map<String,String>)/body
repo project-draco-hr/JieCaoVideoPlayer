@@ -1,22 +1,5 @@
 {
   if (TextUtils.isEmpty(url))   return;
-  try {
-    currentVideoWidth=0;
-    currentVideoHeight=0;
-    mediaPlayer.release();
-    mediaPlayer=new MediaPlayer();
-    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-    mediaPlayer.setDataSource(context,Uri.parse(url),mapHeadData);
-    mediaPlayer.setOnPreparedListener(this);
-    mediaPlayer.setOnCompletionListener(this);
-    mediaPlayer.setOnBufferingUpdateListener(this);
-    mediaPlayer.setScreenOnWhilePlaying(true);
-    mediaPlayer.setOnSeekCompleteListener(this);
-    mediaPlayer.setOnErrorListener(this);
-    mediaPlayer.setOnVideoSizeChangedListener(this);
-    mediaPlayer.prepareAsync();
-  }
- catch (  IOException e) {
-    e.printStackTrace();
-  }
+  PrepareTHread p=new PrepareTHread(context,url,mapHeadData);
+  p.start();
 }

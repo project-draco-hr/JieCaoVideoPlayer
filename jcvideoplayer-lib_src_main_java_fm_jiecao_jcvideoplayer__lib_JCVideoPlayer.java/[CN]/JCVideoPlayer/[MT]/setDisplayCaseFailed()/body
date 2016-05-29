@@ -1,16 +1,3 @@
 {
-  try {
-    JCMediaManager.instance().mediaPlayer.setDisplay(surfaceHolder);
-    if (DEBUG)     Log.i(TAG,"setDisplaySurfaceHolder [" + this + "] "+ mUrl);
-  }
- catch (  IllegalArgumentException e) {
-    if (DEBUG)     Log.w(TAG,"recreate surfaceview from IllegalArgumentException [" + this + "] "+ mUrl);
-    addSurfaceView();
-    e.printStackTrace();
-  }
-catch (  IllegalStateException e1) {
-    if (DEBUG)     Log.w(TAG,"recreate surfaceview from IllegalStateException [" + this + "] "+ mUrl);
-    addSurfaceView();
-    e1.printStackTrace();
-  }
+  JCMediaManager.instance().setDisplay(surfaceHolder);
 }

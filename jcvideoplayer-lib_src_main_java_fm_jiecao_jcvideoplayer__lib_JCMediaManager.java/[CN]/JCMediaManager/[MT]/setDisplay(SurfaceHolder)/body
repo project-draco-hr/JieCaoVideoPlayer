@@ -1,0 +1,4 @@
+{
+  SetDisplayTHread s=new SetDisplayTHread(holder);
+  s.start();
+}
