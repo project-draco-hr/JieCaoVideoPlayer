@@ -15,7 +15,7 @@
       prepareVideo();
     }
  else     if (mCurrentState == CURRENT_STATE_PLAYING) {
-      if (DEBUG)       Log.d(TAG,"pauseVideo [" + this + "] "+ mUrl);
+      Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
       setStateAndUi(CURRENT_STATE_PAUSE);
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
@@ -45,7 +45,7 @@
       backFullscreen();
     }
  else {
-      if (DEBUG)       Log.d(TAG,"toFullscreenActivity [" + this + "] "+ mUrl);
+      Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
         JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
       }
