@@ -1,4 +1,5 @@
 {
   ReleaseTHread r=new ReleaseTHread();
   r.start();
+  Log.d(TAG,"releaseMediaPlayer");
 }
