@@ -1,3 +1,7 @@
 {
   mediaPlayer=new MediaPlayer();
+  mMediaHandlerThread=new HandlerThread(TAG);
+  mMediaHandlerThread.start();
+  mMediaHandler=new MediaHandler((mMediaHandlerThread.getLooper()));
+  mainThreadHandler=new Handler();
 }

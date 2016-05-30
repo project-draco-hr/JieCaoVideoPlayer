@@ -1,6 +1,0 @@
-{
-  if (TextUtils.isEmpty(url))   return;
-  PrepareTHread p=new PrepareTHread(context,url,mapHeadData);
-  p.start();
-  Log.i(TAG,"prepareToPlay");
-}

@@ -1,5 +1,5 @@
 {
-  ReleaseTHread r=new ReleaseTHread();
-  r.start();
-  Log.d(TAG,"releaseMediaPlayer");
+  Message msg=new Message();
+  msg.what=HANDLER_RELEASE;
+  mMediaHandler.sendMessage(msg);
 }

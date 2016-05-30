@@ -1,8 +1,0 @@
-{
-  Log.d(TAG,"releaseMediaPlayer run");
-synchronized (mediaAsyncObj) {
-    Log.d(TAG,"releaseMediaPlayer start");
-    mediaPlayer.release();
-    Log.d(TAG,"releaseMediaPlayer done");
-  }
-}

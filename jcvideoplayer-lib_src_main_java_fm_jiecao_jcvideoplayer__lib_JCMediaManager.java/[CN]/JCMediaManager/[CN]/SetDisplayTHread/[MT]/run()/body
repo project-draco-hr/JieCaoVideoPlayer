@@ -1,8 +1,0 @@
-{
-  Log.w(TAG,"setDisplay run");
-synchronized (mediaAsyncObj) {
-    Log.w(TAG,"setDisplay start");
-    JCMediaManager.instance().mediaPlayer.setDisplay(holder);
-    Log.w(TAG,"setDisplay done");
-  }
-}

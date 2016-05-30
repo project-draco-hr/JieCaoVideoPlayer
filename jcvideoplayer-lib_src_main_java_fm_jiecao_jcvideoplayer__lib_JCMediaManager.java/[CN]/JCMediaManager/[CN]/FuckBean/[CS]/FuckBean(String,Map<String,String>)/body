@@ -1,5 +1,4 @@
 {
-  this.context=context;
   this.url=url;
   this.mapHeadData=mapHeadData;
 }
