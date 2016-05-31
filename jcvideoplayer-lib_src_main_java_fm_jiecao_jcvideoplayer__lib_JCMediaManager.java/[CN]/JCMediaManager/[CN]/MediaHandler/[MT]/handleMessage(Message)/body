@@ -12,6 +12,7 @@ case HANDLER_PREPARE:
       Class<MediaPlayer> clazz=MediaPlayer.class;
       Method method=clazz.getDeclaredMethod("setDataSource",String.class,Map.class);
       method.invoke(mediaPlayer,((FuckBean)msg.obj).url,((FuckBean)msg.obj).mapHeadData);
+      mediaPlayer.setLooping(((FuckBean)msg.obj).looping);
       mediaPlayer.setOnPreparedListener(JCMediaManager.this);
       mediaPlayer.setOnCompletionListener(JCMediaManager.this);
       mediaPlayer.setOnBufferingUpdateListener(JCMediaManager.this);

@@ -6,6 +6,6 @@
   }
   JCMediaManager.instance().listener=this;
   addSurfaceView();
-  JCMediaManager.instance().prepareToPlay(mUrl,mMapHeadData);
+  JCMediaManager.instance().prepareToPlay(mUrl,mMapHeadData,mLooping);
   setStateAndUi(CURRENT_STATE_PREPAREING);
 }
