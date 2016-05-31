@@ -7,5 +7,6 @@
       JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
     }
   }
+  Log.d("JCMediaManager","2");
   onCompletion();
 }

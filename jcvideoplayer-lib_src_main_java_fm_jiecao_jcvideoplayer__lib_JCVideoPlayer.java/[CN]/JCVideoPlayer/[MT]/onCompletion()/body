@@ -2,12 +2,15 @@
   cancelProgressTimer();
   resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
+  Log.e("JCMediaManager","removeAllViews");
   if (surfaceContainer.getChildCount() > 0) {
     surfaceContainer.removeAllViews();
   }
+  Log.e("JCMediaManager","removeAllViews done");
   finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
+    Log.d("JCMediaManager","4");
     JCMediaManager.instance().lastListener.onCompletion();
   }
 }

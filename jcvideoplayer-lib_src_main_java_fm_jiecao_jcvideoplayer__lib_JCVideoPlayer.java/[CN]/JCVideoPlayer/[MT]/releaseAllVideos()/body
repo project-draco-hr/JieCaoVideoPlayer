@@ -3,6 +3,7 @@
     Log.i(TAG,"releaseAllVideos");
     JCMediaManager.instance().releaseMediaPlayer();
     if (JCMediaManager.instance().listener != null) {
+      Log.d("JCMediaManager","5");
       JCMediaManager.instance().listener.onCompletion();
     }
   }
