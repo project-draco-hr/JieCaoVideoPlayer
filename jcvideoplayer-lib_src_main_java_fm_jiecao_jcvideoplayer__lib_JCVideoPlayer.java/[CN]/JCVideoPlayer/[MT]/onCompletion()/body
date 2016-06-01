@@ -13,4 +13,6 @@
     Log.d("JCMediaManager","4");
     JCMediaManager.instance().lastListener.onCompletion();
   }
+  JCMediaManager.instance().listener=null;
+  JCMediaManager.instance().lastListener=null;
 }

@@ -5,6 +5,7 @@
   }
   JCMediaManager.instance().mediaPlayer.setDisplay(null);
   JCMediaManager.instance().listener=JCMediaManager.instance().lastListener;
+  JCMediaManager.instance().lastListener=null;
   JCMediaManager.instance().lastState=mCurrentState;
   JCMediaManager.instance().listener.onBackFullscreen();
   finishFullscreenActivity();

@@ -1,5 +1,6 @@
 {
   Log.d(TAG,"quitFullscreen [" + this.hashCode() + "] ");
+  IF_FULLSCREEN_FROM_NORMAL=false;
   if (mIfFullscreenIsDirectly) {
     JCMediaManager.instance().mediaPlayer.stop();
     finishFullscreenActivity();
