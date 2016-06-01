@@ -1,7 +1,6 @@
 {
   Log.d(TAG,"prepareVideo [" + this.hashCode() + "] ");
   if (JCMediaManager.instance().listener != null) {
-    Log.d("JCMediaManager","3");
     JCMediaManager.instance().listener.onCompletion();
   }
   JCMediaManager.instance().listener=this;

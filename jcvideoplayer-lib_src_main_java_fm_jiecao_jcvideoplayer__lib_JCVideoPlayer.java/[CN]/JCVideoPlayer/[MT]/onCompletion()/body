@@ -10,7 +10,6 @@
   finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
-    Log.d("JCMediaManager","4");
     JCMediaManager.instance().lastListener.onCompletion();
   }
   JCMediaManager.instance().listener=null;

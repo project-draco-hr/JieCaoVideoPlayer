@@ -17,7 +17,6 @@ break;
 case CURRENT_STATE_ERROR:
 if (JCMediaManager.instance().listener == this) {
 JCMediaManager.instance().releaseMediaPlayer();
-Log.d("JCMediaManager","1");
 onCompletion();
 }
 break;
