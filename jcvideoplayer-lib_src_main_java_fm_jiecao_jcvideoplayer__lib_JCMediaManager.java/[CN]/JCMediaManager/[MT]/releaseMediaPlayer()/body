@@ -1,0 +1,5 @@
+{
+  Message msg=new Message();
+  msg.what=HANDLER_RELEASE;
+  mMediaHandler.sendMessage(msg);
+}

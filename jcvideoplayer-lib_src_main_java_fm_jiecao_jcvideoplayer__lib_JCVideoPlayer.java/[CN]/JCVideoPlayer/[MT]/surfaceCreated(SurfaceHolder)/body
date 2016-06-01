@@ -1,4 +1,4 @@
 {
-  if (DEBUG)   Log.i(TAG,"surfaceCreated [" + this + "] "+ mUrl);
+  Log.i(TAG,"surfaceCreated [" + this.hashCode() + "] ");
   setDisplayCaseFailed();
 }

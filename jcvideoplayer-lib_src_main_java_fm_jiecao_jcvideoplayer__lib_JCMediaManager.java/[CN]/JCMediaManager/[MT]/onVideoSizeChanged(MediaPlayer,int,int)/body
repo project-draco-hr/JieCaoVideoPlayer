@@ -2,6 +2,11 @@
   currentVideoWidth=mp.getVideoWidth();
   currentVideoHeight=mp.getVideoHeight();
   if (listener != null) {
-    listener.onVideoSizeChanged();
+    mainThreadHandler.post(new Runnable(){
+      @Override public void run(){
+        listener.onVideoSizeChanged();
+      }
+    }
+);
   }
 }

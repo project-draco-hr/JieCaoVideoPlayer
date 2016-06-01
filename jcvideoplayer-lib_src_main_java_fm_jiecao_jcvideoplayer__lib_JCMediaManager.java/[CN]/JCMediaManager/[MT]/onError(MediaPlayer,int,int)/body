@@ -1,6 +1,11 @@
 {
   if (listener != null) {
-    listener.onError(what,extra);
+    mainThreadHandler.post(new Runnable(){
+      @Override public void run(){
+        listener.onError(what,extra);
+      }
+    }
+);
   }
   return true;
 }

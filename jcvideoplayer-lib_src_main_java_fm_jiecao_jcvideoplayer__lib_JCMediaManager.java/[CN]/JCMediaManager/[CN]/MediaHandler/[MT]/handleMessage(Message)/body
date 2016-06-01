@@ -1,0 +1,47 @@
+{
+  super.handleMessage(msg);
+switch (msg.what) {
+case HANDLER_PREPARE:
+    try {
+      currentVideoWidth=0;
+      currentVideoHeight=0;
+      mediaPlayer.release();
+      mediaPlayer=new MediaPlayer();
+      mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+      Class<MediaPlayer> clazz=MediaPlayer.class;
+      Method method=clazz.getDeclaredMethod("setDataSource",String.class,Map.class);
+      method.invoke(mediaPlayer,((FuckBean)msg.obj).url,((FuckBean)msg.obj).mapHeadData);
+      mediaPlayer.setLooping(((FuckBean)msg.obj).looping);
+      mediaPlayer.setOnPreparedListener(JCMediaManager.this);
+      mediaPlayer.setOnCompletionListener(JCMediaManager.this);
+      mediaPlayer.setOnBufferingUpdateListener(JCMediaManager.this);
+      mediaPlayer.setScreenOnWhilePlaying(true);
+      mediaPlayer.setOnSeekCompleteListener(JCMediaManager.this);
+      mediaPlayer.setOnErrorListener(JCMediaManager.this);
+      mediaPlayer.setOnVideoSizeChangedListener(JCMediaManager.this);
+      mediaPlayer.prepareAsync();
+    }
+ catch (    NoSuchMethodException e) {
+      e.printStackTrace();
+    }
+catch (    IllegalAccessException e) {
+      e.printStackTrace();
+    }
+catch (    InvocationTargetException e) {
+      e.printStackTrace();
+    }
+catch (    Exception e) {
+      e.printStackTrace();
+    }
+  break;
+case HANDLER_SETDISPLAY:
+SurfaceHolder holder=(SurfaceHolder)msg.obj;
+if (holder.getSurface() != null && holder.getSurface().isValid()) {
+JCMediaManager.instance().mediaPlayer.setDisplay(holder);
+}
+break;
+case HANDLER_RELEASE:
+mediaPlayer.release();
+break;
+}
+}

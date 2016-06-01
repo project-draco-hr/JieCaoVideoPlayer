@@ -1,10 +1,11 @@
 {
-  if (DEBUG)   Log.i(TAG,"quitFullScreenGoToNormal [" + this + "] "+ mUrl);
+  Log.i(TAG,"quitFullScreenGoToNormal [" + this.hashCode() + "] ");
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
     JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }
   JCMediaManager.instance().mediaPlayer.setDisplay(null);
   JCMediaManager.instance().listener=JCMediaManager.instance().lastListener;
+  JCMediaManager.instance().lastListener=null;
   JCMediaManager.instance().lastState=mCurrentState;
   JCMediaManager.instance().listener.onBackFullscreen();
   finishFullscreenActivity();

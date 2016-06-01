@@ -1,5 +1,10 @@
 {
   if (listener != null) {
-    listener.onSeekComplete();
+    mainThreadHandler.post(new Runnable(){
+      @Override public void run(){
+        listener.onSeekComplete();
+      }
+    }
+);
   }
 }

@@ -1,0 +1,6 @@
+{
+  Message msg=new Message();
+  msg.what=HANDLER_SETDISPLAY;
+  msg.obj=holder;
+  mMediaHandler.sendMessage(msg);
+}

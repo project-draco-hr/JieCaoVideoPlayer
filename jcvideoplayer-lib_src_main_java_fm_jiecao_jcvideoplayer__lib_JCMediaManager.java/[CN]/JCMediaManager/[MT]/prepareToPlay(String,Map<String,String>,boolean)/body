@@ -1,0 +1,8 @@
+{
+  if (TextUtils.isEmpty(url))   return;
+  Message msg=new Message();
+  msg.what=HANDLER_PREPARE;
+  FuckBean fb=new FuckBean(url,mapHeadData,loop);
+  msg.obj=fb;
+  mMediaHandler.sendMessage(msg);
+}
