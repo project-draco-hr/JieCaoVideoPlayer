@@ -3,9 +3,8 @@
   if (surfaceContainer.getChildCount() > 0) {
     surfaceContainer.removeAllViews();
   }
-  surfaceView=new JCResizeSurfaceView(getContext());
-  surfaceHolder=surfaceView.getHolder();
-  surfaceHolder.addCallback(this);
+  surfaceView=new JCResizeTextureView(getContext());
+  surfaceView.setSurfaceTextureListener(this);
   RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
   layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
   surfaceContainer.addView(surfaceView,layoutParams);
