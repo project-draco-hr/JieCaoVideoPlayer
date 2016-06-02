@@ -3,7 +3,7 @@
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
     JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }
-  JCMediaManager.instance().mediaPlayer.setDisplay(null);
+  JCMediaManager.instance().setDisplay(null);
   JCMediaManager.instance().listener=JCMediaManager.instance().lastListener;
   JCMediaManager.instance().lastListener=null;
   JCMediaManager.instance().lastState=mCurrentState;

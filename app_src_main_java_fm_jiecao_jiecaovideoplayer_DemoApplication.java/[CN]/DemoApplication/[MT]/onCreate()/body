@@ -1,4 +1,5 @@
 {
   super.onCreate();
+  LeakCanary.install(this);
   initUniversalImageLoader();
 }

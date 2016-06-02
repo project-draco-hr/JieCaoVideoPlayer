@@ -49,7 +49,7 @@
       if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
         JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
       }
-      JCMediaManager.instance().mediaPlayer.setDisplay(null);
+      JCMediaManager.instance().setDisplay(null);
       JCMediaManager.instance().lastListener=this;
       JCMediaManager.instance().listener=null;
       IF_FULLSCREEN_FROM_NORMAL=true;
