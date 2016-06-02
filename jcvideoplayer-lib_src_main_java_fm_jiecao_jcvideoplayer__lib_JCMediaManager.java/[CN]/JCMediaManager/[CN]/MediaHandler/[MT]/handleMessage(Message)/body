@@ -36,12 +36,12 @@ catch (    Exception e) {
   break;
 case HANDLER_SETDISPLAY:
 if (msg.obj == null) {
-  JCMediaManager.instance().mediaPlayer.setDisplay(null);
+  instance().mediaPlayer.setSurface(null);
 }
  else {
-  SurfaceHolder holder=(SurfaceHolder)msg.obj;
-  if (holder.getSurface() != null && holder.getSurface().isValid()) {
-    JCMediaManager.instance().mediaPlayer.setDisplay(holder);
+  Surface holder=(Surface)msg.obj;
+  if (holder.isValid()) {
+    instance().mediaPlayer.setSurface(holder);
   }
 }
 break;

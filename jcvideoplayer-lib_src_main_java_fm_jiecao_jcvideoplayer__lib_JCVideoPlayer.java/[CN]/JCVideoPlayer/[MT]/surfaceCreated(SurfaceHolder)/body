@@ -1,4 +1,0 @@
-{
-  Log.i(TAG,"surfaceCreated [" + this.hashCode() + "] ");
-  setDisplayCaseFailed();
-}

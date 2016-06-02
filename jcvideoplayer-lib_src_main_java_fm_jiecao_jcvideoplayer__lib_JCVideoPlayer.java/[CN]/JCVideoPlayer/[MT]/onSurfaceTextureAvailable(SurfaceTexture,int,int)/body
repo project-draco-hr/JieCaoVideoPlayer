@@ -1,0 +1,4 @@
+{
+  mSurface=new Surface(surface);
+  JCMediaManager.instance().setDisplay(mSurface);
+}
