@@ -1,0 +1,11 @@
+{
+  if (listener != null) {
+    mainThreadHandler.post(new Runnable(){
+      @Override public void run(){
+        listener.onInfo(what,extra);
+      }
+    }
+);
+  }
+  return false;
+}

@@ -18,6 +18,7 @@ case HANDLER_PREPARE:
       mediaPlayer.setScreenOnWhilePlaying(true);
       mediaPlayer.setOnSeekCompleteListener(JCMediaManager.this);
       mediaPlayer.setOnErrorListener(JCMediaManager.this);
+      mediaPlayer.setOnInfoListener(JCMediaManager.this);
       mediaPlayer.setOnVideoSizeChangedListener(JCMediaManager.this);
       mediaPlayer.prepareAsync();
     }

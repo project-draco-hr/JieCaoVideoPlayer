@@ -1,0 +1,13 @@
+{
+  Log.e("onInfo"," what " + what);
+  if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
+    this.mBuffering=true;
+    changeProgressLoading(true);
+    Log.e("onInfo","MEDIA_INFO_BUFFERING_START");
+  }
+ else   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
+    this.mBuffering=false;
+    changeProgressLoading(false);
+    Log.e("onInfo","MEDIA_INFO_BUFFERING_END");
+  }
+}
