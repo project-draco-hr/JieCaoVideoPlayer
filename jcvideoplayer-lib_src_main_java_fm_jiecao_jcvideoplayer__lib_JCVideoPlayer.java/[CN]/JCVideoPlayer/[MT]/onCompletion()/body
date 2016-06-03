@@ -2,11 +2,9 @@
   cancelProgressTimer();
   resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
-  Log.e("JCMediaManager","removeAllViews");
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }
-  Log.e("JCMediaManager","removeAllViews done");
   finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
