@@ -12,4 +12,7 @@
   }
   JCMediaManager.instance().listener=null;
   JCMediaManager.instance().lastListener=null;
+  AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
+  mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
+  ((Activity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 }
