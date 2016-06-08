@@ -1,0 +1,7 @@
+{
+  if (JC_BURIED_POINT_STANDARD != null) {
+    JC_BURIED_POINT_STANDARD.onClickStartThumb(mUrl,mObjects);
+  }
+  prepareVideo();
+  startDismissControlViewTimer();
+}

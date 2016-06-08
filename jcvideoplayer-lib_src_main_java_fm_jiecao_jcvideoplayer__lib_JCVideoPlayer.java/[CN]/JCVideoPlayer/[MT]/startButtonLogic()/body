@@ -1,0 +1,9 @@
+{
+  if (JC_BURIED_POINT != null && mCurrentState == CURRENT_STATE_NORMAL) {
+    JC_BURIED_POINT.onClickStartIcon(mUrl,mObjects);
+  }
+ else   if (JC_BURIED_POINT != null) {
+    JC_BURIED_POINT.onClickStartError(mUrl,mObjects);
+  }
+  prepareVideo();
+}
