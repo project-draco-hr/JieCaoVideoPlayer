@@ -22,10 +22,7 @@ onCompletion();
 }
 break;
 case CURRENT_STATE_COMPLETE:
-if (JCMediaManager.instance().listener == this) {
-JCMediaManager.instance().releaseMediaPlayer();
 cancelProgressTimer();
-}
 break;
 }
 }

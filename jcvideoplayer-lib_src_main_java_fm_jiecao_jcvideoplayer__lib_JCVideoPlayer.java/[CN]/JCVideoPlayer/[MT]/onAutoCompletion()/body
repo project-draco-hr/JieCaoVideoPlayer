@@ -8,4 +8,17 @@
     }
   }
   setStateAndUi(CURRENT_STATE_COMPLETE);
+  if (textureViewContainer.getChildCount() > 0) {
+    textureViewContainer.removeAllViews();
+  }
+  finishFullscreenActivity();
+  if (IF_FULLSCREEN_FROM_NORMAL) {
+    IF_FULLSCREEN_FROM_NORMAL=false;
+    JCMediaManager.instance().lastListener.onAutoCompletion();
+  }
+  JCMediaManager.instance().listener=null;
+  JCMediaManager.instance().lastListener=null;
+  AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
+  mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
+  ((Activity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 }

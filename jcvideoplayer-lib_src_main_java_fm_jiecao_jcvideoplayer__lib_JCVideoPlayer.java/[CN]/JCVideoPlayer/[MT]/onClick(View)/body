@@ -53,8 +53,12 @@
       JCMediaManager.instance().mediaPlayer.start();
       setStateAndUi(CURRENT_STATE_PLAYING);
     }
+ else     if (mCurrentState == CURRENT_STATE_COMPLETE) {
+      startButtonLogic();
+    }
   }
  else   if (i == R.id.fullscreen) {
+    if (mCurrentState == CURRENT_STATE_COMPLETE)     return;
     if (mIfCurrentIsFullscreen) {
       backFullscreen();
     }

@@ -6,7 +6,7 @@
       if (getContext() != null && getContext() instanceof Activity) {
         ((Activity)getContext()).runOnUiThread(new Runnable(){
           @Override public void run(){
-            if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_ERROR) {
+            if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_ERROR && mCurrentState != CURRENT_STATE_COMPLETE) {
               bottomContainer.setVisibility(View.INVISIBLE);
               topContainer.setVisibility(View.INVISIBLE);
               bottomProgressBar.setVisibility(View.VISIBLE);
