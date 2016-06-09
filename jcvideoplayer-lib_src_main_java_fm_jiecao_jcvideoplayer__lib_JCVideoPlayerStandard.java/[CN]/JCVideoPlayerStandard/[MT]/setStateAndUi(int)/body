@@ -19,5 +19,9 @@ break;
 case CURRENT_STATE_ERROR:
 changeUiToError();
 break;
+case CURRENT_STATE_COMPLETE:
+changeUiToShowUiComplete();
+cancelDismissControlViewTimer();
+break;
 }
 }

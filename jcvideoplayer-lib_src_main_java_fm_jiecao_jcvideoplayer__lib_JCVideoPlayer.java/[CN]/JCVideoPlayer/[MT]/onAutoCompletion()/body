@@ -7,5 +7,5 @@
       JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
     }
   }
-  onCompletion();
+  setStateAndUi(CURRENT_STATE_COMPLETE);
 }

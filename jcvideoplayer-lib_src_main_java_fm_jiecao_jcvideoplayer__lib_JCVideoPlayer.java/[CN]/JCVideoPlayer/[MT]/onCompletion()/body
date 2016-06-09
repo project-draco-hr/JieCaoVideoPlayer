@@ -1,6 +1,4 @@
 {
-  cancelProgressTimer();
-  resetProgressAndTime();
   setStateAndUi(CURRENT_STATE_NORMAL);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
