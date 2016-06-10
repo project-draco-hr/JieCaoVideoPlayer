@@ -23,6 +23,7 @@ onCompletion();
 break;
 case CURRENT_STATE_COMPLETE:
 cancelProgressTimer();
+progressBar.setProgress(100);
 break;
 }
 }

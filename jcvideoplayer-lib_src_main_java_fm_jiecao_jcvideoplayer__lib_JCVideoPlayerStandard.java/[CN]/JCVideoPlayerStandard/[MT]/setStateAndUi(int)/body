@@ -22,6 +22,7 @@ break;
 case CURRENT_STATE_COMPLETE:
 changeUiToShowUiComplete();
 cancelDismissControlViewTimer();
+bottomProgressBar.setProgress(100);
 break;
 }
 }
