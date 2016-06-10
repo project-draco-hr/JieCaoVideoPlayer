@@ -8,6 +8,7 @@ case CURRENT_STATE_NORMAL:
     }
   break;
 case CURRENT_STATE_PREPAREING:
+resetProgressAndTime();
 break;
 case CURRENT_STATE_PLAYING:
 startProgressTimer();
