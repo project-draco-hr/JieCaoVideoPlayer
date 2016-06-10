@@ -1,5 +1,6 @@
 {
   if (UPDATE_PROGRESS_TIMER != null) {
     UPDATE_PROGRESS_TIMER.cancel();
+    UPDATE_PROGRESS_TIMER=null;
   }
 }

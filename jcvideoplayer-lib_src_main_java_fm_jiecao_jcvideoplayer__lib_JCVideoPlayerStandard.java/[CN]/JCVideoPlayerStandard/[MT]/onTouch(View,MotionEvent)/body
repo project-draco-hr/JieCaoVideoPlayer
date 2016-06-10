@@ -3,16 +3,15 @@
   if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-      cancelDismissControlViewTimer();
-    break;
+      break;
 case MotionEvent.ACTION_MOVE:
-  break;
+    break;
 case MotionEvent.ACTION_UP:
-startDismissControlViewTimer();
+  startDismissControlViewTimer();
 if (mChangePosition) {
-int duration=getDuration();
-int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
-bottomProgressBar.setProgress(progress);
+  int duration=getDuration();
+  int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
+  bottomProgressBar.setProgress(progress);
 }
 if (!mChangePosition && !mChangeVolume) {
 onClickUiToggle();

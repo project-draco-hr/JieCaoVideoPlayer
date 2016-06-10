@@ -1,5 +1,6 @@
 {
   if (DISSMISS_CONTROL_VIEW_TIMER != null) {
     DISSMISS_CONTROL_VIEW_TIMER.cancel();
+    DISSMISS_CONTROL_VIEW_TIMER=null;
   }
 }

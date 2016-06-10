@@ -10,7 +10,6 @@ case MotionEvent.ACTION_DOWN:
   mDownY=y;
 mChangeVolume=false;
 mChangePosition=false;
-cancelProgressTimer();
 break;
 case MotionEvent.ACTION_MOVE:
 float deltaX=x - mDownX;
@@ -20,6 +19,7 @@ float absDeltaY=Math.abs(deltaY);
 if (mIfCurrentIsFullscreen) {
 if (!mChangePosition && !mChangeVolume) {
 if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
+cancelProgressTimer();
 if (absDeltaX >= mThreshold) {
 mChangePosition=true;
 mDownPosition=getCurrentPositionWhenPlaying();
