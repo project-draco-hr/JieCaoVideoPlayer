@@ -1,4 +1,5 @@
 {
+  if (mCurrentState != CURRENT_STATE_PLAYING && mCurrentState != CURRENT_STATE_PAUSE)   return;
   if (fromUser) {
     int time=progress * getDuration() / 100;
     JCMediaManager.instance().mediaPlayer.seekTo(time);
