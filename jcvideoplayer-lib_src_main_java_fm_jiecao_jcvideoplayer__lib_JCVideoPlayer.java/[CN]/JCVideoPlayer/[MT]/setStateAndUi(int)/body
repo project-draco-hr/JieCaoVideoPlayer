@@ -25,6 +25,7 @@ break;
 case CURRENT_STATE_AUTO_COMPLETE:
 cancelProgressTimer();
 progressBar.setProgress(100);
+currentTimeTextView.setText(totalTimeTextView.getText());
 break;
 }
 }
