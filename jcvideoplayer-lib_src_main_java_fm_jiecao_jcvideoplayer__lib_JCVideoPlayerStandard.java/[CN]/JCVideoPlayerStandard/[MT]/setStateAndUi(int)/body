@@ -19,7 +19,7 @@ break;
 case CURRENT_STATE_ERROR:
 changeUiToError();
 break;
-case CURRENT_STATE_COMPLETE:
+case CURRENT_STATE_AUTO_COMPLETE:
 changeUiToShowUiComplete();
 cancelDismissControlViewTimer();
 bottomProgressBar.setProgress(100);

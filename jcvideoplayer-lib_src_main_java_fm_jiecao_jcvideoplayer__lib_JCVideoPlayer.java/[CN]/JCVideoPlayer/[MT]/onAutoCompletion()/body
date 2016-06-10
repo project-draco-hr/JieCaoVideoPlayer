@@ -7,7 +7,7 @@
       JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
     }
   }
-  setStateAndUi(CURRENT_STATE_COMPLETE);
+  setStateAndUi(CURRENT_STATE_AUTO_COMPLETE);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }

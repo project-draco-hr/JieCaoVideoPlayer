@@ -21,7 +21,7 @@ JCMediaManager.instance().releaseMediaPlayer();
 onCompletion();
 }
 break;
-case CURRENT_STATE_COMPLETE:
+case CURRENT_STATE_AUTO_COMPLETE:
 cancelProgressTimer();
 progressBar.setProgress(100);
 break;

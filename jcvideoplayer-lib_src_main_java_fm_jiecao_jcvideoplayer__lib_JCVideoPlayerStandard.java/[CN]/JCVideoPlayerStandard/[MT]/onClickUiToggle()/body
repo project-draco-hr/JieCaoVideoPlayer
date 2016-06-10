@@ -23,7 +23,7 @@
       changeUiToShowUiPause();
     }
   }
- else   if (mCurrentState == CURRENT_STATE_COMPLETE) {
+ else   if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToClearUiComplete();
     }
