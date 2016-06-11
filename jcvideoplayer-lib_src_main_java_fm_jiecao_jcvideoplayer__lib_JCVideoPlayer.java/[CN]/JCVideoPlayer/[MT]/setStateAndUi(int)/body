@@ -3,8 +3,8 @@
 switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
     if (JCMediaManager.instance().listener == this) {
-      JCMediaManager.instance().releaseMediaPlayer();
       cancelProgressTimer();
+      JCMediaManager.instance().releaseMediaPlayer();
     }
   break;
 case CURRENT_STATE_PREPAREING:
@@ -18,8 +18,8 @@ startProgressTimer();
 break;
 case CURRENT_STATE_ERROR:
 if (JCMediaManager.instance().listener == this) {
-JCMediaManager.instance().releaseMediaPlayer();
 onCompletion();
+JCMediaManager.instance().releaseMediaPlayer();
 }
 break;
 case CURRENT_STATE_AUTO_COMPLETE:
