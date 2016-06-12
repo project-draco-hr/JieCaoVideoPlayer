@@ -21,6 +21,7 @@
   }
   int totalTime=getDuration();
   mResultTimePosition=(int)(mDownPosition + deltaX * totalTime / mScreenWidth);
+  if (mResultTimePosition > totalTime)   mResultTimePosition=totalTime;
   mDialogCurrentTime.setText(JCUtils.stringForTime(mResultTimePosition));
   mDialogTotalTime.setText(" / " + JCUtils.stringForTime(totalTime) + "");
   mDialogProgressBar.setProgress(mResultTimePosition * 100 / totalTime);
