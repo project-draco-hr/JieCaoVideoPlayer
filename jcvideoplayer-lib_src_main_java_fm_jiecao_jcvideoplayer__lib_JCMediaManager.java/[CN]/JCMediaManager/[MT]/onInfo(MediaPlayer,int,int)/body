@@ -1,8 +1,8 @@
 {
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
-      if (listener != null) {
-        listener.onInfo(what,extra);
+      if (listener() != null) {
+        listener().onInfo(what,extra);
       }
     }
   }

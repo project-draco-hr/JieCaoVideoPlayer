@@ -1,8 +1,8 @@
 {
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
-      if (listener != null) {
-        listener.onPrepared();
+      if (listener() != null) {
+        listener().onPrepared();
       }
     }
   }

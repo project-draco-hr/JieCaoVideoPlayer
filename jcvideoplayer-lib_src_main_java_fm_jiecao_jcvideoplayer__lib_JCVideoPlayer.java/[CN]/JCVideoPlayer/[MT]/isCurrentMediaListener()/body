@@ -1,0 +1,3 @@
+{
+  return JCMediaManager.instance().listener() != null && JCMediaManager.instance().listener() == this;
+}
