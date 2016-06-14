@@ -2,7 +2,7 @@
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
       if (listener != null) {
-        listener.onBufferingUpdate(percent);
+        listener().onBufferingUpdate(percent);
       }
     }
   }

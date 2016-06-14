@@ -17,7 +17,7 @@
       Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
       setStateAndUi(CURRENT_STATE_PAUSE);
-      if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
+      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
         if (mIfCurrentIsFullscreen) {
           JC_BURIED_POINT.onClickStopFullscreen(mUrl,mObjects);
         }
@@ -27,7 +27,7 @@
       }
     }
  else     if (mCurrentState == CURRENT_STATE_PAUSE) {
-      if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
+      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
         if (mIfCurrentIsFullscreen) {
           JC_BURIED_POINT.onClickResumeFullscreen(mUrl,mObjects);
         }
@@ -50,12 +50,12 @@
     }
  else {
       Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");
-      if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
+      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
         JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
       }
       JCMediaManager.instance().setDisplay(null);
-      JCMediaManager.instance().lastListener=this;
-      JCMediaManager.instance().listener=null;
+      JCMediaManager.instance().setLastListener(this);
+      JCMediaManager.instance().setListener(null);
       IF_FULLSCREEN_FROM_NORMAL=true;
       IF_RELEASE_WHEN_ON_PAUSE=false;
       JCFullScreenActivity.startActivityFromNormal(getContext(),mCurrentState,mUrl,JCVideoPlayer.this.getClass(),this.mObjects);

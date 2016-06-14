@@ -1,5 +1,5 @@
 {
-  if (JCMediaManager.instance().listener == this && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) < FULL_SCREEN_NORMAL_DELAY)   return false;
+  if (isCurrentMediaListener() && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) < FULL_SCREEN_NORMAL_DELAY)   return false;
   mCurrentState=CURRENT_STATE_NORMAL;
   this.mUrl=url;
   this.mObjects=objects;

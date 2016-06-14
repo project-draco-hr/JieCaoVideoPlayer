@@ -1,5 +1,5 @@
 {
-  if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
+  if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
     if (mIfCurrentIsFullscreen) {
       JC_BURIED_POINT.onAutoCompleteFullscreen(mUrl,mObjects);
     }
@@ -14,9 +14,9 @@
   finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
-    JCMediaManager.instance().lastListener.onAutoCompletion();
+    JCMediaManager.instance().lastListener().onAutoCompletion();
   }
-  JCMediaManager.instance().lastListener=null;
+  JCMediaManager.instance().setLastListener(null);
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   ((Activity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
