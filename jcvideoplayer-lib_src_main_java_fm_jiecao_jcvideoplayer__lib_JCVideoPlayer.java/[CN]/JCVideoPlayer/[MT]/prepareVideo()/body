@@ -1,9 +1,9 @@
 {
   Log.d(TAG,"prepareVideo [" + this.hashCode() + "] ");
-  if (JCMediaManager.instance().listener != null) {
-    JCMediaManager.instance().listener.onCompletion();
+  if (JCMediaManager.instance().listener() != null) {
+    JCMediaManager.instance().listener().onCompletion();
   }
-  JCMediaManager.instance().listener=this;
+  JCMediaManager.instance().setListener(this);
   addSurfaceView();
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.requestAudioFocus(onAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);

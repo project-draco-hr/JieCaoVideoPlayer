@@ -3,8 +3,8 @@
   currentVideoHeight=mp.getVideoHeight();
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
-      if (listener != null) {
-        listener.onVideoSizeChanged();
+      if (listener() != null) {
+        listener().onVideoSizeChanged();
       }
     }
   }

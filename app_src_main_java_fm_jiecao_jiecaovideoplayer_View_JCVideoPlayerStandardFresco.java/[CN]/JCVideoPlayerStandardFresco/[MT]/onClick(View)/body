@@ -11,7 +11,7 @@
     }
   }
  else   if (i == R.id.surface_container) {
-    if (jc_BuriedPointStandard != null && JCMediaManager.instance().listener == this) {
+    if (jc_BuriedPointStandard != null && isCurrentMediaListener()) {
       if (mIfCurrentIsFullscreen) {
         jc_BuriedPointStandard.onClickBlankFullscreen(mUrl,mObjects);
       }

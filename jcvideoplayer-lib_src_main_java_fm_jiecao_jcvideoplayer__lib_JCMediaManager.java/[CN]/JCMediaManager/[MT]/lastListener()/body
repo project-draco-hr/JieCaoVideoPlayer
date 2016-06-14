@@ -1,0 +1,4 @@
+{
+  if (listener == null)   return null;
+  return lastListener.get();
+}
