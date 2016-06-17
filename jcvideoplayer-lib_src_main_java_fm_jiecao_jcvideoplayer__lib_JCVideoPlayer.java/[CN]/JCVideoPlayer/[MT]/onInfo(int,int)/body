@@ -1,11 +1,12 @@
 {
   Log.i(TAG,"onInfo what - " + what + " extra - "+ extra);
   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
-    onMediaInfoBuffering(true);
+    BACKUP_PLAYING_BUFFERING_STATE=mCurrentState;
+    setStateAndUi(CURRENT_STATE_PLAYING_BUFFERING_START);
     Log.i(TAG,"MEDIA_INFO_BUFFERING_START");
   }
  else   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
-    onMediaInfoBuffering(false);
+    setStateAndUi(BACKUP_PLAYING_BUFFERING_STATE);
     Log.i(TAG,"MEDIA_INFO_BUFFERING_END");
   }
 }

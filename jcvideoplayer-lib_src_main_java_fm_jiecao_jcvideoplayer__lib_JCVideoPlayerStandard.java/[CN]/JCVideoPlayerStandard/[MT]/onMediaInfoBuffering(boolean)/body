@@ -1,5 +1,0 @@
-{
-  super.onMediaInfoBuffering(statues);
-  loadingProgressBar.setVisibility(statues ? View.VISIBLE : View.INVISIBLE);
-  startButton.setVisibility(!statues ? View.VISIBLE : View.INVISIBLE);
-}
