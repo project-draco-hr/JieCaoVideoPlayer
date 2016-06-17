@@ -6,10 +6,10 @@
   finishFullscreenActivity();
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
-    JCMediaManager.instance().lastListener().onCompletion();
+    JCMediaManager.instance().lastListener.onCompletion();
   }
-  JCMediaManager.instance().setListener(null);
-  JCMediaManager.instance().setLastListener(null);
+  JCMediaManager.instance().listener=null;
+  JCMediaManager.instance().lastListener=null;
   JCMediaManager.instance().currentVideoWidth=0;
   JCMediaManager.instance().currentVideoHeight=0;
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);

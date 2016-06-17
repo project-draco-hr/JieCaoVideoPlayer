@@ -1,5 +1,5 @@
 {
-  if (isCurrentMediaListener() && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) > FULL_SCREEN_NORMAL_DELAY) {
+  if (JCMediaManager.instance().listener == this && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) > FULL_SCREEN_NORMAL_DELAY) {
     Log.i(TAG,"release [" + this.hashCode() + "]");
     releaseAllVideos();
   }
