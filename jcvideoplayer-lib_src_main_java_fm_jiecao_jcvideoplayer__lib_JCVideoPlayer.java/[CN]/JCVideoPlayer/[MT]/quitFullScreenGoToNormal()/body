@@ -8,5 +8,8 @@
   JCMediaManager.instance().lastListener=null;
   JCMediaManager.instance().lastState=mCurrentState;
   JCMediaManager.instance().listener.onBackFullscreen();
+  if (mCurrentState == CURRENT_STATE_PAUSE) {
+    JCMediaManager.instance().mediaPlayer.seekTo(JCMediaManager.instance().mediaPlayer.getCurrentPosition());
+  }
   finishFullscreenActivity();
 }
