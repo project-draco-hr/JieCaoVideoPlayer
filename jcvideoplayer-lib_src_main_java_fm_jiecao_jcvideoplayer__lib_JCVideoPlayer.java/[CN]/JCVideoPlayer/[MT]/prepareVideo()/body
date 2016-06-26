@@ -4,7 +4,7 @@
     JCMediaManager.instance().listener.onCompletion();
   }
   JCMediaManager.instance().listener=this;
-  addSurfaceView();
+  addTextureView();
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.requestAudioFocus(onAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
   ((Activity)getContext()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
