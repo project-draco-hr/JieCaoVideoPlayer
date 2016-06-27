@@ -18,7 +18,6 @@ startProgressTimer();
 break;
 case CURRENT_STATE_ERROR:
 if (JCMediaManager.instance().listener == this) {
-onCompletion();
 JCMediaManager.instance().releaseMediaPlayer();
 }
 break;
