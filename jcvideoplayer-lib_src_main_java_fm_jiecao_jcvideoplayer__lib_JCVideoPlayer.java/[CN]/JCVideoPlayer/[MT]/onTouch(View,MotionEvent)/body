@@ -29,7 +29,7 @@ JC_BURIED_POINT.onTouchScreenSeekPosition(mUrl,mObjects);
 }
  else {
 mChangeVolume=true;
-mDownVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+mGestureDownVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
 JC_BURIED_POINT.onTouchScreenSeekVolume(mUrl,mObjects);
 }
@@ -46,15 +46,18 @@ String totalTime=JCUtils.stringForTime(totalTimeDuration);
 showProgressDialog(deltaX,seekTime,mSeekTimePosition,totalTime,totalTimeDuration);
 }
 if (mChangeVolume) {
-showVolumDialog(-deltaY);
+deltaY=-deltaY;
+int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+int deltaV=(int)(max * deltaY * 3 / mScreenHeight);
+mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,mGestureDownVolume + deltaV,0);
+int volumePercent=(int)(mGestureDownVolume * 100 / max + deltaY * 3 * 100 / mScreenHeight);
+showVolumDialog(-deltaY,volumePercent);
 }
 break;
 case MotionEvent.ACTION_UP:
 mTouchingProgressBar=false;
 dismissProgressDialog();
-if (mVolumeDialog != null) {
-mVolumeDialog.dismiss();
-}
+dismissVolumDialog();
 if (mChangePosition) {
 JCMediaManager.instance().mediaPlayer.seekTo(mSeekTimePosition);
 int duration=getDuration();

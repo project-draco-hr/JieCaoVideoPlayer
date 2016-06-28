@@ -1,4 +1,5 @@
 {
+  super.showVolumDialog(deltaY,volumePercent);
   if (mVolumeDialog == null) {
     View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_volume_dialog,null);
     mDialogVolumeProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
@@ -16,9 +17,5 @@
   if (!mVolumeDialog.isShowing()) {
     mVolumeDialog.show();
   }
-  int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-  int deltaV=(int)(max * deltaY * 3 / mScreenHeight);
-  mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,mDownVolume + deltaV,0);
-  int transformatVolume=(int)(mDownVolume * 100 / max + deltaY * 3 * 100 / mScreenHeight);
-  mDialogVolumeProgressBar.setProgress(transformatVolume);
+  mDialogVolumeProgressBar.setProgress(volumePercent);
 }
