@@ -1,0 +1,12 @@
+{
+  if (mCurrentState == CURRENT_STATE_PLAYING || mCurrentState == CURRENT_STATE_PAUSE) {
+    if (getContext() != null && getContext() instanceof Activity) {
+      ((Activity)getContext()).runOnUiThread(new Runnable(){
+        @Override public void run(){
+          setTextAndProgress(0);
+        }
+      }
+);
+    }
+  }
+}
