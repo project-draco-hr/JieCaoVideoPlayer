@@ -51,9 +51,7 @@ showVolumDialog(-deltaY);
 break;
 case MotionEvent.ACTION_UP:
 mTouchingProgressBar=false;
-if (mProgressDialog != null) {
-mProgressDialog.dismiss();
-}
+dismissProgressDialog();
 if (mVolumeDialog != null) {
 mVolumeDialog.dismiss();
 }
