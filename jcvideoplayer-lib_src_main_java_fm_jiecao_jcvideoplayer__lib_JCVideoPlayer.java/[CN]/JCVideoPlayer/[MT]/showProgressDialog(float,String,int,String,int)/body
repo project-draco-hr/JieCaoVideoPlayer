@@ -2,7 +2,7 @@
   if (mProgressDialog == null) {
     View localView=LayoutInflater.from(getContext()).inflate(fm.jiecao.jcvideoplayer_lib.R.layout.jc_progress_dialog,null);
     mDialogProgressBar=((ProgressBar)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_progressbar));
-    mDialogCurrentTime=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_current));
+    mDialogSeekTime=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_current));
     mDialogTotalTime=((TextView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.tv_duration));
     mDialogIcon=((ImageView)localView.findViewById(fm.jiecao.jcvideoplayer_lib.R.id.duration_image_tip));
     mProgressDialog=new Dialog(getContext(),fm.jiecao.jcvideoplayer_lib.R.style.jc_style_dialog_progress);
@@ -19,12 +19,9 @@
   if (!mProgressDialog.isShowing()) {
     mProgressDialog.show();
   }
-  int totalTime=getDuration();
-  mResultTimePosition=(int)(mDownPosition + deltaX * totalTime / mScreenWidth);
-  if (mResultTimePosition > totalTime)   mResultTimePosition=totalTime;
-  mDialogCurrentTime.setText(JCUtils.stringForTime(mResultTimePosition));
-  mDialogTotalTime.setText(" / " + JCUtils.stringForTime(totalTime) + "");
-  mDialogProgressBar.setProgress(mResultTimePosition * 100 / totalTime);
+  mDialogSeekTime.setText(seekTime);
+  mDialogTotalTime.setText(" / " + totalTime);
+  mDialogProgressBar.setProgress(seekTimePosition * 100 / totalTimeDuration);
   if (deltaX > 0) {
     mDialogIcon.setBackgroundResource(R.drawable.jc_forward_icon);
   }

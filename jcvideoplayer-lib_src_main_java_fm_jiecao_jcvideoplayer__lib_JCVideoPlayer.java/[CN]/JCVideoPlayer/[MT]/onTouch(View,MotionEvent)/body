@@ -38,7 +38,12 @@ JC_BURIED_POINT.onTouchScreenSeekVolume(mUrl,mObjects);
 }
 }
 if (mChangePosition) {
-showProgressDialog(deltaX);
+int totalTimeDuration=getDuration();
+mSeekTimePosition=(int)(mDownPosition + deltaX * totalTimeDuration / mScreenWidth);
+if (mSeekTimePosition > totalTimeDuration) mSeekTimePosition=totalTimeDuration;
+String seekTime=JCUtils.stringForTime(mSeekTimePosition);
+String totalTime=JCUtils.stringForTime(totalTimeDuration);
+showProgressDialog(deltaX,seekTime,mSeekTimePosition,totalTime,totalTimeDuration);
 }
 if (mChangeVolume) {
 showVolumDialog(-deltaY);
@@ -53,9 +58,9 @@ if (mVolumeDialog != null) {
 mVolumeDialog.dismiss();
 }
 if (mChangePosition) {
-JCMediaManager.instance().mediaPlayer.seekTo(mResultTimePosition);
+JCMediaManager.instance().mediaPlayer.seekTo(mSeekTimePosition);
 int duration=getDuration();
-int progress=mResultTimePosition * 100 / (duration == 0 ? 1 : duration);
+int progress=mSeekTimePosition * 100 / (duration == 0 ? 1 : duration);
 progressBar.setProgress(progress);
 }
 startProgressTimer();
