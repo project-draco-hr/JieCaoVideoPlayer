@@ -1,4 +1,5 @@
 {
   mCurrentState=JCMediaManager.instance().lastState;
   setStateAndUi(mCurrentState);
+  addTextureView();
 }
