@@ -1,5 +1,5 @@
 {
-  Log.i(TAG,"addTextureView [" + this.hashCode() + "] ");
+  Log.d(TAG,"addTextureView [" + this.hashCode() + "] ");
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }

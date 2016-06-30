@@ -3,6 +3,6 @@
   if (fromUser) {
     int time=progress * getDuration() / 100;
     JCMediaManager.instance().mediaPlayer.seekTo(time);
-    Log.d(TAG,"seekTo " + time + " ["+ this.hashCode()+ "] ");
+    Log.i(TAG,"seekTo " + time + " ["+ this.hashCode()+ "] ");
   }
 }

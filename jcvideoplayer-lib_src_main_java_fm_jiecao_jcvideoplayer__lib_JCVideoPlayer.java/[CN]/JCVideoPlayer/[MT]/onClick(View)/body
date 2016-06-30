@@ -1,6 +1,7 @@
 {
   int i=v.getId();
   if (i == R.id.start) {
+    Log.i(TAG,"onClick start [" + this.hashCode() + "] ");
     if (TextUtils.isEmpty(mUrl)) {
       Toast.makeText(getContext(),getResources().getString(R.string.no_url),Toast.LENGTH_SHORT).show();
       return;
@@ -58,6 +59,7 @@
     }
   }
  else   if (i == R.id.fullscreen) {
+    Log.i(TAG,"onClick fullscreen [" + this.hashCode() + "] ");
     if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE)     return;
     if (mIfCurrentIsFullscreen) {
       backFullscreen();
@@ -76,6 +78,7 @@
     }
   }
  else   if (i == R.id.surface_container && mCurrentState == CURRENT_STATE_ERROR) {
+    Log.i(TAG,"onClick surfaceContainer State=Error [" + this.hashCode() + "] ");
     if (JC_BURIED_POINT != null) {
       JC_BURIED_POINT.onClickStartError(mUrl,mObjects);
     }

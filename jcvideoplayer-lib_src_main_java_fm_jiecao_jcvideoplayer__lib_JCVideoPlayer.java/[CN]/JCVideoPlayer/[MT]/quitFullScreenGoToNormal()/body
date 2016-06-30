@@ -1,5 +1,5 @@
 {
-  Log.i(TAG,"quitFullScreenGoToNormal [" + this.hashCode() + "] ");
+  Log.d(TAG,"quitFullScreenGoToNormal [" + this.hashCode() + "] ");
   if (JC_BURIED_POINT != null && JCMediaManager.instance().listener == this) {
     JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }

@@ -5,13 +5,15 @@
   if (id == R.id.surface_container) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
-      mTouchingProgressBar=true;
-    mDownX=x;
-  mDownY=y;
+      Log.i(TAG,"onTouch surfaceContainer actionDown [" + this.hashCode() + "] ");
+    mTouchingProgressBar=true;
+  mDownX=x;
+mDownY=y;
 mChangeVolume=false;
 mChangePosition=false;
 break;
 case MotionEvent.ACTION_MOVE:
+Log.i(TAG,"onTouch surfaceContainer actionMove [" + this.hashCode() + "] ");
 float deltaX=x - mDownX;
 float deltaY=y - mDownY;
 float absDeltaX=Math.abs(deltaX);
@@ -55,6 +57,7 @@ showVolumDialog(-deltaY,volumePercent);
 }
 break;
 case MotionEvent.ACTION_UP:
+Log.i(TAG,"onTouch surfaceContainer actionUp [" + this.hashCode() + "] ");
 mTouchingProgressBar=false;
 dismissProgressDialog();
 dismissVolumDialog();
@@ -79,6 +82,7 @@ break;
  else if (id == R.id.progress) {
 switch (event.getAction()) {
 case MotionEvent.ACTION_DOWN:
+Log.i(TAG,"onTouch bottomProgress actionUp [" + this.hashCode() + "] ");
 cancelProgressTimer();
 ViewParent vpdown=getParent();
 while (vpdown != null) {
@@ -87,6 +91,7 @@ vpdown=vpdown.getParent();
 }
 break;
 case MotionEvent.ACTION_UP:
+Log.i(TAG,"onTouch bottomProgress actionDown [" + this.hashCode() + "] ");
 startProgressTimer();
 ViewParent vpup=getParent();
 while (vpup != null) {

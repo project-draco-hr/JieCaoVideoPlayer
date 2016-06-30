@@ -1,6 +1,6 @@
 {
   if (IF_RELEASE_WHEN_ON_PAUSE) {
-    Log.i(TAG,"releaseAllVideos");
+    Log.d(TAG,"releaseAllVideos");
     if (JCMediaManager.instance().listener != null) {
       JCMediaManager.instance().listener.onCompletion();
     }
