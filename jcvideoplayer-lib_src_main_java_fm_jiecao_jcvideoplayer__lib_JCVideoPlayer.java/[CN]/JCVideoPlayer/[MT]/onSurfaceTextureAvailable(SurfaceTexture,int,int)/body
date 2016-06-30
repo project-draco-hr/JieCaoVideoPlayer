@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"onSurfaceTextureAvailable [" + this.hashCode() + "] ");
   mSurface=new Surface(surface);
   JCMediaManager.instance().setDisplay(mSurface);
 }
