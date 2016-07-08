@@ -1,5 +1,5 @@
 {
-  mediaPlayer=new MediaPlayer();
+  mediaPlayer=new IjkMediaPlayer();
   mMediaHandlerThread=new HandlerThread(TAG);
   mMediaHandlerThread.start();
   mMediaHandler=new MediaHandler((mMediaHandlerThread.getLooper()));

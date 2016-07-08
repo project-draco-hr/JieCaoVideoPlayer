@@ -1,0 +1,5 @@
+IMediaPlayer mp
+int width
+int height
+int sar_num
+int sar_den
