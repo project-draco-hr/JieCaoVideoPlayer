@@ -1,26 +1,42 @@
 {
   if (mCurrentState == CURRENT_STATE_PREPAREING) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
-      changeUiToClearUiPrepareing();
+      changeUiToPrepareingClear();
     }
  else {
-      changeUiToShowUiPrepareing();
+      changeUiToPrepareingShow();
     }
   }
  else   if (mCurrentState == CURRENT_STATE_PLAYING) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
-      changeUiToClearUiPlaying();
+      changeUiToPlayingClear();
     }
  else {
-      changeUiToShowUiPlaying();
+      changeUiToPlayingShow();
     }
   }
  else   if (mCurrentState == CURRENT_STATE_PAUSE) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
-      changeUiToClearUiPause();
+      changeUiToPauseClear();
     }
  else {
-      changeUiToShowUiPause();
+      changeUiToPauseShow();
+    }
+  }
+ else   if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
+    if (bottomContainer.getVisibility() == View.VISIBLE) {
+      changeUiToCompleteClear();
+    }
+ else {
+      changeUiToCompleteShow();
+    }
+  }
+ else   if (mCurrentState == CURRENT_STATE_PLAYING_BUFFERING_START) {
+    if (bottomContainer.getVisibility() == View.VISIBLE) {
+      changeUiToPlayingBufferingClear();
+    }
+ else {
+      changeUiToPlayingBufferingShow();
     }
   }
 }

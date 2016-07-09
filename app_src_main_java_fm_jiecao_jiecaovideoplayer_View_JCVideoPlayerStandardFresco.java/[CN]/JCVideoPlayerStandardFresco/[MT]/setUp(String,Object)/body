@@ -1,12 +1,13 @@
 {
+  if (objects.length == 0)   return false;
   if (super.setUp(url,objects)) {
-    tvTitle.setText(objects[0].toString());
+    titleTextView.setText(objects[0].toString());
     if (mIfCurrentIsFullscreen) {
-      fullscreenButton.setImageResource(R.drawable.jc_shrink);
+      fullscreenButton.setImageResource(fm.jiecao.jcvideoplayer_lib.R.drawable.jc_shrink);
     }
  else {
-      fullscreenButton.setImageResource(R.drawable.jc_enlarge);
-      ivBack.setVisibility(View.GONE);
+      fullscreenButton.setImageResource(fm.jiecao.jcvideoplayer_lib.R.drawable.jc_enlarge);
+      backButton.setVisibility(View.GONE);
     }
     return true;
   }

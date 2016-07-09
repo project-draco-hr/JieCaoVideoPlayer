@@ -1,5 +1,5 @@
 {
   super.setProgressAndTime(progress,secProgress,currentTime,totalTime);
-  if (progress != 0)   pbBottom.setProgress(progress);
-  if (secProgress != 0)   pbBottom.setSecondaryProgress(secProgress);
+  if (progress != 0)   bottomProgressBar.setProgress(progress);
+  if (secProgress != 0)   bottomProgressBar.setSecondaryProgress(secProgress);
 }

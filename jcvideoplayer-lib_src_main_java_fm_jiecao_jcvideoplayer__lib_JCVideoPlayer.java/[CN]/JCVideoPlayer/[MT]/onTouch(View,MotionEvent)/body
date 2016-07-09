@@ -43,8 +43,8 @@ if (mChangePosition) {
 int totalTimeDuration=getDuration();
 mSeekTimePosition=(int)(mDownPosition + deltaX * totalTimeDuration / mScreenWidth);
 if (mSeekTimePosition > totalTimeDuration) mSeekTimePosition=totalTimeDuration;
-String seekTime=JCUtils.stringForTime(mSeekTimePosition);
-String totalTime=JCUtils.stringForTime(totalTimeDuration);
+String seekTime=Utils.stringForTime(mSeekTimePosition);
+String totalTime=Utils.stringForTime(totalTimeDuration);
 showProgressDialog(deltaX,seekTime,mSeekTimePosition,totalTime,totalTimeDuration);
 }
 if (mChangeVolume) {

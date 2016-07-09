@@ -1,9 +1,0 @@
-{
-  topContainer.setVisibility(View.INVISIBLE);
-  bottomContainer.setVisibility(View.INVISIBLE);
-  startButton.setVisibility(View.INVISIBLE);
-  pbLoading.setVisibility(View.INVISIBLE);
-  ivThumb.setVisibility(View.INVISIBLE);
-  ivCover.setVisibility(View.INVISIBLE);
-  pbBottom.setVisibility(View.INVISIBLE);
-}

@@ -3,22 +3,29 @@
 switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
     changeUiToNormal();
-  cancelDismissControlViewTimer();
-break;
+  break;
 case CURRENT_STATE_PREPAREING:
-changeUiToShowUiPrepareing();
+changeUiToPrepareingShow();
 startDismissControlViewTimer();
 break;
 case CURRENT_STATE_PLAYING:
-changeUiToShowUiPlaying();
+changeUiToPlayingShow();
 startDismissControlViewTimer();
 break;
 case CURRENT_STATE_PAUSE:
-changeUiToShowUiPause();
+changeUiToPauseShow();
 cancelDismissControlViewTimer();
 break;
 case CURRENT_STATE_ERROR:
 changeUiToError();
+break;
+case CURRENT_STATE_AUTO_COMPLETE:
+changeUiToCompleteShow();
+cancelDismissControlViewTimer();
+bottomProgressBar.setProgress(100);
+break;
+case CURRENT_STATE_PLAYING_BUFFERING_START:
+changeUiToPlayingBufferingShow();
 break;
 }
 }

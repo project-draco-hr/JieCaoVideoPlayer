@@ -1,5 +1,8 @@
 {
-  if (mDismissControlViewTimer != null) {
-    mDismissControlViewTimer.cancel();
+  if (DISSMISS_CONTROL_VIEW_TIMER != null) {
+    DISSMISS_CONTROL_VIEW_TIMER.cancel();
+  }
+  if (mDismissControlViewTimerTask != null) {
+    mDismissControlViewTimerTask.cancel();
   }
 }

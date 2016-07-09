@@ -1,0 +1,6 @@
+{
+  super.dismissProgressDialog();
+  if (mProgressDialog != null) {
+    mProgressDialog.dismiss();
+  }
+}

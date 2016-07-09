@@ -3,6 +3,6 @@
     if (progress != 0)     progressBar.setProgress(progress);
   }
   if (secProgress != 0)   progressBar.setSecondaryProgress(secProgress);
-  currentTimeTextView.setText(JCUtils.stringForTime(currentTime));
-  totalTimeTextView.setText(JCUtils.stringForTime(totalTime));
+  currentTimeTextView.setText(Utils.stringForTime(currentTime));
+  totalTimeTextView.setText(Utils.stringForTime(totalTime));
 }
