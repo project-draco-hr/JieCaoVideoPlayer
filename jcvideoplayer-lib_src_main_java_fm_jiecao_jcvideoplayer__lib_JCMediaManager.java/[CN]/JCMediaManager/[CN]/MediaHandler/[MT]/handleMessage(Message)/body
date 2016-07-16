@@ -6,9 +6,9 @@ case HANDLER_PREPARE:
       currentVideoWidth=0;
       currentVideoHeight=0;
       mediaPlayer.release();
-      mediaPlayer=new MediaPlayer();
+      mediaPlayer=new IjkMediaPlayer();
       mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-      Class<MediaPlayer> clazz=MediaPlayer.class;
+      Class<IjkMediaPlayer> clazz=IjkMediaPlayer.class;
       Method method=clazz.getDeclaredMethod("setDataSource",String.class,Map.class);
       method.invoke(mediaPlayer,((FuckBean)msg.obj).url,((FuckBean)msg.obj).mapHeadData);
       mediaPlayer.setLooping(((FuckBean)msg.obj).looping);

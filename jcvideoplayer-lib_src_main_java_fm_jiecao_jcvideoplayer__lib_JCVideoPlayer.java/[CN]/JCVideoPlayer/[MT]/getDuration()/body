@@ -1,7 +1,7 @@
 {
   int duration=0;
   try {
-    duration=JCMediaManager.instance().mediaPlayer.getDuration();
+    duration=(int)JCMediaManager.instance().mediaPlayer.getDuration();
   }
  catch (  IllegalStateException e) {
     e.printStackTrace();
