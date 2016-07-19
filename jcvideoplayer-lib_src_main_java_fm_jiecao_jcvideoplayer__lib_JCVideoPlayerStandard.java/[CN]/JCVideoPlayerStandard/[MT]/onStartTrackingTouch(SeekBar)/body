@@ -1,0 +1,4 @@
+{
+  super.onStartTrackingTouch(seekBar);
+  cancelDismissControlViewTimer();
+}
