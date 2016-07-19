@@ -13,7 +13,6 @@
   progressBar.setOnSeekBarChangeListener(this);
   bottomContainer.setOnClickListener(this);
   textureViewContainer.setOnClickListener(this);
-  progressBar.setOnTouchListener(this);
   textureViewContainer.setOnTouchListener(this);
   mScreenWidth=getContext().getResources().getDisplayMetrics().widthPixels;
   mScreenHeight=getContext().getResources().getDisplayMetrics().heightPixels;

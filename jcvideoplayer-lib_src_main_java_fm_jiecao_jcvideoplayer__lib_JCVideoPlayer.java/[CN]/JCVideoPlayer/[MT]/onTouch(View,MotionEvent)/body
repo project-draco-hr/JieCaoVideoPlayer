@@ -79,27 +79,5 @@ JC_BURIED_POINT.onClickSeekbar(mUrl,mObjects);
 break;
 }
 }
- else if (id == R.id.progress) {
-switch (event.getAction()) {
-case MotionEvent.ACTION_DOWN:
-Log.i(TAG,"onTouch bottomProgress actionUp [" + this.hashCode() + "] ");
-cancelProgressTimer();
-ViewParent vpdown=getParent();
-while (vpdown != null) {
-vpdown.requestDisallowInterceptTouchEvent(true);
-vpdown=vpdown.getParent();
-}
-break;
-case MotionEvent.ACTION_UP:
-Log.i(TAG,"onTouch bottomProgress actionDown [" + this.hashCode() + "] ");
-startProgressTimer();
-ViewParent vpup=getParent();
-while (vpup != null) {
-vpup.requestDisallowInterceptTouchEvent(false);
-vpup=vpup.getParent();
-}
-break;
-}
-}
 return false;
 }
