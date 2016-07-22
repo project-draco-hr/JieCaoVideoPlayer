@@ -1,5 +1,0 @@
-{
-  super.init(context);
-  shareButton=(ImageView)findViewById(R.id.share);
-  shareButton.setOnClickListener(this);
-}

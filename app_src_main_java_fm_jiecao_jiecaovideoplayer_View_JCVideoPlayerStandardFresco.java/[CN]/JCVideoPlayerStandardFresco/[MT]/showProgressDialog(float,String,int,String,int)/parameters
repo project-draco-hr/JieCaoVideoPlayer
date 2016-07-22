@@ -1,5 +1,0 @@
-float deltaX
-String seekTime
-int seekTimePosition
-String totalTime
-int totalTimeDuration

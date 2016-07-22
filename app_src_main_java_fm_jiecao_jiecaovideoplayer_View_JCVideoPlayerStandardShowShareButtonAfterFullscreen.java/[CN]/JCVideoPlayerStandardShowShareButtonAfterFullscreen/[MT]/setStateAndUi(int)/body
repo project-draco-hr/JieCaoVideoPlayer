@@ -1,9 +1,0 @@
-{
-  super.setStateAndUi(state);
-  if (mIfCurrentIsFullscreen) {
-    shareButton.setVisibility(View.VISIBLE);
-  }
- else {
-    shareButton.setVisibility(View.INVISIBLE);
-  }
-}
