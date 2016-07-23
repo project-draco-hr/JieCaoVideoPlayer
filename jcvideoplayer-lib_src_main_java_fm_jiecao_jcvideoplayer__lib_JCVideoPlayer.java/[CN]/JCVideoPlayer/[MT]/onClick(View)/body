@@ -58,7 +58,7 @@
       JCMediaManager.instance().setListener(null);
       IF_FULLSCREEN_FROM_NORMAL=true;
       IF_RELEASE_WHEN_ON_PAUSE=false;
-      JCFullScreenActivity.startActivityFromNormal(getContext(),mCurrentState,mUrl,JCVideoPlayer.this.getClass(),this.mObjects);
+      toFullscreen();
     }
   }
  else   if (i == R.id.surface_container && mCurrentState == CURRENT_STATE_ERROR) {

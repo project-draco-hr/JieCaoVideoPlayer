@@ -3,10 +3,10 @@
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }
-  textureView=null;
-  textureView=new JCResizeTextureView(getContext());
-  textureView.setSurfaceTextureListener(this);
+  JCMediaManager.textureView=null;
+  JCMediaManager.textureView=new JCResizeTextureView(getContext());
+  JCMediaManager.textureView.setSurfaceTextureListener(this);
   RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
   layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
-  textureViewContainer.addView(textureView,layoutParams);
+  textureViewContainer.addView(JCMediaManager.textureView,layoutParams);
 }

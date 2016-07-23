@@ -1,0 +1,15 @@
+{
+  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  try {
+    Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
+    JCVideoPlayer mJcVideoPlayer=constructor.newInstance(getContext());
+    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,200);
+    vp.addView(mJcVideoPlayer,lp);
+  }
+ catch (  InstantiationException e) {
+    e.printStackTrace();
+  }
+catch (  Exception e) {
+    e.printStackTrace();
+  }
+}
