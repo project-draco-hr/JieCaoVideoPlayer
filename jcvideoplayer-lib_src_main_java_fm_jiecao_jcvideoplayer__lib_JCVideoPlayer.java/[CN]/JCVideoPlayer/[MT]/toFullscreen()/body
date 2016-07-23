@@ -3,8 +3,17 @@
   try {
     Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
     JCVideoPlayer mJcVideoPlayer=constructor.newInstance(getContext());
-    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,200);
+    WindowManager wm=(WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
+    int w=wm.getDefaultDisplay().getWidth();
+    int h=wm.getDefaultDisplay().getHeight();
+    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(h,w);
+    lp.setMargins((w - h) / 2,-(w - h) / 2,0,0);
     vp.addView(mJcVideoPlayer,lp);
+    mJcVideoPlayer.setUp(mUrl,mObjects);
+    mJcVideoPlayer.setStateAndUi(mCurrentState);
+    mJcVideoPlayer.setRotation(90);
+    ((AppCompatActivity)getContext()).getSupportActionBar().hide();
+    ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();
