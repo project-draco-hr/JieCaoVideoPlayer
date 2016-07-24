@@ -11,9 +11,10 @@
     vp.addView(mJcVideoPlayer,lp);
     mJcVideoPlayer.setUp(mUrl,mObjects);
     mJcVideoPlayer.setStateAndUi(mCurrentState);
+    mJcVideoPlayer.addTextureView();
     mJcVideoPlayer.setRotation(90);
-    ((AppCompatActivity)getContext()).getSupportActionBar().hide();
     ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    ((AppCompatActivity)getContext()).getSupportActionBar().hide();
   }
  catch (  InstantiationException e) {
     e.printStackTrace();
