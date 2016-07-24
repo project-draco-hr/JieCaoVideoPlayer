@@ -3,6 +3,7 @@
   mCurrentState=CURRENT_STATE_NORMAL;
   this.mUrl=url;
   this.mObjects=objects;
+  this.mCurrentScreen=screen;
   setStateAndUi(CURRENT_STATE_NORMAL);
   return true;
 }

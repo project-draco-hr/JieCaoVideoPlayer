@@ -1,0 +1,6 @@
+{
+  if (JCMediaManager.instance().listener() != null) {
+    return JCMediaManager.instance().listener().onBackPress();
+  }
+  return false;
+}

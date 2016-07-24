@@ -1,5 +1,5 @@
 {
-  if (setUp(url,objects)) {
+  if (setUp(url,screen,objects)) {
     this.mMapHeadData.clear();
     this.mMapHeadData.putAll(mapHeadData);
     return true;

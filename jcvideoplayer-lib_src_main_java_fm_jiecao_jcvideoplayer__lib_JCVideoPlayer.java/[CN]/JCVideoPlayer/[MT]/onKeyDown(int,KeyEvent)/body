@@ -1,7 +1,0 @@
-{
-  if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-    Toast.makeText(getContext(),"?????????Back?????????",Toast.LENGTH_SHORT).show();
-    return true;
-  }
-  return super.onKeyDown(keyCode,event);
-}

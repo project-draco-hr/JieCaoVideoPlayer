@@ -3,7 +3,6 @@
   IF_FULLSCREEN_FROM_NORMAL=false;
   if (mIfFullscreenIsDirectly) {
     JCMediaManager.instance().mediaPlayer.release();
-    finishFullscreenActivity();
   }
  else {
     CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();

@@ -11,5 +11,4 @@
   if (mCurrentState == CURRENT_STATE_PAUSE) {
     JCMediaManager.instance().mediaPlayer.seekTo(JCMediaManager.instance().mediaPlayer.getCurrentPosition());
   }
-  finishFullscreenActivity();
 }
