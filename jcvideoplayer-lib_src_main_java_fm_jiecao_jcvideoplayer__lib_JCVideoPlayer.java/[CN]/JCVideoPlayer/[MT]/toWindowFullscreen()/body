@@ -12,7 +12,7 @@
     mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
     mJcVideoPlayer.setStateAndUi(mCurrentState);
     mJcVideoPlayer.addTextureView();
-    JCMediaManager.instance().setListener(mJcVideoPlayer);
+    JCVideoPlayerManager.setListener(mJcVideoPlayer);
     mJcVideoPlayer.setRotation(90);
     ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
     ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);

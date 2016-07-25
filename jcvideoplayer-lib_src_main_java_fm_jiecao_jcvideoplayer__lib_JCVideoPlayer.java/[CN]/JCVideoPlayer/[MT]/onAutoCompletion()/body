@@ -13,9 +13,9 @@
   }
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
-    JCMediaManager.instance().lastListener().onAutoCompletion();
+    JCVideoPlayerManager.lastListener().onAutoCompletion();
   }
-  JCMediaManager.instance().setLastListener(null);
+  JCVideoPlayerManager.setLastListener(null);
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   ((Activity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

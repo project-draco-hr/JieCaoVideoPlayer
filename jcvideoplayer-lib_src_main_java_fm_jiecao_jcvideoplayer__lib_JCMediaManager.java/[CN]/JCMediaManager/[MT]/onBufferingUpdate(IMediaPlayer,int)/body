@@ -1,8 +1,8 @@
 {
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
-      if (listener != null) {
-        listener().onBufferingUpdate(percent);
+      if (JCVideoPlayerManager.listener() != null) {
+        JCVideoPlayerManager.listener().onBufferingUpdate(percent);
       }
     }
   }

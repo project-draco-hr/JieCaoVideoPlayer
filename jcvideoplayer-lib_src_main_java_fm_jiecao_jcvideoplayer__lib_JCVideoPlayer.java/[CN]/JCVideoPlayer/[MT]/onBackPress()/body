@@ -3,10 +3,10 @@
     ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
     vp.removeView(this);
     JCMediaManager.instance().setDisplay(null);
-    JCMediaManager.instance().setListener(JCMediaManager.instance().lastListener());
-    JCMediaManager.instance().setLastListener(null);
+    JCVideoPlayerManager.setListener(JCVideoPlayerManager.lastListener());
+    JCVideoPlayerManager.setLastListener(null);
     JCMediaManager.instance().lastState=mCurrentState;
-    JCMediaManager.instance().listener().onBackFullscreen();
+    JCVideoPlayerManager.listener().onBackFullscreen();
     return true;
   }
   return false;

@@ -54,8 +54,8 @@
         JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
       }
       JCMediaManager.instance().setDisplay(null);
-      JCMediaManager.instance().setLastListener(this);
-      JCMediaManager.instance().setListener(null);
+      JCVideoPlayerManager.setLastListener(this);
+      JCVideoPlayerManager.setListener(null);
       IF_FULLSCREEN_FROM_NORMAL=true;
       IF_RELEASE_WHEN_ON_PAUSE=false;
       toWindowFullscreen();

@@ -4,10 +4,10 @@
     JC_BURIED_POINT.onQuitFullscreen(mUrl,mObjects);
   }
   JCMediaManager.instance().setDisplay(null);
-  JCMediaManager.instance().setListener(JCMediaManager.instance().lastListener());
-  JCMediaManager.instance().setLastListener(null);
+  JCVideoPlayerManager.setListener(JCVideoPlayerManager.lastListener());
+  JCVideoPlayerManager.setLastListener(null);
   JCMediaManager.instance().lastState=mCurrentState;
-  JCMediaManager.instance().listener().onBackFullscreen();
+  JCVideoPlayerManager.listener().onBackFullscreen();
   if (mCurrentState == CURRENT_STATE_PAUSE) {
     JCMediaManager.instance().mediaPlayer.seekTo(JCMediaManager.instance().mediaPlayer.getCurrentPosition());
   }

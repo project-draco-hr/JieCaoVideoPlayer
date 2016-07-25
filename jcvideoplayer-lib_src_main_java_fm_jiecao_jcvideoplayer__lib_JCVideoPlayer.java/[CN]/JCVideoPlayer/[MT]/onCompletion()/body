@@ -6,8 +6,8 @@
   if (IF_FULLSCREEN_FROM_NORMAL) {
     IF_FULLSCREEN_FROM_NORMAL=false;
   }
-  JCMediaManager.instance().setListener(null);
-  JCMediaManager.instance().setLastListener(null);
+  JCVideoPlayerManager.setListener(null);
+  JCVideoPlayerManager.setLastListener(null);
   JCMediaManager.instance().currentVideoWidth=0;
   JCMediaManager.instance().currentVideoHeight=0;
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
