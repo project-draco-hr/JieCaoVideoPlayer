@@ -25,4 +25,7 @@
  else   if (i == R.id.back) {
     backPress();
   }
+ else   if (i == R.id.back_tiny) {
+    backPress();
+  }
 }

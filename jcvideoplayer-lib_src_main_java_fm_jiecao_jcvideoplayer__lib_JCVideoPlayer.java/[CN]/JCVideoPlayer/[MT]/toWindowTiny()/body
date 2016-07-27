@@ -8,7 +8,7 @@
     FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(400,400);
     lp.gravity=Gravity.RIGHT | Gravity.BOTTOM;
     vp.addView(mJcVideoPlayer,lp);
-    mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
+    mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_TINY,mObjects);
     mJcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
     mJcVideoPlayer.addTextureView();
     JCVideoPlayerManager.setListener(mJcVideoPlayer);

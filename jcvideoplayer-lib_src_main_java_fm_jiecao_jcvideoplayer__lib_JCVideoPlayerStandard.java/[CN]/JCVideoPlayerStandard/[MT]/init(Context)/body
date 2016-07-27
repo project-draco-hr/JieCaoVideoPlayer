@@ -9,4 +9,5 @@
   tinyBackImageView=(ImageView)findViewById(R.id.back_tiny);
   thumbImageView.setOnClickListener(this);
   backButton.setOnClickListener(this);
+  tinyBackImageView.setOnClickListener(this);
 }

@@ -14,6 +14,7 @@
     }
  else     if (mCurrentScreen == SCREEN_WINDOW_TINY) {
       tinyBackImageView.setVisibility(View.VISIBLE);
+      setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
     }
     return true;
   }
