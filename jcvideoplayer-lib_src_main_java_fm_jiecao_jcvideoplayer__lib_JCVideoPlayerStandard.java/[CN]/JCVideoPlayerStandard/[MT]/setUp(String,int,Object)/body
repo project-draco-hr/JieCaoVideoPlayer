@@ -2,12 +2,18 @@
   if (objects.length == 0)   return false;
   if (super.setUp(url,screen,objects)) {
     titleTextView.setText(objects[0].toString());
-    if (mIfCurrentIsFullscreen) {
+    if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
       fullscreenButton.setImageResource(R.drawable.jc_shrink);
+      backButton.setVisibility(View.VISIBLE);
+      tinyBackImageView.setVisibility(View.INVISIBLE);
     }
- else {
+ else     if (mCurrentScreen == SCREEN_LAYOUT_LIST) {
       fullscreenButton.setImageResource(R.drawable.jc_enlarge);
       backButton.setVisibility(View.GONE);
+      tinyBackImageView.setVisibility(View.INVISIBLE);
+    }
+ else     if (mCurrentScreen == SCREEN_WINDOW_TINY) {
+      tinyBackImageView.setVisibility(View.VISIBLE);
     }
     return true;
   }

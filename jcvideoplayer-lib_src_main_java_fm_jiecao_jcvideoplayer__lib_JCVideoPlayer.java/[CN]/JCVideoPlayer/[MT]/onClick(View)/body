@@ -18,22 +18,10 @@
       JCMediaManager.instance().mediaPlayer.pause();
       setUiWitStateAndScreen(CURRENT_STATE_PAUSE);
       if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-        if (mIfCurrentIsFullscreen) {
-          JC_BURIED_POINT.onClickStopFullscreen(mUrl,mObjects);
-        }
- else {
-          JC_BURIED_POINT.onClickStop(mUrl,mObjects);
-        }
       }
     }
  else     if (mCurrentState == CURRENT_STATE_PAUSE) {
       if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-        if (mIfCurrentIsFullscreen) {
-          JC_BURIED_POINT.onClickResumeFullscreen(mUrl,mObjects);
-        }
- else {
-          JC_BURIED_POINT.onClickResume(mUrl,mObjects);
-        }
       }
       JCMediaManager.instance().mediaPlayer.start();
       setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
@@ -45,8 +33,8 @@
  else   if (i == R.id.fullscreen) {
     Log.i(TAG,"onClick fullscreen [" + this.hashCode() + "] ");
     if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE)     return;
-    if (mIfCurrentIsFullscreen) {
-      backFullscreen();
+    if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
+      backPress();
     }
  else {
       Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");

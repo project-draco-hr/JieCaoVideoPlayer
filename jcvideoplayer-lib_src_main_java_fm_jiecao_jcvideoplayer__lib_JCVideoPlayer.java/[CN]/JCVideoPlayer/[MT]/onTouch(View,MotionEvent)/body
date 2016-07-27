@@ -18,7 +18,7 @@ float deltaX=x - mDownX;
 float deltaY=y - mDownY;
 float absDeltaX=Math.abs(deltaX);
 float absDeltaY=Math.abs(deltaY);
-if (mIfCurrentIsFullscreen) {
+if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
 if (!mChangePosition && !mChangeVolume) {
 if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
 cancelProgressTimer();
@@ -69,12 +69,6 @@ progressBar.setProgress(progress);
 }
 startProgressTimer();
 if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-if (mIfCurrentIsFullscreen) {
-JC_BURIED_POINT.onClickSeekbarFullscreen(mUrl,mObjects);
-}
- else {
-JC_BURIED_POINT.onClickSeekbar(mUrl,mObjects);
-}
 }
 break;
 }

@@ -1,11 +1,5 @@
 {
   if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-    if (mIfCurrentIsFullscreen) {
-      JC_BURIED_POINT.onAutoCompleteFullscreen(mUrl,mObjects);
-    }
- else {
-      JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
-    }
   }
   setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
   if (textureViewContainer.getChildCount() > 0) {
