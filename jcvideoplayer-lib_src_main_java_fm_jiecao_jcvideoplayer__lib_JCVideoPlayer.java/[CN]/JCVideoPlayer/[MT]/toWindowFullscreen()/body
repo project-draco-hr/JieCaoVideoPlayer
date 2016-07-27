@@ -15,7 +15,7 @@
     lp.setMargins((w - h) / 2,-(w - h) / 2,0,0);
     vp.addView(mJcVideoPlayer,lp);
     mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
-    mJcVideoPlayer.setStateAndUi(mCurrentState);
+    mJcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
     mJcVideoPlayer.addTextureView();
     mJcVideoPlayer.setRotation(90);
     JCVideoPlayerManager.setLastListener(this);

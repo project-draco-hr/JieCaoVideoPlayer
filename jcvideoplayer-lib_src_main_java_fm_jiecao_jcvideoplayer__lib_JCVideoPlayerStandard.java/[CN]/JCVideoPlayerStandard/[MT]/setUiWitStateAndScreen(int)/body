@@ -1,5 +1,5 @@
 {
-  super.setStateAndUi(state);
+  super.setUiWitStateAndScreen(state);
 switch (mCurrentState) {
 case CURRENT_STATE_NORMAL:
     changeUiToNormal();

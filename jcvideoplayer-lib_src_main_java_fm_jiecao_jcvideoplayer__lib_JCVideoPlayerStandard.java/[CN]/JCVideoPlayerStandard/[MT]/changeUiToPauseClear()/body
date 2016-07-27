@@ -1,4 +1,3 @@
 {
-  changeUiToClear();
-  bottomProgressBar.setVisibility(View.VISIBLE);
+  setAllControlsVisible(View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
 }

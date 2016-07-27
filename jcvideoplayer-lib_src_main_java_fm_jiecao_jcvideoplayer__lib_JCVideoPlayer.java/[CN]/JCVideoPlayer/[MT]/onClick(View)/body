@@ -16,7 +16,7 @@
  else     if (mCurrentState == CURRENT_STATE_PLAYING) {
       Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
-      setStateAndUi(CURRENT_STATE_PAUSE);
+      setUiWitStateAndScreen(CURRENT_STATE_PAUSE);
       if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
         if (mIfCurrentIsFullscreen) {
           JC_BURIED_POINT.onClickStopFullscreen(mUrl,mObjects);
@@ -36,7 +36,7 @@
         }
       }
       JCMediaManager.instance().mediaPlayer.start();
-      setStateAndUi(CURRENT_STATE_PLAYING);
+      setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
     }
  else     if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
       startButtonLogic();

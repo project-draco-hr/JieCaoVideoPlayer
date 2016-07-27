@@ -9,7 +9,7 @@
     lp.gravity=Gravity.RIGHT | Gravity.BOTTOM;
     vp.addView(mJcVideoPlayer,lp);
     mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
-    mJcVideoPlayer.setStateAndUi(mCurrentState);
+    mJcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
     mJcVideoPlayer.addTextureView();
     JCVideoPlayerManager.setListener(mJcVideoPlayer);
   }

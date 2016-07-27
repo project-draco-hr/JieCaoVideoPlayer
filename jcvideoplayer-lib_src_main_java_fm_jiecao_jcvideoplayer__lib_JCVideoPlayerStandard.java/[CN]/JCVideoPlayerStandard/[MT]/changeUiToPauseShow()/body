@@ -1,10 +1,4 @@
 {
-  topContainer.setVisibility(View.VISIBLE);
-  bottomContainer.setVisibility(View.VISIBLE);
-  startButton.setVisibility(View.VISIBLE);
-  loadingProgressBar.setVisibility(View.INVISIBLE);
-  thumbImageView.setVisibility(View.INVISIBLE);
-  coverImageView.setVisibility(View.INVISIBLE);
-  bottomProgressBar.setVisibility(View.INVISIBLE);
+  setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
   updateStartImage();
 }
