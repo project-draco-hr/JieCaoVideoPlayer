@@ -13,4 +13,13 @@
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   ((Activity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  View oldF=vp.findViewById(FULLSCREEN_ID);
+  View oldT=vp.findViewById(TINY_ID);
+  if (oldF != null) {
+    vp.removeView(oldF);
+  }
+  if (oldT != null) {
+    vp.removeView(oldT);
+  }
 }
