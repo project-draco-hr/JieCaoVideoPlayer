@@ -1,0 +1,10 @@
+{
+  if (context == null)   return null;
+  if (context instanceof Activity) {
+    return (Activity)context;
+  }
+ else   if (context instanceof ContextWrapper) {
+    return scanForActivity(((ContextWrapper)context).getBaseContext());
+  }
+  return null;
+}
