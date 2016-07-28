@@ -5,21 +5,26 @@
   IF_FULLSCREEN_FROM_NORMAL=true;
   IF_RELEASE_WHEN_ON_PAUSE=false;
   ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  View old=vp.findViewById(FULLSCREEN_ID);
+  if (old != null) {
+    vp.removeView(old);
+  }
   try {
     Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
-    JCVideoPlayer mJcVideoPlayer=constructor.newInstance(getContext());
+    JCVideoPlayer jcVideoPlayer=constructor.newInstance(getContext());
+    jcVideoPlayer.setId(FULLSCREEN_ID);
     WindowManager wm=(WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
     int w=wm.getDefaultDisplay().getWidth();
     int h=wm.getDefaultDisplay().getHeight();
     FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(h,w);
     lp.setMargins((w - h) / 2,-(w - h) / 2,0,0);
-    vp.addView(mJcVideoPlayer,lp);
-    mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
-    mJcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
-    mJcVideoPlayer.addTextureView();
-    mJcVideoPlayer.setRotation(90);
+    vp.addView(jcVideoPlayer,lp);
+    jcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
+    jcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
+    jcVideoPlayer.addTextureView();
+    jcVideoPlayer.setRotation(90);
     JCVideoPlayerManager.setLastListener(this);
-    JCVideoPlayerManager.setListener(mJcVideoPlayer);
+    JCVideoPlayerManager.setListener(jcVideoPlayer);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();
