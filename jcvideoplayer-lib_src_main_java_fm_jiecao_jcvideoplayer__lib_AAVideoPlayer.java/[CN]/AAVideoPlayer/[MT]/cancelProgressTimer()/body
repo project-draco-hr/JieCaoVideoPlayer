@@ -1,0 +1,8 @@
+{
+  if (UPDATE_PROGRESS_TIMER != null) {
+    UPDATE_PROGRESS_TIMER.cancel();
+  }
+  if (mProgressTimerTask != null) {
+    mProgressTimerTask.cancel();
+  }
+}

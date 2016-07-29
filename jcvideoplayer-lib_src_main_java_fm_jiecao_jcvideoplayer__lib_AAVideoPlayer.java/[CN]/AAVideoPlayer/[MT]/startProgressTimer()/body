@@ -1,0 +1,6 @@
+{
+  cancelProgressTimer();
+  UPDATE_PROGRESS_TIMER=new Timer();
+  mProgressTimerTask=new ProgressTimerTask();
+  UPDATE_PROGRESS_TIMER.schedule(mProgressTimerTask,0,300);
+}

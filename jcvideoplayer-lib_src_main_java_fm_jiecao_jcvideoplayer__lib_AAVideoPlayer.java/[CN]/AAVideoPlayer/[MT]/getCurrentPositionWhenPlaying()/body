@@ -1,0 +1,13 @@
+{
+  int position=0;
+  if (mCurrentState == CURRENT_STATE_PLAYING || mCurrentState == CURRENT_STATE_PAUSE) {
+    try {
+      position=(int)JCMediaManager.instance().mediaPlayer.getCurrentPosition();
+    }
+ catch (    IllegalStateException e) {
+      e.printStackTrace();
+      return position;
+    }
+  }
+  return position;
+}

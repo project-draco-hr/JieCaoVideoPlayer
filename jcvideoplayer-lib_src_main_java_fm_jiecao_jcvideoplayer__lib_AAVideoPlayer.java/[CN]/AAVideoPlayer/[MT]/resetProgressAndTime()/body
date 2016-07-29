@@ -1,0 +1,6 @@
+{
+  progressBar.setProgress(0);
+  progressBar.setSecondaryProgress(0);
+  currentTimeTextView.setText(JCUtils.stringForTime(0));
+  totalTimeTextView.setText(JCUtils.stringForTime(0));
+}
