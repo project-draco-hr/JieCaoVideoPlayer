@@ -1,3 +1,0 @@
-{
-  return JCVideoPlayerManager.listener() != null && JCVideoPlayerManager.listener() == this;
-}

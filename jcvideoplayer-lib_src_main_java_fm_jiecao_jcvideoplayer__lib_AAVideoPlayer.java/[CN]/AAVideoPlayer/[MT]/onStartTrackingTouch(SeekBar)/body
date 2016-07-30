@@ -1,9 +1,0 @@
-{
-  Log.i(TAG,"bottomProgress onStartTrackingTouch [" + this.hashCode() + "] ");
-  cancelProgressTimer();
-  ViewParent vpdown=getParent();
-  while (vpdown != null) {
-    vpdown.requestDisallowInterceptTouchEvent(true);
-    vpdown=vpdown.getParent();
-  }
-}

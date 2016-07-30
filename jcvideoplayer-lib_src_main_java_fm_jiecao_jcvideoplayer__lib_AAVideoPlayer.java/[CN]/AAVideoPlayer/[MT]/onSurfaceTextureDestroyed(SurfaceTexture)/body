@@ -1,4 +1,0 @@
-{
-  surface.release();
-  return true;
-}

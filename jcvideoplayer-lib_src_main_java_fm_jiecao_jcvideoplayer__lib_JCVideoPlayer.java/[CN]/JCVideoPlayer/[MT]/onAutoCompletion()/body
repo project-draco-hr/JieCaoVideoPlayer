@@ -1,13 +1,7 @@
 {
-  if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-  }
   setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
-  }
-  if (IF_FULLSCREEN_FROM_NORMAL) {
-    IF_FULLSCREEN_FROM_NORMAL=false;
-    JCVideoPlayerManager.lastListener().onAutoCompletion();
   }
   JCVideoPlayerManager.setLastListener(null);
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);

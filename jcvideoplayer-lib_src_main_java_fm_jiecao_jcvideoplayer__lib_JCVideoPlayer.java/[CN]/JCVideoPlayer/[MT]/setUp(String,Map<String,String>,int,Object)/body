@@ -1,8 +1,0 @@
-{
-  if (setUp(url,screen,objects)) {
-    this.mMapHeadData.clear();
-    this.mMapHeadData.putAll(mapHeadData);
-    return true;
-  }
-  return false;
-}

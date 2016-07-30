@@ -3,9 +3,6 @@
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }
-  if (IF_FULLSCREEN_FROM_NORMAL) {
-    IF_FULLSCREEN_FROM_NORMAL=false;
-  }
   JCVideoPlayerManager.setListener(null);
   JCVideoPlayerManager.setLastListener(null);
   JCMediaManager.instance().currentVideoWidth=0;

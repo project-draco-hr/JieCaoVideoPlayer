@@ -1,7 +1,0 @@
-{
-  int mVideoWidth=JCMediaManager.instance().currentVideoWidth;
-  int mVideoHeight=JCMediaManager.instance().currentVideoHeight;
-  if (mVideoWidth != 0 && mVideoHeight != 0) {
-    JCMediaManager.textureView.requestLayout();
-  }
-}

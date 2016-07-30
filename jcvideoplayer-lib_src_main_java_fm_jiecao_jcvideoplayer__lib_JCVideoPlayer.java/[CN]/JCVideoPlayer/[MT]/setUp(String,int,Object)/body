@@ -1,8 +1,8 @@
 {
   mCurrentState=CURRENT_STATE_NORMAL;
-  this.mUrl=url;
-  this.mObjects=objects;
-  this.mCurrentScreen=screen;
+  mUrl=url;
+  mObjects=objects;
+  mCurrentScreen=screen;
   setUiWitStateAndScreen(CURRENT_STATE_NORMAL);
   return true;
 }

@@ -17,12 +17,8 @@
       Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
       setUiWitStateAndScreen(CURRENT_STATE_PAUSE);
-      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-      }
     }
  else     if (mCurrentState == CURRENT_STATE_PAUSE) {
-      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-      }
       JCMediaManager.instance().mediaPlayer.start();
       setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
     }
@@ -38,17 +34,11 @@
     }
  else {
       Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");
-      if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-        JC_BURIED_POINT.onEnterFullscreen(mUrl,mObjects);
-      }
       toWindowFullscreen();
     }
   }
  else   if (i == R.id.surface_container && mCurrentState == CURRENT_STATE_ERROR) {
     Log.i(TAG,"onClick surfaceContainer State=Error [" + this.hashCode() + "] ");
-    if (JC_BURIED_POINT != null) {
-      JC_BURIED_POINT.onClickStartError(mUrl,mObjects);
-    }
     prepareVideo();
   }
 }

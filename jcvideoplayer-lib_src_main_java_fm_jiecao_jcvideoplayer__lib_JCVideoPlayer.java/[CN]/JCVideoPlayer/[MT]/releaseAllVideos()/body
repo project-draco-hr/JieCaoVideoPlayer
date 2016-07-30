@@ -1,12 +1,7 @@
 {
-  if (IF_RELEASE_WHEN_ON_PAUSE) {
-    Log.d(TAG,"releaseAllVideos");
-    if (JCVideoPlayerManager.listener() != null) {
-      JCVideoPlayerManager.listener().onCompletion();
-    }
-    JCMediaManager.instance().releaseMediaPlayer();
+  Log.d(TAG,"releaseAllVideos");
+  if (JCVideoPlayerManager.listener() != null) {
+    JCVideoPlayerManager.listener().onCompletion();
   }
- else {
-    IF_RELEASE_WHEN_ON_PAUSE=true;
-  }
+  JCMediaManager.instance().releaseMediaPlayer();
 }

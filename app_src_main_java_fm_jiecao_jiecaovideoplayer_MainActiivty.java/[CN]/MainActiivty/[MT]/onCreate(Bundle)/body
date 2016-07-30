@@ -10,7 +10,7 @@
     }
   }
 );
-  findViewById(R.id.to_fullscreen).setOnClickListener(new View.OnClickListener(){
+  findViewById(R.id.to_fullscreen_directly).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
       getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
       getSupportActionBar().setShowHideAnimationEnabled(false);
