@@ -1,7 +1,0 @@
-{
-  if (super.setUp(url,objects)) {
-    fullscreenButton.setVisibility(View.GONE);
-    return true;
-  }
-  return false;
-}

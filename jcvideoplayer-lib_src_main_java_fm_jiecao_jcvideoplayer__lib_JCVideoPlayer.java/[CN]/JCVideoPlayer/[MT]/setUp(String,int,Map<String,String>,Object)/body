@@ -1,0 +1,6 @@
+{
+  setUp(url,screen,objects);
+  mMapHeadData.clear();
+  mMapHeadData.putAll(mapHeadData);
+  return true;
+}

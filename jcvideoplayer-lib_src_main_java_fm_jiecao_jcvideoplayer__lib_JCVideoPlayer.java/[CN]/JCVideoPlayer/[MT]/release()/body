@@ -1,6 +1,0 @@
-{
-  if (isCurrentMediaListener() && (System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) > FULL_SCREEN_NORMAL_DELAY) {
-    Log.d(TAG,"release [" + this.hashCode() + "]");
-    releaseAllVideos();
-  }
-}

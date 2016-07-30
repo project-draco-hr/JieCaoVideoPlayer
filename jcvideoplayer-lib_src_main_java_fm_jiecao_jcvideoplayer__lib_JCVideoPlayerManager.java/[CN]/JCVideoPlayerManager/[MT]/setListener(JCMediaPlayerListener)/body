@@ -1,0 +1,4 @@
+{
+  if (listener == null)   LISTENER=null;
+ else   LISTENER=new WeakReference<>(listener);
+}

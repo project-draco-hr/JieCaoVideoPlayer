@@ -1,6 +1,6 @@
 {
   Log.e(TAG,"onError " + what + " - "+ extra+ " ["+ this.hashCode()+ "] ");
   if (what != 38 && what != -38) {
-    setStateAndUi(CURRENT_STATE_ERROR);
+    setUiWitStateAndScreen(CURRENT_STATE_ERROR);
   }
 }

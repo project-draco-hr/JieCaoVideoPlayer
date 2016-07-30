@@ -1,8 +1,12 @@
 {
-  topContainer.setVisibility(View.INVISIBLE);
-  bottomContainer.setVisibility(View.INVISIBLE);
-  startButton.setVisibility(View.INVISIBLE);
-  thumbImageView.setVisibility(View.INVISIBLE);
-  bottomProgressBar.setVisibility(View.INVISIBLE);
-  coverImageView.setVisibility(View.VISIBLE);
+switch (mCurrentScreen) {
+case SCREEN_LAYOUT_LIST:
+    setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE);
+  break;
+case SCREEN_WINDOW_FULLSCREEN:
+setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE);
+break;
+case SCREEN_WINDOW_TINY:
+break;
+}
 }

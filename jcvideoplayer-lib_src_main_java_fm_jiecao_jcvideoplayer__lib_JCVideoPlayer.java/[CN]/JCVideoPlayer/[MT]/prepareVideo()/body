@@ -1,13 +1,13 @@
 {
   Log.d(TAG,"prepareVideo [" + this.hashCode() + "] ");
-  if (JCMediaManager.instance().listener() != null) {
-    JCMediaManager.instance().listener().onCompletion();
+  if (JCVideoPlayerManager.listener() != null) {
+    JCVideoPlayerManager.listener().onCompletion();
   }
-  JCMediaManager.instance().setListener(this);
+  JCVideoPlayerManager.setListener(this);
   addTextureView();
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.requestAudioFocus(onAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
   JCUtils.scanForActivity(getContext()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
   JCMediaManager.instance().prepare(mUrl,mMapHeadData,mLooping);
-  setStateAndUi(CURRENT_STATE_PREPAREING);
+  setUiWitStateAndScreen(CURRENT_STATE_PREPAREING);
 }

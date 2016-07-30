@@ -6,6 +6,8 @@
   thumbImageView=(ImageView)findViewById(R.id.thumb);
   coverImageView=(ImageView)findViewById(R.id.cover);
   loadingProgressBar=(ProgressBar)findViewById(R.id.loading);
+  tinyBackImageView=(ImageView)findViewById(R.id.back_tiny);
   thumbImageView.setOnClickListener(this);
   backButton.setOnClickListener(this);
+  tinyBackImageView.setOnClickListener(this);
 }

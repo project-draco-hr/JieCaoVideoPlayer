@@ -18,23 +18,17 @@ float deltaX=x - mDownX;
 float deltaY=y - mDownY;
 float absDeltaX=Math.abs(deltaX);
 float absDeltaY=Math.abs(deltaY);
-if (mIfCurrentIsFullscreen) {
+if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
 if (!mChangePosition && !mChangeVolume) {
 if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
 cancelProgressTimer();
 if (absDeltaX >= mThreshold) {
 mChangePosition=true;
 mDownPosition=getCurrentPositionWhenPlaying();
-if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-JC_BURIED_POINT.onTouchScreenSeekPosition(mUrl,mObjects);
-}
 }
  else {
 mChangeVolume=true;
 mGestureDownVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-JC_BURIED_POINT.onTouchScreenSeekVolume(mUrl,mObjects);
-}
 }
 }
 }
@@ -68,14 +62,6 @@ int progress=mSeekTimePosition * 100 / (duration == 0 ? 1 : duration);
 progressBar.setProgress(progress);
 }
 startProgressTimer();
-if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-if (mIfCurrentIsFullscreen) {
-JC_BURIED_POINT.onClickSeekbarFullscreen(mUrl,mObjects);
-}
- else {
-JC_BURIED_POINT.onClickSeekbar(mUrl,mObjects);
-}
-}
 break;
 }
 }

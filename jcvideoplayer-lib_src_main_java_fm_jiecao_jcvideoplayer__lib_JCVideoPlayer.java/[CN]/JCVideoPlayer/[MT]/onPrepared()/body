@@ -6,5 +6,5 @@
     seekToInAdvance=-1;
   }
   startProgressTimer();
-  setStateAndUi(CURRENT_STATE_PLAYING);
+  setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
 }

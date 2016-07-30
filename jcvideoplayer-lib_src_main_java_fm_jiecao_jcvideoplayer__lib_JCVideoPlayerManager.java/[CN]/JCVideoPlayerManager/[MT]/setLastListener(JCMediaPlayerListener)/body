@@ -1,0 +1,4 @@
+{
+  if (lastListener == null)   LAST_LISTENER=null;
+ else   LAST_LISTENER=new WeakReference<>(lastListener);
+}

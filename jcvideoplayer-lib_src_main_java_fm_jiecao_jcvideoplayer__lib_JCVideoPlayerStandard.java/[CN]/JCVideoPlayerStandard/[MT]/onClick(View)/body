@@ -19,16 +19,13 @@
   }
  else   if (i == R.id.surface_container) {
     if (JC_BURIED_POINT_STANDARD != null && isCurrentMediaListener()) {
-      if (mIfCurrentIsFullscreen) {
-        JC_BURIED_POINT_STANDARD.onClickBlankFullscreen(mUrl,mObjects);
-      }
- else {
-        JC_BURIED_POINT_STANDARD.onClickBlank(mUrl,mObjects);
-      }
     }
     startDismissControlViewTimer();
   }
  else   if (i == R.id.back) {
-    backFullscreen();
+    backPress();
+  }
+ else   if (i == R.id.back_tiny) {
+    backPress();
   }
 }

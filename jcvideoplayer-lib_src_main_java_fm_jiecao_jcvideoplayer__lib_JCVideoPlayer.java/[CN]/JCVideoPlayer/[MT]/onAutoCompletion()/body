@@ -1,23 +1,19 @@
 {
-  if (JC_BURIED_POINT != null && isCurrentMediaListener()) {
-    if (mIfCurrentIsFullscreen) {
-      JC_BURIED_POINT.onAutoCompleteFullscreen(mUrl,mObjects);
-    }
- else {
-      JC_BURIED_POINT.onAutoComplete(mUrl,mObjects);
-    }
-  }
-  setStateAndUi(CURRENT_STATE_AUTO_COMPLETE);
+  setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }
-  finishFullscreenActivity();
-  if (IF_FULLSCREEN_FROM_NORMAL) {
-    IF_FULLSCREEN_FROM_NORMAL=false;
-    JCMediaManager.instance().lastListener().onAutoCompletion();
-  }
-  JCMediaManager.instance().setLastListener(null);
+  JCVideoPlayerManager.setLastListener(null);
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   JCUtils.scanForActivity(getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  View oldF=vp.findViewById(FULLSCREEN_ID);
+  View oldT=vp.findViewById(TINY_ID);
+  if (oldF != null) {
+    vp.removeView(oldF);
+  }
+  if (oldT != null) {
+    vp.removeView(oldT);
+  }
 }

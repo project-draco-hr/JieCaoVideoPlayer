@@ -1,0 +1,8 @@
+{
+  mCurrentState=CURRENT_STATE_NORMAL;
+  mUrl=url;
+  mObjects=objects;
+  mCurrentScreen=screen;
+  setUiWitStateAndScreen(CURRENT_STATE_NORMAL);
+  return true;
+}

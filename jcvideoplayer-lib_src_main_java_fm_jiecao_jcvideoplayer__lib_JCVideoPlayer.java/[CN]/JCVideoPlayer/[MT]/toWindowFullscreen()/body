@@ -1,0 +1,33 @@
+{
+  ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+  ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);
+  ((AppCompatActivity)getContext()).getSupportActionBar().hide();
+  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  View old=vp.findViewById(FULLSCREEN_ID);
+  if (old != null) {
+    vp.removeView(old);
+  }
+  try {
+    Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
+    JCVideoPlayer jcVideoPlayer=constructor.newInstance(getContext());
+    jcVideoPlayer.setId(FULLSCREEN_ID);
+    WindowManager wm=(WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
+    int w=wm.getDefaultDisplay().getWidth();
+    int h=wm.getDefaultDisplay().getHeight();
+    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(h,w);
+    lp.setMargins((w - h) / 2,-(w - h) / 2,0,0);
+    vp.addView(jcVideoPlayer,lp);
+    jcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
+    jcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
+    jcVideoPlayer.addTextureView();
+    jcVideoPlayer.setRotation(90);
+    JCVideoPlayerManager.setLastListener(this);
+    JCVideoPlayerManager.setListener(jcVideoPlayer);
+  }
+ catch (  InstantiationException e) {
+    e.printStackTrace();
+  }
+catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

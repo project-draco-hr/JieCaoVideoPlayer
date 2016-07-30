@@ -1,0 +1,19 @@
+{
+  super.setUiWitStateAndScreen(state);
+switch (mCurrentState) {
+case CURRENT_STATE_NORMAL:
+    startButton.setVisibility(View.VISIBLE);
+  break;
+case CURRENT_STATE_PREPAREING:
+startButton.setVisibility(View.INVISIBLE);
+break;
+case CURRENT_STATE_PLAYING:
+startButton.setVisibility(View.VISIBLE);
+break;
+case CURRENT_STATE_PAUSE:
+break;
+case CURRENT_STATE_ERROR:
+break;
+}
+updateStartImage();
+}
