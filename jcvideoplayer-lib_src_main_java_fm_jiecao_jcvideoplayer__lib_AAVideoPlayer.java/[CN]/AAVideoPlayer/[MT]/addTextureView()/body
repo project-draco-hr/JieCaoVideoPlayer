@@ -1,0 +1,12 @@
+{
+  Log.d(TAG,"addTextureView [" + this.hashCode() + "] ");
+  if (textureViewContainer.getChildCount() > 0) {
+    textureViewContainer.removeAllViews();
+  }
+  JCMediaManager.textureView=null;
+  JCMediaManager.textureView=new JCResizeTextureView(getContext());
+  JCMediaManager.textureView.setSurfaceTextureListener(this);
+  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+  layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+  textureViewContainer.addView(JCMediaManager.textureView,layoutParams);
+}

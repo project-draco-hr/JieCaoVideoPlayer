@@ -2,11 +2,10 @@
   if (mCurrentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || mCurrentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
     ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
     vp.removeView(this);
-    JCMediaManager.instance().setDisplay(null);
     JCVideoPlayerManager.setListener(JCVideoPlayerManager.lastListener());
     JCVideoPlayerManager.setLastListener(null);
     JCMediaManager.instance().lastState=mCurrentState;
-    JCVideoPlayerManager.listener().onBackFullscreen();
+    JCVideoPlayerManager.listener().goBackThisListener();
     return true;
   }
   return false;

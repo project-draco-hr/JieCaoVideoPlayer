@@ -7,7 +7,7 @@
   JCVideoPlayerManager.setListener(JCVideoPlayerManager.lastListener());
   JCVideoPlayerManager.setLastListener(null);
   JCMediaManager.instance().lastState=mCurrentState;
-  JCVideoPlayerManager.listener().onBackFullscreen();
+  JCVideoPlayerManager.listener().goBackThisListener();
   if (mCurrentState == CURRENT_STATE_PAUSE) {
     JCMediaManager.instance().mediaPlayer.seekTo(JCMediaManager.instance().mediaPlayer.getCurrentPosition());
   }

@@ -1,6 +1,4 @@
 {
-  JCVideoPlayerManager.setLastListener(this);
-  JCVideoPlayerManager.setListener(null);
   ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(TINY_ID);
   if (old != null) {
@@ -16,6 +14,7 @@
     mJcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_TINY,mObjects);
     mJcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
     mJcVideoPlayer.addTextureView();
+    JCVideoPlayerManager.setLastListener(this);
     JCVideoPlayerManager.setListener(mJcVideoPlayer);
   }
  catch (  InstantiationException e) {

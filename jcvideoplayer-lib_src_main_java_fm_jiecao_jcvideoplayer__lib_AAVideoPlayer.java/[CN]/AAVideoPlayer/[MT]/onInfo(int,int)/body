@@ -1,0 +1,15 @@
+{
+  Log.d(TAG,"onInfo what - " + what + " extra - "+ extra);
+  if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
+    BACKUP_PLAYING_BUFFERING_STATE=mCurrentState;
+    setUiWitStateAndScreen(CURRENT_STATE_PLAYING_BUFFERING_START);
+    Log.d(TAG,"MEDIA_INFO_BUFFERING_START");
+  }
+ else   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
+    if (BACKUP_PLAYING_BUFFERING_STATE != -1) {
+      setUiWitStateAndScreen(BACKUP_PLAYING_BUFFERING_STATE);
+      BACKUP_PLAYING_BUFFERING_STATE=-1;
+    }
+    Log.d(TAG,"MEDIA_INFO_BUFFERING_END");
+  }
+}

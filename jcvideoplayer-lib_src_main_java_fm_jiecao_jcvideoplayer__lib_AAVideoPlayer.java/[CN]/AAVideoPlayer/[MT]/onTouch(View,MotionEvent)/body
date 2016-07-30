@@ -1,3 +1,69 @@
 {
-  return false;
+  float x=event.getX();
+  float y=event.getY();
+  int id=v.getId();
+  if (id == R.id.surface_container) {
+switch (event.getAction()) {
+case MotionEvent.ACTION_DOWN:
+      Log.i(TAG,"onTouch surfaceContainer actionDown [" + this.hashCode() + "] ");
+    mTouchingProgressBar=true;
+  mDownX=x;
+mDownY=y;
+mChangeVolume=false;
+mChangePosition=false;
+break;
+case MotionEvent.ACTION_MOVE:
+Log.i(TAG,"onTouch surfaceContainer actionMove [" + this.hashCode() + "] ");
+float deltaX=x - mDownX;
+float deltaY=y - mDownY;
+float absDeltaX=Math.abs(deltaX);
+float absDeltaY=Math.abs(deltaY);
+if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
+if (!mChangePosition && !mChangeVolume) {
+if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
+cancelProgressTimer();
+if (absDeltaX >= mThreshold) {
+mChangePosition=true;
+mDownPosition=getCurrentPositionWhenPlaying();
+}
+ else {
+mChangeVolume=true;
+mGestureDownVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+}
+}
+}
+}
+if (mChangePosition) {
+int totalTimeDuration=getDuration();
+mSeekTimePosition=(int)(mDownPosition + deltaX * totalTimeDuration / mScreenWidth);
+if (mSeekTimePosition > totalTimeDuration) mSeekTimePosition=totalTimeDuration;
+String seekTime=JCUtils.stringForTime(mSeekTimePosition);
+String totalTime=JCUtils.stringForTime(totalTimeDuration);
+showProgressDialog(deltaX,seekTime,mSeekTimePosition,totalTime,totalTimeDuration);
+}
+if (mChangeVolume) {
+deltaY=-deltaY;
+int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+int deltaV=(int)(max * deltaY * 3 / mScreenHeight);
+mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,mGestureDownVolume + deltaV,0);
+int volumePercent=(int)(mGestureDownVolume * 100 / max + deltaY * 3 * 100 / mScreenHeight);
+showVolumDialog(-deltaY,volumePercent);
+}
+break;
+case MotionEvent.ACTION_UP:
+Log.i(TAG,"onTouch surfaceContainer actionUp [" + this.hashCode() + "] ");
+mTouchingProgressBar=false;
+dismissProgressDialog();
+dismissVolumDialog();
+if (mChangePosition) {
+JCMediaManager.instance().mediaPlayer.seekTo(mSeekTimePosition);
+int duration=getDuration();
+int progress=mSeekTimePosition * 100 / (duration == 0 ? 1 : duration);
+progressBar.setProgress(progress);
+}
+startProgressTimer();
+break;
+}
+}
+return false;
 }
