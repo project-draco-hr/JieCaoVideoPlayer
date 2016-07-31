@@ -1,0 +1,31 @@
+{
+  super.setUiWitStateAndScreen(state);
+switch (mCurrentState) {
+case CURRENT_STATE_NORMAL:
+    changeUiToNormal();
+  break;
+case CURRENT_STATE_PREPAREING:
+changeUiToPrepareingShow();
+startDismissControlViewTimer();
+break;
+case CURRENT_STATE_PLAYING:
+changeUiToPlayingShow();
+startDismissControlViewTimer();
+break;
+case CURRENT_STATE_PAUSE:
+changeUiToPauseShow();
+cancelDismissControlViewTimer();
+break;
+case CURRENT_STATE_ERROR:
+changeUiToError();
+break;
+case CURRENT_STATE_AUTO_COMPLETE:
+changeUiToCompleteShow();
+cancelDismissControlViewTimer();
+bottomProgressBar.setProgress(100);
+break;
+case CURRENT_STATE_PLAYING_BUFFERING_START:
+changeUiToPlayingBufferingShow();
+break;
+}
+}

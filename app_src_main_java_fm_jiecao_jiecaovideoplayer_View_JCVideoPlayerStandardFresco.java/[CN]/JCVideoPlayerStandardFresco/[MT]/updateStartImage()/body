@@ -1,0 +1,11 @@
+{
+  if (mCurrentState == CURRENT_STATE_PLAYING) {
+    startButton.setImageResource(R.drawable.jc_click_pause_selector);
+  }
+ else   if (mCurrentState == CURRENT_STATE_ERROR) {
+    startButton.setImageResource(R.drawable.jc_click_error_selector);
+  }
+ else {
+    startButton.setImageResource(R.drawable.jc_click_play_selector);
+  }
+}

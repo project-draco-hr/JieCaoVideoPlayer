@@ -1,0 +1,13 @@
+{
+  super.init(context);
+  bottomProgressBar=(ProgressBar)findViewById(R.id.bottom_progressbar);
+  titleTextView=(TextView)findViewById(R.id.title);
+  backButton=(ImageView)findViewById(R.id.back);
+  thumbImageView=(SimpleDraweeView)findViewById(R.id.thumb);
+  coverImageView=(ImageView)findViewById(R.id.cover);
+  loadingProgressBar=(ProgressBar)findViewById(R.id.loading);
+  tinyBackImageView=(ImageView)findViewById(R.id.back_tiny);
+  thumbImageView.setOnClickListener(this);
+  backButton.setOnClickListener(this);
+  tinyBackImageView.setOnClickListener(this);
+}

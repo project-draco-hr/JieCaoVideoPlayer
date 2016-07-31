@@ -1,0 +1,6 @@
+{
+  cancelDismissControlViewTimer();
+  DISSMISS_CONTROL_VIEW_TIMER=new Timer();
+  mDismissControlViewTimerTask=new DismissControlViewTimerTask();
+  DISSMISS_CONTROL_VIEW_TIMER.schedule(mDismissControlViewTimerTask,2500);
+}

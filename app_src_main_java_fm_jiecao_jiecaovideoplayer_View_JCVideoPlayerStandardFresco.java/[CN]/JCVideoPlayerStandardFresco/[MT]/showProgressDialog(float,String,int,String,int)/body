@@ -1,0 +1,32 @@
+{
+  super.showProgressDialog(deltaX,seekTime,seekTimePosition,totalTime,totalTimeDuration);
+  if (mProgressDialog == null) {
+    View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_progress_dialog,null);
+    mDialogProgressBar=((ProgressBar)localView.findViewById(R.id.duration_progressbar));
+    mDialogSeekTime=((TextView)localView.findViewById(R.id.tv_current));
+    mDialogTotalTime=((TextView)localView.findViewById(R.id.tv_duration));
+    mDialogIcon=((ImageView)localView.findViewById(R.id.duration_image_tip));
+    mProgressDialog=new Dialog(getContext(),R.style.jc_style_dialog_progress);
+    mProgressDialog.setContentView(localView);
+    mProgressDialog.getWindow().addFlags(Window.FEATURE_ACTION_BAR);
+    mProgressDialog.getWindow().addFlags(32);
+    mProgressDialog.getWindow().addFlags(16);
+    mProgressDialog.getWindow().setLayout(-2,-2);
+    WindowManager.LayoutParams localLayoutParams=mProgressDialog.getWindow().getAttributes();
+    localLayoutParams.gravity=49;
+    localLayoutParams.y=getResources().getDimensionPixelOffset(R.dimen.jc_progress_dialog_margin_top);
+    mProgressDialog.getWindow().setAttributes(localLayoutParams);
+  }
+  if (!mProgressDialog.isShowing()) {
+    mProgressDialog.show();
+  }
+  mDialogSeekTime.setText(seekTime);
+  mDialogTotalTime.setText(" / " + totalTime);
+  mDialogProgressBar.setProgress(seekTimePosition * 100 / totalTimeDuration);
+  if (deltaX > 0) {
+    mDialogIcon.setBackgroundResource(R.drawable.jc_forward_icon);
+  }
+ else {
+    mDialogIcon.setBackgroundResource(R.drawable.jc_backward_icon);
+  }
+}

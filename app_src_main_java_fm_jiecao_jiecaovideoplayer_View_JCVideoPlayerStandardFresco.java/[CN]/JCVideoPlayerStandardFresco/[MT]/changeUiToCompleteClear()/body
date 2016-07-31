@@ -1,0 +1,14 @@
+{
+switch (mCurrentScreen) {
+case SCREEN_LAYOUT_LIST:
+    setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE);
+  updateStartImage();
+break;
+case SCREEN_WINDOW_FULLSCREEN:
+setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE);
+updateStartImage();
+break;
+case SCREEN_WINDOW_TINY:
+break;
+}
+}
