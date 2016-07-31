@@ -1,5 +1,11 @@
 {
   super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_list);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("PlayDirectlyWithoutLayout");
   setContentView(R.layout.activity_directly_play);
   findViewById(R.id.fullscreen).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
