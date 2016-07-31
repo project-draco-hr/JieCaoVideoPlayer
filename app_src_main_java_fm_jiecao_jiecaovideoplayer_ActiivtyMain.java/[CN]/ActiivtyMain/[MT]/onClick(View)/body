@@ -1,0 +1,13 @@
+{
+switch (v.getId()) {
+case R.id.play_directly_without_layout:
+    startActivity(new Intent(ActiivtyMain.this,ActivityPlayDirectly.class));
+  break;
+case R.id.about_listview:
+startActivity(new Intent(ActiivtyMain.this,ActivityListView.class));
+break;
+case R.id.about_ui:
+startActivity(new Intent(ActiivtyMain.this,ActivityUI.class));
+break;
+}
+}

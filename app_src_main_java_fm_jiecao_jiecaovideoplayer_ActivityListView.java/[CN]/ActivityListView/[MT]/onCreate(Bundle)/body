@@ -6,28 +6,12 @@
   getSupportActionBar().setDisplayUseLogoEnabled(false);
   getSupportActionBar().setTitle("About ListView");
   setContentView(R.layout.activity_listview);
-  findViewById(R.id.normal_list).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActivityListView.this,ActivityListViewNormal.class));
-    }
-  }
-);
-  findViewById(R.id.viewpayer_list).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActivityListView.this,ActivityListViewViewpager.class));
-    }
-  }
-);
-  findViewById(R.id.multi_holder_list).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActivityListView.this,ActivityListViewMultiHolder.class));
-    }
-  }
-);
-  findViewById(R.id.recyleview).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      Toast.makeText(ActivityListView.this,"Coming soon",Toast.LENGTH_SHORT).show();
-    }
-  }
-);
+  mNormalList=(Button)findViewById(R.id.normal_list);
+  mViewPagerList=(Button)findViewById(R.id.viewpayer_list);
+  mMultiHolderList=(Button)findViewById(R.id.multi_holder_list);
+  mRecyleView=(Button)findViewById(R.id.recyleview);
+  mNormalList.setOnClickListener(this);
+  mViewPagerList.setOnClickListener(this);
+  mMultiHolderList.setOnClickListener(this);
+  mRecyleView.setOnClickListener(this);
 }

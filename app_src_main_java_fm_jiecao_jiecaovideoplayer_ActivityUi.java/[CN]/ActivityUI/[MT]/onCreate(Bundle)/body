@@ -6,22 +6,10 @@
   getSupportActionBar().setDisplayUseLogoEnabled(false);
   getSupportActionBar().setTitle("About UI");
   setContentView(R.layout.activity_ui);
-  findViewById(R.id.small_change).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActivityUI.this,ActivityUISmallChange.class));
-    }
-  }
-);
-  findViewById(R.id.big_change).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      Toast.makeText(ActivityUI.this,"Comming Soon",Toast.LENGTH_SHORT).show();
-    }
-  }
-);
-  findViewById(R.id.imageloader).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActivityUI.this,ActivityUIImageLoader.class));
-    }
-  }
-);
+  mSmallChange=(Button)findViewById(R.id.small_change);
+  mBigChange=(Button)findViewById(R.id.big_change);
+  mImageLoader=(Button)findViewById(R.id.imageloader);
+  mSmallChange.setOnClickListener(this);
+  mBigChange.setOnClickListener(this);
+  mImageLoader.setOnClickListener(this);
 }

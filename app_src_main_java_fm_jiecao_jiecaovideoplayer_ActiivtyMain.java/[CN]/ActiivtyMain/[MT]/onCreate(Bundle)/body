@@ -1,6 +1,12 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
+  aboutUI=(Button)findViewById(R.id.play_directly_without_layout);
+  aboutListView=(Button)findViewById(R.id.about_listview);
+  playDirectly=(Button)findViewById(R.id.about_ui);
+  aboutListView.setOnClickListener(this);
+  aboutUI.setOnClickListener(this);
+  playDirectly.setOnClickListener(this);
   jcVideoPlayerSimple=(JCVideoPlayerSimple)findViewById(R.id.simple_demo);
   jcVideoPlayerSimple.setUp("http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8",JCVideoPlayerStandard.SCREEN_LAYOUT_LIST,"???????????????");
   jcVideoPlayerStandard=(JCVideoPlayerStandard)findViewById(R.id.jc_video);
@@ -9,24 +15,6 @@
   findViewById(R.id.tiny_win).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
       jcVideoPlayerStandard.toWindowTiny();
-    }
-  }
-);
-  findViewById(R.id.about_listview).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActiivtyMain.this,ActivityListView.class));
-    }
-  }
-);
-  findViewById(R.id.play_directly_without_layout).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActiivtyMain.this,ActivityPlayDirectly.class));
-    }
-  }
-);
-  findViewById(R.id.about_ui).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      startActivity(new Intent(ActiivtyMain.this,ActivityUI.class));
     }
   }
 );
