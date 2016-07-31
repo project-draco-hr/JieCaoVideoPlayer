@@ -1,0 +1,11 @@
+{
+  super.onCreate(savedInstanceState);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("NormalListActivity");
+  setContentView(R.layout.activity_list_normal);
+  listView=(ListView)findViewById(R.id.listview);
+  listView.setAdapter(new VideoListAdapter(this));
+}

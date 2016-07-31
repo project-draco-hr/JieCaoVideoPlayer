@@ -1,0 +1,30 @@
+{
+  super.onCreate(savedInstanceState);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("ListActivity");
+  setContentView(R.layout.activity_list);
+  findViewById(R.id.normal_list).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+      startActivity(new Intent(ActivityList.this,ActivityListNormal.class));
+    }
+  }
+);
+  findViewById(R.id.viewpayer_list).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+  findViewById(R.id.multi_holder_list).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+  findViewById(R.id.recyleview).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+}

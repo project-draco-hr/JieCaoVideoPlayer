@@ -1,0 +1,16 @@
+{
+  ViewHolder viewHolder;
+  if (null == convertView) {
+    viewHolder=new ViewHolder();
+    LayoutInflater mInflater=LayoutInflater.from(context);
+    convertView=mInflater.inflate(R.layout.item_videoview,null);
+    viewHolder.jcVideoPlayer=(JCVideoPlayerStandard)convertView.findViewById(R.id.videoplayer);
+    convertView.setTag(viewHolder);
+  }
+ else {
+    viewHolder=(ViewHolder)convertView.getTag();
+  }
+  viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,videoTitles[videoIndexs[position]]);
+  ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],viewHolder.jcVideoPlayer.thumbImageView);
+  return convertView;
+}
