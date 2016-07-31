@@ -1,0 +1,12 @@
+{
+  if (super.setUp(url,screen,objects)) {
+    if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
+      titleTextView.setVisibility(View.VISIBLE);
+    }
+ else {
+      titleTextView.setVisibility(View.INVISIBLE);
+    }
+    return true;
+  }
+  return false;
+}
