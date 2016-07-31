@@ -14,6 +14,7 @@
 );
   findViewById(R.id.viewpayer_list).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
+      startActivity(new Intent(ActivityList.this,ActivityListViewpager.class));
     }
   }
 );
@@ -24,6 +25,7 @@
 );
   findViewById(R.id.recyleview).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
+      Toast.makeText(ActivityList.this,"Coming soon",Toast.LENGTH_SHORT).show();
     }
   }
 );

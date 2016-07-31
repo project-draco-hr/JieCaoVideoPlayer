@@ -1,0 +1,4 @@
+{
+  ((ViewPager)view).addView(viewLists.get(position),0);
+  return viewLists.get(position);
+}
