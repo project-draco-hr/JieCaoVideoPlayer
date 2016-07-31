@@ -1,3 +1,3 @@
 {
-  return R.layout.jc_layout_standard_fresco;
+  return R.layout.layout_standard_fresco;
 }
