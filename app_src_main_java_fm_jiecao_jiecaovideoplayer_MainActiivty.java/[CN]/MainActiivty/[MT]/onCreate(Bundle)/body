@@ -1,16 +1,18 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
-  jcVideo=(JCVideoPlayerStandard)findViewById(R.id.jc_video);
-  jcVideo.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.SCREEN_LAYOUT_LIST,"???????????????");
-  ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideo.thumbImageView);
+  jcVideoPlayerSimple=(JCVideoPlayerSimple)findViewById(R.id.simple_demo);
+  jcVideoPlayerSimple.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.SCREEN_LAYOUT_LIST,"???????????????");
+  jcVideoPlayerStandard=(JCVideoPlayerStandard)findViewById(R.id.jc_video);
+  jcVideoPlayerStandard.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.SCREEN_LAYOUT_LIST,"???????????????");
+  ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideoPlayerStandard.thumbImageView);
   findViewById(R.id.show_tiny_window).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
-      jcVideo.toWindowTiny();
+      jcVideoPlayerStandard.toWindowTiny();
     }
   }
 );
-  findViewById(R.id.to_fullscreen_directly).setOnClickListener(new View.OnClickListener(){
+  findViewById(R.id.play_directly_without_layout).setOnClickListener(new View.OnClickListener(){
     @Override public void onClick(    View v){
       getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
       getSupportActionBar().setShowHideAnimationEnabled(false);
@@ -21,7 +23,7 @@
         vp.removeView(old);
       }
       try {
-        Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)((JCVideoPlayer)jcVideo).getClass().getConstructor(Context.class);
+        Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)((JCVideoPlayer)jcVideoPlayerStandard).getClass().getConstructor(Context.class);
         JCVideoPlayer jcVideoPlayer=constructor.newInstance(MainActiivty.this);
         jcVideoPlayer.setId(JCVideoPlayer.FULLSCREEN_ID);
         WindowManager wm=(WindowManager)getSystemService(Context.WINDOW_SERVICE);
