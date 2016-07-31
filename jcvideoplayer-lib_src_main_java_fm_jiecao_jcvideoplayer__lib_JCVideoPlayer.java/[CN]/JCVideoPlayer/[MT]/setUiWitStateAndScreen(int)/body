@@ -1,6 +1,6 @@
 {
-  mCurrentState=state;
-switch (mCurrentState) {
+  currentState=state;
+switch (currentState) {
 case CURRENT_STATE_NORMAL:
     if (isCurrentMediaListener()) {
       cancelProgressTimer();

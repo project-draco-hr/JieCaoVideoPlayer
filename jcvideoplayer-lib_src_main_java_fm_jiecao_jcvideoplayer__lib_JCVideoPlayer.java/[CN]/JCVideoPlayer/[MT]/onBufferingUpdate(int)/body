@@ -1,5 +1,5 @@
 {
-  if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_PREPAREING) {
+  if (currentState != CURRENT_STATE_NORMAL && currentState != CURRENT_STATE_PREPAREING) {
     Log.v(TAG,"onBufferingUpdate " + percent + " ["+ this.hashCode()+ "] ");
     setTextAndProgress(percent);
   }

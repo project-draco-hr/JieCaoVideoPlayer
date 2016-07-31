@@ -6,7 +6,7 @@
     vpup.requestDisallowInterceptTouchEvent(false);
     vpup=vpup.getParent();
   }
-  if (mCurrentState != CURRENT_STATE_PLAYING && mCurrentState != CURRENT_STATE_PAUSE)   return;
+  if (currentState != CURRENT_STATE_PLAYING && currentState != CURRENT_STATE_PAUSE)   return;
   int time=seekBar.getProgress() * getDuration() / 100;
   JCMediaManager.instance().mediaPlayer.seekTo(time);
   Log.i(TAG,"seekTo " + time + " ["+ this.hashCode()+ "] ");

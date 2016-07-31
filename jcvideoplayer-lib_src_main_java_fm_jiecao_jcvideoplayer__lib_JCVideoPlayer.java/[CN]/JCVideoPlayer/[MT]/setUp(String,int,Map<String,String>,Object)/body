@@ -1,7 +1,7 @@
 {
   if (setUp(url,screen,objects)) {
-    mMapHeadData.clear();
-    mMapHeadData.putAll(mapHeadData);
+    this.mapHeadData.clear();
+    this.mapHeadData.putAll(mapHeadData);
     return true;
   }
   return false;

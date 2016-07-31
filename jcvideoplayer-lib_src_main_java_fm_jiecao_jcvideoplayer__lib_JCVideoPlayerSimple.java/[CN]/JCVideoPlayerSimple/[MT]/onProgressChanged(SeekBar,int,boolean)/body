@@ -1,6 +1,6 @@
 {
   if (fromUser) {
-    if (mCurrentState == CURRENT_STATE_NORMAL) {
+    if (currentState == CURRENT_STATE_NORMAL) {
       Toast.makeText(getContext(),"Play video first",Toast.LENGTH_SHORT).show();
       return;
     }

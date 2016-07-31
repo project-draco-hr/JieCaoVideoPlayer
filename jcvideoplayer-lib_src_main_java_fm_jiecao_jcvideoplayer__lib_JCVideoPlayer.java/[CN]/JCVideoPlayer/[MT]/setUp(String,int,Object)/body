@@ -1,9 +1,9 @@
 {
   if ((System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) < FULL_SCREEN_NORMAL_DELAY)   return false;
-  mCurrentState=CURRENT_STATE_NORMAL;
-  mUrl=url;
-  mObjects=objects;
-  mCurrentScreen=screen;
+  this.currentState=CURRENT_STATE_NORMAL;
+  this.url=url;
+  this.objects=objects;
+  this.currentScreen=screen;
   setUiWitStateAndScreen(CURRENT_STATE_NORMAL);
   return true;
 }

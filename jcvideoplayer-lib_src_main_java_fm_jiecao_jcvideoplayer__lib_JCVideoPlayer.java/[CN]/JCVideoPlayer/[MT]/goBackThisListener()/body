@@ -1,6 +1,6 @@
 {
-  mCurrentState=JCMediaManager.instance().lastState;
-  setUiWitStateAndScreen(mCurrentState);
+  currentState=JCMediaManager.instance().lastState;
+  setUiWitStateAndScreen(currentState);
   addTextureView();
   ((AppCompatActivity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
   ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);

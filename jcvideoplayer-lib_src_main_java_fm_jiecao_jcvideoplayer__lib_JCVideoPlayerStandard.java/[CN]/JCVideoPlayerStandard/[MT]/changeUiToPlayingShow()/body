@@ -1,5 +1,5 @@
 {
-switch (mCurrentScreen) {
+switch (currentScreen) {
 case SCREEN_LAYOUT_LIST:
     setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
   updateStartImage();

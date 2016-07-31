@@ -20,8 +20,8 @@
     FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(h,w);
     lp.setMargins((w - h) / 2,-(w - h) / 2,0,0);
     vp.addView(jcVideoPlayer,lp);
-    jcVideoPlayer.setUp(mUrl,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,mObjects);
-    jcVideoPlayer.setUiWitStateAndScreen(mCurrentState);
+    jcVideoPlayer.setUp(url,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,objects);
+    jcVideoPlayer.setUiWitStateAndScreen(currentState);
     jcVideoPlayer.addTextureView();
     jcVideoPlayer.setRotation(90);
     JCVideoPlayerManager.setLastListener(this);

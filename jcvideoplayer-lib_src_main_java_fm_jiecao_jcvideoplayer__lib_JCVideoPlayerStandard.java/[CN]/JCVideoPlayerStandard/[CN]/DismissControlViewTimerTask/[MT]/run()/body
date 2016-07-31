@@ -1,5 +1,5 @@
 {
-  if (mCurrentState != CURRENT_STATE_NORMAL && mCurrentState != CURRENT_STATE_ERROR && mCurrentState != CURRENT_STATE_AUTO_COMPLETE) {
+  if (currentState != CURRENT_STATE_NORMAL && currentState != CURRENT_STATE_ERROR && currentState != CURRENT_STATE_AUTO_COMPLETE) {
     if (getContext() != null && getContext() instanceof Activity) {
       ((Activity)getContext()).runOnUiThread(new Runnable(){
         @Override public void run(){

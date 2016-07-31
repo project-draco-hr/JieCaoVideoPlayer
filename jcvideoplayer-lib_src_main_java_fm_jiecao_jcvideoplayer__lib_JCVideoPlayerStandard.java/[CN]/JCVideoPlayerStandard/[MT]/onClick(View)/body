@@ -2,18 +2,18 @@
   super.onClick(v);
   int i=v.getId();
   if (i == R.id.thumb) {
-    if (TextUtils.isEmpty(mUrl)) {
+    if (TextUtils.isEmpty(url)) {
       Toast.makeText(getContext(),getResources().getString(R.string.no_url),Toast.LENGTH_SHORT).show();
       return;
     }
-    if (mCurrentState == CURRENT_STATE_NORMAL) {
-      if (!mUrl.startsWith("file") && !JCUtils.isWifiConnected(getContext()) && !WIFI_TIP_DIALOG_SHOWED) {
+    if (currentState == CURRENT_STATE_NORMAL) {
+      if (!url.startsWith("file") && !JCUtils.isWifiConnected(getContext()) && !WIFI_TIP_DIALOG_SHOWED) {
         showWifiDialog();
         return;
       }
       startPlayLocic();
     }
- else     if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
+ else     if (currentState == CURRENT_STATE_AUTO_COMPLETE) {
       onClickUiToggle();
     }
   }

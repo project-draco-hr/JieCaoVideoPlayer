@@ -2,34 +2,34 @@
   int i=v.getId();
   if (i == R.id.start) {
     Log.i(TAG,"onClick start [" + this.hashCode() + "] ");
-    if (TextUtils.isEmpty(mUrl)) {
+    if (TextUtils.isEmpty(url)) {
       Toast.makeText(getContext(),getResources().getString(R.string.no_url),Toast.LENGTH_SHORT).show();
       return;
     }
-    if (mCurrentState == CURRENT_STATE_NORMAL || mCurrentState == CURRENT_STATE_ERROR) {
-      if (!mUrl.startsWith("file") && !JCUtils.isWifiConnected(getContext()) && !WIFI_TIP_DIALOG_SHOWED) {
+    if (currentState == CURRENT_STATE_NORMAL || currentState == CURRENT_STATE_ERROR) {
+      if (!url.startsWith("file") && !JCUtils.isWifiConnected(getContext()) && !WIFI_TIP_DIALOG_SHOWED) {
         showWifiDialog();
         return;
       }
       startButtonLogic();
     }
- else     if (mCurrentState == CURRENT_STATE_PLAYING) {
+ else     if (currentState == CURRENT_STATE_PLAYING) {
       Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
       setUiWitStateAndScreen(CURRENT_STATE_PAUSE);
     }
- else     if (mCurrentState == CURRENT_STATE_PAUSE) {
+ else     if (currentState == CURRENT_STATE_PAUSE) {
       JCMediaManager.instance().mediaPlayer.start();
       setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
     }
- else     if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
+ else     if (currentState == CURRENT_STATE_AUTO_COMPLETE) {
       startButtonLogic();
     }
   }
  else   if (i == R.id.fullscreen) {
     Log.i(TAG,"onClick fullscreen [" + this.hashCode() + "] ");
-    if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE)     return;
-    if (mCurrentScreen == SCREEN_WINDOW_FULLSCREEN) {
+    if (currentState == CURRENT_STATE_AUTO_COMPLETE)     return;
+    if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
       backPress();
     }
  else {
@@ -37,7 +37,7 @@
       toWindowFullscreen();
     }
   }
- else   if (i == R.id.surface_container && mCurrentState == CURRENT_STATE_ERROR) {
+ else   if (i == R.id.surface_container && currentState == CURRENT_STATE_ERROR) {
     Log.i(TAG,"onClick surfaceContainer State=Error [" + this.hashCode() + "] ");
     prepareVideo();
   }

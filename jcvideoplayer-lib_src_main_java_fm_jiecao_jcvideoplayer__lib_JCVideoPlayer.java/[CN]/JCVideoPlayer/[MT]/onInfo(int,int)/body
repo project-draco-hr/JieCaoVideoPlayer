@@ -1,7 +1,7 @@
 {
   Log.d(TAG,"onInfo what - " + what + " extra - "+ extra);
   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
-    mBackUpBufferState=mCurrentState;
+    mBackUpBufferState=currentState;
     setUiWitStateAndScreen(CURRENT_STATE_PLAYING_BUFFERING_START);
     Log.d(TAG,"MEDIA_INFO_BUFFERING_START");
   }

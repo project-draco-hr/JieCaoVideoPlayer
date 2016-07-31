@@ -1,5 +1,5 @@
 {
-  if (mCurrentState != CURRENT_STATE_PREPAREING)   return;
+  if (currentState != CURRENT_STATE_PREPAREING)   return;
   JCMediaManager.instance().mediaPlayer.start();
   if (seekToInAdvance != -1) {
     JCMediaManager.instance().mediaPlayer.seekTo(seekToInAdvance);

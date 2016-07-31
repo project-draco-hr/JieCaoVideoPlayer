@@ -1,5 +1,5 @@
 {
-  if (mCurrentState == CURRENT_STATE_PREPAREING) {
+  if (currentState == CURRENT_STATE_PREPAREING) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToPrepareingClear();
     }
@@ -7,7 +7,7 @@
       changeUiToPrepareingShow();
     }
   }
- else   if (mCurrentState == CURRENT_STATE_PLAYING) {
+ else   if (currentState == CURRENT_STATE_PLAYING) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToPlayingClear();
     }
@@ -15,7 +15,7 @@
       changeUiToPlayingShow();
     }
   }
- else   if (mCurrentState == CURRENT_STATE_PAUSE) {
+ else   if (currentState == CURRENT_STATE_PAUSE) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToPauseClear();
     }
@@ -23,7 +23,7 @@
       changeUiToPauseShow();
     }
   }
- else   if (mCurrentState == CURRENT_STATE_AUTO_COMPLETE) {
+ else   if (currentState == CURRENT_STATE_AUTO_COMPLETE) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToCompleteClear();
     }
@@ -31,7 +31,7 @@
       changeUiToCompleteShow();
     }
   }
- else   if (mCurrentState == CURRENT_STATE_PLAYING_BUFFERING_START) {
+ else   if (currentState == CURRENT_STATE_PLAYING_BUFFERING_START) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
       changeUiToPlayingBufferingClear();
     }

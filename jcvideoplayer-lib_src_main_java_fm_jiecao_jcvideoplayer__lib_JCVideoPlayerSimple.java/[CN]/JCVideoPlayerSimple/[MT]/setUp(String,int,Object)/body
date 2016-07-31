@@ -1,5 +1,11 @@
 {
   if (super.setUp(url,screen,objects)) {
+    if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
+      fullscreenButton.setImageResource(R.drawable.jc_shrink);
+    }
+ else {
+      fullscreenButton.setImageResource(R.drawable.jc_enlarge);
+    }
     fullscreenButton.setVisibility(View.GONE);
     return true;
   }
