@@ -1,0 +1,22 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_listview);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("PlayDirectlyWithoutLayout");
+  setContentView(R.layout.activity_directly_play);
+  findViewById(R.id.fullscreen).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+      Toast.makeText(ActivityPlayDirectly.this,"Comming Soon",Toast.LENGTH_SHORT).show();
+    }
+  }
+);
+  findViewById(R.id.tiny_window).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+      Toast.makeText(ActivityPlayDirectly.this,"Comming Soon",Toast.LENGTH_SHORT).show();
+    }
+  }
+);
+}
