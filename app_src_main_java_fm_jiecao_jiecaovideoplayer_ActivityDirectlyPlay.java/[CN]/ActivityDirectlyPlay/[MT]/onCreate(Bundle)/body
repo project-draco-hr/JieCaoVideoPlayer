@@ -1,6 +1,6 @@
 {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_list);
+  setContentView(R.layout.activity_listview);
   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   getSupportActionBar().setDisplayShowHomeEnabled(true);
   getSupportActionBar().setDisplayShowTitleEnabled(true);

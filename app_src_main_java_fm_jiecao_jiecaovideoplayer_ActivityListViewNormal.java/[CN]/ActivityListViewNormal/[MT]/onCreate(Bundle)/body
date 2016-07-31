@@ -1,11 +1,12 @@
 {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_list_content);
   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   getSupportActionBar().setDisplayShowHomeEnabled(true);
   getSupportActionBar().setDisplayShowTitleEnabled(true);
   getSupportActionBar().setDisplayUseLogoEnabled(false);
-  getSupportActionBar().setTitle("MultiHolder");
+  getSupportActionBar().setTitle("NormalListView");
+  setContentView(R.layout.activity_listview_content);
   listView=(ListView)findViewById(R.id.listview);
-  listView.setAdapter(new VideoListAdapter(this));
+  adapterVideoList=new AdapterVideoList(this);
+  listView.setAdapter(adapterVideoList);
 }
