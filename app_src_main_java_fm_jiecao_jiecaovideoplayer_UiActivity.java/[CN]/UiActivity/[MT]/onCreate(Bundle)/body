@@ -1,0 +1,19 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_ui);
+  findViewById(R.id.simple_change).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+  findViewById(R.id.big_change).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+  findViewById(R.id.imageloader).setOnClickListener(new View.OnClickListener(){
+    @Override public void onClick(    View v){
+    }
+  }
+);
+}
