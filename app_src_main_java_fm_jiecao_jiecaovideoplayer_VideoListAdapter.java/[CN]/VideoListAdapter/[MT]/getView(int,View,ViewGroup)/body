@@ -1,4 +1,5 @@
 {
+  Log.e(TAG,"why you always getview");
   ViewHolder viewHolder;
   if (null == convertView) {
     viewHolder=new ViewHolder();

@@ -7,5 +7,6 @@
   getSupportActionBar().setTitle("NormalListActivity");
   setContentView(R.layout.activity_list_normal);
   listView=(ListView)findViewById(R.id.listview);
-  listView.setAdapter(new VideoListAdapter(this));
+  videoListAdapter=new VideoListAdapter(this);
+  listView.setAdapter(videoListAdapter);
 }
