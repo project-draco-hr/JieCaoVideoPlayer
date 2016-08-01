@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"onPrepared " + " [" + this.hashCode() + "] ");
   if (currentState != CURRENT_STATE_PREPAREING)   return;
   JCMediaManager.instance().mediaPlayer.start();
   if (seekToInAdvance != -1) {

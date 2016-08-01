@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"goToOtherListener " + " [" + this.hashCode() + "] ");
   if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
     ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
     vp.removeView(this);

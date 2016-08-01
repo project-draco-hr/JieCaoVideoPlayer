@@ -1,0 +1,11 @@
+{
+  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  View oldF=vp.findViewById(FULLSCREEN_ID);
+  View oldT=vp.findViewById(TINY_ID);
+  if (oldF != null) {
+    vp.removeView(oldF);
+  }
+  if (oldT != null) {
+    vp.removeView(oldT);
+  }
+}

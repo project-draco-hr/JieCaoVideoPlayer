@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"onCompletion " + " [" + this.hashCode() + "] ");
   setUiWitStateAndScreen(CURRENT_STATE_NORMAL);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
@@ -10,4 +11,5 @@
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   JCUtils.scanForActivity(getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+  clearFullscreenLayout();
 }

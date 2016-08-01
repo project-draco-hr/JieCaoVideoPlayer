@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"toWindowFullscreen " + " [" + this.hashCode() + "] ");
   ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);
   ((AppCompatActivity)getContext()).getSupportActionBar().hide();

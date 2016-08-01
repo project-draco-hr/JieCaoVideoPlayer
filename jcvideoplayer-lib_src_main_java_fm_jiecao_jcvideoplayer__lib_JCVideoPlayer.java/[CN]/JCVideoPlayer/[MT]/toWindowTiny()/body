@@ -1,4 +1,5 @@
 {
+  Log.i(TAG,"toWindowTiny " + " [" + this.hashCode() + "] ");
   ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(TINY_ID);
   if (old != null) {
