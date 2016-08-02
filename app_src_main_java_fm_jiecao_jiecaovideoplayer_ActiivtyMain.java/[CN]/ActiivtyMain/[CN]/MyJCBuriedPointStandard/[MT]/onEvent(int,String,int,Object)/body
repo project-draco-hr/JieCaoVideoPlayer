@@ -49,5 +49,4 @@ default :
 Log.i("Buried_Point","unknow");
 break;
 }
-System.out.println("fdsfdsfdsfdsfs " + type + "  "+ screen);
 }
