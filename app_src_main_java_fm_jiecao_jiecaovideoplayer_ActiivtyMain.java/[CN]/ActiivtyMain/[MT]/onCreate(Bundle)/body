@@ -18,5 +18,5 @@
     }
   }
 );
-  JCVideoPlayerStandard.setJcBuriedPointStandard(new MyJCBuriedPointStandard());
+  JCVideoPlayer.setJcBuriedPoint(new MyJCBuriedPointStandard());
 }
