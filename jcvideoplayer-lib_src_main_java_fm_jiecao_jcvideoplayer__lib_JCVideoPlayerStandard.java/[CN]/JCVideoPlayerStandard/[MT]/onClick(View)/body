@@ -18,8 +18,6 @@
     }
   }
  else   if (i == R.id.surface_container) {
-    if (JC_BURIED_POINT_STANDARD != null && isCurrentMediaListener()) {
-    }
     startDismissControlViewTimer();
   }
  else   if (i == R.id.back) {

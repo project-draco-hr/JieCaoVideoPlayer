@@ -1,5 +1,6 @@
 {
   Log.i(TAG,"bottomProgress onStopTrackingTouch [" + this.hashCode() + "] ");
+  onEvent(JCBuriedPoint.ON_SEEK_POSITION);
   startProgressTimer();
   ViewParent vpup=getParent();
   while (vpup != null) {

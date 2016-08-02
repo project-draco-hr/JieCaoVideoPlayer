@@ -11,19 +11,23 @@
         showWifiDialog();
         return;
       }
-      startButtonLogic();
+      prepareVideo();
+      onEvent(currentState != CURRENT_STATE_ERROR ? JCBuriedPoint.ON_CLICK_START_ICON : JCBuriedPoint.ON_CLICK_START_ERROR);
     }
  else     if (currentState == CURRENT_STATE_PLAYING) {
+      onEvent(JCBuriedPoint.ON_CLICK_PAUSE);
       Log.d(TAG,"pauseVideo [" + this.hashCode() + "] ");
       JCMediaManager.instance().mediaPlayer.pause();
       setUiWitStateAndScreen(CURRENT_STATE_PAUSE);
     }
  else     if (currentState == CURRENT_STATE_PAUSE) {
+      onEvent(JCBuriedPoint.ON_CLICK_RESUME);
       JCMediaManager.instance().mediaPlayer.start();
       setUiWitStateAndScreen(CURRENT_STATE_PLAYING);
     }
  else     if (currentState == CURRENT_STATE_AUTO_COMPLETE) {
-      startButtonLogic();
+      onEvent(JCBuriedPoint.ON_CLICK_START_AUTO_COMPLETE);
+      prepareVideo();
     }
   }
  else   if (i == R.id.fullscreen) {
@@ -34,6 +38,7 @@
     }
  else {
       Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");
+      onEvent(JCBuriedPoint.ON_ENTER_FULLSCREEN);
       toWindowFullscreen();
     }
   }

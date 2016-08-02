@@ -56,10 +56,14 @@ mTouchingProgressBar=false;
 dismissProgressDialog();
 dismissVolumDialog();
 if (mChangePosition) {
+onEvent(JCBuriedPoint.ON_TOUCH_SCREEN_SEEK_POSITION);
 JCMediaManager.instance().mediaPlayer.seekTo(mSeekTimePosition);
 int duration=getDuration();
 int progress=mSeekTimePosition * 100 / (duration == 0 ? 1 : duration);
 progressBar.setProgress(progress);
+}
+if (mChangeVolume) {
+onEvent(JCBuriedPoint.ON_TOUCH_SCREEN_SEEK_VOLUME);
 }
 startProgressTimer();
 break;

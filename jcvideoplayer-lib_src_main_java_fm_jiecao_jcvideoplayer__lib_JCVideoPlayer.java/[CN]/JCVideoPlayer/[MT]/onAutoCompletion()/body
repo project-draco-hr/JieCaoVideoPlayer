@@ -1,5 +1,6 @@
 {
   Log.i(TAG,"onAutoCompletion " + " [" + this.hashCode() + "] ");
+  onEvent(JCBuriedPoint.ON_AUTO_COMPLETE);
   setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();

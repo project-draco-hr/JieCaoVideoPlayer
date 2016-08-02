@@ -1,0 +1,4 @@
+int type
+String url
+int screen
+Object objects
