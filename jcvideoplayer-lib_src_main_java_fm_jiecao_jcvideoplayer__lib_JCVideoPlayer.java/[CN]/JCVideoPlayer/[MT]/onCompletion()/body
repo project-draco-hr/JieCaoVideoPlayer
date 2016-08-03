@@ -5,7 +5,6 @@
     textureViewContainer.removeAllViews();
   }
   JCVideoPlayerManager.setListener(null);
-  JCVideoPlayerManager.setLastListener(null);
   JCMediaManager.instance().currentVideoWidth=0;
   JCMediaManager.instance().currentVideoHeight=0;
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);

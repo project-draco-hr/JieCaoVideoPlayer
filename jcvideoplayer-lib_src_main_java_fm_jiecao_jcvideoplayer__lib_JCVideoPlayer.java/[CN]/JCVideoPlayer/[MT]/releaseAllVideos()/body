@@ -3,5 +3,8 @@
   if (JCVideoPlayerManager.listener() != null) {
     JCVideoPlayerManager.listener().onCompletion();
   }
+  if (JCVideoPlayerManager.lastListener() != null) {
+    JCVideoPlayerManager.lastListener().onCompletion();
+  }
   JCMediaManager.instance().releaseMediaPlayer();
 }
