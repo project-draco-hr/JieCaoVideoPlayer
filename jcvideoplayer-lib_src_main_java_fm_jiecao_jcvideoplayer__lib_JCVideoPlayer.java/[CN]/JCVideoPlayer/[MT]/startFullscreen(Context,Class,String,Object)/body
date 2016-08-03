@@ -8,8 +8,8 @@
     vp.removeView(old);
   }
   try {
-    Constructor<JCVideoPlayerStandard> constructor=JCVideoPlayerStandard.class.getConstructor(Context.class);
-    JCVideoPlayerStandard jcVideoPlayer=constructor.newInstance(context);
+    Constructor<JCVideoPlayer> constructor=_class.getConstructor(Context.class);
+    JCVideoPlayer jcVideoPlayer=constructor.newInstance(context);
     jcVideoPlayer.setId(JCVideoPlayerStandard.FULLSCREEN_ID);
     WindowManager wm=(WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
     int w=wm.getDefaultDisplay().getWidth();
