@@ -1,5 +1,5 @@
 {
-  Log.i(TAG,"toWindowFullscreen " + " [" + this.hashCode() + "] ");
+  Log.i(TAG,"startWindowFullscreen " + " [" + this.hashCode() + "] ");
   ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);
   ((AppCompatActivity)getContext()).getSupportActionBar().hide();
@@ -25,6 +25,8 @@
     jcVideoPlayer.setUiWitStateAndScreen(currentState);
     jcVideoPlayer.addTextureView();
     jcVideoPlayer.setRotation(90);
+    RotateAnimation ra=new RotateAnimation(0f,360f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+    jcVideoPlayer.setAnimation(ra);
     JCVideoPlayerManager.setLastListener(this);
     JCVideoPlayerManager.setListener(jcVideoPlayer);
   }

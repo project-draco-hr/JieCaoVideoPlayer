@@ -1,5 +1,5 @@
 {
-  Log.i(TAG,"toWindowTiny " + " [" + this.hashCode() + "] ");
+  Log.i(TAG,"startWindowTiny " + " [" + this.hashCode() + "] ");
   onEvent(JCBuriedPoint.ON_ENTER_TINYSCREEN);
   ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(TINY_ID);
