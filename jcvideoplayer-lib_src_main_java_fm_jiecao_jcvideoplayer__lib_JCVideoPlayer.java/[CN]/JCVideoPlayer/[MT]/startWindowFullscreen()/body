@@ -25,7 +25,7 @@
     jcVideoPlayer.setUiWitStateAndScreen(currentState);
     jcVideoPlayer.addTextureView();
     jcVideoPlayer.setRotation(90);
-    RotateAnimation ra=new RotateAnimation(0f,360f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+    final Animation ra=AnimationUtils.loadAnimation(getContext(),R.anim.rotate_fullscreen);
     jcVideoPlayer.setAnimation(ra);
     JCVideoPlayerManager.setLastListener(this);
     JCVideoPlayerManager.setListener(jcVideoPlayer);
