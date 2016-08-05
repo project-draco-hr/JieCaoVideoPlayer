@@ -1,10 +1,6 @@
 {
   Log.i(TAG,"goToOtherListener " + " [" + this.hashCode() + "] ");
   if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
-    if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN) {
-      final Animation ra=AnimationUtils.loadAnimation(getContext(),R.anim.quit_fullscreen);
-      startAnimation(ra);
-    }
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
     if (JCVideoPlayerManager.lastListener() == null) {
       JCVideoPlayerManager.listener().onCompletion();
