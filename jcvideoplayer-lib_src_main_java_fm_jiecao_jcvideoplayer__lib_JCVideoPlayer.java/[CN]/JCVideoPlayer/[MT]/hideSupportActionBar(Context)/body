@@ -1,0 +1,13 @@
+{
+  ActionBar ab=((AppCompatActivity)context).getSupportActionBar();
+  if (ab != null) {
+    ACTIONBAR_STATUS=ab.isShowing();
+    if (ACTIONBAR_STATUS) {
+      ((AppCompatActivity)context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+      ab.setShowHideAnimationEnabled(false);
+      ab.hide();
+    }
+ else {
+    }
+  }
+}

@@ -1,7 +1,5 @@
 {
-  ((AppCompatActivity)context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-  ((AppCompatActivity)context).getSupportActionBar().setShowHideAnimationEnabled(false);
-  ((AppCompatActivity)context).getSupportActionBar().hide();
+  hideSupportActionBar(context);
   ViewGroup vp=(ViewGroup)((AppCompatActivity)context).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(JCVideoPlayer.FULLSCREEN_ID);
   if (old != null) {

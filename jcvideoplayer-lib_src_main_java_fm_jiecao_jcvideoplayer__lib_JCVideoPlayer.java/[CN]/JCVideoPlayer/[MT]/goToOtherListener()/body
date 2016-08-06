@@ -4,9 +4,7 @@
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
     if (JCVideoPlayerManager.lastListener() == null) {
       JCVideoPlayerManager.listener().onCompletion();
-      ((AppCompatActivity)getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-      ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);
-      ((AppCompatActivity)getContext()).getSupportActionBar().show();
+      showSupportActionBar(getContext());
       return true;
     }
     ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);

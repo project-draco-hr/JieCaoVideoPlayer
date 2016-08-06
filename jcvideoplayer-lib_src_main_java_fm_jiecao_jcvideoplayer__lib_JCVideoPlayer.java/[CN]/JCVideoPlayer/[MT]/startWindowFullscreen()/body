@@ -1,8 +1,6 @@
 {
   Log.i(TAG,"startWindowFullscreen " + " [" + this.hashCode() + "] ");
-  ((AppCompatActivity)getContext()).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-  ((AppCompatActivity)getContext()).getSupportActionBar().setShowHideAnimationEnabled(false);
-  ((AppCompatActivity)getContext()).getSupportActionBar().hide();
+  hideSupportActionBar(getContext());
   ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(FULLSCREEN_ID);
   if (old != null) {
