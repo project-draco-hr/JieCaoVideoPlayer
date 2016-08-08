@@ -1,13 +1,12 @@
 {
-  ActionBar ab=((AppCompatActivity)context).getSupportActionBar();
-  if (ab != null) {
-    ACTIONBAR_STATUS=ab.isShowing();
-    if (ACTIONBAR_STATUS) {
-      ((AppCompatActivity)context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+  if (ACTION_BAR_EXIST) {
+    ActionBar ab=((AppCompatActivity)context).getSupportActionBar();
+    if (ab != null) {
       ab.setShowHideAnimationEnabled(false);
       ab.hide();
     }
- else {
-    }
+  }
+  if (TOOL_BAR_EXIST) {
+    ((AppCompatActivity)context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
   }
 }
