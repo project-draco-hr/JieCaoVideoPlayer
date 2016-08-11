@@ -1,0 +1,23 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_listview_viewpager);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("ViewPagerAndListView");
+  List<View> listViews=new ArrayList<>();
+  ListView listView1=(ListView)getLayoutInflater().inflate(R.layout.layout_list,null);
+  ListView listView2=(ListView)getLayoutInflater().inflate(R.layout.layout_list,null);
+  ListView listView3=(ListView)getLayoutInflater().inflate(R.layout.layout_list,null);
+  listView1.setAdapter(new VideoListAdapter(this));
+  listView2.setAdapter(new VideoListAdapter(this));
+  listView3.setAdapter(new VideoListAdapter(this));
+  listViews.add(listView1);
+  listViews.add(listView2);
+  listViews.add(listView3);
+  MyAdapter myAdapter=new MyAdapter(listViews);
+  ViewPager viewPager=(ViewPager)findViewById(R.id.viewPager);
+  viewPager.setAdapter(myAdapter);
+  viewPager.setOnPageChangeListener(this);
+}

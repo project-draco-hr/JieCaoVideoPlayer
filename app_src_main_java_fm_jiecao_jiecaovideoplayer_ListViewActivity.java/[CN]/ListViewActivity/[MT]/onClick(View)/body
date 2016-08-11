@@ -1,0 +1,16 @@
+{
+switch (v.getId()) {
+case R.id.normal_list:
+    startActivity(new Intent(ListViewActivity.this,ListViewNormalActivity.class));
+  break;
+case R.id.viewpayer_list:
+startActivity(new Intent(ListViewActivity.this,ListViewViewpagerActivity.class));
+break;
+case R.id.multi_holder_list:
+startActivity(new Intent(ListViewActivity.this,ListViewMultiHolderActivity.class));
+break;
+case R.id.recyleview:
+Toast.makeText(ListViewActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
+break;
+}
+}
