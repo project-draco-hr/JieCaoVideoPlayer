@@ -1,13 +1,12 @@
 {
   Log.i(TAG,"onAutoCompletion " + " [" + this.hashCode() + "] ");
   onEvent(JCBuriedPoint.ON_AUTO_COMPLETE);
-  setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
-  if (textureViewContainer.getChildCount() > 0) {
-    textureViewContainer.removeAllViews();
+  if (JCVideoPlayerManager.listener() != null) {
+    JCVideoPlayerManager.listener().onCompletion();
+    JCVideoPlayerManager.setListener(null);
   }
-  JCVideoPlayerManager.setLastListener(null);
-  AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
-  mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
-  JCUtils.scanForActivity(getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-  clearFullscreenLayout();
+  if (JCVideoPlayerManager.lastListener() != null) {
+    JCVideoPlayerManager.lastListener().onCompletion();
+    JCVideoPlayerManager.setLastListener(null);
+  }
 }
