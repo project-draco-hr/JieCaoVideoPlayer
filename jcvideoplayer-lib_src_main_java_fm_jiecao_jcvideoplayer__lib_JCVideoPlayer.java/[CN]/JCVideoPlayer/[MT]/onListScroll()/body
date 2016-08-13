@@ -1,0 +1,6 @@
+{
+  Log.i(TAG,"onListScroll");
+  if (JCVideoPlayerManager.listener() != null) {
+    JCVideoPlayerManager.listener().onListScrollChange();
+  }
+}

@@ -1,0 +1,7 @@
+{
+  int[] locationOnScreen=new int[2];
+  getLocationOnScreen(locationOnScreen);
+  int top=locationOnScreen[1];
+  int bottom=top + getHeight();
+  System.out.println("scroll top " + top + "  "+ bottom);
+}
