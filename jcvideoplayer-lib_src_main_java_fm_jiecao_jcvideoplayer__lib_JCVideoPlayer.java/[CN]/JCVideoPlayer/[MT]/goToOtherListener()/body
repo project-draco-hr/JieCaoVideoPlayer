@@ -4,6 +4,7 @@
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
     if (JCVideoPlayerManager.LISTENERLIST.size() == 1) {
       JCVideoPlayerManager.popListener().onCompletion();
+      JCMediaManager.instance().releaseMediaPlayer();
       showSupportActionBar(getContext());
       return true;
     }
