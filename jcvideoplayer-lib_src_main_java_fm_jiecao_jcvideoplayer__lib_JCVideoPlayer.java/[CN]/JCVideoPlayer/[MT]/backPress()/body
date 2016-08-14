@@ -1,7 +1,7 @@
 {
   Log.i(TAG,"backPress");
-  if (JCVideoPlayerManager.listener() != null) {
-    return JCVideoPlayerManager.listener().goToOtherListener();
+  if (JCVideoPlayerManager.getFirst() != null) {
+    return JCVideoPlayerManager.getFirst().goToOtherListener();
   }
   return false;
 }

@@ -1,0 +1,3 @@
+{
+  LISTENERLIST.push(new WeakReference<>(listener));
+}

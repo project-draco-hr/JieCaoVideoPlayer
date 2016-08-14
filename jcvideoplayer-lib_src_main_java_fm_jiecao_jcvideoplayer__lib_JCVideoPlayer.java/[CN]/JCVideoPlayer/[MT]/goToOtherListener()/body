@@ -2,17 +2,16 @@
   Log.i(TAG,"goToOtherListener " + " [" + this.hashCode() + "] ");
   if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
-    if (JCVideoPlayerManager.lastListener() == null) {
-      JCVideoPlayerManager.listener().onCompletion();
+    if (JCVideoPlayerManager.LISTENERLIST.size() == 1) {
+      JCVideoPlayerManager.popListener().onCompletion();
       showSupportActionBar(getContext());
       return true;
     }
     ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
     vp.removeView(this);
-    JCVideoPlayerManager.setListener(JCVideoPlayerManager.lastListener());
-    JCVideoPlayerManager.setLastListener(null);
     JCMediaManager.instance().lastState=currentState;
-    JCVideoPlayerManager.listener().goBackThisListener();
+    JCVideoPlayerManager.popListener().onCompletion();
+    JCVideoPlayerManager.getFirst().goBackThisListener();
     CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();
     return true;
   }

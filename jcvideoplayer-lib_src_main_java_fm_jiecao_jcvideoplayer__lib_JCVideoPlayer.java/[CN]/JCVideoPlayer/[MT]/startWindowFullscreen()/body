@@ -23,8 +23,7 @@
     jcVideoPlayer.setUiWitStateAndScreen(currentState);
     jcVideoPlayer.addTextureView();
     jcVideoPlayer.setRotation(90);
-    JCVideoPlayerManager.setLastListener(this);
-    JCVideoPlayerManager.setListener(jcVideoPlayer);
+    JCVideoPlayerManager.putListener(jcVideoPlayer);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();

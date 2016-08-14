@@ -19,8 +19,7 @@
     mJcVideoPlayer.setUp(url,JCVideoPlayerStandard.SCREEN_WINDOW_TINY,objects);
     mJcVideoPlayer.setUiWitStateAndScreen(currentState);
     mJcVideoPlayer.addTextureView();
-    JCVideoPlayerManager.setLastListener(this);
-    JCVideoPlayerManager.setListener(mJcVideoPlayer);
+    JCVideoPlayerManager.putListener(mJcVideoPlayer);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();

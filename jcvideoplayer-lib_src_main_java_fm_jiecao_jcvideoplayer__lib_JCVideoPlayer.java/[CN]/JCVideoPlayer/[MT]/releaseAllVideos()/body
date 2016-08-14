@@ -1,10 +1,5 @@
 {
   Log.d(TAG,"releaseAllVideos");
-  if (JCVideoPlayerManager.listener() != null) {
-    JCVideoPlayerManager.listener().onCompletion();
-  }
-  if (JCVideoPlayerManager.lastListener() != null) {
-    JCVideoPlayerManager.lastListener().onCompletion();
-  }
+  JCVideoPlayerManager.completeAll();
   JCMediaManager.instance().releaseMediaPlayer();
 }

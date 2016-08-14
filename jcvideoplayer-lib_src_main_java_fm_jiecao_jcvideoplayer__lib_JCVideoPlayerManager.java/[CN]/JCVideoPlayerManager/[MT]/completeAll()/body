@@ -1,0 +1,7 @@
+{
+  JCMediaPlayerListener ll=popListener();
+  while (ll != null) {
+    ll.onCompletion();
+    ll=popListener();
+  }
+}
