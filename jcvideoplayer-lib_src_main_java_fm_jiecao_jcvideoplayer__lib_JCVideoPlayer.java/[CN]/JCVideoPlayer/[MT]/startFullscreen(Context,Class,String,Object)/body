@@ -1,6 +1,6 @@
 {
   hideSupportActionBar(context);
-  ViewGroup vp=(ViewGroup)((AppCompatActivity)context).findViewById(Window.ID_ANDROID_CONTENT);
+  ViewGroup vp=(ViewGroup)(JCUtils.getAppCompActivity(context)).findViewById(Window.ID_ANDROID_CONTENT);
   View old=vp.findViewById(JCVideoPlayer.FULLSCREEN_ID);
   if (old != null) {
     vp.removeView(old);
