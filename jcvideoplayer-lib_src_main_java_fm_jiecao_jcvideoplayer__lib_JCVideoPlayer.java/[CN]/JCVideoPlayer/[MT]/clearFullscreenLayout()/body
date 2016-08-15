@@ -1,5 +1,5 @@
 {
-  ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+  ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).findViewById(Window.ID_ANDROID_CONTENT);
   View oldF=vp.findViewById(FULLSCREEN_ID);
   View oldT=vp.findViewById(TINY_ID);
   if (oldF != null) {
