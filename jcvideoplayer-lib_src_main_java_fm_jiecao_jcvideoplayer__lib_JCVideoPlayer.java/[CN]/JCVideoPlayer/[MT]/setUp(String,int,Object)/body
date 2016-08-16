@@ -1,5 +1,8 @@
 {
   if ((System.currentTimeMillis() - CLICK_QUIT_FULLSCREEN_TIME) < FULL_SCREEN_NORMAL_DELAY)   return false;
+  if (isCurrentMediaListener()) {
+    System.out.println("onListScrollChange setup");
+  }
   this.currentState=CURRENT_STATE_NORMAL;
   this.url=url;
   this.objects=objects;
