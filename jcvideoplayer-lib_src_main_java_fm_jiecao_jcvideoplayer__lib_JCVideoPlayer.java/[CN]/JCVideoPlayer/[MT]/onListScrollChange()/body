@@ -6,9 +6,11 @@
   if (isCurrentMediaListener()) {
     if (bottom < 20) {
       System.out.println("onListScrollChange isMe top " + top + "  "+ bottom);
+      startWindowTiny();
     }
  else     if (top > (mScreenHeight - 20)) {
       System.out.println("onListScrollChange isMe bottom " + top + "  "+ bottom);
+      startWindowTiny();
     }
   }
  else {
