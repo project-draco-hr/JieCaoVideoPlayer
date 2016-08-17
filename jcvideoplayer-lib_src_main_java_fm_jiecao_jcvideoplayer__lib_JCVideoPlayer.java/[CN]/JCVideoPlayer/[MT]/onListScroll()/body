@@ -1,5 +1,4 @@
 {
-  Log.i(TAG,"onListScroll");
   if (JCVideoPlayerManager.getFirst() != null) {
     JCVideoPlayerManager.getFirst().onListScrollChange();
   }

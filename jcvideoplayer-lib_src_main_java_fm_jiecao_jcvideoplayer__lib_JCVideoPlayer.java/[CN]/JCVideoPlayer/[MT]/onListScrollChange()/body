@@ -1,24 +1,25 @@
 {
   int[] locationOnScreen=new int[2];
-  getLocationInWindow(locationOnScreen);
+  getLocationOnScreen(locationOnScreen);
   int top=locationOnScreen[1];
   int bottom=top + getHeight();
+  System.out.println("onListScrollChange " + top + "  "+ bottom);
   if (isCurrentMediaListener()) {
     if (bottom < 20) {
-      System.out.println("onListScrollChange isMe top " + top + "  "+ bottom);
+      System.out.println("onListScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
  else     if (top > (mScreenHeight - 20)) {
-      System.out.println("onListScrollChange isMe bottom " + top + "  "+ bottom);
+      System.out.println("onListScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
   }
  else {
     if (bottom > 20) {
-      System.out.println("onListScrollChange top " + top + "  "+ bottom);
+      System.out.println("onListScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
     }
  else     if (top < (mScreenHeight - 20)) {
-      System.out.println("onListScrollChange bottom " + top + "  "+ bottom);
+      System.out.println("onListScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
     }
   }
 }
