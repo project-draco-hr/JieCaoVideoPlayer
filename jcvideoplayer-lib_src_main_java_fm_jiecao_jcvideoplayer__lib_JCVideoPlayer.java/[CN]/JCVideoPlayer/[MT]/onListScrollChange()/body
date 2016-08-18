@@ -1,25 +1,25 @@
 {
+  if (currentScreen == SCREEN_WINDOW_FULLSCREEN || currentScreen == SCREEN_WINDOW_TINY)   return;
   int[] locationOnScreen=new int[2];
-  getLocationOnScreen(locationOnScreen);
+  getLocationInWindow(locationOnScreen);
   int top=locationOnScreen[1];
   int bottom=top + getHeight();
-  System.out.println("onListScrollChange " + top + "  "+ bottom);
   if (isCurrentMediaListener()) {
     if (bottom < 20) {
-      System.out.println("onListScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onListScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
  else     if (top > (mScreenHeight - 20)) {
-      System.out.println("onListScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onListScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
   }
  else {
     if (bottom > 20) {
-      System.out.println("onListScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onListScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
     }
  else     if (top < (mScreenHeight - 20)) {
-      System.out.println("onListScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onListScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
     }
   }
 }
