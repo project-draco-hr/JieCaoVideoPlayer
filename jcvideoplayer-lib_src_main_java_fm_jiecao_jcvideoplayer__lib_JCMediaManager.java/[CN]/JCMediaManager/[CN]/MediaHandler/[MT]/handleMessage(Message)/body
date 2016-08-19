@@ -44,6 +44,12 @@ if (msg.obj == null) {
   if (holder.isValid()) {
     Log.i(TAG,"set surface");
     instance().mediaPlayer.setSurface(holder);
+    mainThreadHandler.post(new Runnable(){
+      @Override public void run(){
+        textureView.requestLayout();
+      }
+    }
+);
   }
 }
 break;
