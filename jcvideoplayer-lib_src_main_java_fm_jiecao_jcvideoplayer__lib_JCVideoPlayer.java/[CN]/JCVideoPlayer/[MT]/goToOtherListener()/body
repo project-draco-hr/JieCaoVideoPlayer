@@ -8,7 +8,7 @@
       showSupportActionBar(getContext());
       return true;
     }
-    ViewGroup vp=(ViewGroup)((Activity)getContext()).findViewById(Window.ID_ANDROID_CONTENT);
+    ViewGroup vp=(ViewGroup)((Activity)getContext()).getWindow().getDecorView();
     vp.removeView(this);
     JCMediaManager.instance().lastState=currentState;
     JCVideoPlayerManager.popListener().onCompletion();
