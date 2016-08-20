@@ -4,6 +4,10 @@
     Log.i(TAG,"onListScrollChange setup " + hashCode());
     startWindowTiny();
   }
+ else   if (isSecondMediaListener() && JCMediaManager.instance().mediaPlayer.getDataSource().equals(url)) {
+    backPress();
+    return false;
+  }
   this.currentState=CURRENT_STATE_NORMAL;
   this.url=url;
   this.objects=objects;
