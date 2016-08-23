@@ -4,7 +4,7 @@
   getSupportActionBar().setDisplayShowHomeEnabled(true);
   getSupportActionBar().setDisplayShowTitleEnabled(true);
   getSupportActionBar().setDisplayUseLogoEnabled(false);
-  getSupportActionBar().setTitle("AutoTiny");
+  getSupportActionBar().setTitle("AutoTinyWindow");
   setContentView(R.layout.activity_auto_tiny);
   normal=(Button)findViewById(R.id.screen_normal);
   list=(Button)findViewById(R.id.screen_list);

@@ -4,7 +4,7 @@ case R.id.screen_normal:
     startActivity(new Intent(this,AutoTinyNormalActivity.class));
   break;
 case R.id.screen_list:
-startActivity(new Intent(this,AutoTInyListActivity.class));
+startActivity(new Intent(this,AutoTinyListActivity.class));
 break;
 }
 }

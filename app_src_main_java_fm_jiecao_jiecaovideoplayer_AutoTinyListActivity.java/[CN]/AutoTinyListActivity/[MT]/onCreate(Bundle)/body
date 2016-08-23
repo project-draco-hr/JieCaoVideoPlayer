@@ -5,5 +5,5 @@
   getSupportActionBar().setDisplayShowTitleEnabled(true);
   getSupportActionBar().setDisplayUseLogoEnabled(false);
   getSupportActionBar().setTitle("AutoTinyList");
-  setContentView(R.layout.activity_auto_tiny_list);
+  setContentView(R.layout.activity_listview_content);
 }
