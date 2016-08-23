@@ -1,9 +1,13 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
+  tinyWindow=(Button)findViewById(R.id.tiny_window);
+  autoTinyWindow=(Button)findViewById(R.id.auto_tiny_window);
   aboutUI=(Button)findViewById(R.id.play_directly_without_layout);
   aboutListView=(Button)findViewById(R.id.about_listview);
   playDirectly=(Button)findViewById(R.id.about_ui);
+  tinyWindow.setOnClickListener(this);
+  autoTinyWindow.setOnClickListener(this);
   aboutListView.setOnClickListener(this);
   aboutUI.setOnClickListener(this);
   playDirectly.setOnClickListener(this);
@@ -12,11 +16,5 @@
   jcVideoPlayerStandard=(JCVideoPlayerStandard)findViewById(R.id.jc_video);
   jcVideoPlayerStandard.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"????????????");
   ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideoPlayerStandard.thumbImageView);
-  findViewById(R.id.tiny_win).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      jcVideoPlayerStandard.startWindowTiny();
-    }
-  }
-);
   JCVideoPlayer.setJcBuriedPoint(new MyJCBuriedPointStandard());
 }

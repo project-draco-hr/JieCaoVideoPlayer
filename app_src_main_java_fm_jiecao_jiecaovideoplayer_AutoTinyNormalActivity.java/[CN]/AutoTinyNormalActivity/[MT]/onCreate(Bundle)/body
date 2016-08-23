@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setDisplayShowHomeEnabled(true);
+  getSupportActionBar().setDisplayShowTitleEnabled(true);
+  getSupportActionBar().setDisplayUseLogoEnabled(false);
+  getSupportActionBar().setTitle("AutoTinyNormal");
+  setContentView(R.layout.activity_auto_tiny_normal);
+}

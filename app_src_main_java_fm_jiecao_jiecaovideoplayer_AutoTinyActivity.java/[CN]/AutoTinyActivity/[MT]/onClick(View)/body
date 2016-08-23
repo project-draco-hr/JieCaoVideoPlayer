@@ -1,0 +1,10 @@
+{
+switch (v.getId()) {
+case R.id.screen_normal:
+    startActivity(new Intent(this,AutoTinyNormalActivity.class));
+  break;
+case R.id.screen_list:
+startActivity(new Intent(this,AutoTInyListActivity.class));
+break;
+}
+}
