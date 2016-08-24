@@ -6,20 +6,20 @@
   int bottom=top + getHeight();
   if (isCurrentMediaListener()) {
     if (bottom < 20) {
-      Log.i(TAG,"onListScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
  else     if (top > (mScreenHeight - 20)) {
-      Log.i(TAG,"onListScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
       startWindowTiny();
     }
   }
  else {
     if (bottom > 20) {
-      Log.i(TAG,"onListScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
     }
  else     if (top < (mScreenHeight - 20)) {
-      Log.i(TAG,"onListScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
+      Log.i(TAG,"onScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
     }
   }
 }
