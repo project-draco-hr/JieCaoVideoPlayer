@@ -34,12 +34,24 @@
     Log.i(TAG,"onClick fullscreen [" + this.hashCode() + "] ");
     if (currentState == CURRENT_STATE_AUTO_COMPLETE)     return;
     if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
+      JCUtils.scanForActivity(getContext()).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+      new Handler().postDelayed(new Runnable(){
+        @Override public void run(){
+          JCUtils.scanForActivity(getContext()).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+        }
+      }
+,2000);
       backPress();
     }
  else {
       Log.d(TAG,"toFullscreenActivity [" + this.hashCode() + "] ");
       onEvent(JCBuriedPoint.ON_ENTER_FULLSCREEN);
-      startWindowFullscreen();
+      if (getContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+        startWindowFullscreenOLD();
+      }
+ else {
+        startWindowFullscreen(0);
+      }
     }
   }
  else   if (i == R.id.surface_container && currentState == CURRENT_STATE_ERROR) {
