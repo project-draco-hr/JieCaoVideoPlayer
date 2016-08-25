@@ -6,15 +6,13 @@
   if (old != null) {
     vp.removeView(old);
   }
-  if (textureViewContainer.getChildCount() > 0) {
-    textureViewContainer.removeAllViews();
-  }
   try {
     Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
     JCVideoPlayer mJcVideoPlayer=constructor.newInstance(getContext());
     mJcVideoPlayer.setId(TINY_ID);
-    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(400,400);
+    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(800,800);
     lp.gravity=Gravity.RIGHT | Gravity.BOTTOM;
+    lp.setMargins(0,0,10,10);
     vp.addView(mJcVideoPlayer,lp);
     mJcVideoPlayer.setUp(url,JCVideoPlayerStandard.SCREEN_WINDOW_TINY,objects);
     mJcVideoPlayer.setUiWitStateAndScreen(currentState);

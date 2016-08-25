@@ -1,0 +1,30 @@
+{
+  Log.i(TAG,"startWindowFullscreen " + " [" + this.hashCode() + "] ");
+  hideSupportActionBar(getContext());
+  ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).findViewById(Window.ID_ANDROID_CONTENT);
+  View old=vp.findViewById(FULLSCREEN_ID);
+  if (old != null) {
+    vp.removeView(old);
+  }
+  try {
+    Constructor<JCVideoPlayer> constructor=(Constructor<JCVideoPlayer>)JCVideoPlayer.this.getClass().getConstructor(Context.class);
+    JCVideoPlayer jcVideoPlayer=constructor.newInstance(getContext());
+    jcVideoPlayer.setId(FULLSCREEN_ID);
+    FrameLayout.LayoutParams lp=new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+    vp.addView(jcVideoPlayer,lp);
+    jcVideoPlayer.setUp(url,JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN,objects);
+    jcVideoPlayer.setUiWitStateAndScreen(currentState);
+    jcVideoPlayer.addTextureView();
+    jcVideoPlayer.setRotation(rotation);
+    final Animation ra=AnimationUtils.loadAnimation(getContext(),R.anim.start_fullscreen);
+    jcVideoPlayer.setAnimation(ra);
+    JCVideoPlayerManager.setLastListener(this);
+    JCVideoPlayerManager.setListener(jcVideoPlayer);
+  }
+ catch (  InstantiationException e) {
+    e.printStackTrace();
+  }
+catch (  Exception e) {
+    e.printStackTrace();
+  }
+}
