@@ -5,8 +5,10 @@
         @Override public void run(){
           bottomContainer.setVisibility(View.INVISIBLE);
           topContainer.setVisibility(View.INVISIBLE);
-          bottomProgressBar.setVisibility(View.VISIBLE);
           startButton.setVisibility(View.INVISIBLE);
+          if (currentScreen != SCREEN_WINDOW_TINY) {
+            bottomProgressBar.setVisibility(View.VISIBLE);
+          }
         }
       }
 );
