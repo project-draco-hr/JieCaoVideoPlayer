@@ -20,5 +20,5 @@
 );
   JCVideoPlayer.setJcBuriedPoint(new MyJCBuriedPointStandard());
   sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
-  sensorEventListener=new MySensorEventListener();
+  sensorEventListener=new JCVideoPlayer.JCAutoFullscreenListener();
 }
