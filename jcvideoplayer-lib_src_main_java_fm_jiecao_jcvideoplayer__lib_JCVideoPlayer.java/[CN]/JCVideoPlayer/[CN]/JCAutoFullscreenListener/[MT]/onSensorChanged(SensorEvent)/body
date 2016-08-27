@@ -6,7 +6,7 @@
   }
  else   if (x > 11) {
     if (JCVideoPlayerManager.listener() != null) {
-      JCVideoPlayerManager.listener().autoFullscrenn();
+      JCVideoPlayerManager.listener().autoFullscreenLeft();
     }
   }
  else   if (y > 11) {
