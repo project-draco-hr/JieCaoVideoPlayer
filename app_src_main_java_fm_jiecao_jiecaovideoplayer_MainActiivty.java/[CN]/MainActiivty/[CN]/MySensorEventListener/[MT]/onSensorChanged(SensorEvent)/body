@@ -1,0 +1,19 @@
+{
+  float x=event.values[SensorManager.DATA_X];
+  float y=event.values[SensorManager.DATA_Y];
+  float z=event.values[SensorManager.DATA_Z];
+  if (x < -11) {
+    System.out.println("fdsfdsfdsf ?????????");
+  }
+ else   if (x > 11) {
+    System.out.println("fdsfdsfdsf ?????????");
+    if (JCVideoPlayerManager.listener() != null) {
+      JCVideoPlayerManager.listener().autoFullscrenn();
+    }
+  }
+ else   if (y > 11) {
+    if (JCVideoPlayerManager.listener() != null) {
+      JCVideoPlayerManager.listener().autoQuitFullscreen();
+    }
+  }
+}

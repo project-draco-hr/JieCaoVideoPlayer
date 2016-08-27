@@ -1,4 +1,5 @@
 {
   super.onPause();
+  sensorManager.unregisterListener(sensorEventListener);
   JCVideoPlayer.releaseAllVideos();
 }
