@@ -1,9 +1,11 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
+  tinyWin=(Button)findViewById(R.id.tiny_win);
   aboutUI=(Button)findViewById(R.id.play_directly_without_layout);
   aboutListView=(Button)findViewById(R.id.about_listview);
   playDirectly=(Button)findViewById(R.id.about_ui);
+  tinyWin.setOnClickListener(this);
   aboutListView.setOnClickListener(this);
   aboutUI.setOnClickListener(this);
   playDirectly.setOnClickListener(this);
@@ -12,12 +14,6 @@
   jcVideoPlayerStandard=(JCVideoPlayerStandard)findViewById(R.id.jc_video);
   jcVideoPlayerStandard.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",JCVideoPlayerStandard.SCREEN_LAYOUT_LIST,"????????????");
   ImageLoader.getInstance().displayImage("http://cos.myqcloud.com/1000264/qcloud_video_attachment/842646334/vod_cover/cover1458036374.jpg",jcVideoPlayerStandard.thumbImageView);
-  findViewById(R.id.tiny_win).setOnClickListener(new View.OnClickListener(){
-    @Override public void onClick(    View v){
-      jcVideoPlayerStandard.startWindowTiny();
-    }
-  }
-);
   JCVideoPlayer.setJcBuriedPoint(new MyJCBuriedPointStandard());
   sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
   sensorEventListener=new JCVideoPlayer.JCAutoFullscreenListener();

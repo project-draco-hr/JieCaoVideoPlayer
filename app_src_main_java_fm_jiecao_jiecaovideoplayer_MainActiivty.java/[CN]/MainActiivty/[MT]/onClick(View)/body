@@ -1,8 +1,11 @@
 {
 switch (v.getId()) {
-case R.id.play_directly_without_layout:
-    startActivity(new Intent(MainActiivty.this,PlayDirectlyActivity.class));
+case R.id.tiny_win:
+    jcVideoPlayerStandard.startWindowTiny();
   break;
+case R.id.play_directly_without_layout:
+startActivity(new Intent(MainActiivty.this,PlayDirectlyActivity.class));
+break;
 case R.id.about_listview:
 startActivity(new Intent(MainActiivty.this,ListViewActivity.class));
 break;
