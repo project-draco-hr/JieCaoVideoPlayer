@@ -3,7 +3,12 @@
   bottomContainer.setVisibility(bottomCon);
   startButton.setVisibility(startBtn);
   loadingProgressBar.setVisibility(loadingPro);
-  thumbImageView.setVisibility(thumbImg);
+  if (thumbImg == View.VISIBLE) {
+    thumbImageView.setVisibility(thumbImg);
+  }
+ else {
+    thumbImageView.setVisibility(View.GONE);
+  }
   coverImageView.setVisibility(coverImg);
   bottomProgressBar.setVisibility(bottomPro);
 }

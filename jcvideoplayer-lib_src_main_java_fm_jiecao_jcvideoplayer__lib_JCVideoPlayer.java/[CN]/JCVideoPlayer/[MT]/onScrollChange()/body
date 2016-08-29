@@ -17,9 +17,11 @@
  else {
     if (bottom > 20) {
       Log.i(TAG,"onScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
+      backPress();
     }
  else     if (top < (mScreenHeight - 20)) {
       Log.i(TAG,"onScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
+      backPress();
     }
   }
 }

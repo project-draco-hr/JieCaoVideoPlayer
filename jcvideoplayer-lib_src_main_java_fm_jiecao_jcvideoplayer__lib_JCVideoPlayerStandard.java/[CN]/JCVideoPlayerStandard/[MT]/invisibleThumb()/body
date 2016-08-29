@@ -1,4 +1,0 @@
-{
-  super.invisibleThumb();
-  thumbImageView.setVisibility(View.INVISIBLE);
-}
