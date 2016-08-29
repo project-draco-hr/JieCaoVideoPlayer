@@ -1,0 +1,4 @@
+{
+  super(itemView);
+  jcVideoPlayer=(JCVideoPlayerStandard)itemView.findViewById(R.id.videoplayer);
+}
