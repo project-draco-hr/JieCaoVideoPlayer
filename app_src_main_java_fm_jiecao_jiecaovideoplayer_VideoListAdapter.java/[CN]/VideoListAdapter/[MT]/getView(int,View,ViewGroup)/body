@@ -4,15 +4,14 @@
   if (null == convertView) {
     viewHolder=new ViewHolder();
     LayoutInflater mInflater=LayoutInflater.from(context);
-    convertView=mInflater.inflate(layoutId,null);
+    convertView=mInflater.inflate(R.layout.item_videoview,null);
     viewHolder.jcVideoPlayer=(JCVideoPlayerStandard)convertView.findViewById(R.id.videoplayer);
     convertView.setTag(viewHolder);
   }
  else {
     viewHolder=(ViewHolder)convertView.getTag();
   }
-  Object[] youData={videoTitles[videoIndexs[position]],position + ""};
-  boolean setUp=viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,youData);
+  boolean setUp=viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,videoTitles[videoIndexs[position]]);
   if (setUp) {
     ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],viewHolder.jcVideoPlayer.thumbImageView);
   }

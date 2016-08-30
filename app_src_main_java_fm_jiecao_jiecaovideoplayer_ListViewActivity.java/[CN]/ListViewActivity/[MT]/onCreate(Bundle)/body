@@ -10,7 +10,6 @@
   mViewPagerList=(Button)findViewById(R.id.viewpayer_list);
   mMultiHolderList=(Button)findViewById(R.id.multi_holder_list);
   mRecyleView=(Button)findViewById(R.id.recyleview);
-  findViewById(R.id.listview_auto_window_tiny).setOnClickListener(this);
   mNormalList.setOnClickListener(this);
   mViewPagerList.setOnClickListener(this);
   mMultiHolderList.setOnClickListener(this);
