@@ -1,3 +1,4 @@
 {
   this.context=context;
+  layoutId=R.layout.item_videoview;
 }

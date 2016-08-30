@@ -12,5 +12,8 @@ break;
 case R.id.recyleview:
 Toast.makeText(ListViewActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
 break;
+case R.id.listview_auto_window_tiny:
+startActivity(new Intent(ListViewActivity.this,ListViewAutoWindowTinyActivity.class));
+break;
 }
 }

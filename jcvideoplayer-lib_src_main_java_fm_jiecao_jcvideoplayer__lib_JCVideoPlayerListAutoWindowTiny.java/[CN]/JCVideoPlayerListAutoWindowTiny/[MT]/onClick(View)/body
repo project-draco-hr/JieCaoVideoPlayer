@@ -1,0 +1,15 @@
+{
+  super.onClick(v);
+  int i=v.getId();
+  if (i == R.id.surface_container && currentScreen == SCREEN_WINDOW_TINY) {
+    Toast.makeText(getContext(),"???????????????",Toast.LENGTH_SHORT).show();
+  }
+ else   if (i == R.id.fullscreen) {
+    if (currentScreen != SCREEN_WINDOW_FULLSCREEN) {
+      isFullSwitchList=true;
+    }
+  }
+ else   if (i == R.id.thumb || i == R.id.start) {
+    position=objects[1].toString();
+  }
+}

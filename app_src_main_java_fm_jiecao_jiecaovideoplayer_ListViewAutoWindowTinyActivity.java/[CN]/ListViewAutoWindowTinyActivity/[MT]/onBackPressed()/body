@@ -1,0 +1,6 @@
+{
+  if (JCVideoPlayerListAutoWindowTiny.backPress()) {
+    return;
+  }
+  super.onBackPressed();
+}
