@@ -1,7 +1,7 @@
 {
 switch (v.getId()) {
 case R.id.tiny_win:
-    startActivity(new Intent(MainActiivty.this,RecyclerViewNormalActivity.class));
+    jcVideoPlayerStandard.startWindowTiny();
   break;
 case R.id.play_directly_without_layout:
 startActivity(new Intent(MainActiivty.this,PlayDirectlyActivity.class));
