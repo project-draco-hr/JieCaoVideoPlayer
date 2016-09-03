@@ -5,7 +5,7 @@
     Log.v(TAG,"onProgressUpdate " + position + "/"+ duration+ " ["+ this.hashCode()+ "] ");
     mHandler.post(new Runnable(){
       @Override public void run(){
-        setTextAndProgress(0);
+        setTextAndProgress(JCMediaManager.instance().bufferPercent);
       }
     }
 );

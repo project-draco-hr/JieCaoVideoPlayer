@@ -2,5 +2,6 @@
   if (currentState != CURRENT_STATE_NORMAL && currentState != CURRENT_STATE_PREPAREING) {
     Log.v(TAG,"onBufferingUpdate " + percent + " ["+ this.hashCode()+ "] ");
     setTextAndProgress(percent);
+    JCMediaManager.instance().bufferPercent=percent;
   }
 }
