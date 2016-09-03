@@ -1,7 +1,9 @@
 {
   Log.d(TAG,"prepareVideo [" + this.hashCode() + "] ");
-  if (JCVideoPlayerManager.listener() != null) {
-    JCVideoPlayerManager.listener().onCompletion();
+  if (currentScreen != SCREEN_WINDOW_FULLSCREEN) {
+    if (JCVideoPlayerManager.listener() != null) {
+      JCVideoPlayerManager.listener().onCompletion();
+    }
   }
   JCVideoPlayerManager.setListener(this);
   addTextureView();

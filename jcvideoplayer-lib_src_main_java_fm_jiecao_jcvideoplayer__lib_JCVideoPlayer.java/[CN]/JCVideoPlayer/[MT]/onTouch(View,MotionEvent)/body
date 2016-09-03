@@ -23,8 +23,10 @@ if (!mChangePosition && !mChangeVolume) {
 if (absDeltaX > THRESHOLD || absDeltaY > THRESHOLD) {
 cancelProgressTimer();
 if (absDeltaX >= THRESHOLD) {
+if (currentState != CURRENT_STATE_ERROR) {
 mChangePosition=true;
 mDownPosition=getCurrentPositionWhenPlaying();
+}
 }
  else {
 mChangeVolume=true;
