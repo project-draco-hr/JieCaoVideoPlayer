@@ -1,0 +1,4 @@
+{
+  coverImageView.setImageBitmap(null);
+  super.prepareVideo();
+}

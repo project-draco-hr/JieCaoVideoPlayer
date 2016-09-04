@@ -1,6 +1,7 @@
 {
   if (objects.length == 0)   return false;
   if (super.setUp(url,screen,objects)) {
+    coverImageView.setImageBitmap(null);
     titleTextView.setText(objects[0].toString());
     if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
       fullscreenButton.setImageResource(R.drawable.jc_shrink);
