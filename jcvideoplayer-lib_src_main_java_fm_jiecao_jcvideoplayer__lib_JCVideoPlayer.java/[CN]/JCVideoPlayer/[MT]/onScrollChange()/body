@@ -4,24 +4,8 @@
   getLocationInWindow(locationOnScreen);
   int top=locationOnScreen[1];
   int bottom=top + getHeight();
-  if (isCurrentMediaListener()) {
-    if (bottom < 20) {
-      Log.i(TAG,"onScrollChange isMe top " + hashCode() + " "+ top+ "  "+ bottom);
-      startWindowTiny();
-    }
- else     if (top > (mScreenHeight - 20)) {
-      Log.i(TAG,"onScrollChange isMe bottom " + hashCode() + " "+ top+ "  "+ bottom);
-      startWindowTiny();
-    }
-  }
- else {
-    if (bottom > 20) {
-      Log.i(TAG,"onScrollChange top " + hashCode() + " "+ top+ "  "+ bottom);
-      backPress();
-    }
- else     if (top < (mScreenHeight - 20)) {
-      Log.i(TAG,"onScrollChange bottom " + hashCode() + " "+ top+ "  "+ bottom);
-      backPress();
-    }
+  System.out.println("onScrollChange " + isShown());
+  if (!isShown()) {
+    startWindowTiny();
   }
 }
