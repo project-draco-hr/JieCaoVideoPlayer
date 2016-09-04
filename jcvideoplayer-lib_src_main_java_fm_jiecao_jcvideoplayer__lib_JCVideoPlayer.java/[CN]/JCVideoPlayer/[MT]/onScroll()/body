@@ -1,5 +1,11 @@
 {
   if (JCVideoPlayerManager.getFirst() != null) {
-    JCVideoPlayerManager.getFirst().onScrollChange();
+    JCVideoPlayer jd=(JCVideoPlayer)JCVideoPlayerManager.getFirst();
+    if (jd.currentScreen != JCVideoPlayer.SCREEN_WINDOW_TINY) {
+      JCVideoPlayerManager.getFirst().onScrollChange();
+    }
+ else {
+      JCVideoPlayerManager.LISTENERLIST.get(1).get().onScrollChange();
+    }
   }
 }

@@ -6,6 +6,13 @@
   int bottom=top + getHeight();
   System.out.println("onScrollChange " + isShown());
   if (!isShown()) {
-    startWindowTiny();
+    if (currentScreen != SCREEN_WINDOW_TINY) {
+      startWindowTiny();
+    }
+  }
+ else {
+    if (currentScreen == SCREEN_WINDOW_TINY) {
+      backPress();
+    }
   }
 }
