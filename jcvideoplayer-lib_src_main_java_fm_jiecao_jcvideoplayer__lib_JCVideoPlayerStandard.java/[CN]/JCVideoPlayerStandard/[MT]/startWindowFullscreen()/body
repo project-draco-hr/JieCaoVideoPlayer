@@ -1,0 +1,7 @@
+{
+  obtainCover();
+  super.startWindowFullscreen();
+  if (currentState == CURRENT_STATE_PAUSE) {
+    refreshCover(pauseSwitchCoverBitmap);
+  }
+}

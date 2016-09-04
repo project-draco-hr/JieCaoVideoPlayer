@@ -1,0 +1,8 @@
+{
+  if (currentState == CURRENT_STATE_PAUSE) {
+    if (isRefreshCover) {
+      pauseSwitchCoverBitmap=JCMediaManager.textureView.getBitmap();
+      isRefreshCover=false;
+    }
+  }
+}

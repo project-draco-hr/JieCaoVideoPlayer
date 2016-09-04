@@ -1,4 +1,7 @@
 {
   super.onStopTrackingTouch(seekBar);
+  if (currentState == CURRENT_STATE_PAUSE) {
+    isRefreshCover=true;
+  }
   startDismissControlViewTimer();
 }
