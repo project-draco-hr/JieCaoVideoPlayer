@@ -1,0 +1,10 @@
+{
+  Log.i(TAG,"onClick  fullscreen refresh ok bitmap [" + this.hashCode() + "] currentState == CURRENT_STATE_PAUSE"+ (currentState == CURRENT_STATE_PAUSE)+ "isRefreshCover="+ isRefreshCover);
+  if (currentState == CURRENT_STATE_PAUSE) {
+    if (isRefreshCover) {
+      pauseSwitchCoverBitmap=JCMediaManager.textureView.getBitmap();
+      isRefreshCover=false;
+      Log.i(TAG,"onClick  fullscreen refresh ok bitmap [" + this.hashCode() + "] ");
+    }
+  }
+}

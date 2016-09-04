@@ -1,0 +1,8 @@
+{
+  obtainCover();
+  boolean b=super.goToOtherListener();
+  if (currentState == CURRENT_STATE_PAUSE) {
+    refreshCover(pauseSwitchCoverBitmap);
+  }
+  return b;
+}

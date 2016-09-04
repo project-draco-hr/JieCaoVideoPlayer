@@ -1,0 +1,6 @@
+{
+  Log.i(TAG,"refreshCover [" + this.hashCode() + "]");
+  JCVideoPlayerStandard jcVideoPlayerStandard=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
+  jcVideoPlayerStandard.coverImageView.setImageBitmap(bitmap);
+  jcVideoPlayerStandard.coverImageView.setVisibility(VISIBLE);
+}

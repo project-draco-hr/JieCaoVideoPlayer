@@ -1,4 +1,8 @@
 {
   super.onStopTrackingTouch(seekBar);
+  Log.i(TAG,"onStopTrackingTouch  [" + this.hashCode() + "] currentState == CURRENT_STATE_PAUSE="+ (currentState == CURRENT_STATE_PAUSE));
+  if (currentState == CURRENT_STATE_PAUSE) {
+    isRefreshCover=true;
+  }
   startDismissControlViewTimer();
 }
