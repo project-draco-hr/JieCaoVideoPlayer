@@ -1,4 +1,5 @@
 {
-  if (pauseSwitchCoverBitmap != null)   coverImageView.setImageBitmap(null);
+  coverImageView.setBackgroundColor(Color.parseColor("#222222"));
+  coverImageView.setImageBitmap(null);
   super.prepareVideo();
 }

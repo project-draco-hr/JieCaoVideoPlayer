@@ -1,7 +1,9 @@
 {
   if (objects.length == 0)   return false;
   if (super.setUp(url,screen,objects)) {
-    if (pauseSwitchCoverBitmap != null)     coverImageView.setImageBitmap(null);
+    if (pauseSwitchCoverBitmap != null && coverImageView.getBackground() == null) {
+      coverImageView.setBackgroundColor(Color.parseColor("#222222"));
+    }
     titleTextView.setText(objects[0].toString());
     if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
       fullscreenButton.setImageResource(R.drawable.jc_shrink);
