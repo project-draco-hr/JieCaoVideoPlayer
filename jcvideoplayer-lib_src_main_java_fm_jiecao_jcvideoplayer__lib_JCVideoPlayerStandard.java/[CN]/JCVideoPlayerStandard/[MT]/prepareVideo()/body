@@ -1,4 +1,4 @@
 {
-  coverImageView.setImageBitmap(null);
+  if (pauseSwitchCoverBitmap != null)   coverImageView.setImageBitmap(null);
   super.prepareVideo();
 }

@@ -1,5 +1,7 @@
 {
-  JCVideoPlayerStandard jcVideoPlayerStandard=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
-  jcVideoPlayerStandard.coverImageView.setImageBitmap(bitmap);
-  jcVideoPlayerStandard.coverImageView.setVisibility(VISIBLE);
+  if (pauseSwitchCoverBitmap != null) {
+    JCVideoPlayerStandard jcVideoPlayerStandard=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
+    jcVideoPlayerStandard.coverImageView.setImageBitmap(bitmap);
+    jcVideoPlayerStandard.coverImageView.setVisibility(VISIBLE);
+  }
 }
