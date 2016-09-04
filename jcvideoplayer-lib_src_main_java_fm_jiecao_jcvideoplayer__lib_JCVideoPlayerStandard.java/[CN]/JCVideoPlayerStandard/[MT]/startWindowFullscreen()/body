@@ -2,7 +2,6 @@
   obtainCover();
   super.startWindowFullscreen();
   if (currentState == CURRENT_STATE_PAUSE) {
-    Log.i(TAG,"startWindowFullscreen  CURRENT_STATE_PAUSE [" + this.hashCode() + "] ");
     refreshCover(pauseSwitchCoverBitmap);
   }
 }

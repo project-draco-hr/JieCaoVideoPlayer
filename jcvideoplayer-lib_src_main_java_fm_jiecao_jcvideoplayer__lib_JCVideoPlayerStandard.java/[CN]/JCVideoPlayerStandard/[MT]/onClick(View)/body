@@ -29,7 +29,6 @@
  else   if (i == R.id.start) {
     if (currentState == CURRENT_STATE_NORMAL || currentState == CURRENT_STATE_PAUSE) {
       isRefreshCover=true;
-      Log.i(TAG,"onClick  start isRefreshCover=true [" + this.hashCode() + "] ");
     }
   }
 }
