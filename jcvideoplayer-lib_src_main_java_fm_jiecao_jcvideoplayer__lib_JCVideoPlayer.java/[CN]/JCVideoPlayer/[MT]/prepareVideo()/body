@@ -8,4 +8,7 @@
   JCUtils.scanForActivity(getContext()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
   JCMediaManager.instance().prepare(url,mapHeadData,looping);
   setUiWitStateAndScreen(CURRENT_STATE_PREPAREING);
+  if (currentState == SCREEN_LAYOUT_LIST) {
+    JCVideoPlayer.setCurrentScrollPlayerListener(this);
+  }
 }

@@ -1,11 +1,11 @@
 {
   if (!isShown()) {
-    if (JCVideoPlayerManager.getFirst() == this) {
+    if (JCVideoPlayerManager.getFirst() == this && JCMediaManager.instance().mediaPlayer.getDataSource().equals(url)) {
       startWindowTiny();
     }
   }
  else {
-    if (JCVideoPlayerManager.getFirst() != this) {
+    if (JCVideoPlayerManager.getFirst() != this && JCMediaManager.instance().mediaPlayer.getDataSource().equals(url)) {
       backPress();
     }
   }
