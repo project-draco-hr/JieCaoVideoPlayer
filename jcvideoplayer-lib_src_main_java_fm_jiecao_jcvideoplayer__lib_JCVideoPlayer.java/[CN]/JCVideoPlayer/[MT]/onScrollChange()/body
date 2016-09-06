@@ -1,17 +1,11 @@
 {
-  if (currentScreen == SCREEN_WINDOW_FULLSCREEN || currentScreen == SCREEN_WINDOW_TINY)   return;
-  int[] locationOnScreen=new int[2];
-  getLocationInWindow(locationOnScreen);
-  int top=locationOnScreen[1];
-  int bottom=top + getHeight();
-  System.out.println("onScrollChange " + isShown());
   if (!isShown()) {
-    if (currentScreen != SCREEN_WINDOW_TINY) {
+    if (JCVideoPlayerManager.getFirst() == this) {
       startWindowTiny();
     }
   }
  else {
-    if (currentScreen == SCREEN_WINDOW_TINY) {
+    if (JCVideoPlayerManager.getFirst() != this) {
       backPress();
     }
   }
