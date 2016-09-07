@@ -1,0 +1,6 @@
+{
+  if (!TextUtils.isEmpty(this.url) && TextUtils.equals(this.url,url)) {
+    return true;
+  }
+  return false;
+}

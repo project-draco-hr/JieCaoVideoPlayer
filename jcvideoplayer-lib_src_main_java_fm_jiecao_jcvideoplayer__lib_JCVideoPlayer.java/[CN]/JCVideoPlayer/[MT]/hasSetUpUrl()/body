@@ -1,0 +1,6 @@
+{
+  if (!TextUtils.isEmpty(url)) {
+    return true;
+  }
+  return false;
+}
