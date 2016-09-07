@@ -7,7 +7,7 @@ case CURRENT_STATE_NORMAL:
       JCMediaManager.instance().releaseMediaPlayer();
     }
   break;
-case CURRENT_STATE_PREPAREING:
+case CURRENT_STATE_PREPARING:
 resetProgressAndTime();
 break;
 case CURRENT_STATE_PLAYING:
