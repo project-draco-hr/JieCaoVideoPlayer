@@ -1,15 +1,19 @@
 {
   Log.d(TAG,"onInfo what - " + what + " extra - "+ extra);
-  if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
+  if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_START) {
     JCMediaManager.instance().backUpBufferState=currentState;
     setUiWitStateAndScreen(CURRENT_STATE_PLAYING_BUFFERING_START);
     Log.d(TAG,"MEDIA_INFO_BUFFERING_START");
   }
- else   if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
+ else   if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_END) {
     if (JCMediaManager.instance().backUpBufferState != -1) {
       setUiWitStateAndScreen(JCMediaManager.instance().backUpBufferState);
       JCMediaManager.instance().backUpBufferState=-1;
     }
     Log.d(TAG,"MEDIA_INFO_BUFFERING_END");
+  }
+ else   if (what == IMediaPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED) {
+    JCMediaManager.instance().videoRotation=extra;
+    Log.d(TAG,"MEDIA_INFO_VIDEO_ROTATION_CHANGED");
   }
 }
