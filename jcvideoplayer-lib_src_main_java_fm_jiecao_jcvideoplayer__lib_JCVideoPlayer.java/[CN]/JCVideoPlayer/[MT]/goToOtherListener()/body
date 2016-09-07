@@ -2,7 +2,7 @@
   Log.i(TAG,"goToOtherListener " + " [" + this.hashCode() + "] ");
   if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
-    if (JCVideoPlayerManager.listener() == null) {
+    if (JCVideoPlayerManager.lastListener() == null) {
       JCVideoPlayerManager.listener().onCompletion();
       showSupportActionBar(getContext());
       return true;
