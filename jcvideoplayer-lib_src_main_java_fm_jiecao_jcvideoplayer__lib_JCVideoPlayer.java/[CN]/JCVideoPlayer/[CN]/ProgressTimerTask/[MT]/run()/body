@@ -1,5 +1,5 @@
 {
-  if (currentState == CURRENT_STATE_PLAYING || currentState == CURRENT_STATE_PAUSE) {
+  if (currentState == CURRENT_STATE_PLAYING || currentState == CURRENT_STATE_PAUSE || currentState == CURRENT_STATE_PLAYING_BUFFERING_START) {
     int position=getCurrentPositionWhenPlaying();
     int duration=getDuration();
     Log.v(TAG,"onProgressUpdate " + position + "/"+ duration+ " ["+ this.hashCode()+ "] ");
