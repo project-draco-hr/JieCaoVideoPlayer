@@ -11,7 +11,7 @@
     ViewGroup vp=(ViewGroup)((Activity)getContext()).getWindow().getDecorView();
     vp.removeView(this);
     JCMediaManager.instance().lastState=currentState;
-    JCVideoPlayerManager.popListener().onCompletion();
+    JCVideoPlayerManager.popListener();
     JCVideoPlayerManager.getFirst().goBackThisListener();
     CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();
     return true;
