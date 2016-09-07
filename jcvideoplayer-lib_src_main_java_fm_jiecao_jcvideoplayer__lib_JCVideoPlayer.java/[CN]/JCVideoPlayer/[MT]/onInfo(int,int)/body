@@ -14,6 +14,7 @@
   }
  else   if (what == IMediaPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED) {
     JCMediaManager.instance().videoRotation=extra;
+    JCMediaManager.textureView.setRotation(extra);
     Log.d(TAG,"MEDIA_INFO_VIDEO_ROTATION_CHANGED");
   }
 }
