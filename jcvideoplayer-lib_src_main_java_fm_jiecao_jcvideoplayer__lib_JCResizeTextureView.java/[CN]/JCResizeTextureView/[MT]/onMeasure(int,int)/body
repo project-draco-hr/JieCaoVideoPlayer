@@ -1,6 +1,9 @@
 {
-  int videoWidth=JCMediaManager.instance().currentVideoWidth;
-  int videoHeight=JCMediaManager.instance().currentVideoHeight;
+  int videoWidth=mVideoSize.x;
+  int videoHeight=mVideoSize.y;
+  if (DEBUG) {
+    Log.i(TAG,"onMeasure " + " [" + this.hashCode() + "] ");
+  }
   int width=getDefaultSize(videoWidth,widthMeasureSpec);
   int height=getDefaultSize(videoHeight,heightMeasureSpec);
   if (videoWidth > 0 && videoHeight > 0) {
@@ -8,6 +11,12 @@
     int widthSpecSize=MeasureSpec.getSize(widthMeasureSpec);
     int heightSpecMode=MeasureSpec.getMode(heightMeasureSpec);
     int heightSpecSize=MeasureSpec.getSize(heightMeasureSpec);
+    if (DEBUG) {
+      Log.i(TAG,"videoWidth=" + videoWidth + ", "+ "videoHeight="+ videoHeight);
+      Log.i(TAG,"viewRotation =" + getRotation());
+      Log.i(TAG,"viewWidth  [" + MeasureSpec.toString(widthMeasureSpec) + "]");
+      Log.i(TAG,"viewHeight [" + MeasureSpec.toString(heightMeasureSpec) + "]");
+    }
     if (widthSpecMode == MeasureSpec.EXACTLY && heightSpecMode == MeasureSpec.EXACTLY) {
       width=widthSpecSize;
       height=heightSpecSize;
@@ -46,6 +55,9 @@
     }
   }
  else {
+  }
+  if (DEBUG) {
+    Log.i(TAG,"viewWidth=" + width + ", "+ "viewHeight="+ height);
   }
   setMeasuredDimension(width,height);
 }

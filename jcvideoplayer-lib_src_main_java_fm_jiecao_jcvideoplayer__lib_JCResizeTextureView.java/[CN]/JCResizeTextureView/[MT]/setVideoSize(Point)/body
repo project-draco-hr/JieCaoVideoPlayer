@@ -1,0 +1,6 @@
+{
+  if (!mVideoSize.equals(videoSize)) {
+    this.mVideoSize=videoSize;
+    requestLayout();
+  }
+}

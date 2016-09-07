@@ -5,6 +5,7 @@
   }
   JCMediaManager.textureView=null;
   JCMediaManager.textureView=new JCResizeTextureView(getContext());
+  JCMediaManager.textureView.setVideoSize(JCMediaManager.instance().getVideoSize());
   JCMediaManager.textureView.setSurfaceTextureListener(this);
   RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
   layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
