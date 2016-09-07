@@ -1,10 +1,10 @@
 {
   if (currentState == CURRENT_STATE_PREPAREING) {
     if (bottomContainer.getVisibility() == View.VISIBLE) {
-      changeUiToPrepareingClear();
+      changeUiToPreparingClear();
     }
  else {
-      changeUiToPrepareingShow();
+      changeUiToPreparingShow();
     }
   }
  else   if (currentState == CURRENT_STATE_PLAYING) {

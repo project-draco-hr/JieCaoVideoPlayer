@@ -5,7 +5,7 @@ case CURRENT_STATE_NORMAL:
     changeUiToNormal();
   break;
 case CURRENT_STATE_PREPAREING:
-changeUiToPrepareingShow();
+changeUiToPreparingShow();
 startDismissControlViewTimer();
 break;
 case CURRENT_STATE_PLAYING:

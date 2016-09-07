@@ -11,7 +11,7 @@
         showWifiDialog();
         return;
       }
-      startPlayLocic();
+      startPlayLogic();
     }
  else     if (currentState == CURRENT_STATE_AUTO_COMPLETE) {
       onClickUiToggle();

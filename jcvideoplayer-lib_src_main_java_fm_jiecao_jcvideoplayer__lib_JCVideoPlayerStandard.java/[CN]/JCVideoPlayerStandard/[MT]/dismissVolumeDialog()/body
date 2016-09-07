@@ -1,5 +1,5 @@
 {
-  super.dismissVolumDialog();
+  super.dismissVolumeDialog();
   if (mVolumeDialog != null) {
     mVolumeDialog.dismiss();
   }

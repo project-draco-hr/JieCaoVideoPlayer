@@ -49,14 +49,14 @@ int max=mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 int deltaV=(int)(max * deltaY * 3 / mScreenHeight);
 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,mGestureDownVolume + deltaV,0);
 int volumePercent=(int)(mGestureDownVolume * 100 / max + deltaY * 3 * 100 / mScreenHeight);
-showVolumDialog(-deltaY,volumePercent);
+showVolumeDialog(-deltaY,volumePercent);
 }
 break;
 case MotionEvent.ACTION_UP:
 Log.i(TAG,"onTouch surfaceContainer actionUp [" + this.hashCode() + "] ");
 mTouchingProgressBar=false;
 dismissProgressDialog();
-dismissVolumDialog();
+dismissVolumeDialog();
 if (mChangePosition) {
 onEvent(JCBuriedPoint.ON_TOUCH_SCREEN_SEEK_POSITION);
 JCMediaManager.instance().mediaPlayer.seekTo(mSeekTimePosition);

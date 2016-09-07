@@ -1,5 +1,5 @@
 {
-  super.showVolumDialog(deltaY,volumePercent);
+  super.showVolumeDialog(deltaY,volumePercent);
   if (mVolumeDialog == null) {
     View localView=LayoutInflater.from(getContext()).inflate(R.layout.jc_volume_dialog,null);
     mDialogVolumeProgressBar=((ProgressBar)localView.findViewById(R.id.volume_progressbar));
