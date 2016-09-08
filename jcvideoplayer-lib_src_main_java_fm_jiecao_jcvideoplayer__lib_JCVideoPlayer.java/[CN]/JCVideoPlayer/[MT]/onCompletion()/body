@@ -7,6 +7,8 @@
   JCVideoPlayerManager.setListener(null);
   JCMediaManager.instance().currentVideoWidth=0;
   JCMediaManager.instance().currentVideoHeight=0;
+  JCMediaManager.instance().bufferPercent=0;
+  JCMediaManager.instance().videoRotation=0;
   AudioManager mAudioManager=(AudioManager)getContext().getSystemService(Context.AUDIO_SERVICE);
   mAudioManager.abandonAudioFocus(onAudioFocusChangeListener);
   JCUtils.scanForActivity(getContext()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
