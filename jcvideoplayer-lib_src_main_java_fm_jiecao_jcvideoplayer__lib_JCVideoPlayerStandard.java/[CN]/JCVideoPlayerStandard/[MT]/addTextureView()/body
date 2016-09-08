@@ -1,4 +1,5 @@
 {
   super.addTextureView();
+  coverImageView.setVideoSize(JCMediaManager.instance().getVideoSize());
   coverImageView.setRotation(JCMediaManager.instance().videoRotation);
 }

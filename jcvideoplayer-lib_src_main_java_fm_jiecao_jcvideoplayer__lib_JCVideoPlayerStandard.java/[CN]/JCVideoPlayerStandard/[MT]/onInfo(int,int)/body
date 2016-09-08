@@ -1,0 +1,14 @@
+{
+  if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_START) {
+    isRefreshCover=true;
+  }
+ else   if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_END) {
+    if (JCMediaManager.instance().backUpBufferState != CURRENT_STATE_PAUSE) {
+      isRefreshCover=false;
+    }
+  }
+  super.onInfo(what,extra);
+  if (what == IMediaPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED) {
+    coverImageView.setRotation(JCMediaManager.instance().videoRotation);
+  }
+}

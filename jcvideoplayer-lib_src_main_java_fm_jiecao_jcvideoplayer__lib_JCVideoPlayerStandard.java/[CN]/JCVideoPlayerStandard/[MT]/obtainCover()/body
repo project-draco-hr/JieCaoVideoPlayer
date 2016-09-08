@@ -1,7 +1,8 @@
 {
-  if (currentState == CURRENT_STATE_PAUSE) {
+  if (isOkStateForCover()) {
     if (isRefreshCover) {
-      pauseSwitchCoverBitmap=JCMediaManager.textureView.getBitmap();
+      Point videoSize=JCMediaManager.instance().getVideoSize();
+      pauseSwitchCoverBitmap=JCMediaManager.textureView.getBitmap(videoSize.x,videoSize.y);
       isRefreshCover=false;
     }
   }

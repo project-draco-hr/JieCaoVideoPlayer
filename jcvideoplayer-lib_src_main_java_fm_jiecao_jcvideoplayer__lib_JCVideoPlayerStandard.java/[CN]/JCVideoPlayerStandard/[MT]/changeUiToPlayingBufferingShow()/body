@@ -1,10 +1,10 @@
 {
 switch (currentScreen) {
 case SCREEN_LAYOUT_LIST:
-    setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
+    setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,coverImageView.getVisibility(),View.INVISIBLE);
   break;
 case SCREEN_WINDOW_FULLSCREEN:
-setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.INVISIBLE,View.INVISIBLE);
+setAllControlsVisible(View.VISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,coverImageView.getVisibility(),View.INVISIBLE);
 break;
 case SCREEN_WINDOW_TINY:
 break;

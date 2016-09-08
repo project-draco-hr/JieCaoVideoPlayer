@@ -1,0 +1,6 @@
+{
+  if (rotation != getRotation()) {
+    super.setRotation(rotation);
+    requestLayout();
+  }
+}

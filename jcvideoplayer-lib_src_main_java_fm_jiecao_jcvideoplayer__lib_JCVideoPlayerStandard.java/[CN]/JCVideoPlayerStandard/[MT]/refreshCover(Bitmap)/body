@@ -1,8 +1,0 @@
-{
-  if (pauseSwitchCoverBitmap != null) {
-    JCVideoPlayerStandard jcVideoPlayerStandard=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
-    jcVideoPlayerStandard.coverImageView.setBackgroundColor(Color.parseColor("#000000"));
-    jcVideoPlayerStandard.coverImageView.setImageBitmap(bitmap);
-    jcVideoPlayerStandard.coverImageView.setVisibility(VISIBLE);
-  }
-}

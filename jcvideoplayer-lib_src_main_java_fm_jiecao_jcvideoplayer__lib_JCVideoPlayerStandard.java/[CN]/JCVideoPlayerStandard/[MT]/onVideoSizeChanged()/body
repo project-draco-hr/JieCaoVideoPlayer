@@ -1,0 +1,4 @@
+{
+  super.onVideoSizeChanged();
+  coverImageView.setVideoSize(JCMediaManager.instance().getVideoSize());
+}

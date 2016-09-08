@@ -1,0 +1,3 @@
+{
+  return currentState == CURRENT_STATE_PAUSE || currentState == CURRENT_STATE_PLAYING_BUFFERING_START;
+}
