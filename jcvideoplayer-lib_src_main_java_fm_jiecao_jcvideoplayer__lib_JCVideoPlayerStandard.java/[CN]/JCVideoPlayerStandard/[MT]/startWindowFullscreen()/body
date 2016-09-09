@@ -1,5 +1,5 @@
 {
-  obtainCover();
+  obtainCache();
   super.startWindowFullscreen();
-  refreshCover();
+  refreshCache();
 }

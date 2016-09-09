@@ -1,6 +1,4 @@
 {
   super.onCompletion();
-  coverImageView.setImageBitmap(null);
-  coverImageView.setVisibility(INVISIBLE);
-  pauseSwitchCoverBitmap=null;
+  clearCoverImage();
 }

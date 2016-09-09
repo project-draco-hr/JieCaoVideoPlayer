@@ -1,4 +1,4 @@
 {
   super.onVideoSizeChanged();
-  coverImageView.setVideoSize(JCMediaManager.instance().getVideoSize());
+  cacheImageView.setVideoSize(JCMediaManager.instance().getVideoSize());
 }

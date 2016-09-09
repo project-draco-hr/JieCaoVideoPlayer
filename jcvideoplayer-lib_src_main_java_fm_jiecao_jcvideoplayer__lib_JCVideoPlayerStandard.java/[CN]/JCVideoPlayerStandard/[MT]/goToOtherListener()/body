@@ -1,6 +1,6 @@
 {
-  obtainCover();
+  obtainCache();
   boolean b=super.goToOtherListener();
-  refreshCover();
+  refreshCache();
   return b;
 }

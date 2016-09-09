@@ -1,6 +1,6 @@
 {
   super.onInfo(what,extra);
   if (what == IMediaPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED) {
-    coverImageView.setRotation(JCMediaManager.instance().videoRotation);
+    cacheImageView.setRotation(JCMediaManager.instance().videoRotation);
   }
 }

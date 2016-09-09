@@ -4,9 +4,10 @@
   titleTextView=(TextView)findViewById(R.id.title);
   backButton=(ImageView)findViewById(R.id.back);
   thumbImageView=(ImageView)findViewById(R.id.thumb);
-  coverImageView=(JCResizeImageView)findViewById(R.id.cover);
+  coverImageView=(ImageView)findViewById(R.id.cover);
   loadingProgressBar=(ProgressBar)findViewById(R.id.loading);
   tinyBackImageView=(ImageView)findViewById(R.id.back_tiny);
+  cacheImageView=(JCResizeImageView)findViewById(R.id.cache);
   thumbImageView.setOnClickListener(this);
   backButton.setOnClickListener(this);
   tinyBackImageView.setOnClickListener(this);

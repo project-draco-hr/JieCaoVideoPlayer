@@ -1,7 +1,7 @@
 {
   super.onSurfaceTextureUpdated(surface);
   if (!textureSizeChanged) {
-    coverImageView.setVisibility(INVISIBLE);
+    cacheImageView.setVisibility(INVISIBLE);
     JCMediaManager.textureView.setHasUpdated();
   }
  else {

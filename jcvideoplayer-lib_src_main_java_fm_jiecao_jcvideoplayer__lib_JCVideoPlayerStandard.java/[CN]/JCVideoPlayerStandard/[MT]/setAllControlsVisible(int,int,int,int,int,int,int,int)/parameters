@@ -5,3 +5,4 @@ int loadingPro
 int thumbImg
 int coverImg
 int bottomPro
+int cacheImg

@@ -1,5 +1,4 @@
 {
-  if (currentState == CURRENT_STATE_ERROR) {
-    coverImageView.setImageBitmap(null);
-  }
+  pauseSwitchCoverBitmap=null;
+  cacheImageView.setImageBitmap(null);
 }

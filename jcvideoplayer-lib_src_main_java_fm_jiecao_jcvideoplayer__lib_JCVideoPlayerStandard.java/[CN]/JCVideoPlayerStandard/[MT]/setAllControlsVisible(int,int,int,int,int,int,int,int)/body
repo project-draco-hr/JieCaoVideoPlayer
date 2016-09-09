@@ -6,4 +6,5 @@
   thumbImageView.setVisibility(thumbImg);
   coverImageView.setVisibility(coverImg);
   bottomProgressBar.setVisibility(bottomPro);
+  cacheImageView.setVisibility(cacheImg);
 }
