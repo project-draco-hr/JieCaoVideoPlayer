@@ -1,0 +1,5 @@
+{
+  if (currentState == CURRENT_STATE_ERROR) {
+    coverImageView.setImageBitmap(null);
+  }
+}
