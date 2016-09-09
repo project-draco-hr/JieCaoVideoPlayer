@@ -1,0 +1,5 @@
+{
+  if (getVisibility() != visibility) {
+    super.setVisibility(visibility);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  super.onSurfaceTextureSizeChanged(surface,width,height);
+  if (!textureUpdated) {
+    textureSizeChanged=true;
+  }
+}

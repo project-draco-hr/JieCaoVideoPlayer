@@ -16,6 +16,7 @@ case CURRENT_STATE_PLAYING_BUFFERING_START:
 startProgressTimer();
 break;
 case CURRENT_STATE_ERROR:
+cancelProgressTimer();
 if (isCurrentMediaListener()) {
 JCMediaManager.instance().releaseMediaPlayer();
 }

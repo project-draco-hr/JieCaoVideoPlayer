@@ -1,3 +1,8 @@
 {
-  return new Point(currentVideoWidth,currentVideoHeight);
+  if (currentVideoWidth != 0 && currentVideoHeight != 0) {
+    return new Point(currentVideoWidth,currentVideoHeight);
+  }
+ else {
+    return null;
+  }
 }

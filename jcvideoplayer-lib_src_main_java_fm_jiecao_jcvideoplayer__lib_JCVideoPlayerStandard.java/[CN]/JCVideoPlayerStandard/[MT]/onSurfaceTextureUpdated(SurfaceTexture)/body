@@ -1,0 +1,10 @@
+{
+  super.onSurfaceTextureUpdated(surface);
+  if (!textureSizeChanged) {
+    coverImageView.setVisibility(INVISIBLE);
+    JCMediaManager.textureView.setHasUpdated();
+  }
+ else {
+    textureSizeChanged=false;
+  }
+}

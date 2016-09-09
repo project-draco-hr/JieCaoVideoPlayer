@@ -26,9 +26,4 @@
  else   if (i == R.id.back_tiny) {
     backPress();
   }
- else   if (i == R.id.start) {
-    if (currentState == CURRENT_STATE_NORMAL || currentState == CURRENT_STATE_PAUSE) {
-      isRefreshCover=true;
-    }
-  }
 }

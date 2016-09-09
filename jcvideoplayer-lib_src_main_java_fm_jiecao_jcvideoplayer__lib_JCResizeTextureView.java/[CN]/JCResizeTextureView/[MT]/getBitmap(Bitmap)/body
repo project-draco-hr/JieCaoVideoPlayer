@@ -1,0 +1,8 @@
+{
+  if (hasUpdated) {
+    return super.getBitmap(bitmap);
+  }
+ else {
+    return null;
+  }
+}

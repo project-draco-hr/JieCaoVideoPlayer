@@ -1,12 +1,9 @@
 {
-  if (isOkStateForCover()) {
-    if (pauseSwitchCoverBitmap != null) {
-      JCVideoPlayerStandard jcVideoPlayer=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
-      if (jcVideoPlayer != null) {
-        jcVideoPlayer.coverImageView.setBackgroundColor(Color.parseColor("#000000"));
-        jcVideoPlayer.coverImageView.setImageBitmap(pauseSwitchCoverBitmap);
-        jcVideoPlayer.coverImageView.setVisibility(VISIBLE);
-      }
+  if (pauseSwitchCoverBitmap != null) {
+    JCVideoPlayerStandard jcVideoPlayer=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
+    if (jcVideoPlayer != null) {
+      jcVideoPlayer.coverImageView.setImageBitmap(pauseSwitchCoverBitmap);
+      jcVideoPlayer.coverImageView.setVisibility(VISIBLE);
     }
   }
 }
