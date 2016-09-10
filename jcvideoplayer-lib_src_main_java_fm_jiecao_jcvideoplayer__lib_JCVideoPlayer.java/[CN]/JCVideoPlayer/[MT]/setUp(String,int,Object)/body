@@ -1,4 +1,7 @@
 {
+  if (!TextUtils.isEmpty(this.url) && TextUtils.equals(this.url,url)) {
+    return false;
+  }
   this.currentState=CURRENT_STATE_NORMAL;
   this.url=url;
   this.objects=objects;
