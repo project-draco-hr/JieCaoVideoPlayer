@@ -11,9 +11,10 @@
  else {
     viewHolder=(ViewHolder)convertView.getTag();
   }
-  boolean setUp=viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,videoTitles[videoIndexs[position]]);
+  VideoBean video=getItem(position);
+  boolean setUp=viewHolder.jcVideoPlayer.setUp(video.url,JCVideoPlayer.SCREEN_LAYOUT_LIST,video.title);
   if (setUp) {
-    ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],viewHolder.jcVideoPlayer.thumbImageView);
+    ImageLoader.getInstance().displayImage(video.thumb,viewHolder.jcVideoPlayer.thumbImageView);
   }
   return convertView;
 }

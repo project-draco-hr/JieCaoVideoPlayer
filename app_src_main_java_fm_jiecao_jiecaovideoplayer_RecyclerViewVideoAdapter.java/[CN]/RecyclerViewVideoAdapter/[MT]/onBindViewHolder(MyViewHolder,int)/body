@@ -1,7 +1,8 @@
 {
   Log.i(TAG,"onBindViewHolder [" + holder.jcVideoPlayer.hashCode() + "] position="+ position);
-  boolean setUp=holder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,videoTitles[videoIndexs[position]]);
+  VideoBean video=getItem(position);
+  boolean setUp=holder.jcVideoPlayer.setUp(video.url,JCVideoPlayer.SCREEN_LAYOUT_LIST,video.title);
   if (setUp) {
-    ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],holder.jcVideoPlayer.thumbImageView);
+    ImageLoader.getInstance().displayImage(video.thumb,holder.jcVideoPlayer.thumbImageView);
   }
 }
