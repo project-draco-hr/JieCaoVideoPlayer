@@ -1,3 +1,0 @@
-{
-  return VideoConstant.videos.get(position);
-}

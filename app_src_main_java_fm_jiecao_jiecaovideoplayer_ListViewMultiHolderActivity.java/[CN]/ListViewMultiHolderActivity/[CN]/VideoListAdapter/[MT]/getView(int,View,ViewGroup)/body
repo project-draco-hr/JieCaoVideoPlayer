@@ -10,10 +10,9 @@
       viewHolder.jcVideoPlayer=(JCVideoPlayerStandard)convertView.findViewById(R.id.videoplayer);
       convertView.setTag(viewHolder);
     }
-    VideoBean video=getItem(position);
-    boolean setUp=viewHolder.jcVideoPlayer.setUp(video.url,JCVideoPlayer.SCREEN_LAYOUT_LIST,video.title);
+    boolean setUp=viewHolder.jcVideoPlayer.setUp(VideoConstant.videoUrls[position],JCVideoPlayer.SCREEN_LAYOUT_LIST,VideoConstant.videoTitles[position]);
     if (setUp) {
-      ImageLoader.getInstance().displayImage(video.thumb,viewHolder.jcVideoPlayer.thumbImageView);
+      ImageLoader.getInstance().displayImage(VideoConstant.videoThumbs[position],viewHolder.jcVideoPlayer.thumbImageView);
     }
   }
  else {
