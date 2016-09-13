@@ -8,7 +8,6 @@
   JCMediaManager.textureView.setVideoSize(JCMediaManager.instance().getVideoSize());
   JCMediaManager.textureView.setRotation(JCMediaManager.instance().videoRotation);
   JCMediaManager.textureView.setSurfaceTextureListener(this);
-  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-  layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+  FrameLayout.LayoutParams layoutParams=new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT,Gravity.CENTER);
   textureViewContainer.addView(JCMediaManager.textureView,layoutParams);
 }

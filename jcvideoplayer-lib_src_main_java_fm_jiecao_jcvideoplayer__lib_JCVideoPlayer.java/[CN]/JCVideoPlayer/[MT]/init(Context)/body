@@ -6,7 +6,7 @@
   currentTimeTextView=(TextView)findViewById(R.id.current);
   totalTimeTextView=(TextView)findViewById(R.id.total);
   bottomContainer=(ViewGroup)findViewById(R.id.layout_bottom);
-  textureViewContainer=(RelativeLayout)findViewById(R.id.surface_container);
+  textureViewContainer=(ViewGroup)findViewById(R.id.surface_container);
   topContainer=(ViewGroup)findViewById(R.id.layout_top);
   startButton.setOnClickListener(this);
   fullscreenButton.setOnClickListener(this);
