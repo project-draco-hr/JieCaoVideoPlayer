@@ -1,5 +1,5 @@
 {
-  Log.i(TAG,"goToOtherListener " + " [" + this.hashCode() + "] ");
+  Log.i(TAG,"backToOtherListener " + " [" + this.hashCode() + "] ");
   if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
     onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
     if (JCVideoPlayerManager.LISTENERLIST.size() == 1) {
