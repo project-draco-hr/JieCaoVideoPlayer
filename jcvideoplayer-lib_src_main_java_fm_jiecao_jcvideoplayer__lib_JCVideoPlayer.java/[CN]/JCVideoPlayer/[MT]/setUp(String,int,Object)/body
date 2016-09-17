@@ -2,10 +2,16 @@
   if (!TextUtils.isEmpty(this.url) && TextUtils.equals(this.url,url)) {
     return false;
   }
-  this.currentState=CURRENT_STATE_NORMAL;
   this.url=url;
   this.objects=objects;
   this.currentScreen=screen;
+  if (JCVideoPlayerManager.LISTENERLIST.size() > 1) {
+    if (JCVideoPlayerManager.LISTENERLIST.getFirst().get().getScreenType() == SCREEN_WINDOW_TINY) {
+      if (JCMediaManager.instance().mediaPlayer.getDataSource().equals(url)) {
+        return true;
+      }
+    }
+  }
   setUiWitStateAndScreen(CURRENT_STATE_NORMAL);
   return true;
 }

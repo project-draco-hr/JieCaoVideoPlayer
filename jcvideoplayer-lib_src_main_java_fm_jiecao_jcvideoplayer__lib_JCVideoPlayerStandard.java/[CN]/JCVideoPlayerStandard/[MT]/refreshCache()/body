@@ -1,6 +1,6 @@
 {
   if (pauseSwitchCoverBitmap != null) {
-    JCVideoPlayerStandard jcVideoPlayer=((JCVideoPlayerStandard)JCVideoPlayerManager.listener());
+    JCVideoPlayerStandard jcVideoPlayer=((JCVideoPlayerStandard)JCVideoPlayerManager.getFirst());
     if (jcVideoPlayer != null) {
       jcVideoPlayer.cacheImageView.setImageBitmap(pauseSwitchCoverBitmap);
       jcVideoPlayer.cacheImageView.setVisibility(VISIBLE);

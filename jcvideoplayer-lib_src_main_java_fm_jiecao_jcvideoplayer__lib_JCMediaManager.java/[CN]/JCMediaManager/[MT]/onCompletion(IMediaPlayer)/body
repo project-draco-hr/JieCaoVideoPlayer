@@ -1,8 +1,8 @@
 {
   mainThreadHandler.post(new Runnable(){
     @Override public void run(){
-      if (JCVideoPlayerManager.listener() != null) {
-        JCVideoPlayerManager.listener().onAutoCompletion();
+      if (JCVideoPlayerManager.getFirst() != null) {
+        JCVideoPlayerManager.getFirst().onAutoCompletion();
       }
     }
   }

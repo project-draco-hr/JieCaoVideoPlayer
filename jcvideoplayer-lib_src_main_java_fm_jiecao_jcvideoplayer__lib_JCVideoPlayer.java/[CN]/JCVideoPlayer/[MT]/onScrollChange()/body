@@ -1,0 +1,13 @@
+{
+  System.out.println("fdsfdsfxx " + isShown());
+  if (!isShown()) {
+    if (JCVideoPlayerManager.getFirst() == this && url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
+      startWindowTiny();
+    }
+  }
+ else {
+    if (JCVideoPlayerManager.getFirst() != this && url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
+      backPress();
+    }
+  }
+}

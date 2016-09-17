@@ -1,0 +1,20 @@
+{
+  Log.i(TAG,"backToOtherListener " + " [" + this.hashCode() + "] ");
+  if (currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN || currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_TINY) {
+    onEvent(currentScreen == JCVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN ? JCBuriedPoint.ON_QUIT_FULLSCREEN : JCBuriedPoint.ON_QUIT_TINYSCREEN);
+    if (JCVideoPlayerManager.LISTENERLIST.size() == 1) {
+      JCVideoPlayerManager.popListener().onCompletion();
+      JCMediaManager.instance().releaseMediaPlayer();
+      showSupportActionBar(getContext());
+      return true;
+    }
+    ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).getWindow().getDecorView();
+    vp.removeView(this);
+    JCMediaManager.instance().lastState=currentState;
+    JCVideoPlayerManager.popListener();
+    JCVideoPlayerManager.getFirst().goBackThisListener();
+    CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();
+    return true;
+  }
+  return false;
+}

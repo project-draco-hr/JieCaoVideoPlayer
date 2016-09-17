@@ -1,12 +1,5 @@
 {
   Log.i(TAG,"onAutoCompletion " + " [" + this.hashCode() + "] ");
   onEvent(JCBuriedPoint.ON_AUTO_COMPLETE);
-  if (JCVideoPlayerManager.listener() != null) {
-    JCVideoPlayerManager.listener().onCompletion();
-    JCVideoPlayerManager.setListener(null);
-  }
-  if (JCVideoPlayerManager.lastListener() != null) {
-    JCVideoPlayerManager.lastListener().onCompletion();
-    JCVideoPlayerManager.setLastListener(null);
-  }
+  JCVideoPlayerManager.completeAll();
 }

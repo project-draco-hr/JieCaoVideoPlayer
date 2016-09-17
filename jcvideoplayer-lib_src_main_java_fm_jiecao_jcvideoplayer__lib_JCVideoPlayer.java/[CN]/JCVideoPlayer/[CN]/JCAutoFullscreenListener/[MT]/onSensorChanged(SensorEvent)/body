@@ -5,13 +5,13 @@
   if (x < -10) {
   }
  else   if (x > 10) {
-    if (JCVideoPlayerManager.listener() != null) {
-      JCVideoPlayerManager.listener().autoFullscreenLeft();
+    if (JCVideoPlayerManager.getFirst() != null) {
+      JCVideoPlayerManager.getFirst().autoFullscreenLeft();
     }
   }
  else   if (y > 9.5) {
-    if (JCVideoPlayerManager.listener() != null) {
-      JCVideoPlayerManager.listener().autoQuitFullscreen();
+    if (JCVideoPlayerManager.getFirst() != null) {
+      JCVideoPlayerManager.getFirst().autoQuitFullscreen();
     }
   }
 }

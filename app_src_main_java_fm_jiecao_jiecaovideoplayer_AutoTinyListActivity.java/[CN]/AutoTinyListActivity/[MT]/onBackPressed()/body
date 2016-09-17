@@ -1,0 +1,6 @@
+{
+  if (JCVideoPlayer.backPress()) {
+    return;
+  }
+  super.onBackPressed();
+}

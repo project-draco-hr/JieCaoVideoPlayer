@@ -1,7 +1,7 @@
 {
   Log.i(TAG,"startWindowFullscreen " + " [" + this.hashCode() + "] ");
   hideSupportActionBar(getContext());
-  ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).findViewById(Window.ID_ANDROID_CONTENT);
+  ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).getWindow().getDecorView();
   View old=vp.findViewById(FULLSCREEN_ID);
   if (old != null) {
     vp.removeView(old);
@@ -23,8 +23,7 @@
     jcVideoPlayer.setUiWitStateAndScreen(currentState);
     jcVideoPlayer.addTextureView();
     jcVideoPlayer.setRotation(90);
-    JCVideoPlayerManager.setLastListener(this);
-    JCVideoPlayerManager.setListener(jcVideoPlayer);
+    JCVideoPlayerManager.putListener(jcVideoPlayer);
   }
  catch (  InstantiationException e) {
     e.printStackTrace();

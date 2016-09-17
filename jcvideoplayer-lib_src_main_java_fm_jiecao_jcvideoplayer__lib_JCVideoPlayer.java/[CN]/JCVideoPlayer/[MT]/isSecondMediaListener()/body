@@ -1,0 +1,6 @@
+{
+  if (JCVideoPlayerManager.LISTENERLIST.size() > 1) {
+    return JCVideoPlayerManager.LISTENERLIST.get(1).get() != null && JCVideoPlayerManager.LISTENERLIST.get(1).get() == this;
+  }
+  return false;
+}

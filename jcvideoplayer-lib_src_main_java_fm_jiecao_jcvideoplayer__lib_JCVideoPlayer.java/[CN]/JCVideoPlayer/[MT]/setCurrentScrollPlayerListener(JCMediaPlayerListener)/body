@@ -1,0 +1,3 @@
+{
+  JCVideoPlayerManager.setCurrentScrollPlayerListener(listener);
+}

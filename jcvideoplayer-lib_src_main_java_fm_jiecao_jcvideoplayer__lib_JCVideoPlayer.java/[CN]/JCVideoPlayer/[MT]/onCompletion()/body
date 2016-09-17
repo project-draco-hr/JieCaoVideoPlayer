@@ -4,7 +4,6 @@
   if (textureViewContainer.getChildCount() > 0) {
     textureViewContainer.removeAllViews();
   }
-  JCVideoPlayerManager.setListener(null);
   JCMediaManager.instance().currentVideoWidth=0;
   JCMediaManager.instance().currentVideoHeight=0;
   JCMediaManager.instance().bufferPercent=0;

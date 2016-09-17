@@ -1,0 +1,5 @@
+{
+  if (JCVideoPlayerManager.getCurrentScrollPlayerListener() != null) {
+    JCVideoPlayerManager.getCurrentScrollPlayerListener().onScrollChange();
+  }
+}

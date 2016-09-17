@@ -1,6 +1,0 @@
-{
-  obtainCache();
-  boolean b=super.goToOtherListener();
-  refreshCache();
-  return b;
-}

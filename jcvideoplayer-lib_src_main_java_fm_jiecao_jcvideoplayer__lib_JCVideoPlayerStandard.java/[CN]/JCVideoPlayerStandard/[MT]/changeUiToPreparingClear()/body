@@ -1,5 +1,6 @@
 {
 switch (currentScreen) {
+case SCREEN_LAYOUT_NORMAL:
 case SCREEN_LAYOUT_LIST:
     setAllControlsVisible(View.INVISIBLE,View.INVISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE,View.INVISIBLE,View.VISIBLE);
   break;
