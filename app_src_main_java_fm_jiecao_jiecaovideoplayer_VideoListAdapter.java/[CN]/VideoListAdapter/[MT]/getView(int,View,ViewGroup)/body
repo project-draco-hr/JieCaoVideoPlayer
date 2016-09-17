@@ -13,7 +13,7 @@
   }
   boolean setUp=viewHolder.jcVideoPlayer.setUp(videoUrls[videoIndexs[position]],JCVideoPlayer.SCREEN_LAYOUT_LIST,videoTitles[videoIndexs[position]]);
   if (setUp) {
-    ImageLoader.getInstance().displayImage(videoThumbs[videoIndexs[position]],viewHolder.jcVideoPlayer.thumbImageView);
+    Picasso.with(convertView.getContext()).load(videoThumbs[position]).into(viewHolder.jcVideoPlayer.thumbImageView);
   }
   return convertView;
 }
