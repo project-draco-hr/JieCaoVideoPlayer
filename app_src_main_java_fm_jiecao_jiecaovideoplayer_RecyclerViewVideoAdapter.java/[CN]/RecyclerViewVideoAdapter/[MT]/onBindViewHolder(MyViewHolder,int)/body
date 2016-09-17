@@ -2,6 +2,6 @@
   Log.i(TAG,"onBindViewHolder [" + holder.jcVideoPlayer.hashCode() + "] position="+ position);
   boolean setUp=holder.jcVideoPlayer.setUp(VideoConstant.videoUrls[position],JCVideoPlayer.SCREEN_LAYOUT_LIST,VideoConstant.videoTitles[position]);
   if (setUp) {
-    ImageLoader.getInstance().displayImage(VideoConstant.videoThumbs[position],holder.jcVideoPlayer.thumbImageView);
+    Picasso.with(holder.jcVideoPlayer.getContext()).load(VideoConstant.videoThumbs[position]).into(holder.jcVideoPlayer.thumbImageView);
   }
 }
