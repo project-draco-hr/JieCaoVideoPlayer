@@ -37,6 +37,7 @@ if (msg.obj == null) {
 }
 break;
 case HANDLER_RELEASE:
+mediaPlayer.reset();
 mediaPlayer.release();
 break;
 }
