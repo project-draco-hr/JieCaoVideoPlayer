@@ -1,5 +1,8 @@
 {
-  if (JCVideoPlayerManager.getCurrentScrollPlayerListener() != null) {
+  if (JCVideoPlayerManager.getCurrentScrollPlayerListener() != null && JCVideoPlayerManager.getCurrentScrollPlayerListener() == JCVideoPlayerManager.getFirst()) {
+    JCVideoPlayerManager.getCurrentScrollPlayerListener().onScrollChange();
+  }
+ else   if (JCVideoPlayerManager.LISTENERLIST.size() > 1 && ((JCVideoPlayer)JCVideoPlayerManager.getFirst()).currentScreen == SCREEN_WINDOW_TINY && JCVideoPlayerManager.getCurrentScrollPlayerListener() == JCVideoPlayerManager.LISTENERLIST.get(1).get()) {
     JCVideoPlayerManager.getCurrentScrollPlayerListener().onScrollChange();
   }
 }
