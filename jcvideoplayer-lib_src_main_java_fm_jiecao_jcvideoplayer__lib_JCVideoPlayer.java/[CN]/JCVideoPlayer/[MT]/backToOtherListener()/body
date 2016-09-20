@@ -13,7 +13,6 @@
     JCMediaManager.instance().lastState=currentState;
     JCVideoPlayerManager.popListener();
     JCVideoPlayerManager.getFirst().goBackThisListener();
-    CLICK_QUIT_FULLSCREEN_TIME=System.currentTimeMillis();
     return true;
   }
   return false;
