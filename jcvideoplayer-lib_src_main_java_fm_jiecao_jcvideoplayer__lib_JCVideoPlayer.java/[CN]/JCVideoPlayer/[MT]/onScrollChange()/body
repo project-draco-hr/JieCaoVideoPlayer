@@ -1,12 +1,13 @@
 {
-  System.out.println("fdsfdsfxx " + isShown());
   if (!isShown()) {
     if (JCVideoPlayerManager.getFirst() == this && url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
+      Log.i(TAG,"onScrollChange startWindowTiny [" + this.hashCode() + "] ");
       startWindowTiny();
     }
   }
  else {
     if (JCVideoPlayerManager.getFirst() != this && url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
+      Log.i(TAG,"onScrollChange backPress [" + this.hashCode() + "] ");
       backPress();
     }
   }
