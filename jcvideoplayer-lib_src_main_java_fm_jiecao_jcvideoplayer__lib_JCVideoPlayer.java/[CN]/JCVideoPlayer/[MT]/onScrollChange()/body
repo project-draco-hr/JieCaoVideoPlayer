@@ -11,7 +11,12 @@
     }
  else {
       if (!isShown()) {
-        startWindowTiny();
+        if (currentState != CURRENT_STATE_PLAYING) {
+          releaseAllVideos();
+        }
+ else {
+          startWindowTiny();
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
 {
-  System.out.println("fdsfdsfsd " + JCVideoPlayerManager.CURRENT_SCROLL_LISTENER_LIST.size());
   for (  WeakReference<JCMediaPlayerListener> jcMediaPlayerListenerWeakReference : JCVideoPlayerManager.CURRENT_SCROLL_LISTENER_LIST) {
     if (jcMediaPlayerListenerWeakReference.get().getState() != CURRENT_STATE_ERROR && jcMediaPlayerListenerWeakReference.get().getState() != CURRENT_STATE_AUTO_COMPLETE) {
       jcMediaPlayerListenerWeakReference.get().onScrollChange();
