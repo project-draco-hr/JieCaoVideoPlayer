@@ -2,6 +2,15 @@
   if (!TextUtils.isEmpty(this.url) && TextUtils.equals(this.url,url)) {
     return false;
   }
+  if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER != null && JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get() != null) {
+    if (this == JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()) {
+      if (((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).getScreenType() != SCREEN_WINDOW_TINY) {
+        if (((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).currentState == CURRENT_STATE_PLAYING) {
+          ((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).startWindowTiny();
+        }
+      }
+    }
+  }
   this.url=url;
   this.objects=objects;
   this.currentScreen=screen;
