@@ -1,7 +1,8 @@
 {
-  for (  WeakReference<JCMediaPlayerListener> jcMediaPlayerListenerWeakReference : JCVideoPlayerManager.CURRENT_SCROLL_LISTENER_LIST) {
-    if (jcMediaPlayerListenerWeakReference.get().getState() != CURRENT_STATE_ERROR && jcMediaPlayerListenerWeakReference.get().getState() != CURRENT_STATE_AUTO_COMPLETE) {
-      jcMediaPlayerListenerWeakReference.get().onScrollChange();
+  if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER != null && JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get() != null) {
+    JCMediaPlayerListener jcMediaPlayerListener=JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get();
+    if (jcMediaPlayerListener.getState() != CURRENT_STATE_ERROR && jcMediaPlayerListener.getState() != CURRENT_STATE_AUTO_COMPLETE) {
+      jcMediaPlayerListener.onScrollChange();
     }
   }
 }

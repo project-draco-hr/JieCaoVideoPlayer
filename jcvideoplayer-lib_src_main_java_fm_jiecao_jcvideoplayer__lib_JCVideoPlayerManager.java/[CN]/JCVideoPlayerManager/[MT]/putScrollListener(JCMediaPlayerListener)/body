@@ -1,5 +1,4 @@
 {
   if (listener.getScreenType() == JCVideoPlayer.SCREEN_WINDOW_TINY || listener.getScreenType() == JCVideoPlayer.SCREEN_WINDOW_FULLSCREEN)   return;
-  CURRENT_SCROLL_LISTENER_LIST.clear();
-  CURRENT_SCROLL_LISTENER_LIST.add(new WeakReference<>(listener));
+  CURRENT_SCROLL_LISTENER=new WeakReference<>(listener);
 }

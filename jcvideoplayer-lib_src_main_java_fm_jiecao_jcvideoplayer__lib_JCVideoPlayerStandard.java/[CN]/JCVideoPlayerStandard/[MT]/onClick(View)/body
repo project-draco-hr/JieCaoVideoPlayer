@@ -24,8 +24,8 @@
     backPress();
   }
  else   if (i == R.id.back_tiny) {
-    if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER_LIST.get(0).get() != null) {
-      if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER_LIST.get(0).get().getUrl() != JCMediaManager.instance().mediaPlayer.getDataSource()) {
+    if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get() != null) {
+      if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get().getUrl() != JCMediaManager.instance().mediaPlayer.getDataSource()) {
         releaseAllVideos();
         return;
       }
