@@ -11,7 +11,19 @@
     ViewGroup vp=(ViewGroup)(JCUtils.scanForActivity(getContext())).getWindow().getDecorView();
     vp.removeView(this);
     JCMediaManager.instance().lastState=currentState;
+    if (JCVideoPlayerManager.LISTENERLIST.size() == 1) {
+      System.out.println("haha");
+    }
+    if (JCVideoPlayerManager.LISTENERLIST.size() == 2) {
+      System.out.println("hehe");
+    }
+    if (JCVideoPlayerManager.LISTENERLIST.size() == 3) {
+      System.out.println("wocao");
+    }
     JCVideoPlayerManager.popListener();
+    if (JCVideoPlayerManager.getFirst() == null) {
+      System.out.println("memeda");
+    }
     JCVideoPlayerManager.getFirst().goBackThisListener();
     return true;
   }
