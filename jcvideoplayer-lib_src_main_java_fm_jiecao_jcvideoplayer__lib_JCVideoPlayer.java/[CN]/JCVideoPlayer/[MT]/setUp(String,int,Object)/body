@@ -4,11 +4,9 @@
   }
   if (JCVideoPlayerManager.CURRENT_SCROLL_LISTENER != null && JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get() != null) {
     if (this == JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()) {
-      if (((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).getScreenType() != SCREEN_WINDOW_TINY) {
-        if (((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).currentState == CURRENT_STATE_PLAYING) {
-          if (url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
-            ((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).startWindowTiny();
-          }
+      if (((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).currentState == CURRENT_STATE_PLAYING) {
+        if (url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
+          ((JCVideoPlayer)JCVideoPlayerManager.CURRENT_SCROLL_LISTENER.get()).startWindowTiny();
         }
       }
     }

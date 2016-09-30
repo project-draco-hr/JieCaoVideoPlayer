@@ -1,11 +1,11 @@
 {
-  if (objects[0].equals("????????????")) {
-    System.out.println("sssssssss");
-  }
   if (url.equals(JCMediaManager.instance().mediaPlayer.getDataSource())) {
     if (JCVideoPlayerManager.getFirst() == null)     return;
     if (JCVideoPlayerManager.getFirst().getScreenType() == SCREEN_WINDOW_TINY) {
       if (isShown()) {
+        if (objects[0].equals("????????????")) {
+          System.out.println("sssssssss");
+        }
         backPress();
       }
     }
